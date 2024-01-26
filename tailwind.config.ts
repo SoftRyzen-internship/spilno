@@ -45,6 +45,7 @@ const config: Config = {
         darkBlue: '#0045CB',
         lightBlue: '#ACC8FF',
         strokeColor: '#CBD8E5',
+        backdropBg: '#303036',
       },
     },
   },

@@ -1,3 +1,9 @@
+import { ModalTest } from '@/components/ui/ModalTest';
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <ModalTest />
+    </div>
+  );
 }
