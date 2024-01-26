@@ -1,9 +1,9 @@
-import { Example } from '@/components/ui/Example';
+import { ModalTest } from '@/components/ui/ModalTest';
 
 export default function Home() {
   return (
     <div>
-      <Example />
+      <ModalTest />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Modal } from './Modal';
+import { Modal } from '../Modal';
 
-//Just example for demonstration
+//Just ModalTest for demonstration
 
-export const Example = () => {
+export const ModalTest = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
