@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Common */
+.section {
+  @apply py-[60px] md:py-[80px] xl:py-[120px];
+}
