@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Modal } from '@/components/ui/Modal';
 
-export const ModalTest = () => {
+export const ModalTest: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {

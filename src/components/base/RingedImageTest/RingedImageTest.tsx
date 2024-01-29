@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { RingedImage } from '@/components/ui/RingedImage';
 
-export const RingedImageTest = () => {
+export const RingedImageTest: React.FC = () => {
   return (
     <>
       <h3 className="text-white">HERO</h3>
