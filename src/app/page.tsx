@@ -3,6 +3,10 @@ import { CaseCard } from '@/components/ui/CaseCard';
 import { ContactUs } from '@/sections/ContactUs';
 import { About } from '@/sections/About';
 
+import { Reviews } from '@/sections/Reviews';
+import { FAQ } from '@/sections/FAQ';
+import { Offer } from '@/sections/Offer';
+
 import data from '@/data/cases.json';
 
 export default function Home() {
@@ -19,6 +23,12 @@ export default function Home() {
       <ContactUs />
 
       <About />
+
+      <Offer />
+
+      <Reviews />
+
+      <FAQ />
     </div>
   );
 }
