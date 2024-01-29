@@ -1,6 +1,6 @@
 export type RingedImageProps = {
   children: React.ReactNode;
-  ringPosition: 'right' | 'left';
+  variant: 'right' | 'left';
   ringType?: 'hero';
   className?: string;
 };

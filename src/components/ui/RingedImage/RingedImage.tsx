@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn';
 import { RingedImageProps } from './types';
 
 export const RingedImage: React.FC<RingedImageProps> = ({
-  ringPosition,
+  variant,
   ringType,
   className,
   children,
@@ -14,9 +14,9 @@ export const RingedImage: React.FC<RingedImageProps> = ({
         'relative aspect-square',
         {
           "after:absolute after:left-0 after:top-0 after:block after:size-full after:rounded-full after:bg-transparent after:content-['']":
-            ringPosition,
+            variant,
         },
-        ringPosition === 'right'
+        variant === 'right'
           ? 'after:translate-x-1/2'
           : 'after:-translate-x-1/2',
         ringType === 'hero'

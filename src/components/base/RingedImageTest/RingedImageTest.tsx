@@ -8,7 +8,7 @@ export const RingedImageTest = () => {
       <h3 className="text-white">HERO</h3>
 
       <RingedImage
-        ringPosition="right"
+        variant="right"
         ringType="hero"
         className="w-[219px] md:w-[248px] xl:w-[537px]"
       >
@@ -25,7 +25,7 @@ export const RingedImageTest = () => {
       <h3 className="text-white">ABOUT</h3>
 
       <RingedImage
-        ringPosition="right"
+        variant="right"
         className="w-[219px] md:w-[259px] xl:w-[537px]"
       >
         <Image
@@ -39,7 +39,7 @@ export const RingedImageTest = () => {
 
       <h3 className="text-white">FORM</h3>
 
-      <RingedImage ringPosition="left" className="hidden xl:block xl:w-[469px]">
+      <RingedImage variant="left" className="hidden xl:block xl:w-[469px]">
         <Image
           alt="contact-us"
           src={`/images/contact-us/contact-us@2x.webp`}
