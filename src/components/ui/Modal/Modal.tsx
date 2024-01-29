@@ -51,7 +51,7 @@ export const Modal: React.FC<ModalProps> = ({
         <div
           className={cn(
             'z-80 fixed inset-0 flex items-center justify-center backdrop-blur-md transition-all duration-300',
-            { 'bg-backdropBg/25 visible opacity-100': isOpen },
+            { 'visible bg-backdropBg/25 opacity-100': isOpen },
             { 'invisible opacity-0': !isOpen },
             backdropStyle,
           )}

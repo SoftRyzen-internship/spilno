@@ -46,6 +46,7 @@ const config: Config = {
         lightBlue: '#ACC8FF',
         strokeColor: '#CBD8E5',
         backdropBg: '#303036',
+        heroRing: '#BFD5FF',
       },
     },
   },
