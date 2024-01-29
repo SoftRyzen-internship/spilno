@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-white font-raleway text-[14px] font-normal leading-[1.5];
+}
+
 /* Common */
 .section {
   @apply py-[60px] md:py-[80px] xl:py-[120px];
