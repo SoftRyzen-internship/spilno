@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+
 import { Modal } from '@/components/ui/Modal';
 
 export const ModalTest = () => {
