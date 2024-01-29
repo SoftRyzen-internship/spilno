@@ -1,4 +1,5 @@
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { ModalTest } from '@/components/ui/ModalTest';
 
 export default function Home() {
   return (
@@ -10,6 +11,10 @@ export default function Home() {
         >
           Хочеш розширити свій бізнес у віртуальному просторі?
         </SectionTitle>
+
+        <div>
+          <ModalTest />
+        </div>
       </div>
     </div>
   );
