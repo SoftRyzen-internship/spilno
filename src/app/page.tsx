@@ -1,6 +1,7 @@
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { ModalTest } from '@/components/ui/ModalTest';
 import { Logo } from '@/components/ui/Logo';
+import { ModalTest } from '@/components/base/ModalTest';
+import { RingedImageTest } from '@/components/base/RingedImageTest';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <div className=" container bg-darkBg">
         <Logo location="header" />
       </div>
+
       <div className="container">
         <SectionTitle
         // Стили, для того, чтобы проверить отбражение в секции About
@@ -15,10 +17,12 @@ export default function Home() {
         >
           Хочеш розширити свій бізнес у віртуальному просторі?
         </SectionTitle>
+      </div>
 
-        <div>
-          <ModalTest />
-        </div>
+      <div className="container space-y-6 overflow-hidden bg-darkBg">
+        <ModalTest />
+
+        <RingedImageTest />
       </div>
     </div>
   );
