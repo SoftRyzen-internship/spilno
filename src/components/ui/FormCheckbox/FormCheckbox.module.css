@@ -1,0 +1,6 @@
+.checkbox::after {
+  @apply absolute left-1/2 top-1/2  z-10 hidden size-4 -translate-x-1/2 -translate-y-1/2 bg-[url('/icons/checkmark.svg')] bg-[length:16px_16px] bg-center bg-no-repeat opacity-0 transition-opacity content-[''];
+}
+.checkbox:checked::after {
+  @apply block opacity-100;
+}
