@@ -36,6 +36,7 @@ export default function Home() {
               d="M23.282 10.102a1 1 0 0 1 1.12.864 12 12 0 0 1 .099 1.535 1 1 0 1 1-2 0c0-.428-.028-.855-.082-1.28a1 1 0 0 1 .863-1.119Z"
               clipRule="evenodd"
             />
+
             <defs>
               <radialGradient
                 id="a"
