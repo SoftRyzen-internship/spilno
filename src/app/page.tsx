@@ -2,12 +2,18 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Logo } from '@/components/ui/Logo';
 import { ModalTest } from '@/components/base/ModalTest';
 import { RingedImageTest } from '@/components/base/RingedImageTest';
+import { MainNav } from '@/components/ui/MainNav';
 
 export default function Home() {
   return (
     <div>
-      <div className=" container bg-darkBg">
+      <div className="container bg-darkBg">
         <Logo location="header" />
+      </div>
+
+      <div className="container bg-darkBg mdOnly:bg-white">
+        <MainNav location="header" />
+        <MainNav location="menu" />
       </div>
 
       <div className="container">
