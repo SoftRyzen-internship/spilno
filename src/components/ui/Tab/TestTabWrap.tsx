@@ -4,6 +4,9 @@ import { useState } from 'react';
 
 import { Tab } from '.';
 
+{
+  /* Для тесту */
+}
 const testData = [
   {
     name: 'Для бізнесу',
@@ -15,6 +18,9 @@ const testData = [
   },
 ];
 
+{
+  /* Тестовий компонент */
+}
 export const TestTabWrap = () => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = testData.map(({ name }) => name);
