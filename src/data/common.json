@@ -2,5 +2,20 @@
   "logo": {
     "path": "/",
     "ariaLabel": "Посилання із логотипом компанії"
-  }
+  },
+
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Головна"
+    },
+    {
+      "path": "/business",
+      "label": "Для бізнесу"
+    },
+    {
+      "path": "/portfolio",
+      "label": "Портфоліо"
+    }
+  ]
 }
