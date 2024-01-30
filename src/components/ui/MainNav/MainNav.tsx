@@ -14,9 +14,8 @@ export const MainNav: React.FC<MainNavProps> = ({ location }) => {
         {navLinks.map(link => (
           <li key={link.path}>
             <Link
-              className="text-white transition-all hover:text-accent focus:text-accent
-              md:text-[18px] xl:font-geologica xl:text-[16px] xl:font-extralight xl:leading-[1.69] smOnly:font-medium
-              mdOnly:text-headline"
+              className="text-white transition-all hover:text-accent focus:text-accent md:text-[18px]
+              xl:font-geologica xl:text-[16px] xl:font-extralight xl:leading-[1.69] mdOnly:text-headline"
               href={link.path}
             >
               {link.label}
