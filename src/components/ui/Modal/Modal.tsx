@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useEffect, MouseEvent } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -32,9 +33,9 @@ export const Modal: React.FC<ModalProps> = ({
   }, [onClose]);
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'hidden';
     };
   }, [isOpen]);
 

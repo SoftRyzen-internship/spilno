@@ -1,76 +1,101 @@
 import { Navigation, Autoplay } from 'swiper/modules';
 
+import { Props as SliderProps } from '@/components/ui/Slider/types';
+
 enum Sections {
   CASES = 'cases',
   REVIEWS = 'reviews',
   PARTNERS = 'partners',
+  ADVANTAGES = 'advantages',
 }
-
-import { Props as SliderProps } from '@/components/ui/Slider/types';
 
 export const getSliderConfig = ({
   section,
-  swiperClassName,
+  wrapClassName,
 }: Partial<SliderProps>) => {
   const slidesPerViewAndGroupDefault = section === Sections.PARTNERS ? 3 : 1;
   const allowTouchMoveDefault = section === Sections.PARTNERS ? false : true;
+  const spaceBetweenDefault = section === Sections.PARTNERS ? 20 : 0;
   const autoplayDefault =
     section === Sections.PARTNERS
       ? { delay: 3000, disableOnInteraction: false }
       : false;
-  let loopDefault: boolean;
-  let spaceBetweenDefault: number;
 
+  let spaceBetweenTab: number;
   let slidesPerViewTab: number;
 
+  let slidesPerViewDesk: number;
+  let spaceBetweenDesk: number;
+
+  let loopTabAndDesk: boolean;
+
   switch (section) {
+    case Sections.ADVANTAGES:
+      spaceBetweenTab = 32;
+      slidesPerViewTab = 3;
+
+      slidesPerViewDesk = 4;
+      spaceBetweenDesk = 48;
+
+      loopTabAndDesk = false;
+      break;
     case Sections.CASES:
-      loopDefault = false;
-      spaceBetweenDefault = 24;
+      spaceBetweenTab = 24;
       slidesPerViewTab = 2;
 
+      slidesPerViewDesk = 2;
+      spaceBetweenDesk = 24;
+
+      loopTabAndDesk = false;
       break;
     case Sections.REVIEWS:
-      loopDefault = true;
-      spaceBetweenDefault = 0;
-      slidesPerViewTab = 1;
+      spaceBetweenTab = 24;
+      slidesPerViewTab = 2;
 
+      slidesPerViewDesk = 1;
+      spaceBetweenDesk = 0;
+
+      loopTabAndDesk = true;
       break;
     default:
-      loopDefault = true;
-      spaceBetweenDefault = 20;
+      spaceBetweenTab = 21;
       slidesPerViewTab = 5;
+
+      slidesPerViewDesk = 6;
+      spaceBetweenDesk = 24;
+
+      loopTabAndDesk = true;
   }
 
-  const spaceBetweenDesktop =
-    section === Sections.PARTNERS ? 24 : spaceBetweenDefault;
-
   return {
-    className: swiperClassName,
+    className: wrapClassName,
     updateOnWindowResize: true,
     wrapperTag: 'ul',
     modules: [Navigation, Autoplay],
     speed: 800,
-    spaceBetween: spaceBetweenDefault,
     lazyPreloadPrevNext: 1,
     navigation: {
-      nextEl: `.button-next-${section}`,
-      prevEl: `.button-prev-${section}`,
+      prevEl: `.slider-prev-btn-${section}`,
+      nextEl: `.slider-next-btn-${section}`,
     },
-    loop: loopDefault,
+    loop: true,
+    spaceBetween: spaceBetweenDefault,
     slidesPerView: slidesPerViewAndGroupDefault,
     slidesPerGroup: slidesPerViewAndGroupDefault,
     autoplay: autoplayDefault,
     allowTouchMove: allowTouchMoveDefault,
     breakpoints: {
       768: {
+        spaceBetween: spaceBetweenTab,
         slidesPerView: slidesPerViewTab,
-        spaceBetween: 4,
         allowTouchMove: false,
+        loop: loopTabAndDesk,
       },
       1280: {
-        slidesPerView: section === Sections.PARTNERS ? 6 : slidesPerViewTab,
-        spaceBetween: spaceBetweenDesktop,
+        slidesPerView: slidesPerViewDesk,
+        spaceBetween: spaceBetweenDesk,
+        allowTouchMove: false,
+        loop: loopTabAndDesk,
       },
     },
   };
