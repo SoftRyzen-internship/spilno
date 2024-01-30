@@ -1,3 +1,15 @@
+- #### Logo
+
+| Prop       | Default   | Description                                                    |
+| ---------- | --------- | -------------------------------------------------------------- |
+| `location` | undefined | required, choose the position you'd need :'header' or 'footer' |
+
+- #### MainNav
+
+| Prop       | Default   | Description                                                  |
+| ---------- | --------- | ------------------------------------------------------------ |
+| `location` | undefined | required, choose the position you'd need :'header' or 'menu' |
+
 - #### SectionTitle
 
 | Prop         | Default | Description                                                  |
