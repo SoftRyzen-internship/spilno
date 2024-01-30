@@ -10,13 +10,8 @@ export const Button: React.FC<ButtonProps> = ({
   link,
   text,
   children,
-  type = 'button',
-  disabled = false,
-  actionHandler,
   btnStyle = 'primary',
-  iconWrapStyles,
-  textStyle,
-  classNames,
+  className,
 }) => {
   const btnClass = cn(
     'inline-flex justify-center items-center gap-4 rounded-[48px] font-geologica text-[16px] font-medium leading-[1.5] xl:text-[20px] xl:leading-[1.35] transition-all',
@@ -30,29 +25,24 @@ export const Button: React.FC<ButtonProps> = ({
       'bg-accent text-white text-[16px] md:text-[20px] py-4 pr-5 pl-6 md:pl-8 md:py-5 md:pr-6 leading-[1.5] md:leading-[1.35] hover:bg-darkBlue focus:bg-darkBlue':
         btnStyle === 'submit',
     },
-    classNames,
+    className,
   );
 
   return (
     <>
       {!link && (
-        <button
-          className={btnClass}
-          onClick={actionHandler}
-          disabled={disabled}
-          type={type}
-        >
-          <span className={textStyle}>{text}</span>
+        <button className={btnClass} type="submit">
+          <span>{text}</span>
 
-          <span className={iconWrapStyles}>{children}</span>
+          <span>{children}</span>
         </button>
       )}
 
       {link && (
         <Link href={link} className={btnClass}>
-          <span className={textStyle}>{text}</span>
+          <span>{text}</span>
 
-          <span className={iconWrapStyles}>{children}</span>
+          <span>{children}</span>
         </Link>
       )}
     </>
