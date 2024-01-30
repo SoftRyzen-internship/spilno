@@ -1,16 +1,20 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+
 import { FormField } from '@/components/ui/FormField';
 import { FormData } from '@/components/ui/FormField/types';
 import { FormTextArea } from '@/components/ui/FormTextArea';
 import { FormCheckbox } from '@/components/ui/FormCheckbox';
+import { FormDropdown } from '@/components/ui/FormDropDown';
+import { FormListbox } from '@/components/ui/FormListbox';
 
 export const ContactUsForm: React.FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
     // setError,
   } = useForm<FormData>();
 
@@ -52,6 +56,22 @@ export const ContactUsForm: React.FC = () => {
           register={register}
           error={errors.email}
         />
+        <FormListbox
+          label="Звідки ви про нас дізнались?"
+          placeholder="Оберіть варіант"
+          name="referralSource"
+          register={register}
+          setValue={setValue}
+          error={errors.referralSource}
+        />
+        {/* <FormDropdown
+          label="Звідки ви про нас дізнались?"
+          placeholder="Оберіть варіант"
+          name="referralSource"
+          register={register}
+          setValue={setValue}
+          error={errors.referralSource}
+        /> */}
         <FormTextArea
           label="Опишіть проєкт"
           placeholder="Створити сайт для запису на різні б'юті-послуги, такі як манікюр, педикюр, косметологія. На сайті слід розмістити перелік послуг з цінами, форма для онлайн-запису..."
