@@ -1,6 +1,11 @@
+'use client';
+
 import { cn } from '@/utils/cn';
+
 import CheckIcon from '~/icons/checkmark.svg';
+
 import { FormFieldProps } from './types';
+
 import css from './FormCheckbox.module.css';
 
 export const FormCheckbox: React.FC<FormFieldProps> = ({

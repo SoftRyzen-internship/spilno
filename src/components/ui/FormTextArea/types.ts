@@ -1,22 +1,14 @@
 import { FieldError, UseFormRegister } from 'react-hook-form';
 
-export type FormData = {
-  name: string;
-  phone: string;
-  telegram: string;
-  email: string;
-  referralSource: string;
-  comments: string;
-  agreement: boolean;
-};
+import { TFormData } from '@/types';
 
 export type FormFieldProps = {
   label: string;
   placeholder: string;
-  name: ValidFieldNames;
-  register: UseFormRegister<FormData>;
+  name: string;
+  register: UseFormRegister<TFormData>;
   error: FieldError | undefined;
   className?: string;
 };
 
-export type ValidFieldNames = 'comments';
+// export type ValidFieldNames = 'projectDecription';

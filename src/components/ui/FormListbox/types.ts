@@ -1,22 +1,14 @@
-import { FieldError, UseFormRegister, UseFormSetValue } from 'react-hook-form';
+import { FieldError, Control } from 'react-hook-form';
 
-export type FormData = {
-  name: string;
-  phone: string;
-  telegram: string;
-  email: string;
-  referralSource: string;
-  comments: string;
-  agreement: boolean;
-};
+import { TFormData } from '@/types';
 
 export type FormListboxProps = {
   label: string;
   placeholder: string;
-  name: ValidFieldNames;
-  register: UseFormRegister<FormData>;
-  setValue: UseFormSetValue<FormData>;
+  variants: string[];
+  name: string;
+  control: Control<TFormData>;
   error: FieldError | undefined;
 };
 
-export type ValidFieldNames = 'referralSource';
+// export type ValidFieldNames = 'referralSource';

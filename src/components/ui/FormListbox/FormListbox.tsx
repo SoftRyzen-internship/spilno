@@ -1,80 +1,139 @@
-import { useState, useEffect } from 'react';
+'use client';
+
+import { Fragment } from 'react';
+import { Controller } from 'react-hook-form';
+import { Listbox, Transition } from '@headlessui/react';
 
 import { cn } from '@/utils/cn';
 
-import ErrorIcon from '~/icons/error.svg';
 import ArrowIcon from '~/icons/arrow-down.svg';
+import CheckIcon from '~/icons/checkmark.svg';
 
 import { FormListboxProps } from './types';
 
-const selectOptions = ['Друзі', 'Лінкедін', 'Телеграм', 'Тікток', 'Інстаграм'];
-
 export const FormListbox: React.FC<FormListboxProps> = ({
   label,
-  placeholder,
   name,
-  register,
-  setValue,
-  error,
-  //   error = { message: 'Введена адреса електронної пошти недійсна. ' },
+  placeholder,
+  variants,
+  control,
+  error = { message: 'Введена адреса електронної пошти недійсна.' },
+  // error,
 }) => {
-  const [isOpen, SetIsOpen] = useState(false);
-  const [option, SetOption] = useState<string | undefined>(undefined);
-
-  const handleOption = (option: string) => {
-    SetOption(option);
-    setValue(option);
-    SetIsOpen(false);
-  };
-
   return (
-    <label className="relative flex flex-col pb-4 text-sm/[1.3] text-primaryText/70">
-      <p className="mb-[9px]">
-        {label} <span className="text-accent">*</span>
-      </p>
-      <input name={name} type="checkbox" className="hidden" {...register} />
-      <div className="relative">
-        <button
-          className={cn(
-            'mb-2 flex w-full items-center justify-between rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[18.5px] text-left text-sm/[1.5] font-light  placeholder:text-greyText',
-            { 'border-red': error },
-          )}
-          onClick={() => SetIsOpen(!isOpen)}
-        >
-          {option || placeholder}
-          <ArrowIcon
-            className={cn('size-4 text-primaryText transition-transform', {
-              'rotate-180': isOpen,
-            })}
-            aria-label="open"
-          />
-        </button>
+    <Controller
+      name={name}
+      control={control}
+      render={({ field }) => (
+        <div className="smOnly:mb-6">
+          <Listbox
+            value={field.value}
+            onChange={field.onChange}
+            name={field.name}
+          >
+            <Listbox.Label className="text-sm/[1.3] text-primaryText/70">
+              <p className="mb-[9px]">
+                {label} <span className="text-accent">*</span>
+              </p>
+            </Listbox.Label>
+            <div className="relative">
+              <Listbox.Button
+                className={cn(
+                  'relative w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[18.5px] text-left text-sm/[1.5] font-light focus:outline-none focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-accent',
+                  { 'border-red': error },
+                )}
+              >
+                {({ open }) => (
+                  <>
+                    <span
+                      className={cn('block', {
+                        'text-primaryText/70': !field.value,
+                      })}
+                    >
+                      {field.value || placeholder}
+                    </span>
+                    <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+                      <ArrowIcon
+                        className={cn(
+                          'size-4 text-primaryText transition-transform',
+                          {
+                            '-rotate-180': open,
+                          },
+                        )}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </>
+                )}
+              </Listbox.Button>
 
-        {isOpen && (
-          <ul className="flex w-full flex-col bg-lightBg">
-            {selectOptions.map(option => (
-              <li key={option} className="p-4">
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleOption(option);
-                  }}
-                >
-                  {option}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      {error && (
-        <div className="flex items-center justify-start gap-1 text-red">
-          <ErrorIcon className="inline-block size-4" aria-label="alert" />
-          <p role="alert" className="text-xs/[1.25] font-medium">
-            {error.message}
-          </p>
+              <Transition
+                as={Fragment}
+                enter="transition-opacity ease-linear duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition-opacity ease-linear duration-300"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <Listbox.Options className="absolute top-0 z-10 mt-0 w-full overflow-auto rounded-[10px] border-[1px] border-accent bg-lightBg ring-0 focus:outline-none focus-visible:border-accent">
+                  <Listbox.Option
+                    key={placeholder}
+                    className="relative cursor-pointer select-none px-4 py-[18.5px] text-sm/[1.5] font-light"
+                    value={field.value || placeholder}
+                  >
+                    <>
+                      <span className={cn('block text-primaryText')}>
+                        {field.value || placeholder}
+                      </span>
+
+                      <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-primaryText">
+                        <ArrowIcon
+                          className="size-4 rotate-180"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </>
+                  </Listbox.Option>
+
+                  {variants.map((option, idx) => (
+                    <Listbox.Option
+                      key={idx}
+                      className={({ active }) =>
+                        cn(
+                          'relative cursor-pointer select-none px-4 py-[18.5px] text-sm/[1.5] font-light',
+                          { 'text-accent': active },
+                        )
+                      }
+                      value={option}
+                    >
+                      {({ selected }) => (
+                        <>
+                          <span
+                            className={cn('block text-primaryText/70', {
+                              'text-accent': selected,
+                            })}
+                          >
+                            {option}
+                          </span>
+                          {selected ? (
+                            <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-accent">
+                              <CheckIcon
+                                className="size-4"
+                                aria-hidden="true"
+                              />
+                            </span>
+                          ) : null}
+                        </>
+                      )}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </Transition>
+            </div>
+          </Listbox>
         </div>
       )}
-    </label>
+    />
   );
 };
