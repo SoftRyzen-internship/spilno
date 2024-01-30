@@ -40,8 +40,8 @@ position the ring. With option `hero` for prop `ringType` realized special ring
 
 A button or link component. Can accept an SVG icon component as children. The
 `link` prop enables the link mode, the value of which will be used in the href
-tag from NextLink. `text` - the text that will be displayed in the button or
-link. `btnStyle` sets the style of the stylized button, has the following
+tag from NextLink. Props `text` - the text that will be displayed in the button
+or link. `btnStyle` sets the style of the stylized button, has the following
 options: `primary`, `accent`, `submit`, `transparent`. `className` is a prop
 that can be used to pass styles that will override common button or link styles
 
