@@ -45,6 +45,14 @@ const config: Config = {
         darkBlue: '#0045CB',
         lightBlue: '#ACC8FF',
         strokeColor: '#CBD8E5',
+        backdropBg: '#303036',
+        heroRing: '#BFD5FF',
+      },
+      transitionDuration: {
+        DEFAULT: '300ms',
+      },
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },
