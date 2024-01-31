@@ -9,6 +9,7 @@
 | Prop       | Default   | Description                                                  |
 | ---------- | --------- | ------------------------------------------------------------ |
 | `location` | undefined | required, choose the position you'd need :'header' or 'menu' |
+| 'onClose'  | undefined | click handler                                                |
 
 - #### SectionTitle
 

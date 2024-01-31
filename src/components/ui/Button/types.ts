@@ -4,4 +4,5 @@ export type ButtonProps = {
   children?: React.ReactNode;
   btnStyle?: 'primary' | 'accent' | 'transparent' | 'submit';
   className?: string;
+  onClick?: () => void;
 };
