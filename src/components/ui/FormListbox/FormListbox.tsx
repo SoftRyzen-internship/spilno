@@ -10,7 +10,6 @@ import ArrowIcon from '~/icons/arrow-down.svg';
 import CheckIcon from '~/icons/checkmark.svg';
 
 import { FormListboxProps } from './types';
-import { TFormData } from '@/types';
 
 export const FormListbox: React.FC<FormListboxProps> = ({
   label,
@@ -18,12 +17,11 @@ export const FormListbox: React.FC<FormListboxProps> = ({
   placeholder,
   variants,
   control,
-  // error = { message: 'Введена адреса електронної пошти недійсна.' },
-  error,
+  errors,
 }) => {
   return (
     <Controller
-      name={name as keyof TFormData}
+      name={name}
       control={control}
       render={({ field }) => (
         <div className="mb-6">
@@ -46,19 +44,15 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                 >
                   <Listbox.Button
                     className={cn(
-                      'relative w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[18.5px] text-left text-sm/[1.5] font-light transition-colors focus:outline-none focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-accent',
-                      { 'border-red': error },
-                      { 'rounded-b-none border-b-0 border-accent': open },
+                      'relative w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-all duration-100 focus:outline-none focus-visible:border-accent',
+                      { 'border-red': errors[name] },
+                      { 'rounded-b-none border-accent': open },
                     )}
                   >
                     <span
-                      className={cn(
-                        'block',
-                        {
-                          'text-primaryText/70': !field.value,
-                        },
-                        { 'text-primaryText': open },
-                      )}
+                      className={cn('block text-primaryText', {
+                        'text-greyText': !field.value,
+                      })}
                     >
                       {field.value || placeholder}
                     </span>
@@ -76,20 +70,20 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                   </Listbox.Button>
                   <Transition
                     as={Fragment}
-                    enter="transition-opacity ease-linear duration-100"
+                    enter="transition-opacity ease-linear duration-150"
                     enterFrom="opacity-0"
                     enterTo="opacity-100"
-                    leave="transition-opacity ease-linear duration-100"
+                    leave="transition-opacity ease-linear duration-150"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute top-full z-10 w-full overflow-auto rounded-b-[10px] border-[1px] border-t-0 border-accent bg-lightBg ring-0 focus:outline-none focus-visible:border-accent">
+                    <Listbox.Options className="absolute top-full z-10 -mt-1 w-full overflow-auto rounded-b-[10px] border-[1px] border-t-0 border-accent bg-lightBg focus:outline-none focus-visible:border-accent">
                       {variants.map((option, idx) => (
                         <Listbox.Option
                           key={idx}
                           className={({ active }) =>
                             cn(
-                              'relative cursor-pointer select-none px-4 py-[18.5px] text-sm/[1.5] font-light hover:text-accent',
+                              'relative cursor-pointer select-none p-4 text-sm/[1.5] font-light text-primaryText/70 hover:text-accent',
                               { 'text-accent': active },
                             )
                           }
@@ -98,12 +92,9 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                           {({ selected }) => (
                             <>
                               <span
-                                className={cn(
-                                  'block text-primaryText/70 hover:text-accent',
-                                  {
-                                    'text-accent': selected,
-                                  },
-                                )}
+                                className={cn('block ', {
+                                  'text-accent': selected,
+                                })}
                               >
                                 {option}
                               </span>

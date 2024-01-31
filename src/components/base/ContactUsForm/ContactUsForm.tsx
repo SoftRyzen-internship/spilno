@@ -1,77 +1,71 @@
 'use client';
 
 import { Fragment } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
+import useFormPersist from 'react-hook-form-persist';
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import { FormField } from '@/components/ui/FormField';
 import { FormTextArea } from '@/components/ui/FormTextArea';
 import { FormCheckbox } from '@/components/ui/FormCheckbox';
 import { FormListbox } from '@/components/ui/FormListbox';
 
-import content from '@/data/form.json';
+import content from '@/data/contactUs.json';
 
-import { schema, TFormData } from './schema';
-// url()
-// .includes("github.com", { message: "Invalid GitHub URL" }),
+import { schema } from './schema';
 
 export const ContactUsForm: React.FC = () => {
+  const { formName, inputs, textarea, checkbox, select, submitBtn } =
+    content.form;
+
   const {
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
     control,
-  } = useForm<TFormData>({
-    resolver: yupResolver(schema),
+  } = useForm<FieldValues>({
+    resolver: zodResolver(schema),
   });
 
-  //   useForm<TFormData>({
-  //   defaultValues: { phone: '+489-79-87-9-78', referralSource: undefined },
-  // });
+  useFormPersist(formName, {
+    watch,
+    setValue,
+  });
 
-  const { inputs, textarea, checkbox, select, submitBtn } = content.form;
-
-  //  useFormPersist(LOCAL_STORAGE_KEY, {
-  //     watch,
-  //     setValue,
-  //     storage: typeof window !== 'undefined' && window.localStorage,
-  //   });
-
-  const onSubmit = async (data: TFormData) => {
+  const onSubmit: SubmitHandler<FieldValues> = async data => {
     console.log('SUCCESS', data);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="mx-auto bg-white px-4 py-8 font-geologica">
+      <div className="-mx-4 bg-white px-4 py-8 font-geologica sm:mx-0">
         {inputs.map(input => (
           <Fragment key={input.id}>
-            <FormField
-              {...input}
-              register={register}
-              error={errors[input.name as keyof TFormData]}
-            />
+            <FormField {...input} register={register} errors={errors} />
           </Fragment>
         ))}
         <FormListbox
+          control={control}
           label={select.label}
           placeholder={select.placeholder}
-          name={select.name as keyof TFormData}
+          name={select.name}
           variants={select.options}
-          error={errors[select.name as keyof TFormData]}
-          control={control}
+          errors={errors}
         />
         <FormTextArea
           label={textarea.label}
           placeholder={textarea.placeholder}
-          name={textarea.name as keyof TFormData}
+          name={textarea.name}
           register={register}
-          error={errors[textarea.name as keyof TFormData]}
+          errors={errors}
         />
         <FormCheckbox
           label={checkbox.label}
-          name={checkbox.name as keyof TFormData}
+          name={checkbox.name}
           register={register}
-          error={errors[checkbox.name as keyof TFormData]}
+          errors={errors}
           className="mb-10"
         />
         <button

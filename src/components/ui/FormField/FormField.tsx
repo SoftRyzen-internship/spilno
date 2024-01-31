@@ -1,9 +1,8 @@
 import { cn } from '@/utils/cn';
 
-import ErrorIcon from '~/icons/error.svg';
+import { FormError } from '@/components/ui/FormError';
 
 import { FormFieldProps } from './types';
-import { TFormData } from '@/components/base/ContactUsForm/schema';
 
 export const FormField: React.FC<FormFieldProps> = ({
   label,
@@ -11,30 +10,22 @@ export const FormField: React.FC<FormFieldProps> = ({
   placeholder,
   name,
   register,
-  error,
-  //   error = { message: 'Введена адреса електронної пошти недійсна. ' },
+  errors,
 }) => (
-  <label className="relative flex flex-col pb-4 text-sm/[1.3] text-primaryText/70">
+  <label className="relative mb-4 flex flex-col text-sm/[1.3] text-primaryText/70">
     <p className="mb-[9px]">
       {label} <span className="text-accent">*</span>
     </p>
     <input
       className={cn(
-        'mb-2 rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[18.5px] text-sm/[1.5] font-light transition-colors placeholder:text-greyText',
-        { 'border-red': error },
+        'relative mb-2 w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-colors placeholder:text-greyText focus:outline-none focus-visible:border-accent focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-offset-accent',
+        { 'border-red': errors[name] },
       )}
       type={type}
       placeholder={placeholder}
-      aria-invalid={error ? 'true' : 'false'}
-      {...register(name as keyof TFormData)}
+      aria-invalid={errors[name] ? 'true' : 'false'}
+      {...register(name)}
     />
-    {error && (
-      <div className="flex items-center justify-start gap-1 text-red">
-        <ErrorIcon className="inline-block size-4" aria-label="alert" />
-        <p role="alert" className="text-xs/[1.25] font-medium">
-          {error.message}
-        </p>
-      </div>
-    )}
+    <FormError name={name} errors={errors} />
   </label>
 );

@@ -1,11 +1,9 @@
-import { FieldError, UseFormRegister } from 'react-hook-form';
-
-import { TFormData } from '@/components/base/ContactUsForm/schema';
+import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 
 export type FormFieldProps = {
   label: string;
   name: string;
-  register: UseFormRegister<TFormData>;
-  error: FieldError | undefined;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors;
   className?: string;
 };

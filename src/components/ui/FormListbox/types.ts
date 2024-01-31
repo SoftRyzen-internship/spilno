@@ -1,11 +1,10 @@
-import { TFormData } from '@/components/base/ContactUsForm/schema';
-import { FieldError, Control } from 'react-hook-form';
+import { FieldErrors, FieldValues, Control } from 'react-hook-form';
 
 export type FormListboxProps = {
   label: string;
   placeholder: string;
   variants: string[];
   name: string;
-  control: Control<TFormData>;
-  error: FieldError | undefined;
+  control: Control<FieldValues>;
+  errors: FieldErrors;
 };
