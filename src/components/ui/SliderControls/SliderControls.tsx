@@ -5,9 +5,15 @@ import { cn } from '@/utils/cn';
 
 import ControlIcon from '~/icons/arrow-right.svg';
 
+import data from '@/data/common.json';
+
 import css from './SliderControls.module.css';
 
 import { Props, Sections } from './types';
+
+const {
+  sliderControls: { prevBtnArialabel, nextBtnArialabel },
+} = data;
 
 export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
   return (
@@ -25,6 +31,7 @@ export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
           css.controls,
         )}
         type="button"
+        aria-label={prevBtnArialabel}
       >
         <ControlIcon className={`rotate-180 ${css.controlIcon}`} />
       </button>
@@ -35,6 +42,7 @@ export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
           css.controls,
         )}
         type="button"
+        aria-label={nextBtnArialabel}
       >
         <ControlIcon className={css.controlIcon} />
       </button>
