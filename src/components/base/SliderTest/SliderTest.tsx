@@ -8,6 +8,8 @@ import sliderData from './slider-test.json';
 export const SliderTest = () => {
   return (
     <div className="container">
+      {/* На десктопной версии (в секции Adavntages) присутстует переход к следующему слайду по свайпу из-за количества слайдов.
+      Когда слайдов будет ровно 4, все будет работать как надо*/}
       <p className="text-[30px] font-medium">advantages</p>
       <Slider
         section="advantages"

@@ -17,6 +17,7 @@ const geologica = Geologica({
   weight: ['200', '300', '400', '500', '700'],
   variable: '--font-geologica',
   display: 'swap',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -35,7 +36,6 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <div id="modal-portal" />
       </body>
     </html>
   );

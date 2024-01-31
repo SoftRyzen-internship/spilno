@@ -5,7 +5,3 @@ export type ModalProps = {
   modalStyle?: string;
   backdropStyle?: string;
 };
-
-export type KeyboardEvent = {
-  key: string;
-};
