@@ -1,6 +1,5 @@
+import { TFormData } from '@/components/base/ContactUsForm/schema';
 import { FieldError, Control } from 'react-hook-form';
-
-import { TFormData } from '@/types';
 
 export type FormListboxProps = {
   label: string;
@@ -10,5 +9,3 @@ export type FormListboxProps = {
   control: Control<TFormData>;
   error: FieldError | undefined;
 };
-
-// export type ValidFieldNames = 'referralSource';

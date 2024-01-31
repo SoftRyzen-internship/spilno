@@ -7,6 +7,7 @@ import CheckIcon from '~/icons/checkmark.svg';
 import { FormFieldProps } from './types';
 
 import css from './FormCheckbox.module.css';
+import { TFormData } from '@/components/base/ContactUsForm/schema';
 
 export const FormCheckbox: React.FC<FormFieldProps> = ({
   label,
@@ -33,7 +34,7 @@ export const FormCheckbox: React.FC<FormFieldProps> = ({
         type="checkbox"
         disabled={!!error}
         aria-invalid={error ? 'true' : 'false'}
-        {...register(name)}
+        {...register(name as keyof TFormData)}
       />
       <CheckIcon
         className="absolute hidden size-4 text-white opacity-0 transition-opacity"

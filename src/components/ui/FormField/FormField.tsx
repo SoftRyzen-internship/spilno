@@ -2,7 +2,8 @@ import { cn } from '@/utils/cn';
 
 import ErrorIcon from '~/icons/error.svg';
 
-import { FormData, FormFieldProps } from './types';
+import { FormFieldProps } from './types';
+import { TFormData } from '@/components/base/ContactUsForm/schema';
 
 export const FormField: React.FC<FormFieldProps> = ({
   label,
@@ -25,7 +26,7 @@ export const FormField: React.FC<FormFieldProps> = ({
       type={type}
       placeholder={placeholder}
       aria-invalid={error ? 'true' : 'false'}
-      {...register(name as keyof FormData)}
+      {...register(name as keyof TFormData)}
     />
     {error && (
       <div className="flex items-center justify-start gap-1 text-red">

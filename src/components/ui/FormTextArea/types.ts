@@ -1,6 +1,6 @@
 import { FieldError, UseFormRegister } from 'react-hook-form';
 
-import { TFormData } from '@/types';
+import { TFormData } from '@/components/base/ContactUsForm/schema';
 
 export type FormFieldProps = {
   label: string;
@@ -10,5 +10,3 @@ export type FormFieldProps = {
   error: FieldError | undefined;
   className?: string;
 };
-
-// export type ValidFieldNames = 'projectDecription';

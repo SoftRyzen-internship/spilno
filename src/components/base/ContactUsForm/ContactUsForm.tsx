@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { yupResolver } from '@hookform/resolvers/yup';
 import { FormField } from '@/components/ui/FormField';
 import { FormTextArea } from '@/components/ui/FormTextArea';
 import { FormCheckbox } from '@/components/ui/FormCheckbox';
@@ -10,7 +10,9 @@ import { FormListbox } from '@/components/ui/FormListbox';
 
 import content from '@/data/form.json';
 
-import { TFormData } from '@/types';
+import { schema, TFormData } from './schema';
+// url()
+// .includes("github.com", { message: "Invalid GitHub URL" }),
 
 export const ContactUsForm: React.FC = () => {
   const {
@@ -19,14 +21,25 @@ export const ContactUsForm: React.FC = () => {
     formState: { errors },
     control,
   } = useForm<TFormData>({
-    defaultValues: { phone: '+489-79-87-9-78', referralSource: undefined },
+    resolver: yupResolver(schema),
   });
 
+  //   useForm<TFormData>({
+  //   defaultValues: { phone: '+489-79-87-9-78', referralSource: undefined },
+  // });
+
   const { inputs, textarea, checkbox, select, submitBtn } = content.form;
+
+  //  useFormPersist(LOCAL_STORAGE_KEY, {
+  //     watch,
+  //     setValue,
+  //     storage: typeof window !== 'undefined' && window.localStorage,
+  //   });
 
   const onSubmit = async (data: TFormData) => {
     console.log('SUCCESS', data);
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mx-auto bg-white px-4 py-8 font-geologica">
@@ -58,7 +71,7 @@ export const ContactUsForm: React.FC = () => {
           label={checkbox.label}
           name={checkbox.name as keyof TFormData}
           register={register}
-          error={errors.agreement}
+          error={errors[checkbox.name as keyof TFormData]}
           className="mb-10"
         />
         <button

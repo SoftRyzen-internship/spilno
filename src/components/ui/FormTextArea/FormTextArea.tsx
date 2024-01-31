@@ -5,15 +5,16 @@ import { cn } from '@/utils/cn';
 import ErrorIcon from '~/icons/error.svg';
 
 import { FormFieldProps } from './types';
+import { TFormData } from '@/components/base/ContactUsForm/schema';
 
 export const FormTextArea: React.FC<FormFieldProps> = ({
   label,
   placeholder,
   name,
   register,
-  // error,
+  error,
   className,
-  error = { message: 'У тексті має бути не більше 500 символів.' },
+  // error = { message: 'У тексті має бути не більше 500 символів.' },
 }) => (
   <label
     className={cn(
@@ -32,7 +33,7 @@ export const FormTextArea: React.FC<FormFieldProps> = ({
       rows={5}
       placeholder={placeholder}
       aria-invalid={error ? 'true' : 'false'}
-      {...register(name)}
+      {...register(name as keyof TFormData)}
     />
     {error && (
       <div className="flex items-center justify-start gap-1 text-red">
