@@ -44,10 +44,7 @@ export const Modal: React.FC<ModalProps> = ({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel
-                className={cn(
-                  'max-w-md overflow-hidden p-6 text-left align-middle transition-all',
-                  modalStyle,
-                )}
+                className={cn('overflow-hidden transition-all', modalStyle)}
               >
                 {children}
               </Dialog.Panel>

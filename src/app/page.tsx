@@ -5,17 +5,15 @@ import { RingedImageTest } from '@/components/base/RingedImageTest';
 import { MainNav } from '@/components/ui/MainNav';
 
 import { Button } from '@/components/ui/Button';
+import { MobileMenu } from '@/components/base/MobileMenu';
 
 export default function Home() {
   return (
     <div>
-      <div className="container bg-darkBg">
+      <div className="container flex items-center justify-between bg-darkBg">
         <Logo location="header" />
-      </div>
-
-      <div className="container bg-darkBg mdOnly:bg-white">
         <MainNav location="header" />
-        <MainNav location="menu" />
+        <MobileMenu />
       </div>
 
       <div className="container">
