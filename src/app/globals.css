@@ -10,3 +10,8 @@ body {
 .section {
   @apply py-[60px] md:py-[80px] xl:py-[120px];
 }
+
+/* Slider */
+.swiper-button-disabled.ctrlSliderBtn {
+  @apply border-lightBlue text-lightBlue hover:bg-white;
+}

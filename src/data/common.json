@@ -17,5 +17,9 @@
       "path": "/portfolio",
       "label": "Портфоліо"
     }
-  ]
+  ],
+  "sliderControls": {
+    "prevBtnArialabel": "Кнопка назад для перегортання слайдера",
+    "nextBtnArialabel": "Кнопка вперед для перегортання слайдера"
+  }
 }
