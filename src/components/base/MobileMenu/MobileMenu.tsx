@@ -7,6 +7,7 @@ import { MainNav } from '@/components/ui/MainNav';
 import { Logo } from '@/components/ui/Logo';
 import { Button } from '@/components/ui/Button';
 import { ContactLinks } from '@/components/ui/ContactLinks';
+import { Socials } from '@/components/ui/Socials';
 
 import MenuIcon from '~/icons/menu.svg';
 import CrossIcon from '~/icons/cross.svg';
@@ -48,8 +49,8 @@ export const MobileMenu: React.FC = () => {
           </button>
         </div>
 
-        <div className="flex h-full flex-col items-center gap-[92px] md:items-start">
-          <div className="flex flex-col gap-[16px] md:gap-[24px]">
+        <div className="flex h-full flex-col items-center md:items-start">
+          <div className="mb-[92px] flex flex-col gap-[16px] md:mb-[64px] md:gap-[24px]">
             <MainNav location="menu" onClick={closeModal} />
 
             <Button
@@ -60,13 +61,15 @@ export const MobileMenu: React.FC = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-[16px] md:gap-[24px] smOnly:items-center">
+          <div className="mb-[64px] flex flex-col gap-[16px] md:mb-[32px] md:gap-[24px] smOnly:items-center">
             <h3 className="font-geologica text-[18px]/[1.3] text-white md:text-[22px]/[1.4] md:text-headline ">
               Контакти
             </h3>
 
             <ContactLinks location="menu" />
           </div>
+
+          <Socials location="menu" />
         </div>
       </Modal>
     </div>
