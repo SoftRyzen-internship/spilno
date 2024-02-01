@@ -1,8 +1,8 @@
 'use client';
 
+import { Listbox, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { Controller } from 'react-hook-form';
-import { Listbox, Transition } from '@headlessui/react';
 
 import { cn } from '@/utils/cn';
 
@@ -18,13 +18,14 @@ export const FormListbox: React.FC<FormListboxProps> = ({
   variants,
   control,
   errors,
+  className = '',
 }) => {
   return (
     <Controller
       name={name}
       control={control}
       render={({ field }) => (
-        <div className="mb-6">
+        <div className={className}>
           <Listbox
             value={field.value}
             onChange={field.onChange}
@@ -32,21 +33,20 @@ export const FormListbox: React.FC<FormListboxProps> = ({
           >
             {({ open }) => (
               <>
-                <Listbox.Label className="text-sm/[1.3] text-primaryText/70">
-                  <p className="mb-[9px]">
+                <Listbox.Label className="text-sm/[1.3] text-primaryText/70 md:text-base/[1.6]">
+                  <p className="md:mb-1 smOnly:mb-2">
                     {label} <span className="text-accent">*</span>
                   </p>
                 </Listbox.Label>
-                <div
-                  className={cn('relative transition-colors', {
-                    'rounded-[10px] bg-lightBg': open,
-                  })}
-                >
+                <div className={cn('relative')}>
                   <Listbox.Button
                     className={cn(
-                      'relative w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-all duration-100 focus:outline-none focus-visible:border-accent',
+                      'relative z-10 w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-all duration-300 focus:outline-none focus-visible:border-accent',
                       { 'border-red': errors[name] },
-                      { 'rounded-b-none border-accent': open },
+                      {
+                        'border-transparent bg-transparent outline-transparent':
+                          open,
+                      },
                     )}
                   >
                     <span
@@ -73,11 +73,11 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                     enter="transition-opacity ease-linear duration-150"
                     enterFrom="opacity-0"
                     enterTo="opacity-100"
-                    leave="transition-opacity ease-linear duration-150"
+                    leave="transition-opacity ease-linear duration-100"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute top-full z-10 -mt-1 w-full overflow-auto rounded-b-[10px] border-[1px] border-t-0 border-accent bg-lightBg focus:outline-none focus-visible:border-accent">
+                    <Listbox.Options className="absolute top-0 z-[1] w-full overflow-auto rounded-[10px] border-[1px] border-accent bg-lightBg pt-[58px] focus:outline-none focus-visible:border-accent">
                       {variants.map((option, idx) => (
                         <Listbox.Option
                           key={idx}

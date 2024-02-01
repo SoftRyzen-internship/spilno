@@ -16,7 +16,7 @@ export const FormCheckbox: React.FC<FormFieldProps> = ({
 }) => (
   <label
     className={cn(
-      'relative mb-10 flex items-center justify-start gap-x-4 hover:cursor-pointer focus:cursor-pointer',
+      'relative flex items-center justify-start gap-x-4 hover:cursor-pointer focus:cursor-pointer',
       className,
     )}
   >
@@ -36,6 +36,8 @@ export const FormCheckbox: React.FC<FormFieldProps> = ({
         aria-label="checked"
       />
     </div>
-    <p className="font-raleway text-xs/[1.6] text-black/80">{label}</p>
+    <p className="font-raleway text-xs/[1.6] text-black/80 md:text-base/[1.6]">
+      {label}
+    </p>
   </label>
 );

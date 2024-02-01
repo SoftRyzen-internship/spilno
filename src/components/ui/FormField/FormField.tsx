@@ -11,14 +11,20 @@ export const FormField: React.FC<FormFieldProps> = ({
   name,
   register,
   errors,
+  className,
 }) => (
-  <label className="relative mb-4 flex flex-col text-sm/[1.3] text-primaryText/70">
-    <p className="mb-[9px]">
+  <label
+    className={cn(
+      'relative flex flex-col text-sm/[1.3] text-primaryText/70 hover:cursor-pointer md:text-base/[1.6]',
+      className,
+    )}
+  >
+    <p className="md:mb-1 smOnly:mb-2">
       {label} <span className="text-accent">*</span>
     </p>
     <input
       className={cn(
-        'relative mb-2 w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-colors placeholder:text-greyText focus:outline-none focus-visible:border-accent focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-offset-accent',
+        'relative mb-2 w-full rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-colors placeholder:text-greyText focus:outline-none focus-visible:border-accent',
         { 'border-red': errors[name] },
       )}
       type={type}

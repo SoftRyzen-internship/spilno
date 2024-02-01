@@ -7,4 +7,5 @@ export type FormListboxProps = {
   name: string;
   control: Control<FieldValues>;
   errors: FieldErrors;
+  className?: string;
 };

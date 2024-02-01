@@ -15,7 +15,7 @@
       {
         "id": "i02",
         "label": "Телефон",
-        "type": "tel",
+        "type": "number",
         "name": "phoneNumber",
         "placeholder": "+380988888545"
       },
@@ -69,10 +69,7 @@
         }
       },
       "phoneNumber": {
-        "format": {
-          "reg": "^\\+[0-9]+$",
-          "message": "Недійсний номер телефону."
-        },
+        "message": "Недійсний номер телефону.",
         "minLength": { "value": 12, "message": "Не менше 12 символів" },
         "maxLength": { "value": 13, "message": "Не більше 13 символів" }
       },

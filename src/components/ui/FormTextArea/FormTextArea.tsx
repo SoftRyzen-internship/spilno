@@ -16,16 +16,16 @@ export const FormTextArea: React.FC<FormFieldProps> = ({
 }) => (
   <label
     className={cn(
-      'relative mb-4 flex flex-col text-sm/[1.3] text-primaryText/70',
+      'relative flex flex-col text-sm/[1.3] text-primaryText/70 hover:cursor-pointer md:text-base/[1.6]',
       className,
     )}
   >
-    <p className="mb-[9px] text-primaryText/70">
+    <p className="text-primaryText/70 md:mb-1 smOnly:mb-2">
       {label} <span className="text-accent">*</span>
     </p>
     <textarea
       className={cn(
-        'max-md:h-[150px] mb-2 w-full resize-none rounded-[10px] border-[1px] border-transparent bg-lightBg p-4 text-sm/[1.5] font-light text-primaryText outline-none transition-colors placeholder:text-greyText',
+        'mb-2 h-[150px] w-full resize-none rounded-[10px] border-[1px] border-transparent bg-lightBg p-4 text-sm/[1.5] font-light text-primaryText transition-colors placeholder:text-greyText focus:outline-none focus-visible:border-accent',
         { 'border-red': errors[name] },
       )}
       rows={5}

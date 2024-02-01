@@ -8,11 +8,15 @@ export const ContactUs: React.FC = () => {
 
   return (
     <section id={id} className="section bg-darkBg">
-      <div className="container">
-        <SectionTitle className="mb-4 " isWhite isCentered>
-          {title}
-        </SectionTitle>
-        <p className="mb-[60px] text-center text-sm/[1.5] text-white">{desc}</p>
+      <div className="container xl:flex xl:justify-between">
+        <div className="md:mb-12 xl:w-[486px] smOnly:mb-[60px] mdOnly:mx-auto mdOnly:max-w-[448px]">
+          <SectionTitle className="mb-4 xl:text-left" isWhite isCentered>
+            {title}
+          </SectionTitle>
+          <p className="text-center text-sm/[1.5] text-white md:text-base xl:mb-16 xl:text-left xl:text-lg/[1.5]">
+            {desc}
+          </p>
+        </div>
         <ContactUsForm />
       </div>
     </section>

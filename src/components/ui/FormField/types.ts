@@ -7,4 +7,5 @@ export type FormFieldProps = {
   name: string;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
+  className?: string;
 };
