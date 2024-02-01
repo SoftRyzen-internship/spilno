@@ -13,9 +13,14 @@ const {
   common,
 } = validation;
 
+const commonMsg = {
+  required_error: common.required,
+  invalid_type_error: common.required,
+};
+
 export const schema = z.object({
   userName: z
-    .string({ required_error: common.required })
+    .string(commonMsg)
     .trim()
     .min(userName.minLength.value, userName.minLength.message)
     .max(userName.maxLength.value, userName.maxLength.message)
@@ -23,26 +28,28 @@ export const schema = z.object({
       message: userName.format.message,
     }),
   phoneNumber: z
-    .string({ required_error: phoneNumber.message })
+    .string({
+      required_error: phoneNumber.message,
+      invalid_type_error: phoneNumber.message,
+    })
     .min(phoneNumber.minLength.value, phoneNumber.minLength.message)
-    .max(phoneNumber.maxLength.value, phoneNumber.maxLength.message),
+    .max(phoneNumber.maxLength.value, phoneNumber.maxLength.message)
+    .transform(value => `+${value}`),
   telegram: z
-    .string({ required_error: common.required })
+    .string(commonMsg)
     .max(telegram.maxLength.value, telegram.maxLength.message)
     .refine(value => value.trim() !== '', { message: common.required })
     .refine(value => RegExp(telegram.format.reg).test(value), {
       message: telegram.format.message,
     }),
-  userEmail: z
-    .string({ required_error: common.required })
-    .email(userEmail.format.message),
+  userEmail: z.string(commonMsg).email(userEmail.format.message),
   referralSource: z
-    .string({ required_error: common.required })
+    .string(commonMsg)
     .refine(value => referralSource.options.includes(value), {
       message: referralSource.message,
     }),
   projectDecription: z
-    .string({ required_error: common.required })
+    .string(commonMsg)
     .trim()
     .max(projectDecription.maxLength.value, projectDecription.maxLength.message)
     .refine(value => RegExp(projectDecription.format.reg).test(value), {
