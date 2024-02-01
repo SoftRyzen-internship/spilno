@@ -1,0 +1,7 @@
+.controls {
+  @apply flex size-[40px] items-center justify-center rounded-full border border-solid border-accent text-accent transition-all hover:bg-accent/10 focus-visible:bg-accent/10 md:size-[56px];
+}
+
+.controlIcon {
+  @apply size-[16px] md:size-[24px];
+}

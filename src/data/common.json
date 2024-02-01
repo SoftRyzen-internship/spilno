@@ -2,5 +2,24 @@
   "logo": {
     "path": "/",
     "ariaLabel": "Посилання із логотипом компанії"
+  },
+
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Головна"
+    },
+    {
+      "path": "/business",
+      "label": "Для бізнесу"
+    },
+    {
+      "path": "/portfolio",
+      "label": "Портфоліо"
+    }
+  ],
+  "sliderControls": {
+    "prevBtnAriaLabel": "Кнопка назад для перегортання слайдера",
+    "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдера"
   }
 }

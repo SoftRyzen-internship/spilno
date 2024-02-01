@@ -17,6 +17,7 @@ const geologica = Geologica({
   weight: ['200', '300', '400', '500', '700'],
   variable: '--font-geologica',
   display: 'swap',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {

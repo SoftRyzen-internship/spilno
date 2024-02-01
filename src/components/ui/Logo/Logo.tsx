@@ -2,11 +2,13 @@ import Link from 'next/link';
 
 import data from '@/data/common.json';
 
+import { cn } from '@/utils/cn';
+
 import LogoIcon from '~/icons/logo.svg';
 
 import { LogoProps } from './types';
 
-export const Logo: React.FC<LogoProps> = ({ location }) => {
+export const Logo: React.FC<LogoProps> = ({ location, className = '' }) => {
   const { logo } = data;
 
   const logoClassName =
@@ -16,7 +18,7 @@ export const Logo: React.FC<LogoProps> = ({ location }) => {
 
   return (
     <Link href={logo.path} aria-label={logo.ariaLabel}>
-      <LogoIcon className={logoClassName} />
+      <LogoIcon className={cn(logoClassName, className)} />
     </Link>
   );
 };

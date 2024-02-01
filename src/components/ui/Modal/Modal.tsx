@@ -30,10 +30,13 @@ export const Modal: React.FC<ModalProps> = ({
         </Transition.Child>
 
         <div
-          className="fixed inset-0 bg-backdropBg/25 backdrop-blur-md"
+          className={cn(
+            'fixed inset-0 bg-backdropBg/25 backdrop-blur-md',
+            backdropStyle,
+          )}
           aria-hidden="true"
         >
-          <div className={cn('fixed inset-0 w-screen', backdropStyle)}>
+          <div className="fixed inset-0 w-screen">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -44,10 +47,7 @@ export const Modal: React.FC<ModalProps> = ({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel
-                className={cn(
-                  'max-w-md overflow-hidden p-6 text-left align-middle transition-all',
-                  modalStyle,
-                )}
+                className={cn('overflow-hidden transition-all', modalStyle)}
               >
                 {children}
               </Dialog.Panel>
