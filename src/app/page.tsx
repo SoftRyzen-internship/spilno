@@ -1,4 +1,3 @@
-import { SliderTest } from '@/components/base/SliderTest/SliderTest';
 import { Logo } from '@/components/ui/Logo';
 import { MainNav } from '@/components/ui/MainNav';
 import { MobileMenu } from '@/components/base/MobileMenu';
@@ -23,10 +22,6 @@ export default function Home() {
           <MainNav location="header" />
           <MobileMenu />
         </div>
-      </div>
-
-      <div className="container mb-20">
-        <SliderTest />
       </div>
 
       <div className="container relative mb-[300px]">
