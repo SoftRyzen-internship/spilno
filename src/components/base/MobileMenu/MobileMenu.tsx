@@ -35,9 +35,7 @@ export const MobileMenu: React.FC = () => {
         modalStyle="smOnly:container smOnly:mx-auto w-full h-full pt-[24px] pb-[32px] md:ml-auto md:w-[371px] md:bg-white md:px-[42px]"
       >
         <div className="mb-[82px] flex justify-between md:mb-[32px]">
-          <div className="md:hidden">
-            <Logo location="header" />
-          </div>
+          <Logo location="header" className="md:hidden" />
 
           <button
             type="button"
