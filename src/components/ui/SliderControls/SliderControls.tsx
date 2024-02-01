@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable tailwindcss/no-custom-classname */
 
 import { cn } from '@/utils/cn';
 
@@ -11,11 +10,11 @@ import css from './SliderControls.module.css';
 
 import { Props, Sections } from './types';
 
-const {
-  sliderControls: { prevBtnArialabel, nextBtnArialabel },
-} = data;
-
 export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
+  const {
+    sliderControls: { prevBtnAriaLabel, nextBtnAriaLabel },
+  } = data;
+
   return (
     <div
       className={cn(
@@ -31,7 +30,7 @@ export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
           css.controls,
         )}
         type="button"
-        aria-label={prevBtnArialabel}
+        aria-label={prevBtnAriaLabel}
       >
         <ControlIcon className={`rotate-180 ${css.controlIcon}`} />
       </button>
@@ -42,7 +41,7 @@ export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
           css.controls,
         )}
         type="button"
-        aria-label={nextBtnArialabel}
+        aria-label={nextBtnAriaLabel}
       >
         <ControlIcon className={css.controlIcon} />
       </button>
