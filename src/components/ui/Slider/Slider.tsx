@@ -12,14 +12,14 @@ import { Props } from './types';
 export const Slider: React.FC<Props> = ({
   slideClassName,
   slidesData,
-  slideComponent: SlideComponenet,
+  slideComponent: SlideComponent,
   ...restProps
 }) => {
   return (
     <Swiper {...getSliderConfig(restProps)}>
       {slidesData.map((card, idx) => (
         <SwiperSlide className={slideClassName} key={card.id ? card.id : idx}>
-          <SlideComponenet card={card} />
+          <SlideComponent card={card} />
         </SwiperSlide>
       ))}
     </Swiper>
