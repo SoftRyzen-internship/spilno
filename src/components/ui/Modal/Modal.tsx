@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, MouseEvent } from 'react';
-import { createPortal } from 'react-dom';
+import { Dialog, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
 
 import { cn } from '@/utils/cn';
 
@@ -14,60 +14,47 @@ export const Modal: React.FC<ModalProps> = ({
   modalStyle,
   backdropStyle,
 }) => {
-  const [mounted, setMounted] = useState(false);
+  return (
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={onClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div />
+        </Transition.Child>
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') {
-        onClose && onClose();
-      }
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [onClose]);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
-    return () => {
-      document.body.style.overflow = 'hidden';
-    };
-  }, [isOpen]);
-
-  const handleClickBackdrop = (e: MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose && onClose();
-    }
-  };
-
-  return !mounted
-    ? null
-    : createPortal(
         <div
           className={cn(
-            'z-80 fixed inset-0 flex items-center justify-center backdrop-blur-md transition-all duration-300',
-            { 'visible bg-backdropBg/25 opacity-100': isOpen },
-            { 'invisible opacity-0': !isOpen },
+            'fixed inset-0 bg-backdropBg/25 backdrop-blur-md',
             backdropStyle,
           )}
-          onClick={handleClickBackdrop}
+          aria-hidden="true"
         >
-          <div
-            className={cn(
-              'transition-all duration-300',
-              { 'scale-100 opacity-100': isOpen },
-              { 'scale-125 opacity-0': !isOpen },
-              modalStyle,
-            )}
-          >
-            {children}
+          <div className="fixed inset-0 w-screen">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel
+                className={cn('overflow-hidden transition-all', modalStyle)}
+              >
+                {children}
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </div>,
-        document.getElementById('modal-portal') as HTMLElement,
-      );
+        </div>
+      </Dialog>
+    </Transition>
+  );
 };

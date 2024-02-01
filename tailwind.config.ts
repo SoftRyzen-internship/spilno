@@ -49,6 +49,12 @@ const config: Config = {
         heroRing: '#BFD5FF',
         black: '#000000',
       },
+      transitionDuration: {
+        DEFAULT: '300ms',
+      },
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
     },
   },
   plugins: [],

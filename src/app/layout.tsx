@@ -17,6 +17,7 @@ const geologica = Geologica({
   weight: ['200', '300', '400', '500', '700'],
   variable: '--font-geologica',
   display: 'swap',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -30,12 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk">
+    <html lang="uk" className="scroll-smooth">
       <body className={`${raleway.variable} ${geologica.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />
-        <div id="modal-portal" />
       </body>
     </html>
   );
