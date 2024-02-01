@@ -17,11 +17,7 @@ import dataOffer from '@/data/offer.json';
 export default function Home() {
   return (
     <div>
-      <div className="container">
-        <SliderTest />
-      </div>
-
-      <div className=" container bg-darkBg">
+      <div className=" container mb-5 bg-darkBg">
         <div className="container flex items-center justify-between bg-darkBg">
           <Logo location="header" />
           <MainNav location="header" />
@@ -29,7 +25,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container relative">
+      <div className="container mb-20">
+        <SliderTest />
+      </div>
+
+      <div className="container relative mb-[300px]">
         <Accordeon>
           {dataOffer.items.map((item: OfferItemsType, index: number) => (
             <AccordeonOfferItem
@@ -42,7 +42,7 @@ export default function Home() {
         </Accordeon>
       </div>
 
-      <div className="container bg-lightBg">
+      <div className="container mb-5 bg-lightBg">
         <Accordeon>
           {dataFAQ.questions.map((item: FAQItemsType, index: number) => (
             <AccordeonFAQItem
