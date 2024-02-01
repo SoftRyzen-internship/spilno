@@ -3,6 +3,8 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 
 import content from '@/data/contactUs.json';
 
+//base style section for demonstrate FORM - rest in PR with contactUs-section will be arrived
+
 export const ContactUs: React.FC = () => {
   const { id, title, desc } = content;
 

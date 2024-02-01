@@ -42,7 +42,12 @@ export const schema = z.object({
     .refine(value => RegExp(telegram.format.reg).test(value), {
       message: telegram.format.message,
     }),
-  userEmail: z.string(commonMsg).email(userEmail.format.message),
+  userEmail: z
+    .string(commonMsg)
+    .email(userEmail.format.message)
+    .refine(value => RegExp(userEmail.format.reg).test(value), {
+      message: userEmail.format.message,
+    }),
   referralSource: z
     .string(commonMsg)
     .refine(value => referralSource.options.includes(value), {

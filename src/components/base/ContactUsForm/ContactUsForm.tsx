@@ -5,15 +5,18 @@ import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { Button } from '@/components/ui/Button';
 import { FormField } from '@/components/ui/FormField';
 import { FormTextArea } from '@/components/ui/FormTextArea';
 import { FormCheckbox } from '@/components/ui/FormCheckbox';
 import { FormListbox } from '@/components/ui/FormListbox';
 import { FormPopup } from '@/components/ui/FormPopup';
+import { Spinner } from '@/components/ui/Spinner';
 
 import { cn } from '@/utils/cn';
-
 import content from '@/data/contactUs.json';
+
+import IconArrow from '~/icons/arrow.svg';
 
 import { schema } from './schema';
 
@@ -21,7 +24,7 @@ export const ContactUsForm: React.FC = () => {
   const { formName, inputs, textarea, checkbox, select, submitBtn } =
     content.form;
 
-  const [isOpenPopup, setIsOpenPopup] = useState(true);
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const closePopup = () => setIsOpenPopup(false);
@@ -33,7 +36,7 @@ export const ContactUsForm: React.FC = () => {
     watch,
     setValue,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     control,
   } = useForm<FieldValues>({
     resolver: zodResolver(schema),
@@ -105,13 +108,17 @@ export const ContactUsForm: React.FC = () => {
             errors={errors}
             className="md:mb-8 smOnly:mb-10"
           />
-
-          <button
-            type="submit"
-            className="w-full rounded-[48px] bg-accent py-4 text-white md:h-[67px]"
+          <Button
+            text={submitBtn.label}
+            className="mx-auto w-full max-w-[338px] smOnly:flex"
+            btnStyle="submit"
           >
-            {submitBtn.label}
-          </button>
+            {!isSubmitting ? (
+              <Spinner />
+            ) : (
+              <IconArrow className="size-5 [&>path]:stroke-[3px]" />
+            )}
+          </Button>
         </div>
       </form>
       {isOpenPopup && (
