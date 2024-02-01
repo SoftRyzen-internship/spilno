@@ -7,11 +7,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { Button } from '@/components/ui/Button';
 import { FormField } from '@/components/ui/FormField';
-import { FormTextArea } from '@/components/ui/FormTextArea';
 import { FormCheckbox } from '@/components/ui/FormCheckbox';
 import { FormListbox } from '@/components/ui/FormListbox';
+import { FormPhoneField } from '@/components/ui/FormPhoneField';
 import { FormPopup } from '@/components/ui/FormPopup';
 import { Spinner } from '@/components/ui/Spinner';
+import { FormTextArea } from '@/components/ui/FormTextArea';
 
 import { cn } from '@/utils/cn';
 import content from '@/data/contactUs.json';
@@ -68,18 +69,32 @@ export const ContactUsForm: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="-mx-4 bg-white font-geologica sm:mx-auto sm:rounded-[10px] md:w-[624px] md:p-12 smOnly:px-4 smOnly:py-8">
           <div className="md:mb-4 md:grid md:grid-cols-2 md:gap-4">
-            {inputs.map(input => (
-              <Fragment key={input.id}>
-                <FormField
-                  {...input}
-                  register={register}
-                  errors={errors}
-                  className={cn('smOnly:mb-4', {
-                    'md:order-last md:col-span-2': input.type === 'email',
-                  })}
-                />
-              </Fragment>
-            ))}
+            {inputs.map(input => {
+              if (input.type === 'tel') {
+                return (
+                  <Fragment key={input.id}>
+                    <FormPhoneField
+                      control={control}
+                      {...input}
+                      errors={errors}
+                      className="smOnly:mb-4"
+                    />
+                  </Fragment>
+                );
+              }
+              return (
+                <Fragment key={input.id}>
+                  <FormField
+                    {...input}
+                    register={register}
+                    errors={errors}
+                    className={cn('smOnly:mb-4', {
+                      'md:order-last md:col-span-2': input.type === 'email',
+                    })}
+                  />
+                </Fragment>
+              );
+            })}
 
             <FormListbox
               control={control}
@@ -108,12 +123,13 @@ export const ContactUsForm: React.FC = () => {
             errors={errors}
             className="md:mb-8 smOnly:mb-10"
           />
+
           <Button
             text={submitBtn.label}
             className="mx-auto w-full max-w-[338px] smOnly:flex"
             btnStyle="submit"
           >
-            {!isSubmitting ? (
+            {isSubmitting ? (
               <Spinner />
             ) : (
               <IconArrow className="size-5 [&>path]:stroke-[3px]" />
@@ -121,6 +137,7 @@ export const ContactUsForm: React.FC = () => {
           </Button>
         </div>
       </form>
+
       {isOpenPopup && (
         <FormPopup
           isOpen={isOpenPopup}

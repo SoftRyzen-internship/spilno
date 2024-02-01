@@ -16,6 +16,7 @@ export const FormError: React.FC<FormErrorProps> = ({ name, errors }) => {
               className="inline-block size-4 shrink-0"
               aria-label="alert"
             />
+
             <p
               role="alert"
               className="!self-center font-raleway text-xs/4 font-medium"

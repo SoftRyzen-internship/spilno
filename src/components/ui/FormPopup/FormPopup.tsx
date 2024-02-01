@@ -2,6 +2,7 @@
 
 import { Modal } from '@/components/ui/Modal';
 
+import { cn } from '@/utils/cn';
 import content from '@/data/contactUs.json';
 
 import CrossIcon from '~/icons/cross.svg';
@@ -9,7 +10,6 @@ import SuccessIcon from '~/icons/success.svg';
 import ErrorIcon from '~/icons/error.svg';
 
 import { FormPopupProps } from './types';
-import { cn } from '@/utils/cn';
 
 export const FormPopup: React.FC<FormPopupProps> = ({
   isOpen,
@@ -38,6 +38,7 @@ export const FormPopup: React.FC<FormPopupProps> = ({
         >
           <CrossIcon className="size-full" />
         </button>
+
         <div>
           <Icon
             className={cn(
@@ -45,6 +46,7 @@ export const FormPopup: React.FC<FormPopupProps> = ({
               isSuccess ? 'text-accent' : 'text-red',
             )}
           />
+
           <h3
             className={cn(
               'mb-4 text-center font-geologica text-base/5 md:text-xl/[1.3] xl:text-[34px]/[1.3]',
@@ -53,6 +55,7 @@ export const FormPopup: React.FC<FormPopupProps> = ({
           >
             {title}
           </h3>
+
           <p className="whitespace-pre text-center text-sm/[1.5] text-primaryText md:text-base/[1.5] xl:text-xl/[1.5] smOnly:text-wrap">
             {desc}
           </p>

@@ -15,9 +15,11 @@
       {
         "id": "i02",
         "label": "Телефон",
-        "type": "number",
+        "type": "tel",
         "name": "phoneNumber",
-        "placeholder": "+380988888545"
+        "pattern": "+############",
+        "placeholder": "+380988888545",
+        "maxlength": 12
       },
       {
         "id": "i03",
@@ -70,8 +72,8 @@
       },
       "phoneNumber": {
         "message": "Недійсний номер телефону.",
-        "minLength": { "value": 12, "message": "Не менше 12 символів" },
-        "maxLength": { "value": 13, "message": "Не більше 13 символів" }
+        "minLength": { "value": 12, "message": "Не менше 11 символів" },
+        "maxLength": { "value": 13, "message": "Не більше 12 символів" }
       },
       "telegram": {
         "format": {

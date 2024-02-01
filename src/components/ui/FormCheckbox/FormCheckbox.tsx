@@ -31,11 +31,13 @@ export const FormCheckbox: React.FC<FormFieldProps> = ({
         aria-invalid={errors[name] ? 'true' : 'false'}
         {...register(name)}
       />
+
       <CheckIcon
         className="absolute hidden size-4 text-white opacity-0 transition-opacity"
         aria-label="checked"
       />
     </div>
+
     <p className="font-raleway text-xs/[1.6] text-black/80 md:text-base/[1.6]">
       {label}
     </p>

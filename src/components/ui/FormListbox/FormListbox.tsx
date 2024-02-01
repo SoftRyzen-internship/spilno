@@ -1,8 +1,8 @@
 'use client';
 
-import { Listbox, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { Controller } from 'react-hook-form';
+import { Listbox, Transition } from '@headlessui/react';
 
 import { cn } from '@/utils/cn';
 
@@ -38,6 +38,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                     {label} <span className="text-accent">*</span>
                   </p>
                 </Listbox.Label>
+
                 <div className={cn('relative')}>
                   <Listbox.Button
                     className={cn(
@@ -56,6 +57,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                     >
                       {field.value || placeholder}
                     </span>
+
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
                       <ArrowIcon
                         className={cn(
@@ -68,6 +70,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                       />
                     </span>
                   </Listbox.Button>
+
                   <Transition
                     as={Fragment}
                     enter="transition-opacity ease-linear duration-150"
@@ -98,6 +101,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                               >
                                 {option}
                               </span>
+
                               {selected ? (
                                 <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-accent">
                                   <CheckIcon

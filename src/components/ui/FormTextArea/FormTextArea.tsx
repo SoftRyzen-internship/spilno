@@ -23,6 +23,7 @@ export const FormTextArea: React.FC<FormFieldProps> = ({
     <p className="text-primaryText/70 md:mb-1 smOnly:mb-2">
       {label} <span className="text-accent">*</span>
     </p>
+
     <textarea
       className={cn(
         'mb-2 h-[150px] w-full resize-none rounded-[10px] border-[1px] border-transparent bg-lightBg p-4 text-sm/[1.5] font-light text-primaryText transition-colors placeholder:text-greyText focus:outline-none focus-visible:border-accent',
@@ -33,6 +34,7 @@ export const FormTextArea: React.FC<FormFieldProps> = ({
       aria-invalid={errors[name] ? 'true' : 'false'}
       {...register(name)}
     />
+
     <FormError errors={errors} name={name} />
   </label>
 );

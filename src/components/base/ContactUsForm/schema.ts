@@ -27,14 +27,15 @@ export const schema = z.object({
     .refine(value => RegExp(userName.format.reg).test(value), {
       message: userName.format.message,
     }),
+
   phoneNumber: z
     .string({
       required_error: phoneNumber.message,
       invalid_type_error: phoneNumber.message,
     })
     .min(phoneNumber.minLength.value, phoneNumber.minLength.message)
-    .max(phoneNumber.maxLength.value, phoneNumber.maxLength.message)
-    .transform(value => `+${value}`),
+    .max(phoneNumber.maxLength.value, phoneNumber.maxLength.message),
+
   telegram: z
     .string(commonMsg)
     .max(telegram.maxLength.value, telegram.maxLength.message)
@@ -42,17 +43,20 @@ export const schema = z.object({
     .refine(value => RegExp(telegram.format.reg).test(value), {
       message: telegram.format.message,
     }),
+
   userEmail: z
     .string(commonMsg)
     .email(userEmail.format.message)
     .refine(value => RegExp(userEmail.format.reg).test(value), {
       message: userEmail.format.message,
     }),
+
   referralSource: z
     .string(commonMsg)
     .refine(value => referralSource.options.includes(value), {
       message: referralSource.message,
     }),
+
   projectDecription: z
     .string(commonMsg)
     .trim()
@@ -60,6 +64,7 @@ export const schema = z.object({
     .refine(value => RegExp(projectDecription.format.reg).test(value), {
       message: projectDecription.format.message,
     }),
+
   agreement: z.boolean().refine(value => value === true, {
     message: common.required,
   }),
