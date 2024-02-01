@@ -83,3 +83,33 @@ that can be used to pass styles that will override common button or link styles
 | --------------- | ----------- | ------------------------------------------------------------------------------------------------------ |
 | `section`       | -           | required, `cases`, `reviews`, `advantages`, name of the section where sliderControls will be rendered. |
 | `wrapClassName` | `undefined` | optional, `Record<string, any>[]`, adds custom css class on the div that wraps control buttons.        |
+
+- #### Accordeon
+
+The accordion component takes the accordion element component as children, and
+stores the state of the element. By default, the first element has an expanded
+state. Only one item can be deployed at a time
+
+| Prop       | Default     | Description                                         |
+| ---------- | ----------- | --------------------------------------------------- |
+| `children` | `undefined` | Built-in ReactNode components, an accordion element |
+
+- #### AccordeonOfferItem
+
+Component is an accordion element that contains a title, description, and image
+
+| Prop    | Default     | Description                                                                                                                         |
+| ------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `data`  | `undefined` | data to be displayed in the component must contain a `title`:`string`, `description`:`string`, `image`:`string` - path to the image |
+| `index` | `undefined` | `number`, the index of the expanded element                                                                                         |
+| `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                                                                  |
+
+- #### AccordeonFAQItem
+
+Component is an accordion element that contains a question and answer.
+
+| Prop    | Default     | Description                                                                                  |
+| ------- | ----------- | -------------------------------------------------------------------------------------------- |
+| `data`  | `undefined` | data to be displayed in the component must contain a `question`:`string`, `answer`:`string`, |
+| `index` | `undefined` | `number`, the index of the expanded element                                                  |
+| `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                           |
