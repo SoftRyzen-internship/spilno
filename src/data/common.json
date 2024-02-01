@@ -18,6 +18,18 @@
       "label": "Портфоліо"
     }
   ],
+
+  "contactLinks": {
+    "email": {
+      "path": "o.kuznietsova@softryzen.com",
+      "label": "spilno@gmail.com"
+    },
+    "telegram": {
+      "path": "https://t.me/Kuznietsova_Oksana",
+      "label": "Telegram"
+    }
+  },
+
   "sliderControls": {
     "prevBtnAriaLabel": "Кнопка назад для перегортання слайдера",
     "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдера"
