@@ -22,7 +22,7 @@
   "mobileMenu": {
     "title": "Контакти",
     "openBtnAriaLabel": "Кнопка відкриття меню",
-    "closeBtnAriaLabel": "Кнопка відкриття меню",
+    "closeBtnAriaLabel": "Кнопка закриття меню",
     "link": {
       "text": "Замовити проєкт",
       "path": "#contactUs"
