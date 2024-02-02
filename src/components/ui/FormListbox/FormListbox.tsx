@@ -86,7 +86,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                           key={idx}
                           className={({ active }) =>
                             cn(
-                              'relative cursor-pointer select-none p-4 text-sm/[1.5] font-light text-primaryText/70 hover:text-accent',
+                              'relative cursor-pointer select-none p-4 text-sm/[1.5] font-light text-primaryText/70 md:hover:bg-selectedBg',
                               { 'text-accent': active },
                             )
                           }

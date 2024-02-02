@@ -48,6 +48,7 @@ const config: Config = {
         backdropBg: '#303036',
         heroRing: '#BFD5FF',
         black: '#000000',
+        selectedBg: '#D6EAFF',
       },
       transitionDuration: {
         DEFAULT: '300ms',
