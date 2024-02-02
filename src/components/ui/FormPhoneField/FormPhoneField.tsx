@@ -43,7 +43,9 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
             aria-invalid={errors[name] ? 'true' : 'false'}
             format="+############"
             onValueChange={values => field.onChange(values.formattedValue)}
-            {...field}
+            onBlur={field.onBlur}
+            name={field.name}
+            value={field.value}
           />
           <FormError name={name} errors={errors} />
         </label>
