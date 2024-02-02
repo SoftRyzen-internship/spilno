@@ -1,4 +1,5 @@
 import { CaseCard } from '@/components/ui/CaseCard';
+import { ContactUs } from '@/sections/ContactUs';
 
 import data from '@/data/cases.json';
 
@@ -10,6 +11,8 @@ export default function Home() {
           <CaseCard key={card.id} {...card} />
         ))}
       </ul>
+
+      <ContactUs />
     </div>
   );
 }
