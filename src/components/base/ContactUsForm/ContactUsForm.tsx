@@ -22,8 +22,15 @@ import IconArrow from '~/icons/arrow.svg';
 import { schema } from './schema';
 
 export const ContactUsForm: React.FC = () => {
-  const { formName, inputs, textarea, checkbox, select, submitBtn } =
-    content.form;
+  const {
+    formName,
+    inputs,
+    textarea,
+    checkbox,
+    select,
+    submitBtn,
+    defaultValues,
+  } = content.form;
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -41,7 +48,8 @@ export const ContactUsForm: React.FC = () => {
     control,
   } = useForm<FieldValues>({
     resolver: zodResolver(schema),
-    mode: 'onChange',
+    mode: 'onBlur',
+    defaultValues: defaultValues,
   });
 
   useFormPersist(formName, {
@@ -50,18 +58,18 @@ export const ContactUsForm: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      //submit to telegram bot
-      console.log('FORM_DATA', data);
-      //
-      setIsSuccess(true);
-    } catch {
-      setIsSuccess(false);
-    } finally {
-      reset();
-      openPopup();
-    }
+    // try {
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    //submit to telegram bot
+    //
+    // setIsSuccess(true);
+    // } catch {
+    // setIsSuccess(false);
+    // }
+    console.log('FORM_DATA', data);
+    setIsSuccess(true);
+    reset();
+    openPopup();
   };
 
   return (

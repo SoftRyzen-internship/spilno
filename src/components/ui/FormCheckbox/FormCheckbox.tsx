@@ -12,7 +12,7 @@ export const FormCheckbox: React.FC<FormFieldProps> = ({
   name,
   register,
   errors,
-  className,
+  className = '',
 }) => (
   <label
     className={cn(

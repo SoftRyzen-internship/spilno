@@ -3,6 +3,15 @@
   "title": "Розвивайте ваш бізнес разом з нами!",
   "desc": "Тут ви можете надіслати заявку щодо розробки сайту для вашого бізнесу. Так ми підтримаємо ваш бізнес, допоможемо створити нові робочі місця.",
   "form": {
+    "defaultValues": {
+      "userName": "",
+      "phoneNumber": "",
+      "telegram": "",
+      "userEmail": "",
+      "referralSource": "",
+      "projectDecription": "",
+      "agreement": ""
+    },
     "formName": "contactUsForm",
     "inputs": [
       {

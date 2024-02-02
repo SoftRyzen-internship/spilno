@@ -11,17 +11,17 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
   name,
   control,
   errors,
-  className,
+  className = '',
 }) => {
   return (
     <Controller
       name={name}
       control={control}
-      defaultValue=""
+      defaultValue={undefined}
       render={({ field }) => (
         <label
           className={cn(
-            'relative flex flex-col text-sm/[1.3] text-primaryText/70 hover:cursor-pointer md:text-base/[1.6]',
+            'relative flex flex-col text-sm/[1.3] text-primaryText/70 md:text-base/[1.6]',
             className,
           )}
         >
