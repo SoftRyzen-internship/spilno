@@ -5,7 +5,7 @@ import { RingedImageProps } from './types';
 export const RingedImage: React.FC<RingedImageProps> = ({
   variant,
   ringType,
-  className,
+  className = '',
   children,
 }) => {
   return (

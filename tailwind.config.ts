@@ -47,6 +47,8 @@ const config: Config = {
         strokeColor: '#CBD8E5',
         backdropBg: '#303036',
         heroRing: '#BFD5FF',
+        black: '#000000',
+        selectedBg: '#D6EAFF',
       },
       transitionDuration: {
         DEFAULT: '300ms',
