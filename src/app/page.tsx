@@ -12,6 +12,7 @@ import { AccordeonOfferItem } from '@/components/ui/AccordeonOfferItem';
 
 import dataFAQ from '@/data/faq.json';
 import dataOffer from '@/data/offer.json';
+import { Advantages } from '@/sections/Advantages/Advantages';
 
 export default function Home() {
   return (
@@ -49,6 +50,8 @@ export default function Home() {
           ))}
         </Accordeon>
       </div>
+
+      <Advantages />
     </div>
   );
 }
