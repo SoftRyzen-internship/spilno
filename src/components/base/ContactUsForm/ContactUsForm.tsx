@@ -58,8 +58,14 @@ export const ContactUsForm: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
-    console.log('FORM_DATA', data);
-    setIsSuccess(true);
+    try {
+      // await submit to telegram bot
+      console.log('FORM_DATA', data);
+      setIsSuccess(true);
+    } catch {
+      setIsSuccess(false);
+    }
+
     reset();
     openPopup();
   };
