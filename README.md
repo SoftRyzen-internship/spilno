@@ -200,3 +200,13 @@ This popup component rendered using Modal component.
 | `isOpen`    | `false` | required, `boolean`, changes state to show/close the popup.              |
 | `isSuccess` | `false` | required, `boolean`, show styled Success or Error component with message |
 | `onClose`   | -       | required, click handler for close popup window                           |
+
+- #### AdvantagesCard
+
+Component - card for section company advantages.
+
+| Prop          | Default | Description                                                               |
+| ------------- | ------- | ------------------------------------------------------------------------- |
+| `id`          | -       | required, `string`, depends what image will be rendered. Value from 01-04 |
+| `title`       | -       | required, `string`, will be rendered as card title                        |
+| `description` | -       | rrequired, `string`, will be rendered as card description                 |

@@ -1,3 +1,4 @@
+import { Advantages } from '@/sections/Advantages';
 import { CaseCard } from '@/components/ui/CaseCard';
 import { ContactUs } from '@/sections/ContactUs';
 
@@ -11,6 +12,8 @@ export default function Home() {
           <CaseCard key={card.id} {...card} />
         ))}
       </ul>
+
+      <Advantages />
 
       <ContactUs />
     </div>
