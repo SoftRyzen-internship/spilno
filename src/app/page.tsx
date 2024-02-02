@@ -1,6 +1,9 @@
 import { Logo } from '@/components/ui/Logo';
 import { MainNav } from '@/components/ui/MainNav';
 import { MobileMenu } from '@/components/base/MobileMenu';
+import { CaseCard } from '@/components/ui/CaseCard';
+
+import data from '@/data/cases.json';
 
 import { Accordeon } from '@/components/base/Accordeon';
 import {
@@ -25,6 +28,11 @@ export default function Home() {
         </div>
       </div>
 
+      <ul className="container flex flex-col gap-6">
+        {data.caseCards.map(card => (
+          <CaseCard key={card.id} {...card} />
+        ))}
+      </ul>
       <div className="container relative mb-[300px]">
         <Accordeon>
           {dataOffer.items.map((item: OfferItemsType, index: number) => (
