@@ -29,10 +29,8 @@ export const schema = z.object({
     }),
 
   phoneNumber: z
-    .string({
-      required_error: phoneNumber.message,
-      invalid_type_error: phoneNumber.message,
-    })
+    .string(commonMsg)
+    .trim()
     .min(phoneNumber.minLength.value, phoneNumber.minLength.message)
     .max(phoneNumber.maxLength.value, phoneNumber.maxLength.message),
 

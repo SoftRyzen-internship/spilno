@@ -44,8 +44,8 @@ export const ContactUsForm: React.FC = () => {
     watch,
     setValue,
     reset,
-    formState: { errors, isSubmitting },
     control,
+    formState: { errors, isSubmitting },
   } = useForm<FieldValues>({
     resolver: zodResolver(schema),
     mode: 'onBlur',

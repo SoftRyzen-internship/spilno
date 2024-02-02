@@ -42,7 +42,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                 <div className={cn('relative')}>
                   <Listbox.Button
                     className={cn(
-                      'relative z-10 w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-all duration-300 focus:outline-none focus-visible:border-accent',
+                      'relative z-10 w-full cursor-pointer rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText outline-transparent transition-all duration-300 focus:outline-none focus-visible:border-accent',
                       { 'border-red': errors[name] },
                       {
                         'border-transparent bg-transparent outline-transparent':
