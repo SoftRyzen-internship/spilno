@@ -7,27 +7,35 @@ import IconAdvantages04 from '~/images/advantages/advantages-04.svg';
 
 import { AdvantagesCardProps } from './types';
 
-export const AdvantagesCard: React.FC<AdvantagesCardProps> = ({ data }) => {
+export const AdvantagesCard: React.FC<AdvantagesCardProps> = ({
+  id,
+  title,
+  description,
+}) => {
   const icons = [
     IconAdvantages01,
     IconAdvantages02,
     IconAdvantages03,
     IconAdvantages04,
   ];
-  console.log(data, 'DATA');
-  const Icon = icons[Number(data.idx) - 1];
+
+  const Icon = icons[Number(id) - 1];
 
   return (
-    <div className="w-full text-center">
-      {/* <div className="relative size-[90px] md:size-[130px] xl:size-[152px]"> */}
+    <div className="w-full text-center md:text-left">
       <Icon
         width={90}
         height={90}
-        className="mx-auto mb-8 size-[90px] rounded-full md:size-[130px] xl:size-[152px]"
+        className="mx-auto mb-8 size-[90px] md:mb-10 md:ml-0 md:mr-auto md:size-[130px] xl:size-[152px]"
       />
-      {/* </div> */}
-      <h3 className="mb-3">{data.title}</h3>
-      <p className="">{data.description}</p>
+
+      <h3 className="mb-3 font-geologica text-base/5 text-headline md:text-lg/[1.25] xl:text-2xl/[1.25]">
+        {title}
+      </h3>
+
+      <p className="text-sm/[1.5] md:text-base xl:text-xl/[1.5]">
+        {description}
+      </p>
     </div>
   );
 };
