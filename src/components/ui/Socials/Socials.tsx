@@ -12,7 +12,7 @@ export const Socials: React.FC<SocialsProps> = ({ location }) => {
   const { socialLinks } = data;
   const linkClassName =
     location === 'menu'
-      ? 'bg-accent'
+      ? 'bg-accent hover:bg-darkBlue focus:bg-darkBlue'
       : 'border border-accent hover:bg-accent focus:bg-accent';
 
   return (
@@ -30,7 +30,9 @@ export const Socials: React.FC<SocialsProps> = ({ location }) => {
             aria-label={ariaLabel}
           >
             {label === 'facebook' && <Facebook className="size-[24px]" />}
+
             {label === 'instagram' && <Instagram className="size-[24px]" />}
+
             {label === 'linkedin' && <Linkedin className="size-[24px]" />}
           </a>
         </li>

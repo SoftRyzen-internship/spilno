@@ -8,9 +8,7 @@ import { Logo } from '@/components/ui/Logo';
 import { Button } from '@/components/ui/Button';
 import { ContactLinks } from '@/components/ui/ContactLinks';
 import { Socials } from '@/components/ui/Socials';
-
-import MenuIcon from '~/icons/menu.svg';
-import CrossIcon from '~/icons/cross.svg';
+import { ModalBtn } from '@/components/ui/ModalBtn';
 
 export const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,14 +19,12 @@ export const MobileMenu: React.FC = () => {
 
   return (
     <div className="xl:hidden">
-      <button
-        type="button"
+      <ModalBtn
+        location="header"
+        ariaLabel="Кнопка відкриття меню"
         className="text-white"
         onClick={openModal}
-        aria-label="Кнопка відкриття меню"
-      >
-        <MenuIcon className="size-[30px] md:size-[32px]" />
-      </button>
+      />
 
       <Modal
         isOpen={isOpen}
@@ -39,14 +35,12 @@ export const MobileMenu: React.FC = () => {
         <div className="mb-[82px] flex justify-between md:mb-[32px]">
           <Logo location="header" className="md:hidden" />
 
-          <button
-            type="button"
+          <ModalBtn
+            location="modal"
+            ariaLabel="Кнопка закриття меню"
             className="text-white md:ml-auto md:text-accent"
             onClick={closeModal}
-            aria-label="Кнопка закриття меню"
-          >
-            <CrossIcon className="ml-auto size-[30px] md:size-[36px]" />
-          </button>
+          />
         </div>
 
         <div className="flex h-full flex-col items-center md:items-start">
