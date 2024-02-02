@@ -12,6 +12,7 @@ import {
 } from '@/components/base/Accordeon/types';
 import { AccordeonFAQItem } from '@/components/ui/AccordeonFAQItem';
 import { AccordeonOfferItem } from '@/components/ui/AccordeonOfferItem';
+import { ContactUs } from '@/sections/ContactUs';
 
 import dataFAQ from '@/data/faq.json';
 import dataOffer from '@/data/offer.json';
@@ -57,6 +58,8 @@ export default function Home() {
           ))}
         </Accordeon>
       </div>
+
+      <ContactUs />
     </div>
   );
 }
