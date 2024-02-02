@@ -1,5 +1,7 @@
 import { AdvantagesCard } from '@/components/ui/AdvantagesCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { Slider } from '@/components/ui/Slider';
+import { SliderControls } from '@/components/ui/SliderControls';
 
 import content from '@/data/advantages.json';
 
@@ -15,30 +17,14 @@ export const Advantages: React.FC = () => {
         <p className="mb-8 text-center text-sm/[1.5] md:text-base xl:text-lg/[1.5]">
           {desc}
         </p>
-        <ul className="flex">
-          {features.map(feature => (
-            <li key={feature.idx}>
-              <AdvantagesCard data={feature} />
-            </li>
-          ))}
-        </ul>
+
+        <Slider
+          section="advantages"
+          slidesData={features}
+          slideComponent={AdvantagesCard}
+        />
+        <SliderControls section="advantages" />
       </div>
     </section>
   );
 };
-
-// },
-// {
-//   "title": "Професійний підхід",
-//   "description": "Робота виконується стажерами під менторством досвідчених спеціалістів.",
-//   "image": "/images/advantages/advantages-02.svg"
-// },
-// {
-//   "title": "Доступ до талантів",
-//   "description": "Взаємодія надає можливість бізнесу співпрацювати з талановитими студентами.",
-//   "image": "/images/advantages/advantages-03.svg"
-// },
-// {
-//   "title": "Сприяння освіті",
-//   "description": "Бізнес виступає сприячем для освіти та розвитку молодих спеціалістів.",
-//   "image": "/images/advantages/advantages-04.svg"
