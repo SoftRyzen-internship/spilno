@@ -10,8 +10,11 @@ import { ContactLinks } from '@/components/ui/ContactLinks';
 import { Socials } from '@/components/ui/Socials';
 import { ModalBtn } from '@/components/ui/ModalBtn';
 
+import data from '@/data/common.json';
+
 export const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { mobileMenu } = data;
 
   const closeModal = () => setIsOpen(false);
 
@@ -21,8 +24,8 @@ export const MobileMenu: React.FC = () => {
     <div className="xl:hidden">
       <ModalBtn
         location="header"
-        ariaLabel="Кнопка відкриття меню"
-        className="text-white"
+        ariaLabel={mobileMenu.openBtnAriaLabel}
+        className="text-white transition-colors hover:text-accent focus:text-accent"
         onClick={openModal}
       />
 
@@ -37,8 +40,8 @@ export const MobileMenu: React.FC = () => {
 
           <ModalBtn
             location="modal"
-            ariaLabel="Кнопка закриття меню"
-            className="text-white md:ml-auto md:text-accent"
+            ariaLabel={mobileMenu.closeBtnAriaLabel}
+            className="text-white transition-colors hover:text-accent focus:text-accent md:ml-auto md:text-accent md:hover:text-darkBlue md:focus:text-darkBlue"
             onClick={closeModal}
           />
         </div>
@@ -48,16 +51,16 @@ export const MobileMenu: React.FC = () => {
             <MainNav location="menu" onClick={closeModal} />
 
             <Button
-              text="Замовити проєкт"
+              text={mobileMenu.link.text}
               btnStyle="transparent"
-              link="#test"
+              link={mobileMenu.link.path}
               onClick={closeModal}
             />
           </div>
 
           <div className="mb-[64px] flex flex-col gap-[16px] md:mb-[32px] md:gap-[24px] smOnly:items-center">
             <h3 className="font-geologica text-[18px]/[1.3] text-white md:text-[22px]/[1.4] md:text-headline ">
-              Контакти
+              {mobileMenu.title}
             </h3>
 
             <ContactLinks location="menu" />
