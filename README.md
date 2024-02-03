@@ -1,15 +1,21 @@
+### Components API
+
+Each component has its own API. You can find it in the component's folder. This
+is a list of more common components and their API.
+
 - #### Logo
 
-| Prop       | Default   | Description                                                    |
-| ---------- | --------- | -------------------------------------------------------------- |
-| `location` | undefined | required, choose the position you'd need :'header' or 'footer' |
+| Prop        | Default | Description                                                    |
+| ----------- | ------- | -------------------------------------------------------------- |
+| `location`  | -       | required, choose the position you'd need :'header' or 'footer' |
+| `className` | ''      | optional, `string`, adds custom css class.                     |
 
 - #### MainNav
 
 | Prop       | Default   | Description                                                  |
 | ---------- | --------- | ------------------------------------------------------------ |
-| `location` | undefined | required, choose the position you'd need :'header' or 'menu' |
-| 'onClose'  | undefined | click handler                                                |
+| `location` | -         | required, choose the position you'd need :'header' or 'menu' |
+| `onClick`  | undefined | click handler                                                |
 
 - #### SectionTitle
 
@@ -19,6 +25,16 @@
 | `isWhite`    | `false` | optional, `boolean`, changes color to white.                 |
 | `isCentered` | `false` | optional, `boolean`, adds css property `text-align: center`. |
 | `className`  | ''      | optional, `string`, adds custom css class.                   |
+
+- #### ModalBtn
+
+| Prop            | Default   | Description                                                   |
+| --------------- | --------- | ------------------------------------------------------------- |
+| `location`      | -         | required, choose the position you'd need :'header' or 'modal' |
+| `ariaLabel`     | -         | required, text for the aria label                             |
+| `onClick`       | undefined | optional, click handler                                       |
+| `className`     | ''        | optional, add custom or additional css class you'd need.      |
+| `iconClassName` | ''        | optional, add custom or additional css class you'd need.      |
 
 - #### Modal
 

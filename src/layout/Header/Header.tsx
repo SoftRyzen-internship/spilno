@@ -9,12 +9,13 @@ export const Header: React.FC = () => {
   const { mobileMenu } = data;
 
   return (
-    <header className="w-full bg-darkBg pt-[24px] xl:pt-[36px]">
+    <header className="bg-darkBg pt-[24px] xl:pt-[36px]">
       <div className="container flex items-center justify-between">
         <Logo location="header" />
 
         <div className="hidden items-center gap-[48px] xl:flex">
           <MainNav location="header" />
+
           <Button
             text={mobileMenu.link.text}
             btnStyle="transparent"

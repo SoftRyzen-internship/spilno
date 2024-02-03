@@ -16,7 +16,7 @@ export const Socials: React.FC<SocialsProps> = ({ location }) => {
       : 'border border-accent hover:bg-accent focus:bg-accent';
 
   return (
-    <ul className="flex gap-[20px]">
+    <ul className="flex gap-[20px] smOnly:justify-center">
       {socialLinks.map(({ path, ariaLabel, label }) => (
         <li key={path}>
           <a
