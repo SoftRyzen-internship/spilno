@@ -33,7 +33,7 @@ export const MobileMenu: React.FC = () => {
         isOpen={isOpen}
         onClose={closeModal}
         backdropStyle="smOnly:bg-darkBg"
-        modalStyle="smOnly:container smOnly:mx-auto w-full h-full pt-[24px] pb-[32px] md:ml-auto md:w-[371px] md:bg-white md:px-[42px]"
+        modalStyle="smOnly:container smOnly:mx-auto w-full h-full pt-[24px] pb-[32px] md:ml-auto md:w-[371px] md:bg-white md:px-[42px] md:pb-[48px]"
       >
         <div className="mb-[82px] flex justify-between md:mb-[32px]">
           <Logo location="header" className="md:hidden" />
@@ -46,28 +46,26 @@ export const MobileMenu: React.FC = () => {
           />
         </div>
 
-        <div className="flex h-full flex-col items-center md:items-start">
-          <div className="mb-[92px] flex flex-col gap-[16px] md:mb-[64px] md:gap-[24px]">
-            <MainNav location="menu" onClick={closeModal} />
+        <div className="mb-[92px] flex flex-col items-center gap-[16px] md:mb-[64px] md:items-start md:gap-[24px]">
+          <MainNav location="menu" onClick={closeModal} />
 
-            <Button
-              text={mobileMenu.link.text}
-              btnStyle="transparent"
-              link={mobileMenu.link.path}
-              onClick={closeModal}
-            />
-          </div>
-
-          <div className="mb-[64px] flex flex-col gap-[16px] md:mb-[32px] md:gap-[24px] smOnly:items-center">
-            <h3 className="font-geologica text-[18px]/[1.3] text-white md:text-[22px]/[1.4] md:text-headline ">
-              {mobileMenu.title}
-            </h3>
-
-            <ContactLinks location="menu" />
-          </div>
-
-          <Socials location="menu" />
+          <Button
+            text={mobileMenu.link.text}
+            btnStyle="transparent"
+            link={mobileMenu.link.path}
+            onClick={closeModal}
+          />
         </div>
+
+        <div className="mb-[64px] flex flex-col gap-[16px] md:mb-[32px] md:gap-[24px] smOnly:items-center">
+          <h3 className="font-geologica text-[18px]/[1.3] text-white md:text-[22px]/[1.4] md:text-headline ">
+            {mobileMenu.title}
+          </h3>
+
+          <ContactLinks location="menu" />
+        </div>
+
+        <Socials location="menu" />
       </Modal>
     </div>
   );
