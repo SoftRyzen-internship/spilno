@@ -132,7 +132,7 @@ export const ContactUsForm: React.FC = () => {
 
           <Button
             text={submitBtn.label}
-            className="mx-auto w-full max-w-[338px] smOnly:flex"
+            className="mx-auto flex w-full md:max-w-[338px] xl:inline-flex"
             btnStyle="submit"
           >
             {isSubmitting ? (
