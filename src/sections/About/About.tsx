@@ -8,7 +8,7 @@ import aboutProjectImg from '~/images/about/about@2x.webp';
 
 import data from '@/data/about.json';
 
-export const About = () => {
+export const About: React.FC = () => {
   const { title, ourGoal, link } = data;
   return (
     <section
