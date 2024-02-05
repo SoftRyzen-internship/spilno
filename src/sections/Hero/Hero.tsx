@@ -12,12 +12,14 @@ export const Hero: React.FC = () => {
   const { id, title, desc, image, button } = content;
 
   return (
-    <div className="bg-darkBg pb-[60px] pt-28 sm:pt-[95px] md:py-[180px] xl:py-[130px]">
+    <section
+      id={id}
+      className="bg-darkBg pb-[60px] pt-28 sm:pt-24 md:py-[180px] xl:py-56"
+    >
       <Header />
-
-      <section id={id}>
-        <div className="min-[1400px]:pr-8 container md:flex md:items-center md:justify-between xl:pr-0 smOnly:justify-end">
-          <div className="mb-7 flex w-full flex-col items-start justify-center sm:mb-10 md:order-2 md:m-0 md:w-[248px] xl:w-[537px] smOnly:mx-auto smOnly:max-w-[406px]">
+      <div className="xl:relative xl:mx-auto xl:max-w-[1400px]">
+        <div className="container md:flex md:items-center md:justify-between xl:justify-start">
+          <div className="mb-7 flex w-full flex-col items-start justify-center sm:mb-10 md:order-2 md:m-0 md:w-[248px] xl:absolute xl:right-0 xl:w-[537px] smOnly:mx-auto smOnly:max-w-[406px]">
             <RingedImage
               variant="right"
               ringType="hero"
@@ -53,7 +55,7 @@ export const Hero: React.FC = () => {
             </Button>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
