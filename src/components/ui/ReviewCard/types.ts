@@ -1,9 +1,7 @@
 export type ReviewProps = {
-  card: {
-    review: string | null;
-    video: VideoReview | null;
-    author: AuthorReview;
-  };
+  review: string | null;
+  video: VideoReview | null;
+  author: AuthorReview;
 };
 
 type VideoReview = {

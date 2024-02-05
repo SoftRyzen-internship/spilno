@@ -11,7 +11,10 @@ import { Modal } from '../Modal';
 import { ReviewerInfoCard } from '../ReviewerInfoCard';
 
 export const ReviewCard: React.FC<ReviewProps> = ({
-  card: { review, video, author },
+  // card: { review, video, author },
+  review,
+  video,
+  author,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
