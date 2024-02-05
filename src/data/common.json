@@ -18,8 +18,48 @@
       "label": "Портфоліо"
     }
   ],
+
+  "mobileMenu": {
+    "title": "Контакти",
+    "openBtnAriaLabel": "Кнопка відкриття меню",
+    "closeBtnAriaLabel": "Кнопка закриття меню",
+    "link": {
+      "text": "Замовити проєкт",
+      "path": "#contactUs"
+    }
+  },
+
+  "contactLinks": {
+    "email": {
+      "path": "o.kuznietsova@softryzen.com",
+      "label": "spilno@gmail.com"
+    },
+    "telegram": {
+      "path": "https://t.me/Kuznietsova_Oksana",
+      "label": "Telegram"
+    }
+  },
+
+  "socialLinks": [
+    {
+      "path": "https://www.facebook.com/profile.php?id=61555523816034",
+      "label": "facebook",
+      "ariaLabel": "Зв'яжися з нами у facebook"
+    },
+    {
+      "path": "https://www.instagram.com/spilno.group/",
+      "label": "instagram",
+      "ariaLabel": "Зв'яжися з нами у instagram"
+    },
+    {
+      "path": "https://www.linkedin.com/company/spilnogroup/",
+      "label": "linkedin",
+      "ariaLabel": "Зв'яжися з нами у linkedin"
+    }
+  ],
+
   "sliderControls": {
-    "prevBtnAriaLabel": "Кнопка назад для перегортання слайдера",
-    "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдера"
+    "prevBtnAriaLabel": "Кнопка назад для перегортання слайдів",
+    "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів"
   }
 }

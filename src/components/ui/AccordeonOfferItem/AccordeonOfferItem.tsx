@@ -70,7 +70,6 @@ export const AccordeonOfferItem: React.FC<AccordeonOfferItemProps> = ({
                   'font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:text-[16px] xl:text-[20px]',
                   { 'max-h-[84px] md:max-h-[120px]': selected },
                   'transition duration-300',
-                  '[@media(max-width:320px)]:overflow-y-auto',
                   styles.fade,
                 )}
               >

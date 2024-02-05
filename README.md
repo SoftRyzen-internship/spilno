@@ -1,15 +1,21 @@
+### Components API
+
+Each component has its own API. You can find it in the component's folder. This
+is a list of more common components and their API.
+
 - #### Logo
 
-| Prop       | Default   | Description                                                    |
-| ---------- | --------- | -------------------------------------------------------------- |
-| `location` | undefined | required, choose the position you'd need :'header' or 'footer' |
+| Prop        | Default | Description                                                    |
+| ----------- | ------- | -------------------------------------------------------------- |
+| `location`  | -       | required, choose the position you'd need :'header' or 'footer' |
+| `className` | ''      | optional, `string`, adds custom css class.                     |
 
 - #### MainNav
 
 | Prop       | Default   | Description                                                  |
 | ---------- | --------- | ------------------------------------------------------------ |
-| `location` | undefined | required, choose the position you'd need :'header' or 'menu' |
-| 'onClose'  | undefined | click handler                                                |
+| `location` | -         | required, choose the position you'd need :'header' or 'menu' |
+| `onClick`  | undefined | click handler                                                |
 
 - #### SectionTitle
 
@@ -19,6 +25,16 @@
 | `isWhite`    | `false` | optional, `boolean`, changes color to white.                 |
 | `isCentered` | `false` | optional, `boolean`, adds css property `text-align: center`. |
 | `className`  | ''      | optional, `string`, adds custom css class.                   |
+
+- #### ModalBtn
+
+| Prop            | Default   | Description                                                   |
+| --------------- | --------- | ------------------------------------------------------------- |
+| `location`      | -         | required, choose the position you'd need :'header' or 'modal' |
+| `ariaLabel`     | -         | required, text for the aria label                             |
+| `onClick`       | undefined | optional, click handler                                       |
+| `className`     | ''        | optional, add custom or additional css class you'd need.      |
+| `iconClassName` | ''        | optional, add custom or additional css class you'd need.      |
 
 - #### Modal
 
@@ -113,3 +129,100 @@ Component is an accordion element that contains a question and answer.
 | `data`  | `undefined` | data to be displayed in the component must contain a `question`:`string`, `answer`:`string`, |
 | `index` | `undefined` | `number`, the index of the expanded element                                                  |
 | `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                           |
+
+- #### FormField
+
+This is a styled input component with an accompanying label and FormError.
+
+| Prop          | Default     | Description                                                                       |
+| ------------- | ----------- | --------------------------------------------------------------------------------- |
+| `label`       | `undefined` | required, `string`, label value                                                   |
+| `type`        | `undefined` | required, `string`, input type                                                    |
+| `placeholder` | `undefined` | required, `string`, input placeholder                                             |
+| `name`        | `undefined` | required, `string`, input name                                                    |
+| `register`    | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
+| `errors`      | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `className`   | `""`        | optional, `string`, allows you to override common styles                          |
+
+- #### FormPhoneField
+
+This is a styled textarea component with an accompanying label and FormError tha
+formatt numeric input according pattern.
+
+| Prop          | Default     | Description                                                                                 |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------- |
+| `label`       | `undefined` | required, `string`, label value                                                             |
+| `placeholder` | `undefined` | required, `string`, input placeholder                                                       |
+| `name`        | `undefined` | required, `string`, textarea name                                                           |
+| `control`     | `undefined` | required, `object` object contains methods for registering components into React Hook Form. |
+| `errors`      | `undefined` | required, errors `object` from React Hook Form.                                             |
+| `className`   | `""`        | optional, `string`, allows you to override common styles                                    |
+
+- #### FormListbox
+
+This is a styled Listbox component (using Listbox @headless library) with an
+accompanying label and FormError. Rendered as `button` + open/hide list `ul`
+
+| Prop          | Default     | Description                                                                                 |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------- |
+| `label`       | `undefined` | required, `string`, label value                                                             |
+| `placeholder` | `undefined` | required, `string`, label for button                                                        |
+| `name`        | `undefined` | required, `string`, form's element name                                                     |
+| `variants`    | `undefined` | required, `string's array`, options to choose                                               |
+| `control`     | `undefined` | required, `object` object contains methods for registering components into React Hook Form. |
+| `errors`      | `undefined` | required, errors `object` from React Hook Form.                                             |
+| `className`   | `""`        | optional, `string`, allows you to override common styles                                    |
+
+- #### FormTextArea
+
+This is a styled textarea component with an accompanying label and FormError.
+
+| Prop          | Default     | Description                                                                       |
+| ------------- | ----------- | --------------------------------------------------------------------------------- |
+| `label`       | `undefined` | required, `string`, label value                                                   |
+| `placeholder` | `undefined` | required, `string`, textarea placeholder                                          |
+| `name`        | `undefined` | required, `string`, textarea name                                                 |
+| `register`    | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
+| `errors`      | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `className`   | `""`        | optional, `string`, allows you to override common styles                          |
+
+- #### FormCheckbox
+
+This is a styled checkbox input component with an accompanying label in a form.
+
+| Prop        | Default     | Description                                                                       |
+| ----------- | ----------- | --------------------------------------------------------------------------------- |
+| `label`     | `undefined` | required, `string`, label value                                                   |
+| `name`      | `undefined` | required, `string`, input name                                                    |
+| `register`  | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
+| `errors`    | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `className` | `""`        | optional, `string`, allows you to override common styles                          |
+
+- #### FormError
+
+This is a styled Error component for form's elements .
+
+| Prop     | Default     | Description                                     |
+| -------- | ----------- | ----------------------------------------------- |
+| `name`   | `undefined` | required, `string`, input value name            |
+| `errors` | `undefined` | required, errors `object` from React Hook Form. |
+
+- #### FormPopup
+
+This popup component rendered using Modal component.
+
+| Prop        | Default | Description                                                              |
+| ----------- | ------- | ------------------------------------------------------------------------ |
+| `isOpen`    | `false` | required, `boolean`, changes state to show/close the popup.              |
+| `isSuccess` | `false` | required, `boolean`, show styled Success or Error component with message |
+| `onClose`   | -       | required, click handler for close popup window                           |
+
+- #### AdvantagesCard
+
+Component - card for section company advantages.
+
+| Prop          | Default | Description                                                               |
+| ------------- | ------- | ------------------------------------------------------------------------- |
+| `id`          | -       | required, `string`, depends what image will be rendered. Value from 01-04 |
+| `title`       | -       | required, `string`, will be rendered as card title                        |
+| `description` | -       | rrequired, `string`, will be rendered as card description                 |

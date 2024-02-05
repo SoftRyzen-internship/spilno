@@ -57,7 +57,6 @@ export const AccordeonFAQItem: React.FC<AccordeonFAQItemProps> = ({
                     'max-h-[264px] md:max-h-[156px] xl:max-h-[182px]': selected,
                   },
                   'transition duration-300',
-                  '[@media(max-width:320px)]:overflow-y-auto',
                   styles.fade,
                 )}
               >

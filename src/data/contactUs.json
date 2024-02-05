@@ -1,0 +1,139 @@
+{
+  "id": "contactUs",
+  "title": "Розвивайте ваш бізнес разом з нами!",
+  "desc": "Тут ви можете надіслати заявку щодо розробки сайту для вашого бізнесу. Так ми підтримаємо ваш бізнес, допоможемо створити нові робочі місця.",
+  "form": {
+    "defaultValues": {
+      "userName": "",
+      "phoneNumber": "",
+      "telegram": "",
+      "userEmail": "",
+      "referralSource": "",
+      "projectDecription": "",
+      "agreement": ""
+    },
+    "formName": "contactUsForm",
+    "inputs": [
+      {
+        "id": "i01",
+        "label": "Імʼя",
+        "type": "text",
+        "name": "userName",
+        "placeholder": "Іван Іванов"
+      },
+      {
+        "id": "i02",
+        "label": "Телефон",
+        "type": "tel",
+        "name": "phoneNumber",
+        "pattern": "+############",
+        "placeholder": "+380988888545",
+        "maxlength": 12
+      },
+      {
+        "id": "i03",
+        "label": "Телеграм",
+        "type": "text",
+        "name": "telegram",
+        "placeholder": "@ivanivanov"
+      },
+      {
+        "id": "i04",
+        "label": "Пошта",
+        "type": "email",
+        "name": "userEmail",
+        "placeholder": "ivanovivan@gmail.com"
+      }
+    ],
+    "select": {
+      "id": "s01",
+      "label": "Звідки ви про нас дізнались?",
+      "name": "referralSource",
+      "placeholder": "Оберіть варіант",
+      "options": ["Друзі", "Лінкедін", "Телеграм", "Тікток", "Інстаграм"]
+    },
+    "textarea": {
+      "id": "t01",
+      "label": "Додаткові коментарі",
+      "name": "projectDecription",
+      "placeholder": "Опишіть проєкт"
+    },
+    "checkbox": {
+      "id": "c01",
+      "label": "Даю згоду на обробку персональних даних",
+      "name": "agreement",
+      "ariaLabel": "перевірено"
+    },
+    "error": { "ariaLabel": "увага" },
+    "submitBtn": { "label": "Замовити сайт" },
+    "validation": {
+      "userName": {
+        "format": {
+          "reg": "^(?!.*(?: --|- |' -| - '))(?![ -]*$)(?!.*--)[A-Za-zА-Яа-яЇїІіЄєҐґ '-]+$",
+          "message": "Невірно введене ім’я."
+        },
+        "minLength": {
+          "value": 1,
+          "message": "Мінімальна довжина 3 символів."
+        },
+        "maxLength": {
+          "value": 90,
+          "message": "Максимальна довжина 90 символів."
+        }
+      },
+      "phoneNumber": {
+        "message": "Недійсний номер телефону.",
+        "minLength": { "value": 12, "message": "Не менше 11 символів." },
+        "maxLength": { "value": 13, "message": "Не більше 12 символів." }
+      },
+      "telegram": {
+        "format": {
+          "linkReg": "^(https?://t.me/)[a-zA-Z\\d_/\\.]+$",
+          "shortReg": "^@[a-zA-Z:/-]+$",
+          "message": "Введена адреса недійсна."
+        },
+        "maxLength": {
+          "value": 60,
+          "message": "Максимальна довжина 60 символів."
+        }
+      },
+      "userEmail": {
+        "format": {
+          "reg": "^(?!@|-)[A-Za-z0-9_.-]+@[A-Za-z0-9-]+(?:.[A-Za-z0-9]+)*$",
+          "message": "Введена адреса електронної пошти недійсна."
+        },
+        "maxLength": {
+          "value": 63,
+          "message": "Максимальна довжина 60 символів."
+        }
+      },
+      "referralSource": {
+        "options": ["Друзі", "Лінкедін", "Телеграм", "Тікток", "Інстаграм"],
+        "message": "Оберіть один з варіантів."
+      },
+      "projectDecription": {
+        "format": {
+          "reg": "^[A-Za-zА-Яа-яЇїІіЄєҐґ0-9(),'\"-.!? \n\r]+$",
+          "message": "Присутні недопустимі символи."
+        },
+        "maxLength": {
+          "value": 1000,
+          "message": "У тексті має бути не більше 1000 символів."
+        }
+      },
+      "common": {
+        "required": "Обовʼязкове поле."
+      }
+    }
+  },
+  "popup": {
+    "onSuccess": {
+      "title": "Ваша заявка успішно відправлена!",
+      "desc": "Ми зв'яжемося з вами найближчим часом."
+    },
+    "onError": {
+      "title": "Щось пішло не так...",
+      "desc": "Ми не змогли отримати Вашу заявку.\n Будь ласка, спробуйте ще раз."
+    }
+  }
+}
