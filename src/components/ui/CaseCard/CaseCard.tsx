@@ -3,17 +3,9 @@ import Link from 'next/link';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import data from '@/data/common.json';
-
 import { Props } from './types';
 
-export const CaseCard: React.FC<Props> = ({ src, alt, text, href }) => {
-  const {
-    caseCard: {
-      tags: { multiPageSite, portfolioWebSite },
-    },
-  } = data;
-
+export const CaseCard: React.FC<Props> = ({ src, alt, text, href, tags }) => {
   return (
     <li className="group w-[328px] rounded-[10px] md:w-[330px] xl:w-[596px]">
       <div className="mb-4 h-[264px] overflow-hidden rounded-[10px] xl:mb-6 xl:h-[498px]">
@@ -31,12 +23,14 @@ export const CaseCard: React.FC<Props> = ({ src, alt, text, href }) => {
       <div className="flex flex-row-reverse justify-between xl:flex-col xl:gap-6">
         <div className="xl:flex xl:items-center xl:justify-between">
           <div className="hidden font-geologica text-[16px]/[1.25] xl:flex xl:gap-2">
-            <p className="rounded-full border border-solid border-lightBlue px-[22px] py-4 font-raleway text-[14px]/[1.25]">
-              {multiPageSite}
-            </p>
-            <p className="rounded-full border border-solid border-lightBlue px-[22px] py-4 font-raleway text-[14px]/[1.25]">
-              {portfolioWebSite}
-            </p>
+            {tags.map(tag => (
+              <p
+                key={tag}
+                className="rounded-full border border-solid border-lightBlue px-[22px] py-4 font-raleway text-[14px]/[1.25]"
+              >
+                {tag}
+              </p>
+            ))}
           </div>
 
           <Link
