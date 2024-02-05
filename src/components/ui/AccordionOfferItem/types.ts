@@ -1,4 +1,4 @@
-export type AccordeonOfferItemProps = {
+export type AccordionOfferItemProps = {
   data: OfferItemsType;
   index: number;
   aria: string;

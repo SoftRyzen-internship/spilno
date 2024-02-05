@@ -1,5 +1,7 @@
-export type AccordeonProps = {
+export type AccordionProps = {
   children: React.ReactNode;
+  type?: string;
+  className?: string;
 };
 
 export type FAQItemsType = {

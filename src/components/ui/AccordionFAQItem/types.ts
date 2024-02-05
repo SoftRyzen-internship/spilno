@@ -1,4 +1,4 @@
-export type AccordeonFAQItemProps = {
+export type AccordionFAQItemProps = {
   data: ItemsType;
   index: number;
   aria: string;
