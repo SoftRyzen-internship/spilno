@@ -3,15 +3,13 @@ import Link from 'next/link';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import data from '@/data/common.json';
+import data from '@/data/cases.json';
 
 import { Props } from './types';
 
 export const CaseCard: React.FC<Props> = ({ src, alt, text, href }) => {
   const {
-    caseCard: {
-      tags: { multiPageSite, portfolioWebSite },
-    },
+    tags: { multiPageSite, portfolioWebSite },
   } = data;
 
   return (

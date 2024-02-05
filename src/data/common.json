@@ -22,12 +22,5 @@
   "sliderControls": {
     "prevBtnAriaLabel": "Кнопка назад для перегортання слайдів",
     "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів"
-  },
-
-  "caseCard": {
-    "tags": {
-      "multiPageSite": "Багатосторінковий сайт",
-      "portfolioWebSite": "Сайт-портфоліо"
-    }
   }
 }

@@ -12,6 +12,7 @@ import {
 } from '@/components/base/Accordeon/types';
 import { AccordeonFAQItem } from '@/components/ui/AccordeonFAQItem';
 import { AccordeonOfferItem } from '@/components/ui/AccordeonOfferItem';
+import { About } from '@/sections/About';
 
 import dataFAQ from '@/data/faq.json';
 import dataOffer from '@/data/offer.json';
@@ -32,6 +33,7 @@ export default function Home() {
           <CaseCard key={card.id} {...card} />
         ))}
       </ul>
+
       <div className="container relative mb-[300px]">
         <Accordeon>
           {dataOffer.items.map((item: OfferItemsType, index: number) => (
@@ -57,6 +59,7 @@ export default function Home() {
           ))}
         </Accordeon>
       </div>
+      <About />
     </div>
   );
 }

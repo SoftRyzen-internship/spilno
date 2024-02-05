@@ -1,4 +1,8 @@
 {
+  "tags": {
+    "multiPageSite": "Багатосторінковий сайт",
+    "portfolioWebSite": "Сайт-портфоліо"
+  },
   "caseCards": [
     {
       "id": "1",
