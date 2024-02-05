@@ -35,7 +35,7 @@
         "label": "Телеграм",
         "type": "text",
         "name": "telegram",
-        "placeholder": "https://t.me/ivanivanov"
+        "placeholder": "@ivanivanov"
       },
       {
         "id": "i04",
@@ -61,8 +61,10 @@
     "checkbox": {
       "id": "c01",
       "label": "Даю згоду на обробку персональних даних",
-      "name": "agreement"
+      "name": "agreement",
+      "ariaLabel": "перевірено"
     },
+    "error": { "ariaLabel": "увага" },
     "submitBtn": { "label": "Замовити сайт" },
     "validation": {
       "userName": {
@@ -71,7 +73,7 @@
           "message": "Невірно введене ім’я."
         },
         "minLength": {
-          "value": 3,
+          "value": 1,
           "message": "Мінімальна довжина 3 символів."
         },
         "maxLength": {
@@ -81,12 +83,13 @@
       },
       "phoneNumber": {
         "message": "Недійсний номер телефону.",
-        "minLength": { "value": 12, "message": "Не менше 11 символів" },
-        "maxLength": { "value": 13, "message": "Не більше 12 символів" }
+        "minLength": { "value": 12, "message": "Не менше 11 символів." },
+        "maxLength": { "value": 13, "message": "Не більше 12 символів." }
       },
       "telegram": {
         "format": {
-          "reg": "^[A-Za-z0-9@:/_]+$",
+          "linkReg": "^(https?://t.me/)[a-zA-Z\\d_/\\.]+$",
+          "shortReg": "^@[a-zA-Z:/-]+$",
           "message": "Введена адреса недійсна."
         },
         "maxLength": {

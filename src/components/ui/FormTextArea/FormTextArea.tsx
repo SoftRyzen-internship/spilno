@@ -20,9 +20,9 @@ export const FormTextArea: React.FC<FormFieldProps> = ({
       className,
     )}
   >
-    <p className="text-primaryText/70 md:mb-1 smOnly:mb-2">
+    <span className="block text-primaryText/70 md:mb-1 smOnly:mb-2">
       {label} <span className="text-accent">*</span>
-    </p>
+    </span>
 
     <textarea
       className={cn(
