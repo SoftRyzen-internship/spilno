@@ -19,9 +19,9 @@ export const FormField: React.FC<FormFieldProps> = ({
       className,
     )}
   >
-    <p className="md:mb-1 smOnly:mb-2">
+    <span className="block md:mb-1 smOnly:mb-2">
       {label} <span className="text-accent">*</span>
-    </p>
+    </span>
 
     <input
       className={cn(
