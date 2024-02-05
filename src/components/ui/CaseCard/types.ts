@@ -3,4 +3,5 @@ export type Props = {
   alt: string;
   text: string;
   href: string;
+  tags: string[];
 };
