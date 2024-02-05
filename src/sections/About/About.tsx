@@ -9,7 +9,7 @@ import aboutProjectImg from '~/images/about/about@2x.webp';
 import data from '@/data/about.json';
 
 export const About: React.FC = () => {
-  const { title, ourGoal, link } = data;
+  const { title, ourGoal, link, aboutProjectImgAlt } = data;
   return (
     <section
       className="overflow-hidden bg-darkBg py-[60px] md:py-[80px] xl:py-[178px]"
@@ -21,7 +21,7 @@ export const About: React.FC = () => {
           className="mb-8 w-[219px] translate-x-[-25%] md:absolute md:right-[-24px] md:top-[54px] md:w-[259px] xl:right-[-195px] xl:top-[-58px] xl:w-[537px]"
         >
           <Image
-            alt=""
+            alt={aboutProjectImgAlt}
             src={aboutProjectImg}
             fill
             className="object-cover"
