@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -55,6 +55,8 @@ export const ContactUsForm: React.FC = () => {
   useFormPersist(formName, {
     watch,
     setValue,
+    storage: typeof window !== 'undefined' ? window.localStorage : undefined,
+    exclude: [checkbox.name],
   });
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
@@ -62,11 +64,11 @@ export const ContactUsForm: React.FC = () => {
       // await submit to telegram bot
       console.log('FORM_DATA', data);
       setIsSuccess(true);
+      reset();
     } catch {
       setIsSuccess(false);
     }
 
-    reset();
     openPopup();
   };
 
@@ -78,27 +80,25 @@ export const ContactUsForm: React.FC = () => {
             {inputs.map(input => {
               if (input.type === 'tel') {
                 return (
-                  <Fragment key={input.id}>
-                    <FormPhoneField
-                      control={control}
-                      {...input}
-                      errors={errors}
-                      className="smOnly:mb-4"
-                    />
-                  </Fragment>
+                  <FormPhoneField
+                    key={input.id}
+                    control={control}
+                    {...input}
+                    errors={errors}
+                    className="smOnly:mb-4"
+                  />
                 );
               }
               return (
-                <Fragment key={input.id}>
-                  <FormField
-                    {...input}
-                    register={register}
-                    errors={errors}
-                    className={cn('smOnly:mb-4', {
-                      'md:order-last md:col-span-2': input.type === 'email',
-                    })}
-                  />
-                </Fragment>
+                <FormField
+                  key={input.id}
+                  {...input}
+                  register={register}
+                  errors={errors}
+                  className={cn('smOnly:mb-4', {
+                    'md:order-last md:col-span-2': input.type === 'email',
+                  })}
+                />
               );
             })}
 
@@ -135,11 +135,7 @@ export const ContactUsForm: React.FC = () => {
             className="mx-auto flex w-full md:max-w-[338px] xl:inline-flex"
             btnStyle="submit"
           >
-            {isSubmitting ? (
-              <Spinner />
-            ) : (
-              <IconArrow className="size-5 [&>path]:stroke-[3px]" />
-            )}
+            {isSubmitting ? <Spinner /> : <IconArrow className="size-6" />}
           </Button>
         </div>
       </form>
