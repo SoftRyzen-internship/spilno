@@ -1,6 +1,7 @@
 import { Advantages } from '@/sections/Advantages';
 import { CaseCard } from '@/components/ui/CaseCard';
 import { ContactUs } from '@/sections/ContactUs';
+import { About } from '@/sections/About';
 
 import data from '@/data/cases.json';
 
@@ -16,6 +17,8 @@ export default function Home() {
       <Advantages />
 
       <ContactUs />
+
+      <About />
     </div>
   );
 }
