@@ -26,17 +26,13 @@ export const FormListbox: React.FC<FormListboxProps> = ({
       control={control}
       render={({ field }) => (
         <div className={className}>
-          <Listbox
-            value={field.value}
-            onChange={field.onChange}
-            name={field.name}
-          >
+          <Listbox value={field.value || ''} onChange={field.onChange}>
             {({ open }) => (
               <>
                 <Listbox.Label className="text-sm/[1.3] text-primaryText/70 md:text-base/[1.6]">
-                  <p className="md:mb-1 smOnly:mb-2">
+                  <span className="md:mb-1 smOnly:mb-2">
                     {label} <span className="text-accent">*</span>
-                  </p>
+                  </span>
                 </Listbox.Label>
 
                 <div className={cn('relative')}>

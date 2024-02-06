@@ -100,17 +100,19 @@ that can be used to pass styles that will override common button or link styles
 | `section`       | -           | required, `cases`, `reviews`, `advantages`, name of the section where sliderControls will be rendered. |
 | `wrapClassName` | `undefined` | optional, `Record<string, any>[]`, adds custom css class on the div that wraps control buttons.        |
 
-- #### Accordeon
+- #### Accordion
 
 The accordion component takes the accordion element component as children, and
 stores the state of the element. By default, the first element has an expanded
 state. Only one item can be deployed at a time
 
-| Prop       | Default     | Description                                         |
-| ---------- | ----------- | --------------------------------------------------- |
-| `children` | `undefined` | Built-in ReactNode components, an accordion element |
+| Prop        | Default     | Description                                                                   |
+| ----------- | ----------- | ----------------------------------------------------------------------------- |
+| `children`  | `undefined` | required, Built-in ReactNode components, an accordion element                 |
+| `type`      | `undefined` | optional, specifies the type of component to render and progress as children  |
+| `className` | `undefined` | optional, `string`, adds custom css class to the Accordion wrapper component. |
 
-- #### AccordeonOfferItem
+- #### AccordionOfferItem
 
 Component is an accordion element that contains a title, description, and image
 
@@ -120,7 +122,7 @@ Component is an accordion element that contains a title, description, and image
 | `index` | `undefined` | `number`, the index of the expanded element                                                                                         |
 | `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                                                                  |
 
-- #### AccordeonFAQItem
+- #### AccordionFAQItem
 
 Component is an accordion element that contains a question and answer.
 
@@ -129,6 +131,40 @@ Component is an accordion element that contains a question and answer.
 | `data`  | `undefined` | data to be displayed in the component must contain a `question`:`string`, `answer`:`string`, |
 | `index` | `undefined` | `number`, the index of the expanded element                                                  |
 | `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                           |
+
+- #### ReviewCard
+
+The component is a feedback card. Implements card rendering with text feedback
+and video feedback. In order for the video display mode to be enabled, the video
+props must be set to true.
+
+| Prop   | Default     | Description                                                                                           |
+| ------ | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `card` | `undefined` | required, `Object`, a feedback data object with data about the test feedback or video and author data |
+
+- #### ReviewerInfoCard
+
+The component is a feedback card. Implements card rendering with text feedback
+and video feedback. In order for the video display mode to be enabled, the video
+props must be set to true.
+
+| Prop        | Default     | Description                                                                                                              |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `author`    | `undefined` | required, `Object`, author data                                                                                          |
+| `video`     | `undefined` | required, `Object` or `null`, object with video feedback data or null - changes styles depending on the type of feedback |
+| `className` | `undefined` | optional, `string`, adds custom css class to the ReviewerInfoCard wrapper component.                                     |
+
+- #### Tabs
+
+A component that allows you to render different content depending on which
+button is active
+
+| Prop       | Default     | Description                             |
+| ---------- | ----------- | --------------------------------------- |
+| `data`     | `undefined` | required, `Object`, data                |
+| `title`    | `undefined` | required, `String`, title text          |
+| `title`    | `undefined` | required, `String`, label text          |
+| `children` | `undefined` | required, Built-in ReactNode components |
 
 - #### FormField
 
@@ -196,6 +232,7 @@ This is a styled checkbox input component with an accompanying label in a form.
 | `name`      | `undefined` | required, `string`, input name                                                    |
 | `register`  | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
 | `errors`    | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `ariaLabel` | `undefined` | required, `string`, aria-label value                                              |
 | `className` | `""`        | optional, `string`, allows you to override common styles                          |
 
 - #### FormError
