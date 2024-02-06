@@ -2,9 +2,9 @@ import { Advantages } from '@/sections/Advantages';
 import { ContactUs } from '@/sections/ContactUs';
 import { Hero } from '@/sections/Hero';
 import { About } from '@/sections/About';
+import { Offer } from '@/sections/Offer';
 import { Reviews } from '@/sections/Reviews';
 import { FAQ } from '@/sections/FAQ';
-import { Offer } from '@/sections/Offer';
 import { CaseCard } from '@/components/ui/CaseCard';
 
 import data from '@/data/cases.json';
