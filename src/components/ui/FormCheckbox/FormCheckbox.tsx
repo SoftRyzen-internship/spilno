@@ -1,7 +1,6 @@
 'use client';
 
 import { cn } from '@/utils/cn';
-import content from '@/data/contactUs.json';
 
 import CheckIcon from '~/icons/checkmark.svg';
 
@@ -9,24 +8,26 @@ import { FormFieldProps } from './types';
 import css from './FormCheckbox.module.css';
 
 export const FormCheckbox: React.FC<FormFieldProps> = ({
+  id,
   label,
   name,
   register,
   errors,
+  ariaLabel,
   className = '',
 }) => {
-  const { ariaLabel } = content.form.checkbox;
   return (
-    <label
+    <div
       className={cn(
-        'relative flex items-center justify-start gap-x-4 hover:cursor-pointer focus:cursor-pointer',
+        'relative flex items-center justify-start gap-x-4',
         className,
       )}
     >
       <div className="relative flex size-6 items-center justify-center">
         <input
+          id={id}
           className={cn(
-            'size-6 shrink-0 appearance-none rounded-[4px] border border-strokeColor bg-transparent outline-none transition-colors checked:bg-accent hover:cursor-pointer focus:cursor-pointer',
+            'size-6 shrink-0 cursor-pointer appearance-none rounded-[4px] border border-strokeColor bg-transparent outline-none transition-colors checked:bg-accent',
             css.checkbox,
             { 'border-red': errors[name] },
           )}
@@ -36,14 +37,17 @@ export const FormCheckbox: React.FC<FormFieldProps> = ({
         />
 
         <CheckIcon
-          className="absolute hidden size-4 text-white opacity-0 transition-opacity"
+          className="pointer-events-none absolute hidden size-4 cursor-pointer text-white opacity-0 transition-opacity"
           aria-label={ariaLabel}
         />
       </div>
 
-      <span className="block font-raleway text-xs/[1.6] text-black/80 md:text-base/[1.6]">
+      <label
+        htmlFor={id}
+        className="block cursor-pointer font-raleway text-xs/[1.6] text-black/80 md:text-base/[1.6]"
+      >
         {label}
-      </span>
-    </label>
+      </label>
+    </div>
   );
 };

@@ -2,16 +2,11 @@
   "id": "contactUs",
   "title": "Розвивайте ваш бізнес разом з нами!",
   "desc": "Тут ви можете надіслати заявку щодо розробки сайту для вашого бізнесу. Так ми підтримаємо ваш бізнес, допоможемо створити нові робочі місця.",
+  "image": {
+    "alt": "Розвиток бізнесу",
+    "src": "/images/contact-us/contact-us@2x.webp"
+  },
   "form": {
-    "defaultValues": {
-      "userName": "",
-      "phoneNumber": "",
-      "telegram": "",
-      "userEmail": "",
-      "referralSource": "",
-      "projectDecription": "",
-      "agreement": ""
-    },
     "formName": "contactUsForm",
     "inputs": [
       {
@@ -46,14 +41,12 @@
       }
     ],
     "select": {
-      "id": "s01",
       "label": "Звідки ви про нас дізнались?",
       "name": "referralSource",
       "placeholder": "Оберіть варіант",
-      "options": ["Друзі", "Лінкедін", "Телеграм", "Тікток", "Інстаграм"]
+      "variants": ["Друзі", "Лінкедін", "Телеграм", "Тікток", "Інстаграм"]
     },
     "textarea": {
-      "id": "t01",
       "label": "Додаткові коментарі",
       "name": "projectDecription",
       "placeholder": "Опишіть проєкт"
@@ -74,7 +67,7 @@
         },
         "minLength": {
           "value": 1,
-          "message": "Мінімальна довжина 3 символів."
+          "message": "Мінімальна довжина 1 символів."
         },
         "maxLength": {
           "value": 90,
@@ -89,7 +82,7 @@
       "telegram": {
         "format": {
           "linkReg": "^(https?://t.me/)[a-zA-Z\\d_/\\.]+$",
-          "shortReg": "^@[a-zA-Z:/-]+$",
+          "shortReg": "^@[a-zA-Z0-9_/]+$",
           "message": "Введена адреса недійсна."
         },
         "maxLength": {
