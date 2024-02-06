@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Raleway, Geologica } from 'next/font/google';
 
-import { Header, Footer } from '@/layout';
+import { Footer, Header } from '@/layout';
 
 import './globals.css';
 

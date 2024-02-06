@@ -135,7 +135,11 @@ export const ContactUsForm: React.FC = () => {
             className="mx-auto flex w-full md:max-w-[338px] xl:inline-flex"
             btnStyle="submit"
           >
-            {isSubmitting ? <Spinner /> : <IconArrow className="size-6" />}
+            {isSubmitting ? (
+              <Spinner />
+            ) : (
+              <IconArrow className="size-5 md:size-6" />
+            )}
           </Button>
         </div>
       </form>
