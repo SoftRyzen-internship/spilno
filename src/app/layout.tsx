@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Raleway, Geologica } from 'next/font/google';
 
-import { Footer } from '@/layout';
+import { Footer, Header } from '@/layout';
 
 import './globals.css';
 
@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="uk" className="scroll-smooth">
       <body className={`${raleway.variable} ${geologica.variable}`}>
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>

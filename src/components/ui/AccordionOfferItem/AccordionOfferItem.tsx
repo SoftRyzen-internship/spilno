@@ -1,18 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import { Tab } from '@headlessui/react';
+import { Tab, Transition } from '@headlessui/react';
 
 import { RingedImage } from '../RingedImage';
 import { cn } from '@/utils/cn';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import { AccordeonOfferItemProps } from './types';
+import { AccordionOfferItemProps } from './types';
 
-import styles from './AccordeonOfferItem.module.css';
+import styles from './AccordionOfferItem.module.css';
 
-export const AccordeonOfferItem: React.FC<AccordeonOfferItemProps> = ({
+export const AccordionOfferItem: React.FC<AccordionOfferItemProps> = ({
   data,
   index,
   aria,
@@ -77,20 +77,30 @@ export const AccordeonOfferItem: React.FC<AccordeonOfferItemProps> = ({
               </p>
             )}
           </div>
-          {selected && (
-            <RingedImage
-              variant="right"
-              className="absolute right-0 top-0 hidden after:hidden md:block"
-            >
-              <Image
-                src={data.image}
-                width={588}
-                height={588}
-                alt={data.title}
-                className="md:size-[330px] xl:size-[588px]"
-              />
-            </RingedImage>
-          )}
+          <Transition
+            show={selected}
+            enter="transition duration-1000"
+            enterFrom="opacity-0"
+            enterTo=" opacity-100"
+            leave="transition duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            {selected && (
+              <RingedImage
+                variant="right"
+                className="absolute right-0 top-1/2 hidden -translate-y-1/2 after:hidden md:block"
+              >
+                <Image
+                  src={data.image}
+                  width={596}
+                  height={596}
+                  alt={data.title}
+                  className="md:size-[330px] xl:size-[596px]"
+                />
+              </RingedImage>
+            )}
+          </Transition>
         </>
       )}
     </Tab>

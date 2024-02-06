@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import { Header } from '@/layout';
 import { Button } from '@/components/ui/Button';
 import { RingedImage } from '@/components/ui/RingedImage';
 
@@ -14,9 +13,8 @@ export const Hero: React.FC = () => {
   return (
     <section
       id={id}
-      className="bg-darkBg pb-[60px] pt-28 sm:pt-24 md:py-[180px] xl:py-56"
+      className="overflow-hidden bg-darkBg pb-[60px] pt-28 sm:pt-24 md:py-[180px] xl:py-56"
     >
-      <Header />
       <div className="xl:relative xl:mx-auto xl:max-w-[1400px]">
         <div className="container md:flex md:items-center md:justify-between xl:justify-start">
           <div className="mb-7 flex w-full flex-col items-start justify-center sm:mb-10 md:order-2 md:m-0 md:w-[248px] xl:absolute xl:right-0 xl:w-[537px] smOnly:mx-auto smOnly:max-w-[406px]">
