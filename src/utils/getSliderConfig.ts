@@ -14,7 +14,7 @@ export const getSliderConfig = ({
   wrapClassName,
 }: Partial<SliderProps>) => {
   const slidesPerViewAndGroupBase = section === Sections.PARTNERS ? 3 : 1;
-  const spaceBetweenBase = section === Sections.PARTNERS ? 20 : 0;
+  const spaceBetweenBase = section === Sections.PARTNERS ? 20 : 16;
   const autoplayBase =
     section === Sections.PARTNERS
       ? { delay: 3000, disableOnInteraction: false }
@@ -54,7 +54,7 @@ export const getSliderConfig = ({
       slidesPerViewTab = 2;
 
       slidesPerViewDesk = 1;
-      spaceBetweenDesk = 48;
+      spaceBetweenDesk = 32;
       break;
     default:
       loopBase = true;
