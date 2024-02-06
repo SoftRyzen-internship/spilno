@@ -1,0 +1,3 @@
+.line::after {
+  @apply absolute hidden h-0.5 bg-lightBlue content-[''] md:right-[-188px] md:top-[22px] md:block md:w-[186px] xl:right-[-326px] xl:top-[49px] xl:w-[324px];
+}

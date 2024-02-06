@@ -26,6 +26,7 @@ export const About: React.FC = () => {
             fill
             className="object-cover"
             sizes="(max-width: 479px) 100vw,(min-width: 480px) 270px, (min-width: 768px) 259px, (min-width: 1280px) 537px"
+            loading="lazy"
           />
         </RingedImage>
         <div className="md:w-[330px] xl:w-[588px]">
