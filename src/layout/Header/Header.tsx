@@ -9,8 +9,8 @@ export const Header: React.FC = () => {
   const { mobileMenu } = data;
 
   return (
-    <header className="bg-darkBg pt-[24px] xl:pt-[36px]">
-      <div className="container flex items-center justify-between">
+    <header className="absolute top-0 w-full bg-transparent pt-6 xl:pt-9">
+      <div className="container mx-auto flex items-center justify-between">
         <Logo location="header" />
 
         <div className="hidden items-center gap-[48px] xl:flex">

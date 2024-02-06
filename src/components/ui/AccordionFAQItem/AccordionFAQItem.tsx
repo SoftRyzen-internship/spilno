@@ -6,11 +6,11 @@ import { cn } from '@/utils/cn';
 
 import ArrowIcon from '~/icons/arrow-down.svg';
 
-import { AccordeonFAQItemProps } from './types';
+import { AccordionFAQItemProps } from './types';
 
-import styles from './AccordeonFAQItem.module.css';
+import styles from './AccordionFAQItem.module.css';
 
-export const AccordeonFAQItem: React.FC<AccordeonFAQItemProps> = ({
+export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
   data,
   index,
   aria,
@@ -24,7 +24,7 @@ export const AccordeonFAQItem: React.FC<AccordeonFAQItemProps> = ({
       {({ selected }) => (
         <div
           className={cn(
-            'relative flex justify-between gap-x-8 py-4',
+            'relative flex justify-between gap-x-8 overflow-hidden py-4',
             'md:gap-x-6 md:py-6',
             styles.line,
           )}
@@ -66,6 +66,8 @@ export const AccordeonFAQItem: React.FC<AccordeonFAQItemProps> = ({
           </div>
 
           <ArrowIcon
+            width={20}
+            height={20}
             className={cn(
               {
                 'rotate-[180deg]': selected,

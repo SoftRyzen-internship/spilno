@@ -54,7 +54,7 @@ export const getSliderConfig = ({
       slidesPerViewTab = 2;
 
       slidesPerViewDesk = 1;
-      spaceBetweenDesk = 0;
+      spaceBetweenDesk = 48;
       break;
     default:
       loopBase = true;
