@@ -232,6 +232,7 @@ This is a styled checkbox input component with an accompanying label in a form.
 | `name`      | `undefined` | required, `string`, input name                                                    |
 | `register`  | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
 | `errors`    | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `ariaLabel` | `undefined` | required, `string`, aria-label value                                              |
 | `className` | `""`        | optional, `string`, allows you to override common styles                          |
 
 - #### FormError
