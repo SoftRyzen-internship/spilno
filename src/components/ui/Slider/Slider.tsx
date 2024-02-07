@@ -18,7 +18,11 @@ export const Slider: React.FC<Props> = ({
   return (
     <Swiper {...getSliderConfig(restProps)}>
       {slidesData.map((card, idx) => (
-        <SwiperSlide className={slideClassName} key={card.id ? card.id : idx}>
+        <SwiperSlide
+          tag="li"
+          className={slideClassName}
+          key={card.id ? card.id : idx}
+        >
           <SlideComponent {...card} />
         </SwiperSlide>
       ))}

@@ -12,7 +12,12 @@ import { Props, Sections } from './types';
 
 export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
   const {
-    sliderControls: { prevBtnAriaLabel, nextBtnAriaLabel },
+    sliderControls: {
+      prevBtnAriaLabel,
+      nextBtnAriaLabel,
+      prevIconAriaLabel,
+      nextIconAriaLabel,
+    },
   } = data;
 
   return (
@@ -32,7 +37,10 @@ export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
         type="button"
         aria-label={prevBtnAriaLabel}
       >
-        <ControlIcon className={`rotate-180 ${css.controlIcon}`} />
+        <ControlIcon
+          className={`rotate-180 ${css.controlIcon}`}
+          aria-label={prevIconAriaLabel}
+        />
       </button>
       <button
         className={cn(
@@ -43,7 +51,10 @@ export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
         type="button"
         aria-label={nextBtnAriaLabel}
       >
-        <ControlIcon className={css.controlIcon} />
+        <ControlIcon
+          className={css.controlIcon}
+          aria-label={nextIconAriaLabel}
+        />
       </button>
     </div>
   );
