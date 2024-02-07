@@ -44,6 +44,20 @@
         "alt": "Логотип сайту онлайн-школи AmbiDexter",
         "src": "/images/partners/partners-06.svg"
       }
+    },
+    {
+      "id": "pl-07",
+      "image": {
+        "alt": "Логотип сайту Pentilo Agency",
+        "src": "/images/partners/partners-07.svg"
+      }
+    },
+    {
+      "id": "pl-08",
+      "image": {
+        "alt": "Логотип сайту БФ “Чиста вода всім”",
+        "src": "/images/partners/partners-08.svg"
+      }
     }
   ]
 }

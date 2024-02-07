@@ -31,8 +31,7 @@
 
   "contactLinks": {
     "email": {
-      "path": "hello@spilno.group",
-      "label": "hello@spilno.group"
+      "path": "hello@spilno.group"
     },
     "telegram": {
       "path": "https://t.me/Kuznietsova_Oksana",
