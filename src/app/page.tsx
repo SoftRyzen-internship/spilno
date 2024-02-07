@@ -8,12 +8,11 @@ import { FAQ } from '@/sections/FAQ';
 import { Problems } from '@/sections/Problems';
 import { Partners } from '@/sections/Partners';
 
-
 export default function Home() {
   return (
     <>
       <Hero />
-      
+
       <Problems />
 
       <Offer />

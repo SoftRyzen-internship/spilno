@@ -10,7 +10,7 @@ export const ContactUs: React.FC = () => {
   const { id, title, desc, image } = content;
 
   return (
-    <section id={id} className="section bg-darkBg">
+    <section id={id} className="section bg-darkBg smOnly:pb-0">
       <div className="container xl:flex xl:justify-between">
         <div className="md:mb-12 xl:mb-16 xl:w-[486px] smOnly:mb-[60px] mdOnly:mx-auto mdOnly:max-w-[448px]">
           <SectionTitle className="mb-4 xl:text-left" isWhite isCentered>
