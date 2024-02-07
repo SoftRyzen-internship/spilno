@@ -11,7 +11,7 @@ import data from '@/data/cases.json';
 import ArrowIcon from '~/icons/arrow.svg';
 
 export const Cases: React.FC = () => {
-  const { title, caseCards, link } = data;
+  const { title, link } = data;
 
   return (
     <section className="py-[60px] md:py-[80px] xl:py-[120px]" id="cases">
@@ -26,7 +26,8 @@ export const Cases: React.FC = () => {
         <Slider
           section="cases"
           slideComponent={CaseCard}
-          slidesData={caseCards}
+          // Временная заглушка
+          slidesData={[{}]}
           wrapClassName="mb-6 smOnly:max-w-[328px] md:mb-12 xl:mb-16"
         />
 
