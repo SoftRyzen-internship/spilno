@@ -45,7 +45,7 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
             onValueChange={values => field.onChange(values.formattedValue)}
             onBlur={field.onBlur}
             name={field.name}
-            value={field.value}
+            value={field.value || ''}
           />
           <FormError name={name} errors={errors} />
         </label>

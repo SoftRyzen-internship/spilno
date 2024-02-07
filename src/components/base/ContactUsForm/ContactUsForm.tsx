@@ -22,15 +22,8 @@ import IconArrow from '~/icons/arrow.svg';
 import { schema } from './schema';
 
 export const ContactUsForm: React.FC = () => {
-  const {
-    formName,
-    inputs,
-    textarea,
-    checkbox,
-    select,
-    submitBtn,
-    defaultValues,
-  } = content.form;
+  const { formName, inputs, textarea, checkbox, select, submitBtn } =
+    content.form;
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -49,13 +42,11 @@ export const ContactUsForm: React.FC = () => {
   } = useForm<FieldValues>({
     resolver: zodResolver(schema),
     mode: 'onBlur',
-    defaultValues: defaultValues,
   });
 
   useFormPersist(formName, {
     watch,
     setValue,
-    storage: typeof window !== 'undefined' ? window.localStorage : undefined,
     exclude: [checkbox.name],
   });
 
@@ -104,27 +95,21 @@ export const ContactUsForm: React.FC = () => {
 
             <FormListbox
               control={control}
-              label={select.label}
-              placeholder={select.placeholder}
-              name={select.name}
-              variants={select.options}
+              {...select}
               errors={errors}
               className="smOnly:mb-6"
             />
           </div>
 
           <FormTextArea
-            label={textarea.label}
-            placeholder={textarea.placeholder}
-            name={textarea.name}
+            {...textarea}
             register={register}
             errors={errors}
             className="md:mb-6 smOnly:mb-4"
           />
 
           <FormCheckbox
-            label={checkbox.label}
-            name={checkbox.name}
+            {...checkbox}
             register={register}
             errors={errors}
             className="md:mb-8 smOnly:mb-10"
