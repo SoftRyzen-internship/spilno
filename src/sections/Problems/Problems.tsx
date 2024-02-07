@@ -3,7 +3,7 @@ import { ProblemCard } from '@/components/ui/ProblemCard';
 
 import data from '@/data/problems.json';
 
-export const Problems = () => {
+export const Problems: React.FC = () => {
   const { title, cards } = data;
 
   return (

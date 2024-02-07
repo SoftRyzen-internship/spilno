@@ -59,6 +59,8 @@
 
   "sliderControls": {
     "prevBtnAriaLabel": "Кнопка назад для перегортання слайдів",
-    "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів"
+    "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів",
+    "prevIconAriaLabel": "іконка стрілки гортання назад",
+    "nextIconAriaLabel": "іконка стрілки гортання вперед"
   }
 }

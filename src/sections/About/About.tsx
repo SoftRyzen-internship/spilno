@@ -39,11 +39,7 @@ export const About: React.FC = () => {
           <p className="mb-12 text-[14px]/[1.5] text-white md:text-[16px] xl:text-[20px]">
             {ourGoal}
           </p>
-          <Button
-            className="w-full md:w-auto"
-            text={link.text}
-            link={link.path}
-          />
+          <Button className="smOnly:w-full" text={link.text} link={link.path} />
         </div>
       </div>
     </section>
