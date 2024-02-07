@@ -1,0 +1,24 @@
+{
+  "devs": {
+    "label": "Створено при підтримці",
+    "creators": [
+      {
+        "label": "Посилання на сайт компанії GoIT",
+        "href": "https://goit.global/ua/",
+        "ariaLabel": "Логотип компанії GoIT"
+      },
+      {
+        "label": "Посилання на сайт компанії SoftRyzen",
+        "href": "https://softryzen.com/",
+        "ariaLabel": "Логотип компанії SoftRyzen"
+      }
+    ]
+  },
+  "policy": {
+    "label": "Terms of Service & Privacy Policy",
+    "href": "https://softryzen.com/privacy-policy"
+  },
+  "copyrights": {
+    "label": "© 2024 SPILNO. Всі права захищені."
+  }
+}

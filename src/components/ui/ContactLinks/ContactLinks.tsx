@@ -19,7 +19,7 @@ export const ContactLinks: React.FC<ContactLinksProps> = ({ location }) => {
           )}
           href={`mailto:${email.path}`}
         >
-          {email.label}
+          {email.path}
         </a>
       </li>
 
