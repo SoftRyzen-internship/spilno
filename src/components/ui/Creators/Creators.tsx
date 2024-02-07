@@ -49,7 +49,7 @@ export const Creators: React.FC = () => {
               width={208}
               height={56}
               aria-label={softryzen.ariaLabel}
-              className="brightness-[0.89] contrast-[0.85] hue-rotate-[321deg] invert-[0.79] saturate-[0.15] sepia-[0.12] transition group-hover:scale-110 group-hover:filter-none group-focus:scale-110 group-focus:filter-none md:h-14 md:w-[208px]"
+              className="h-10 w-[148px] brightness-[0.89] contrast-[0.85] hue-rotate-[321deg] invert-[0.79] saturate-[0.15] sepia-[0.12] transition group-hover:scale-110 group-hover:filter-none group-focus:scale-110 group-focus:filter-none md:h-14 md:w-[208px]"
             />
           </a>
         </li>
