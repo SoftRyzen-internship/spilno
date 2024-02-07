@@ -4,7 +4,7 @@
     "creators": [
       {
         "label": "Посилання на сайт компанії GoIT",
-        "href": "https://goit.global/",
+        "href": "https://goit.global/ua/",
         "ariaLabel": "Логотип компанії GoIT"
       },
       {
@@ -16,7 +16,7 @@
   },
   "policy": {
     "label": "Terms of Service & Privacy Policy",
-    "href": "/"
+    "href": "https://softryzen.com/privacy-policy"
   },
   "copyrights": {
     "label": "© 2024 SPILNO. Всі права захищені."
