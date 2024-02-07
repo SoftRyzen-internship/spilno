@@ -62,5 +62,16 @@
     "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів",
     "prevIconAriaLabel": "іконка стрілки гортання назад",
     "nextIconAriaLabel": "іконка стрілки гортання вперед"
+  },
+
+  "reviewCard": {
+    "closeBtn": {
+      "label": "Кнопка закриття меню",
+      "closeBtnAriaLabel": "Кнопка закриття меню",
+      "closeBtnIconAriaLabel": "Хрестик"
+    },
+    "readMoreBtn": {
+      "label": "Читати більше"
+    }
   }
 }

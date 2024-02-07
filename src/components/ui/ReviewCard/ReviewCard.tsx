@@ -2,13 +2,19 @@
 
 import { useState } from 'react';
 
+import { ReviewerInfoCard } from '../ReviewerInfoCard';
+import { Modal } from '../Modal';
+
+import { cn } from '@/utils/cn';
+
 import CloseIcon from '~/icons/cross.svg';
 import PlayIcon from '~/icons/play.svg';
 
+import commonData from '@/data/common.json';
+
 import { ReviewProps } from './types';
-import { cn } from '@/utils/cn';
-import { Modal } from '../Modal';
-import { ReviewerInfoCard } from '../ReviewerInfoCard';
+
+import styles from './ReviewCard.module.css';
 
 export const ReviewCard: React.FC<ReviewProps> = ({
   review,
@@ -17,7 +23,10 @@ export const ReviewCard: React.FC<ReviewProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const closeModal = () => setIsOpen(false);
+  const closeModal = () => {
+    console.log('click');
+    setIsOpen(false);
+  };
 
   const openModal = () => setIsOpen(true);
 
@@ -53,7 +62,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
               onClick={openModal}
               type="button"
             >
-              Читати більше
+              {commonData.reviewCard.readMoreBtn.label}
             </button>
           ) : (
             <button
@@ -74,42 +83,43 @@ export const ReviewCard: React.FC<ReviewProps> = ({
       <Modal
         isOpen={isOpen}
         onClose={closeModal}
-        backdropStyle="bg-backdropBg/25 backdrop-filter backdrop-blur-lg"
-        modalStyle=""
+        modalStyle={cn(
+          'relative w-full max-w-[448px] rounded-[10px] bg-white p-4',
+          'md:w-[684px] md:max-w-full md:p-12',
+          'xl:w-[1010px]',
+          !video && styles.quoteUpIcon,
+        )}
+        modalWrapStyle="container flex items-center xl:justify-center"
       >
-        <div className="container">
-          <div className="h-[552px] w-full rounded-[10px] bg-white p-4">
-            <button
-              type="button"
-              className=""
-              onClick={closeModal}
-              aria-label="Кнопка закриття меню"
-            >
-              <CloseIcon className="ml-auto size-[30px] md:size-[36px]" />
-            </button>
+        <button
+          type="button"
+          className="mb-6 ml-auto block text-greyText md:mb-10"
+          onClick={closeModal}
+          aria-label={commonData.reviewCard.closeBtn.closeBtnAriaLabel}
+        >
+          <CloseIcon
+            width={36}
+            height={36}
+            className="ml-auto size-6 md:size-8 xl:size-12"
+            aria-label={commonData.reviewCard.closeBtn.closeBtnIconAriaLabel}
+          />
+        </button>
 
-            {!video ? (
-              <div>
-                <p className="font-raleway text-[14px] font-normal leading-[1.5] text-primaryText">
-                  {review}
-                </p>
-                <ReviewerInfoCard author={author} video={video} />
-              </div>
-            ) : (
-              <div>
-                <iframe
-                  width="300"
-                  height="450"
-                  src="https://www.youtube.com/embed/r0oWdn-ZgPQ"
-                  title="🧑‍💻 Полезный оператор в JavaScript #frontend #js #programming #hobby #javascript"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
+        {!video ? (
+          <div>
+            <p className="mb-10 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-6 md:text-[16px] xl:mb-8 xl:text-[24px]">
+              {review}
+            </p>
+
+            <div className={cn('relative', styles.quoteDownIcon)}>
+              <ReviewerInfoCard author={author} video={video} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div>
+            <p>React.Player will be here soon</p>
+          </div>
+        )}
       </Modal>
     </>
   );
