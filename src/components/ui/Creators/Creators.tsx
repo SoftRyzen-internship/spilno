@@ -13,7 +13,7 @@ export const Creators: React.FC = () => {
       <p className="text-xs/[1.5] text-white md:text-sm/[1.25] smOnly:mb-2">
         {label}
       </p>
-      <ul className="flex h-10 items-center justify-center md:h-14">
+      <ul className="flex h-10 items-center justify-center md:h-14 smOnly:mx-auto smOnly:max-w-[240px]">
         <li className="size-full">
           <a
             href={goit.href}
