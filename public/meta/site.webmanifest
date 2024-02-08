@@ -1,0 +1,49 @@
+{
+    "name": "Spilno – розробка сучасних сайтів для вашого бізнесу безкоштовно",
+    "short_name": "Spilno",
+    "title": "Spilno – розробка сучасних сайтів для вашого бізнесу безкоштовно",
+    "description": "Проєкт, де стажери разом з досвідченими менторами безкоштовно розробляють сайти для вашого бізнесу",
+    "start_url": "/",
+    "locale": "uk_UA",
+  "keywords": "Spilno, створення сайту, якість виконання, ефектине веб-рішення, безкоштовні проєкти, професійний підхід, талановиті студенти, індивідуальний підхід",
+    "icons": [
+      {
+        "media": "(prefers-color-scheme: light)",
+        "url": "/meta/light/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "media": "(prefers-color-scheme: dark)",
+        "url": "/meta/dark/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "media": "(prefers-color-scheme: light)",
+        "url": "/meta/light/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "media": "(prefers-color-scheme: dark)",
+        "url": "/meta/dark/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+      "images": [
+    {
+      "url": "/meta/og-image.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "Spilno - розробка сучасних сайтів для вашого бізнесу безкоштовно"
+    }
+  ],
+    "background_color": "#ffffff",
+    "display": "browser"
+}
