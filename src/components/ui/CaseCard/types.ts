@@ -1,7 +1,12 @@
 export type Props = {
-  src: string;
-  alt: string;
+  slug: string;
+  title: string;
   text: string;
-  href: string;
-  tags: string[];
+  alt: string;
+  url: string;
+  tags: {
+    attributes: {
+      name: string;
+    };
+  }[];
 };

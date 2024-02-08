@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 
-export const fetchCasesByField = gql`
+export const fetchMainPageCases = gql`
   {
     cases(filters: { mainPage: { eq: true } }, sort: "id") {
       data {
@@ -13,6 +13,13 @@ export const fetchCasesByField = gql`
             data {
               attributes {
                 url
+              }
+            }
+          }
+          types {
+            data {
+              attributes {
+                name
               }
             }
           }
