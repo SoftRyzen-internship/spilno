@@ -96,6 +96,7 @@ export const AccordionOfferItem: React.FC<AccordionOfferItemProps> = ({
                   width={596}
                   height={596}
                   alt={data.title}
+                  loading="lazy"
                   className="md:size-[330px] xl:size-[596px]"
                 />
               </RingedImage>

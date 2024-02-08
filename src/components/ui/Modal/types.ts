@@ -4,4 +4,5 @@ export type ModalProps = {
   onClose: () => void;
   modalStyle?: string;
   backdropStyle?: string;
+  modalWrapStyle?: string;
 };

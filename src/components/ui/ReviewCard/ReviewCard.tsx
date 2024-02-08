@@ -2,13 +2,16 @@
 
 import { useState } from 'react';
 
-import CloseIcon from '~/icons/cross.svg';
+import { ReviewerInfoCard } from '../ReviewerInfoCard';
+import { ReviewModal } from '../ReviewModal';
+
+import { cn } from '@/utils/cn';
+
 import PlayIcon from '~/icons/play.svg';
 
+import commonData from '@/data/common.json';
+
 import { ReviewProps } from './types';
-import { cn } from '@/utils/cn';
-import { Modal } from '../Modal';
-import { ReviewerInfoCard } from '../ReviewerInfoCard';
 
 export const ReviewCard: React.FC<ReviewProps> = ({
   review,
@@ -53,7 +56,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
               onClick={openModal}
               type="button"
             >
-              Читати більше
+              {commonData.reviewCard.readMoreBtn.label}
             </button>
           ) : (
             <button
@@ -71,46 +74,12 @@ export const ReviewCard: React.FC<ReviewProps> = ({
           <ReviewerInfoCard author={author} video={video} />
         </div>
       </div>
-      <Modal
-        isOpen={isOpen}
-        onClose={closeModal}
-        backdropStyle="bg-backdropBg/25 backdrop-filter backdrop-blur-lg"
-        modalStyle=""
-      >
-        <div className="container">
-          <div className="h-[552px] w-full rounded-[10px] bg-white p-4">
-            <button
-              type="button"
-              className=""
-              onClick={closeModal}
-              aria-label="Кнопка закриття меню"
-            >
-              <CloseIcon className="ml-auto size-[30px] md:size-[36px]" />
-            </button>
 
-            {!video ? (
-              <div>
-                <p className="font-raleway text-[14px] font-normal leading-[1.5] text-primaryText">
-                  {review}
-                </p>
-                <ReviewerInfoCard author={author} video={video} />
-              </div>
-            ) : (
-              <div>
-                <iframe
-                  width="300"
-                  height="450"
-                  src="https://www.youtube.com/embed/r0oWdn-ZgPQ"
-                  title="🧑‍💻 Полезный оператор в JavaScript #frontend #js #programming #hobby #javascript"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
-          </div>
-        </div>
-      </Modal>
+      <ReviewModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        data={{ video, author, review }}
+      />
     </>
   );
 };
