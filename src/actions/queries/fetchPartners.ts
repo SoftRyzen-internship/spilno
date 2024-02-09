@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request';
 
-export const fetchCasesAll = gql`
-  query FetchPartners {
+export const fetchPartners = gql`
+  {
     partners {
       data {
         attributes {
