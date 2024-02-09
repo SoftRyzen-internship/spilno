@@ -5,7 +5,7 @@ import data from '@/data/cases.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import { Props } from './types';
+import { CaseCardType as Props } from '@/types';
 
 export const CaseCard: React.FC<Props> = ({ slug, text, alt, url, tags }) => {
   const { projectDetailsLinkAriaLabel, arrowIconAriaLabel } = data;

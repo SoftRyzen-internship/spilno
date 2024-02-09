@@ -1,6 +1,5 @@
-export type Props = {
+export type CaseCardType = {
   slug: string;
-  title: string;
   text: string;
   alt: string;
   url: string;
