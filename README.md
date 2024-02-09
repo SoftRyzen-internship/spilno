@@ -87,11 +87,11 @@ that can be used to pass styles that will override common button or link styles
 
 | Prop             | Default     | Description                                                                                               |
 | ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| `slideComponent` | -           | required, `React.FC<any>`, It`s the comenent that will be rendered as side.                               |
+| `slideComponent` | -           | required, `React.FC<any>`, It`s the component that will be rendered as side.                              |
 | `slidesData`     | -           | required, `Record<string, any>[]`, It is a array with slide`s objects                                     |
 | `section`        | -           | required, `cases`, `reviews`, `partners`, `advantages`, name of the section where slider will be rendered |
 | `wrapClassName`  | `undefined` | optional, `string`, adds custom css class to the Swiper component.                                        |
-| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponenet component.                               |
+| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponent component.                                |
 
 - #### SliderControls
 
@@ -263,3 +263,23 @@ Component - card for section company advantages.
 | `id`          | -       | required, `string`, depends what image will be rendered. Value from 01-04 |
 | `title`       | -       | required, `string`, will be rendered as card title                        |
 | `description` | -       | rrequired, `string`, will be rendered as card description                 |
+
+- #### ReviewModal
+
+Feedback card modal window component. Works in two modes, for test feedback and
+video feedback
+
+| Prop         | Default     | Description                                                                             |
+| ------------ | ----------- | --------------------------------------------------------------------------------------- |
+| `isOpen`     | `undefined` | required, `boolean`, reports the state of the modal window, true - open, false - closed |
+| `closeModal` | `undefined` | required, `function`, callback to close the modal window                                |
+| `data`       | `undefined` | required, `Object`, data may include text feedback or video feedback data               |
+
+- #### VideoPlayer
+
+Video player component. Plays videos of different sizes. A link to the video is
+expected in the props
+
+| Prop    | Default     | Description                                                                                              |
+| ------- | ----------- | -------------------------------------------------------------------------------------------------------- |
+| `video` | `undefined` | required, `Object`, data, which must contain a property with the value of the absolute path to the video |

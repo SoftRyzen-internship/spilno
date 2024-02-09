@@ -18,8 +18,10 @@ export const ContactLinks: React.FC<ContactLinksProps> = ({ location }) => {
             linkClassName,
           )}
           href={`mailto:${email.path}`}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
         >
-          {email.label}
+          {email.path}
         </a>
       </li>
 

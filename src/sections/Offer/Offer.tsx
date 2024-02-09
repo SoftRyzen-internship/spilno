@@ -12,7 +12,7 @@ export const Offer = () => {
         <div className="relative xl:flex xl:h-[596px] ">
           <div className="xl:flex xl:flex-col xl:justify-center">
             <SectionTitle className="mb-6 md:mb-8 md:w-[329px] xl:mb-16 xl:w-[485px]">
-              Що ми пропонуємо для вашого бізнесу
+              {data.title}
             </SectionTitle>
             <Accordion className="md:h-[274px] xl:h-[324px]">
               {data.items.map((item: OfferItemsType, index: number) => (

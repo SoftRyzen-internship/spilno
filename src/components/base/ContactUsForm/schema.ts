@@ -59,6 +59,7 @@ export const schema = z.object({
   projectDecription: z
     .string(commonMsg)
     .trim()
+    .min(projectDecription.minLength.value, projectDecription.minLength.message)
     .max(projectDecription.maxLength.value, projectDecription.maxLength.message)
     .regex(
       RegExp(projectDecription.format.reg),

@@ -13,11 +13,11 @@ export const getSliderConfig = ({
   section,
   wrapClassName,
 }: Partial<SliderProps>) => {
-  const slidesPerViewAndGroupBase = section === Sections.PARTNERS ? 3 : 1;
+  const slidesPerViewBase = section === Sections.PARTNERS ? 3 : 1;
   const spaceBetweenBase = section === Sections.PARTNERS ? 20 : 16;
   const autoplayBase =
     section === Sections.PARTNERS
-      ? { delay: 3000, disableOnInteraction: false }
+      ? { delay: 2000, disableOnInteraction: false }
       : false;
 
   let loopBase: boolean;
@@ -77,11 +77,10 @@ export const getSliderConfig = ({
       prevEl: `.slider-prev-btn-${section}`,
       nextEl: `.slider-next-btn-${section}`,
     },
-    loop: loopBase,
     allowTouchMove: true,
+    loop: loopBase,
     spaceBetween: spaceBetweenBase,
-    slidesPerView: slidesPerViewAndGroupBase,
-    slidesPerGroup: slidesPerViewAndGroupBase,
+    slidesPerView: slidesPerViewBase,
     autoplay: autoplayBase,
 
     breakpoints: {

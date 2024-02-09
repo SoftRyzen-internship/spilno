@@ -15,3 +15,13 @@ body {
 .swiper-button-disabled.ctrlSliderBtn {
   @apply border-lightBlue text-lightBlue hover:bg-white;
 }
+
+/* Footer */
+@layer utilities {
+  .delimeter {
+    @apply relative;
+  }
+  .delimeter::after {
+    @apply absolute left-1/2 top-0 h-[1px] w-screen -translate-x-1/2 bg-delimeterGrey content-[''];
+  }
+}

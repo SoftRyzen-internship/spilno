@@ -49,6 +49,7 @@ const config: Config = {
         heroRing: '#BFD5FF',
         black: '#000000',
         selectedBg: '#D6EAFF',
+        delimeterGrey: '#373347',
       },
       transitionDuration: {
         DEFAULT: '300ms',

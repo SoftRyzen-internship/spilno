@@ -18,7 +18,7 @@ export const ProblemCard: React.FC<Props> = ({
   const Icon = icons[idx];
 
   return (
-    <li className="flex w-[242px] flex-col items-center text-center md:w-[212px] xl:w-[360px]">
+    <div className="flex w-[242px] flex-col items-center text-center md:w-[212px] xl:w-[360px]">
       <div
         className={cn(
           'mb-4 flex size-[50px] items-center justify-center border-2 border-solid border-lightBlue md:mb-6 xl:mb-12 xl:size-[104px]',
@@ -52,6 +52,6 @@ export const ProblemCard: React.FC<Props> = ({
       </h3>
 
       <p className="leading-[1.5] text-primaryText xl:text-[24px]">{text}</p>
-    </li>
+    </div>
   );
 };
