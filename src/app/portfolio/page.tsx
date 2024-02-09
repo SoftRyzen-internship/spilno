@@ -1,9 +1,15 @@
-const PortfolioPage = () => {
-  return (
-    <div>
-      <h1>Портфоліо</h1>
-    </div>
-  );
-};
+import { PortfolioHero } from '@/sections/PortfolioHero';
+import { ContactUs } from '@/sections/ContactUs';
+import { PortfolioCases } from '@/sections/PortfolioCases';
 
-export default PortfolioPage;
+export default function PortfolioPage() {
+  return (
+    <>
+      <PortfolioHero />
+
+      <PortfolioCases />
+
+      <ContactUs />
+    </>
+  );
+}

@@ -1,0 +1,6 @@
+.circle {
+  @apply relative;
+}
+.circle::after {
+  @apply absolute left-1/2 top-1/2 h-[226px] w-[528px] -translate-y-1/2 bg-[url('/icons/circles.svg')] bg-contain bg-left bg-no-repeat content-[''] xl:h-[352px] xl:w-[852px] smOnly:hidden;
+}
