@@ -2,6 +2,7 @@ import { CasesSlider } from '@/components/base/CasesSlider';
 
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Button } from '@/components/ui/Button';
+import { SliderControls } from '@/components/ui/SliderControls';
 
 import { getMainPageCases } from '@/actions/getMainPageCases';
 
@@ -27,6 +28,10 @@ export const Cases: React.FC = async () => {
             </SectionTitle>
 
             <CasesSlider slidesData={slidesData} />
+            <SliderControls
+              wrapClassName="mb-8 flex justify-center md:absolute md:top-[4px] right-[42px] md:mb-0 xl:right-[32px] xl:top-[29px]"
+              section="cases"
+            />
 
             <Button
               btnStyle="accent"

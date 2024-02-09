@@ -49,7 +49,7 @@ export const CaseCard: React.FC<Props> = ({ slug, text, alt, url, tags }) => {
           </Link>
         </div>
 
-        <p className="line-clamp-2 max-w-[272px] text-start font-geologica text-[16px]/[1.25] md:max-w-[258px] md:text-[18px] xl:flex xl:max-w-[486px] xl:text-[24px]">
+        <p className="line-clamp-2 max-w-[272px] text-start font-geologica text-[16px]/[1.25] md:line-clamp-3 md:max-w-[258px] md:text-[18px] xl:line-clamp-2 xl:max-w-[486px] xl:text-[24px]">
           {text}
         </p>
       </div>
