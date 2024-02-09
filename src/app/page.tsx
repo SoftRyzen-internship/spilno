@@ -7,6 +7,7 @@ import { Reviews } from '@/sections/Reviews';
 import { FAQ } from '@/sections/FAQ';
 import { Problems } from '@/sections/Problems';
 import { Partners } from '@/sections/Partners';
+import { Cases } from '@/sections/Cases';
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
       <Advantages />
 
       <About />
+
+      <Cases />
 
       <Reviews />
 

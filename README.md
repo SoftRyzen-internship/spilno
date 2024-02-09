@@ -87,11 +87,11 @@ that can be used to pass styles that will override common button or link styles
 
 | Prop             | Default     | Description                                                                                               |
 | ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| `slideComponent` | -           | required, `React.FC<any>`, It`s the comenent that will be rendered as side.                               |
+| `slideComponent` | -           | required, `React.FC<any>`, It`s the component that will be rendered as side.                              |
 | `slidesData`     | -           | required, `Record<string, any>[]`, It is a array with slide`s objects                                     |
 | `section`        | -           | required, `cases`, `reviews`, `partners`, `advantages`, name of the section where slider will be rendered |
 | `wrapClassName`  | `undefined` | optional, `string`, adds custom css class to the Swiper component.                                        |
-| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponenet component.                               |
+| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponent component.                                |
 
 - #### SliderControls
 
