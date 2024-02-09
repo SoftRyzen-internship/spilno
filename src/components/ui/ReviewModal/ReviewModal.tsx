@@ -15,11 +15,12 @@ import styles from './ReviewModal.module.css';
 export const ReviewModal: React.FC<ReviewModalProps> = ({
   isOpen,
   closeModal,
-  data: { video, author, review },
+  data: { url, author, text },
+  isVideoReview,
 }) => {
   return (
     <>
-      {!video && (
+      {!isVideoReview && (
         <Modal
           isOpen={isOpen}
           onClose={closeModal}
@@ -27,7 +28,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
             'relative w-full max-w-[448px] rounded-[10px] bg-white p-4',
             'md:w-[684px] md:max-w-full md:p-12',
             'xl:w-[1010px]',
-            !video && styles.quoteUpIcon,
+            !isVideoReview && styles.quoteUpIcon,
           )}
           modalWrapStyle="container flex items-center xl:justify-center"
         >
@@ -47,17 +48,17 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
           <div>
             <p className="mb-10 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-6 md:text-[16px] xl:mb-8 xl:text-[24px]">
-              {review}
+              {text}
             </p>
 
             <div className={cn('relative', styles.quoteDownIcon)}>
-              <ReviewerInfoCard author={author} video={video} />
+              <ReviewerInfoCard author={author} isVideoReview={isVideoReview} />
             </div>
           </div>
         </Modal>
       )}
 
-      {video && (
+      {isVideoReview && (
         <Modal
           isOpen={isOpen}
           onClose={closeModal}
@@ -78,7 +79,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
             />
           </button>
 
-          <VideoPlayer video={video} />
+          <VideoPlayer url={url} />
         </Modal>
       )}
     </>

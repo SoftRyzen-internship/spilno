@@ -1,39 +1,33 @@
-'use client';
-
-import { Tab } from '@headlessui/react';
-
 import { Tabs } from '@/components/ui/Tabs';
-import { ReviewCard } from '@/components/ui/ReviewCard';
-import { SliderControls } from '@/components/ui/SliderControls';
-import { Slider } from '@/components/ui/Slider';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 
-import data from '@/data/reviews.json';
+import { getReviews } from '@/actions/getReviews';
 
-export const Reviews: React.FC = () => {
-  const { title, label, reviewsData } = data;
+import staticData from '@/data/common.json';
+
+export const Reviews: React.FC = async () => {
+  const { title, label } = staticData.reviewSection;
+
+  const reviewsData = await getReviews();
 
   return (
-    <section className="section bg-lightBg">
-      <div className="container">
-        <Tabs title={title} label={label} data={reviewsData}>
-          {reviewsData &&
-            reviewsData.map(({ reviews }, idx) => (
-              <Tab.Panel key={idx} className="xl:h-[688px] xl:w-[596px]">
-                <Slider
-                  section="reviews"
-                  slidesData={reviews}
-                  slideComponent={ReviewCard}
-                  slideClassName="mb-8 mdOnly:mb-[52px] xl:h-[600px] xl:w-[596px]"
-                />
+    <>
+      {reviewsData && (
+        <section className="section bg-lightBg">
+          <div className="container">
+            <Tabs reviewsData={reviewsData}>
+              <SectionTitle className="mb-4 xl:mb-6">{title}</SectionTitle>
 
-                <SliderControls
-                  section="reviews"
-                  wrapClassName="justify-center xl:justify-end"
-                />
-              </Tab.Panel>
-            ))}
-        </Tabs>
-      </div>
-    </section>
+              <p
+                className="mb-8 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:w-[448px]
+              md:text-[16px] xl:mb-0 xl:text-[18px] smOnly:mr-10"
+              >
+                {label}
+              </p>
+            </Tabs>
+          </div>
+        </section>
+      )}
+    </>
   );
 };
