@@ -67,7 +67,7 @@
         },
         "minLength": {
           "value": 1,
-          "message": "Мінімальна довжина 1 символів."
+          "message": "Обовʼязкове поле."
         },
         "maxLength": {
           "value": 90,
@@ -106,8 +106,12 @@
       },
       "projectDecription": {
         "format": {
-          "reg": "^[A-Za-zА-Яа-яЇїІіЄєҐґ0-9(),'\"-.!? \n\r]+$",
+          "reg": "^[A-Za-zА-Яа-яЇїІіЄєҐґ0-9(),'\"-.!? \n\r]*$",
           "message": "Присутні недопустимі символи."
+        },
+        "minLength": {
+          "value": 1,
+          "message": "Обовʼязкове поле."
         },
         "maxLength": {
           "value": 1000,
