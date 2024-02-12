@@ -4,9 +4,7 @@ import { VideoPlayerProps } from './types';
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
-export const VideoPlayer: React.FC<VideoPlayerProps> = ({
-  video: { path: url },
-}) => {
+export const VideoPlayer: React.FC<VideoPlayerProps> = ({ url }) => {
   return (
     <div className="relative size-full pt-[56.25%]">
       <ReactPlayer
