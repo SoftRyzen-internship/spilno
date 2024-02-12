@@ -16,6 +16,13 @@ export const fetchCasesAll = gql`
               }
             }
           }
+          types {
+            data {
+              attributes {
+                name
+              }
+            }
+          }
         }
       }
     }

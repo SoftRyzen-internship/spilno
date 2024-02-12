@@ -2,10 +2,14 @@ import { PartnersCard } from '@/components/ui/PartnersCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Slider } from '@/components/ui/Slider';
 
+import { getPartners } from '@/actions/getPartners';
+
 import content from '@/data/partners.json';
 
-export const Partners: React.FC = () => {
-  const { id, title, desc, partnersList } = content;
+export const Partners: React.FC = async () => {
+  const { id, title, desc } = content;
+
+  const partnersList = await getPartners();
 
   return (
     <section id={id} className="section bg-white">
@@ -20,12 +24,14 @@ export const Partners: React.FC = () => {
           </p>
         </div>
 
-        <Slider
-          section="partners"
-          slidesData={partnersList}
-          slideComponent={PartnersCard}
-          wrapClassName="smOnly:max-w-[328px] mx-auto"
-        />
+        {partnersList && (
+          <Slider
+            section="partners"
+            slidesData={partnersList}
+            slideComponent={PartnersCard}
+            wrapClassName="smOnly:max-w-[328px] mx-auto"
+          />
+        )}
       </div>
     </section>
   );
