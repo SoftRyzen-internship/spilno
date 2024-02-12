@@ -1,8 +1,8 @@
 import { gql } from 'graphql-request';
 
-export const fetchMainPageCases = gql`
-  {
-    cases(filters: { mainPage: { eq: true } }, sort: "id") {
+export const fetchOneCase = gql`
+  query ($case: String) {
+    cases(filters: { slug: { eq: $case } }) {
       data {
         attributes {
           slug
