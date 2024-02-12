@@ -1,5 +1,3 @@
-import { getContacts } from '@/actions/getContacts';
-
 import { cn } from '@/utils/cn';
 
 import data from '@/data/common.json';
@@ -10,14 +8,8 @@ import Linkedin from '~/icons/linkedin.svg';
 
 import { SocialsProps } from './types';
 
-export const Socials: React.FC<SocialsProps> = async ({ location }) => {
+export const Socials: React.FC<SocialsProps> = ({ location, socialList }) => {
   const { ariaLabel } = data.socialLinks;
-
-  const socialList = await getContacts();
-
-  if (!socialList || typeof socialList !== 'object') {
-    return null;
-  }
 
   const linkClassName =
     location === 'menu'

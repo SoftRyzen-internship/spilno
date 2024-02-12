@@ -1,5 +1,6 @@
 export type SocialsProps = {
   location: 'menu' | 'footer';
+  socialList: TContacts;
 };
 
 export type TContacts = {
