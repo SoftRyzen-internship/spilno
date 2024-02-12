@@ -18,6 +18,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
   variants,
   control,
   errors,
+  required = false,
   className = '',
 }) => {
   return (
@@ -33,7 +34,7 @@ export const FormListbox: React.FC<FormListboxProps> = ({
                   as="p"
                   className="text-sm/[1.3] text-primaryText/70 md:mb-1 md:text-base/[1.6] smOnly:mb-2"
                 >
-                  {label} <span className="text-accent">*</span>
+                  {label} {required && <span className="text-accent">*</span>}
                 </Listbox.Label>
 
                 <div className={cn('relative')}>

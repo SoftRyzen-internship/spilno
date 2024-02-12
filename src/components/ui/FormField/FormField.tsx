@@ -11,6 +11,7 @@ export const FormField: React.FC<FormFieldProps> = ({
   name,
   register,
   errors,
+  required = false,
   className = '',
 }) => (
   <label
@@ -20,7 +21,7 @@ export const FormField: React.FC<FormFieldProps> = ({
     )}
   >
     <span className="block md:mb-1 smOnly:mb-2">
-      {label} <span className="text-accent">*</span>
+      {label} {required && <span className="text-accent">*</span>}
     </span>
 
     <input

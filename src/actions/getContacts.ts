@@ -2,16 +2,27 @@ import { request } from 'graphql-request';
 
 import { fetchContacts } from '@/actions/queries/fetchContacts';
 
+type Data = {
+  contact: {
+    data: {
+      attributes: {
+        instagram: string;
+        linkedin: string;
+        facebook: string;
+      };
+    };
+  };
+};
+
 export const getContacts = async () => {
   try {
-    const data = await request(
+    const { contact }: Data = await request(
       process.env.API_BASE_URL as string,
       fetchContacts,
     );
 
-    console.log(data);
-    return;
+    return contact.data.attributes;
   } catch (error) {
-    console.log(error);
+    return null;
   }
 };

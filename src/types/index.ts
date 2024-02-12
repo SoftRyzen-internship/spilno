@@ -13,6 +13,13 @@ export type CaseCardType = {
 export type TelegramData = Record<string, string>;
 
 export type TelegramRes = { code: number };
+
+export type TContacts = {
+  instagram: string;
+  linkedin: string;
+  facebook: string;
+};
+
 export type Review = {
   from: string;
   type: string;
