@@ -1,6 +1,6 @@
 import { request } from 'graphql-request';
 
-import { fetchReviews } from './queries/fetchReviews';
+import { fetchReviews } from '@/actions/queries/fetchReviews';
 
 import commonData from '@/data/common.json';
 

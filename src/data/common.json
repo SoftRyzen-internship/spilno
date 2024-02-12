@@ -50,16 +50,6 @@
     "nextIconAriaLabel": "іконка стрілки гортання вперед"
   },
 
-  "reviewCard": {
-    "closeBtn": {
-      "label": "Кнопка закриття меню",
-      "closeBtnAriaLabel": "Кнопка закриття меню",
-      "closeBtnIconAriaLabel": "Хрестик"
-    },
-    "readMoreBtn": {
-      "label": "Читати більше"
-    }
-  },
   "telegramFieldNames": [
     "Імʼя",
     "Телефон",
@@ -68,6 +58,7 @@
     "Звідки ви про нас дізнались?",
     "Додаткові коментарі"
   ],
+
   "reviewSection": {
     "title": "Враження від спільної взаємодії",
     "label": "Дізнайтеся, як наші клієнти та стажери оцінюють нас та діляться своїм досвідом"
@@ -76,5 +67,18 @@
   "reviewTabs": {
     "business": "Від бізнесу",
     "trainee": "Від стажерів"
+  },
+
+  "reviewCard": {
+    "closeBtn": {
+      "label": "Кнопка закриття меню",
+      "closeBtnAriaLabel": "Кнопка закриття меню",
+      "closeBtnIconAriaLabel": "Хрестик"
+    },
+    "readMoreBtn": {
+      "label": "Читати більше"
+    },
+    "playBtnAriaLabel": "кнопка відтворення відео",
+    "playIconAriaLabel": "іконка відтворення відео"
   }
 }
