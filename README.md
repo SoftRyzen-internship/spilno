@@ -42,13 +42,14 @@ Pure Modal Component which expect `onClose`:implements close modal window by
 mouse click on backdrop or by press `ESC` button, `isOpen` - state to show/hide
 modal, `children` -content for modal.
 
-| Prop            | Default | Description                                                   |
-| --------------- | ------- | ------------------------------------------------------------- |
-| `children`      | -       | required, `ReactNode`, which will be content for modal window |
-| `isOpen`        | `false` | required, `boolean`, changes state to show/close the window.  |
-| `onClose`       | -       | required, click handler for close modal window                |
-| `modalStyle`    | ''      | optional, `string`, additional css class you'd need           |
-| `backdropStyle` | ''      | optional, `string`, additional css class you'd need           |
+| Prop             | Default | Description                                                       |
+| ---------------- | ------- | ----------------------------------------------------------------- |
+| `children`       | -       | required, `ReactNode`, which will be content for modal window     |
+| `isOpen`         | `false` | required, `boolean`, changes state to show/close the window.      |
+| `onClose`        | -       | required, click handler for close modal window                    |
+| `modalStyle`     | ''      | optional, `string`, additional css class you'd need               |
+| `modalWrapStyle` | ''      | optional, `string`, additional css class you'd need for container |
+| `backdropStyle`  | ''      | optional, `string`, additional css class you'd need               |
 
 - #### RingedImage
 
@@ -181,6 +182,7 @@ This is a styled input component with an accompanying label and FormError.
 | `name`        | `undefined` | required, `string`, input name                                                    |
 | `register`    | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                       |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                          |
 
 - #### FormPhoneField
@@ -195,6 +197,7 @@ formatt numeric input according pattern.
 | `name`        | `undefined` | required, `string`, textarea name                                                           |
 | `control`     | `undefined` | required, `object` object contains methods for registering components into React Hook Form. |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                             |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                                 |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                                    |
 
 - #### FormListbox
@@ -210,6 +213,7 @@ accompanying label and FormError. Rendered as `button` + open/hide list `ul`
 | `variants`    | `undefined` | required, `string's array`, options to choose                                               |
 | `control`     | `undefined` | required, `object` object contains methods for registering components into React Hook Form. |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                             |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                                 |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                                    |
 
 - #### FormTextArea
@@ -223,6 +227,7 @@ This is a styled textarea component with an accompanying label and FormError.
 | `name`        | `undefined` | required, `string`, textarea name                                                 |
 | `register`    | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                       |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                          |
 
 - #### FormCheckbox
@@ -287,3 +292,12 @@ expected in the props
 | Prop  | Default     | Description                                                 |
 | ----- | ----------- | ----------------------------------------------------------- |
 | `url` | `undefined` | required, `string`, value of the absolute path to the video |
+
+- #### PartnersCard
+
+Component - card for section company advantages.
+
+| Prop  | Default | Description                                         |
+| ----- | ------- | --------------------------------------------------- |
+| `alt` | -       | required, `string`, describe alt for partner logo   |
+| `url` | -       | required, `string`, link with partner web-site logo |

@@ -10,6 +10,12 @@ export type CaseCardType = {
   }[];
 };
 
+export type TContacts = {
+  instagram: string;
+  linkedin: string;
+  facebook: string;
+};
+
 export type Review = {
   from: string;
   type: string;

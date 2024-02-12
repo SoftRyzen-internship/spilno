@@ -12,7 +12,9 @@ import { ModalBtn } from '@/components/ui/ModalBtn';
 
 import data from '@/data/common.json';
 
-export const MobileMenu: React.FC = () => {
+import { MobileMenuProps } from './types';
+
+export const MobileMenu: React.FC<MobileMenuProps> = ({ socialList }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { mobileMenu } = data;
 
@@ -65,7 +67,7 @@ export const MobileMenu: React.FC = () => {
           <ContactLinks location="menu" />
         </div>
 
-        <Socials location="menu" />
+        {socialList && <Socials location="menu" socialList={socialList} />}
       </Modal>
     </div>
   );
