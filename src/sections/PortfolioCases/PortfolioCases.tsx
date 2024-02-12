@@ -1,13 +1,13 @@
 import { CaseCard } from '@/components/ui/CaseCard';
 
-import { getMainPageCases } from '@/actions/getMainPageCases';
+import { getAllCases } from '@/actions/getAllCases';
 
 import content from '@/data/advantages.json';
 
 export const PortfolioCases: React.FC = async () => {
   const { id, title } = content;
 
-  const slidesData = await getMainPageCases();
+  const slidesData = await getAllCases();
 
   return (
     <section id={id} className="section">
