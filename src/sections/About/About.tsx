@@ -29,6 +29,7 @@ export const About: React.FC = () => {
             loading="lazy"
           />
         </RingedImage>
+
         <div className="md:w-[330px] xl:w-[588px]">
           <SectionTitle
             className="mb-4 text-[18px]/[1.3] md:text-[20px] xl:mb-6 xl:text-[34px]"
@@ -36,9 +37,11 @@ export const About: React.FC = () => {
           >
             {title}
           </SectionTitle>
+
           <p className="mb-12 text-[14px]/[1.5] text-white md:text-[16px] xl:text-[20px]">
             {ourGoal}
           </p>
+
           <Button className="smOnly:w-full" text={link.text} link={link.path} />
         </div>
       </div>

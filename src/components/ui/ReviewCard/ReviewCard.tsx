@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { ReviewerInfoCard } from '@/components/ui/ReviewerInfoCard';
-import { ReviewModal } from '@/components/ui/ReviewModal';
+import { ReviewModal } from '@/components/base/ReviewModal';
 
 import { cn } from '@/utils/cn';
 
@@ -72,14 +72,17 @@ export const ReviewCard: React.FC<ReviewProps> = ({
               className="mb-4 font-raleway text-[14px] font-normal leading-[1.5] text-accent underline"
               onClick={openModal}
               type="button"
+              aria-label={commonData.reviewCard.playBtnAriaLabel}
             >
               <PlayIcon
                 width={74}
                 height={74}
                 className="block size-[74px] rounded-full bg-accent/40 backdrop-blur-[20px]"
+                aria-label={commonData.reviewCard.playIconAriaLabel}
               />
             </button>
           )}
+
           <ReviewerInfoCard author={author} isVideoReview={isVideoReview} />
         </div>
       </div>
