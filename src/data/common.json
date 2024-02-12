@@ -39,23 +39,9 @@
     }
   },
 
-  "socialLinks": [
-    {
-      "path": "https://www.facebook.com/profile.php?id=61555523816034",
-      "label": "facebook",
-      "ariaLabel": "Зв'яжися з нами у facebook"
-    },
-    {
-      "path": "https://www.instagram.com/spilno.group/",
-      "label": "instagram",
-      "ariaLabel": "Зв'яжися з нами у instagram"
-    },
-    {
-      "path": "https://www.linkedin.com/company/spilnogroup/",
-      "label": "linkedin",
-      "ariaLabel": "Зв'яжися з нами у linkedin"
-    }
-  ],
+  "socialLinks": {
+    "ariaLabel": "Зв'яжися з нами у"
+  },
 
   "sliderControls": {
     "prevBtnAriaLabel": "Кнопка назад для перегортання слайдів",

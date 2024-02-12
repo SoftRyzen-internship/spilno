@@ -1,3 +1,5 @@
+import { getContacts } from '@/actions/getContacts';
+
 import { cn } from '@/utils/cn';
 
 import data from '@/data/common.json';
@@ -8,8 +10,15 @@ import Linkedin from '~/icons/linkedin.svg';
 
 import { SocialsProps } from './types';
 
-export const Socials: React.FC<SocialsProps> = ({ location }) => {
-  const { socialLinks } = data;
+export const Socials: React.FC<SocialsProps> = async ({ location }) => {
+  const { ariaLabel } = data.socialLinks;
+
+  const socialList = await getContacts();
+
+  if (!socialList || typeof socialList !== 'object') {
+    return null;
+  }
+
   const linkClassName =
     location === 'menu'
       ? 'bg-accent hover:bg-darkBlue focus:bg-darkBlue'
@@ -17,23 +26,23 @@ export const Socials: React.FC<SocialsProps> = ({ location }) => {
 
   return (
     <ul className="flex gap-[20px] smOnly:justify-center">
-      {socialLinks.map(({ path, ariaLabel, label }) => (
-        <li key={path}>
+      {Object.keys(socialList).map(contact => (
+        <li key={contact}>
           <a
             className={cn(
               'flex size-[40px] items-center justify-center rounded-full  text-white transition-colors',
               linkClassName,
             )}
-            href={path}
+            href={socialList[contact as keyof typeof socialList]}
             target="_blank"
             rel="noopener noreferrer nofollow"
-            aria-label={ariaLabel}
+            aria-label={ariaLabel.concat(' ', contact)}
           >
-            {label === 'facebook' && <Facebook className="size-[24px]" />}
+            {contact === 'facebook' && <Facebook className="size-[24px]" />}
 
-            {label === 'instagram' && <Instagram className="size-[24px]" />}
+            {contact === 'instagram' && <Instagram className="size-[24px]" />}
 
-            {label === 'linkedin' && <Linkedin className="size-[24px]" />}
+            {contact === 'linkedin' && <Linkedin className="size-[24px]" />}
           </a>
         </li>
       ))}
