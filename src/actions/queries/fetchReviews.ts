@@ -1,28 +1,31 @@
 import { gql } from 'graphql-request';
 
-export const fetchMainPageCases = gql`
+export const fetchReviews = gql`
   {
-    cases(filters: { mainPage: { eq: true } }, sort: "id") {
+    reviews {
       data {
         attributes {
-          slug
-          title
-          text
-          alt
-          img {
+          from
+          type
+          url
+          preview {
             data {
               attributes {
                 url
               }
             }
           }
-          types(sort: "id") {
+          text
+          avatar {
             data {
               attributes {
-                name
+                url
               }
             }
           }
+          name
+          position
+          company
         }
       }
     }

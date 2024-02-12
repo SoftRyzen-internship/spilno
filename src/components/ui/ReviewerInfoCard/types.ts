@@ -1,17 +1,13 @@
 export type ReviewerInfoCardProps = {
   author: AuthorReview;
-  video: VideoReview | null;
-  className?: string;
-};
 
-type VideoReview = {
-  path: string;
-  preview: string;
+  className?: string;
+  isVideoReview: boolean;
 };
 
 type AuthorReview = {
+  avatar: string | null;
   name: string;
-  activity: string;
-  project: string;
-  photo: string;
+  position: string;
+  company: string | null;
 };

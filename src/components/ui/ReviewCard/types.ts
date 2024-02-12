@@ -1,17 +1,18 @@
 export type ReviewProps = {
-  review: string | null;
+  text: string | null;
   video: VideoReview | null;
   author: AuthorReview;
+  type: string;
 };
 
 type VideoReview = {
-  path: string;
+  url: string;
   preview: string;
 };
 
 type AuthorReview = {
   name: string;
-  activity: string;
-  project: string;
-  photo: string;
+  position: string;
+  company: string;
+  avatar: string;
 };

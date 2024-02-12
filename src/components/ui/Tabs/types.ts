@@ -1,12 +1,11 @@
 export type TabsProps = {
-  data: (ReviewsData | FAQData)[];
   children: React.ReactNode;
-  title: string;
-  label: string;
+  questionsData?: FAQData[];
+  reviewsData?: reviewsDataProps[] | undefined;
 };
 
 type FAQData = {
-  name: string;
+  label: string;
   aria: string;
   questions: QuestionsData[];
 };
@@ -16,25 +15,23 @@ type QuestionsData = {
   answer: string;
 };
 
-type ReviewsData = {
-  name: string;
-  reviews: Reviews[];
+type reviewsDataProps = {
+  data: Review[];
+  label: string;
 };
 
-type Reviews = {
-  review: string | null;
-  video: ReviewVideo | null;
-  author: ReviewAuthor;
-};
-
-type ReviewVideo = {
-  path: string;
-  preview: string;
-};
-
-type ReviewAuthor = {
-  photo: string;
-  name: string;
-  activity: string;
-  project: string;
+type Review = {
+  from: string;
+  type: string;
+  text: string | null;
+  video: {
+    url: string | null;
+    preview: string | null;
+  };
+  author: {
+    avatar: string | null;
+    name: string;
+    position: string;
+    company: string | null;
+  };
 };
