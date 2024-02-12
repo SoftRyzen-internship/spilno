@@ -14,7 +14,8 @@
         "label": "Імʼя",
         "type": "text",
         "name": "userName",
-        "placeholder": "Іван Іванов"
+        "placeholder": "Іван Іванов",
+        "required": true
       },
       {
         "id": "i02",
@@ -23,33 +24,38 @@
         "name": "phoneNumber",
         "pattern": "+############",
         "placeholder": "+380988888545",
-        "maxlength": 12
+        "maxlength": 12,
+        "required": true
       },
       {
         "id": "i03",
         "label": "Телеграм",
         "type": "text",
         "name": "telegram",
-        "placeholder": "@ivanivanov"
+        "placeholder": "@ivanivanov",
+        "required": false
       },
       {
         "id": "i04",
         "label": "Пошта",
         "type": "email",
         "name": "userEmail",
-        "placeholder": "ivanovivan@gmail.com"
+        "placeholder": "ivanovivan@gmail.com",
+        "required": true
       }
     ],
     "select": {
       "label": "Звідки ви про нас дізнались?",
       "name": "referralSource",
       "placeholder": "Оберіть варіант",
-      "variants": ["Друзі", "Лінкедін", "Телеграм", "Тікток", "Інстаграм"]
+      "variants": ["Друзі", "Лінкедін", "Телеграм", "Тікток", "Інстаграм"],
+      "required": true
     },
     "textarea": {
-      "label": "Додаткові коментарі",
+      "label": "Опишіть проєкт",
       "name": "projectDecription",
-      "placeholder": "Опишіть проєкт"
+      "placeholder": "Створити сайт для запису на різні б'юті-послуги, такі як манікюр, педикюр, косметологія. На сайті слід розмістити перелік послуг з цінами, форма для онлайн-запису, галерея робіт майстрів та відгуки клієнтів.",
+      "required": true
     },
     "checkbox": {
       "id": "c01",
@@ -91,6 +97,10 @@
         }
       },
       "userEmail": {
+        "minLength": {
+          "value": 1,
+          "message": "Обовʼязкове поле."
+        },
         "format": {
           "reg": "^(?!@|-)[A-Za-z0-9_.-]+@[A-Za-z0-9-]+(?:.[A-Za-z0-9]+)*$",
           "message": "Введена адреса електронної пошти недійсна."

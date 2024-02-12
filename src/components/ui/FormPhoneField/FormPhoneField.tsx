@@ -15,6 +15,7 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
   name,
   control,
   errors,
+  required = false,
   className = '',
 }) => {
   return (
@@ -30,7 +31,7 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
           )}
         >
           <span className="block md:mb-1 smOnly:mb-2">
-            {label} <span className="text-accent">*</span>
+            {label} {required && <span className="text-accent">*</span>}
           </span>
 
           <PatternFormat
