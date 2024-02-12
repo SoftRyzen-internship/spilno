@@ -53,6 +53,7 @@ export const ContactUsForm: React.FC = () => {
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       // await submit to telegram bot
+      await new Promise(resolve => setTimeout(resolve, 3000));
       console.log('FORM_DATA', data);
       setIsSuccess(true);
       reset();

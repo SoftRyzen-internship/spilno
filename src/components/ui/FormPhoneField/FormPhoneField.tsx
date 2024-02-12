@@ -22,7 +22,7 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
     <Controller
       name={name}
       control={control}
-      defaultValue={undefined}
+      defaultValue=""
       render={({ field }) => (
         <label
           className={cn(
@@ -43,10 +43,10 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
             placeholder={placeholder}
             aria-invalid={errors[name] ? 'true' : 'false'}
             format="+############"
-            onValueChange={values => field.onChange(values.formattedValue)}
+            onChange={field.onChange}
             onBlur={field.onBlur}
             name={field.name}
-            value={field.value || ''}
+            value={field.value}
           />
           <FormError name={name} errors={errors} />
         </label>
