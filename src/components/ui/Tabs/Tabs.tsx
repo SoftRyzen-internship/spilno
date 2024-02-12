@@ -7,10 +7,10 @@ import { cn } from '@/utils/cn';
 
 import { Accordion } from '@/components/base/Accordion';
 import { FAQItemsType } from '@/components/base/Accordion/types';
-import { Slider } from '../Slider';
-import { SliderControls } from '../SliderControls';
-import { ReviewCard } from '../ReviewCard';
-import { AccordionFAQItem } from '../AccordionFAQItem';
+import { Slider } from '@/components/ui/Slider';
+import { SliderControls } from '@/components/ui/SliderControls';
+import { ReviewCard } from '@/components/ui/ReviewCard';
+import { AccordionFAQItem } from '@/components/ui/AccordionFAQItem';
 
 import { TabsProps } from './types';
 

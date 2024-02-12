@@ -1,6 +1,6 @@
-import { Modal } from '../Modal';
-import { ReviewerInfoCard } from '../ReviewerInfoCard';
-import { VideoPlayer } from '../VideoPlayer';
+import { Modal } from '@/components/ui/Modal';
+import { ReviewerInfoCard } from '@/components/ui/ReviewerInfoCard';
+import { VideoPlayer } from '@/components/ui/VideoPlayer';
 
 import { cn } from '@/utils/cn';
 

@@ -70,8 +70,6 @@ export const getReviews = async (): Promise<ReviewsData | undefined> => {
 
     return reviewsData;
   } catch (error) {
-    console.log(error);
-
     return undefined;
   }
 };
