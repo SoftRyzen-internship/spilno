@@ -29,10 +29,11 @@ export const FormListbox: React.FC<FormListboxProps> = ({
           <Listbox value={field.value || ''} onChange={field.onChange}>
             {({ open }) => (
               <>
-                <Listbox.Label className="text-sm/[1.3] text-primaryText/70 md:text-base/[1.6]">
-                  <span className="md:mb-1 smOnly:mb-2">
-                    {label} <span className="text-accent">*</span>
-                  </span>
+                <Listbox.Label
+                  as="p"
+                  className="text-sm/[1.3] text-primaryText/70 md:mb-1 md:text-base/[1.6] smOnly:mb-2"
+                >
+                  {label} <span className="text-accent">*</span>
                 </Listbox.Label>
 
                 <div className={cn('relative')}>

@@ -1,25 +1,15 @@
 import { gql } from 'graphql-request';
 
-export const fetchCasesAll = gql`
+export const fetchPartners = gql`
   {
-    cases(sort: "id") {
+    partners {
       data {
         attributes {
-          slug
-          title
-          text
           alt
           img {
             data {
               attributes {
                 url
-              }
-            }
-          }
-          types(sort: "id") {
-            data {
-              attributes {
-                name
               }
             }
           }
