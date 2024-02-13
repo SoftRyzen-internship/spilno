@@ -1,11 +1,7 @@
 export type ContactsResponse = {
   contact: {
     data: {
-      attributes: {
-        instagram: string;
-        linkedin: string;
-        facebook: string;
-      };
+      attributes: TContacts;
     };
   };
 };
