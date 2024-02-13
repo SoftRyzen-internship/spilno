@@ -1,3 +1,133 @@
+# SPILNO 💻🧩👨🏿‍💻
+
+**[View live page](https://spilno.vercel.app/)**
+
+---
+
+![Site image](./public/meta/og-image.jpg)
+
+## 🗂️ Project description 🗂️
+
+A website for the **Spilno** website development company.
+
+- **Project name**: Spilno
+- **Project goals**:
+  - Develop websites for your business for free.
+  - Promotes the education and development of young professionals.
+  - Provides an opportunity for businesses to cooperate with talented students.
+  - Attracting new client / partners
+- **Target audience**:
+  - **Age**: 18-50+
+  - **Gender**: All
+- **Product scope**: Development of a multi-page website for the SoftRyzen
+  company, whose main field of activity is web-developing
+
+## ⚙️ Creating the project ⚙️
+
+**Spilno** is a [Next.js](https://nextjs.org/) project bootstrapped with
+[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+### Features
+
+- **Optimization**: The website is optimized for fast loading, providing users
+  with quick access to information.
+- **Modularity and reusability**: The product is built using a component
+  approach, which makes the code modular and allows components to be used on
+  different pages and in different sections of the project. This simplifies the
+  maintenance of the site and the expansion of its functionality.
+- **Linters and formatting**: Using tools like Prettier and ESLint helps
+  maintain code standards, ensures a consistent style, and identifies potential
+  problems in the code.
+- **Adaptability**: The website is responsive, allowing you to create dynamic
+  and interactive user interfaces without reloading pages. This increases user
+  engagement and interaction.
+- **Convenient content management**: The content management system has an
+  intuitive interface that simplifies the process of updating and editing
+  content. You can easily make changes to texts, images and other content
+  without special knowledge in web development.
+- **Accessibility**:
+  - Intuitive design
+  - Semantic HTML
+  - Mobile-friendly interface
+  - Web resource available for any internet connection
+
+### Design
+
+[Design layout on Figma](https://www.figma.com/file/mSm6uF73qFf4q1R87z63jl/Site?type=design&node-id=1830-7598&mode=design&t=HuwLqtzF5dy9YXKM-0)
+
+### Project structure
+
+```mermaid
+graph LR
+
+Z{Enter} --> L(Layout)
+  L --> B(Header)
+  L --> A((Home page))
+  L --> C(Footer)
+  B --> BA[Menu]
+
+  A --> AA[Section 1. Hero]
+  A --> AB[Section 2. Problems]
+  A --> AC[Section 3. Offer]
+  A --> AD[Section 4. Advantages]
+  A --> AE[Section 5. About]
+  A --> AF[Section 6. Cases]
+  A --> AG[Section 6. Reviews]
+  A --> AH[Section 6. Partners]
+  A --> AI[Section 6. FAQ]
+  A --> AK[Section 6. ContactUs]
+
+  BA --> D((Portfolio page))
+  D --> DA[Section 1. Portfolio Hero]
+  D --> DB[Section 2. Portfolio Cases]
+  D --> DC[Section 3. Reviews]
+  D --> DB[Section 4. ContactUs]
+
+
+  BA --> E((Business page))
+  E --> EA[Section 1. Hero]
+  E --> EB[Section 2. Advantages]
+  E --> EC[Section 3. BusinessClients]
+  E --> ED[Section 4. Collaboration]
+  E --> EE[Section 5. Cases]
+  E --> EF[Section 6. Partners]
+  E --> EG[Section 7. FAQ]
+  E --> EH[Section 8. ContactUs]
+
+```
+
+<details>
+
+<summary><b>Project Organization and File Colocation: </b></summary>
+
+<br/>
+
+```
+
+|-- public -> static files
+|-- src -> source directory with the main application code
+  |-- app -> pages and routing
+    |-- / --> routing group for main UI
+    |-- (portfolio) --> routing group for portfolio UI
+    |-- (business) --> routing group for business UI
+  |-- components -> folder with reusable components
+    |-- base -> base sections/block components (accordion, form, slider, etc.)
+    |-- ui -> small reusable components (button, modal, etc.)
+      |-- NameComponent -> folders for each component
+        |-- NameComponent.tsx -> main component
+        |-- NameComponent.module.css -> file for special components styles
+        |-- index.ts -> file for re-export
+        |-- types.ts -> file for special components types (props)
+  |-- layout -> components that are used as a main template (header, footer)
+  |-- sections -> folder with section components
+  |-- data -> static data for the project (json)
+  |-- types -> folder with reusable type definitions
+  |-- utils -> additional reusable functions
+
+```
+
+</details>
+
 ### Components API
 
 Each component has its own API. You can find it in the component's folder. This
@@ -311,3 +441,64 @@ Component - section company's advantages
 | `id`    | -       | required, `string`, used as id for section             |
 | `title` | -       | required, `string`, display as title for section       |
 | `desc`  | -       | required, `string`, display as description for section |
+
+- #### BusinessClientsCard
+
+Component - card for section business clients.
+
+| Prop    | Default | Description                                                                            |
+| ------- | ------- | -------------------------------------------------------------------------------------- |
+| `id`    | -       | required, `string`, used as an identifier for the correct display of the category icon |
+| `title` | -       | required, `string`, display as title for the category                                  |
+| `desc`  | -       | required, `string`, display as description for the category                            |
+
+### 🚧 Technology stack
+
+- **Main technologies**:
+
+  - Next.js (app router)
+  - TypeScript
+  - Tailwind CSS
+
+- **Additional dependencies**:
+
+  - Headless UI
+  - Swiper
+  - React Player
+  - React Hook Form
+  - React Hook Form Persist
+  - React Number Format
+  - Zod
+  - Clsx
+  - Googleapis
+  - Graphql-request
+  - Graphql
+
+  ...full list of dependencies is available in `package.json` file.
+
+## 🗃️ Deployment 🗃️
+
+To deploy this project, you need to perform the following steps:
+
+1. **Clone the repository**: Use the `git clone` command to clone this
+   repository to your computer.
+2. **Install the dependencies**: Open a terminal in the root of the project and
+   run `npm install` or `yarn install` to install all required dependencies.
+3. **Setting environment variables**: Create a `.env` file in the root folder
+   and add the necessary environment variables that you need for the project
+   according to the `.env.example` file.
+4. **Run the application**: Run the `npm run dev` or `yarn dev` command to run
+   the project on the local server.
+5. **Deploy**: To deploy this project to a production server, use hosting
+   platforms such as Vercel, Netlify, or others.
+
+## 📱 Contacts 📱
+
+**SoftRyzen** is ready to answer your questions and provide additional
+information:
+
+- **Website**: [softryzen.com](https://softryzen.com/)
+- **Phone**: <a href="tel:+380979769625">+380979769625</a>
+- **Email**: [services@softryzen.com](mailto:services@softryzen.com)
+- **YouTube channel**:
+  [https://www.youtube.com](https://www.youtube.com/watch?v=_X7NLwgdfgI)
