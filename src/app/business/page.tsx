@@ -6,6 +6,7 @@ import { Cases } from '@/sections/Cases';
 import { FAQ } from '@/sections/FAQ';
 import { Hero } from '@/sections/Hero';
 import { Partners } from '@/sections/Partners';
+import { BusinessClients } from '@/sections/BusinessClients';
 
 import data from '@/data/business.json';
 
@@ -20,7 +21,7 @@ const BusinessPage = () => {
 
       <Advantages {...advantages} />
 
-      {/* OurClients */}
+      <BusinessClients />
 
       {/* Collaboration */}
 
