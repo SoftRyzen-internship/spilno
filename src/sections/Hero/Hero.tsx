@@ -1,15 +1,23 @@
 import Image from 'next/image';
 
+import { cn } from '@/utils/cn';
+
 import { Button } from '@/components/ui/Button';
 import { RingedImage } from '@/components/ui/RingedImage';
 
-import content from '@/data/hero.json';
-
 import IconArrow from '~/icons/arrow.svg';
 
-export const Hero: React.FC = () => {
-  const { id, title, desc, image, button } = content;
+import { HeroProps } from './types';
 
+export const Hero: React.FC<HeroProps> = ({
+  id,
+  title,
+  desc,
+  image,
+  button,
+  className = '',
+  descClassName = '',
+}) => {
   return (
     <section
       id={id}
@@ -34,12 +42,17 @@ export const Hero: React.FC = () => {
             </RingedImage>
           </div>
 
-          <div className="md:w-[414px] xl:w-[596px]">
+          <div className={cn('md:w-[414px] xl:w-[596px]', className)}>
             <h1 className="mb-4 text-left font-geologica text-2xl/[1.15] font-light text-white md:text-[32px] xl:mb-8 xl:text-[56px]">
               {title}
             </h1>
 
-            <p className="mb-8 text-sm/[1.5] text-white md:text-sm/[1.4] xl:mb-16 xl:text-[22px]/[1.4]">
+            <p
+              className={cn(
+                'mb-8 text-sm/[1.5] text-white md:text-sm/[1.4] xl:mb-16 xl:text-[22px]/[1.4]',
+                descClassName,
+              )}
+            >
               {desc}
             </p>
 

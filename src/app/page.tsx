@@ -12,11 +12,11 @@ import { Cases } from '@/sections/Cases';
 import data from '@/data/main.json';
 
 export default function Home() {
-  const { advantages } = data;
+  const { hero, advantages } = data;
 
   return (
     <>
-      <Hero />
+      <Hero {...hero} />
 
       <Problems />
 

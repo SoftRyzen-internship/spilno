@@ -12,11 +12,15 @@ import data from '@/data/business.json';
 export const metadata: Metadata = data.meta;
 
 const BusinessPage = () => {
-  const { advantages } = data;
+  const { hero, advantages } = data;
 
   return (
     <>
-      <Hero />
+      <Hero
+        {...hero}
+        className="xl:w-[699px]"
+        descClassName="xl:text-[18px]/[1.5] xl:w-[493px]"
+      />
 
       <Advantages {...advantages} />
 

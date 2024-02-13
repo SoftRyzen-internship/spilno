@@ -4,10 +4,10 @@
     "title": "Розкрийте нові можливості для бізнесу",
     "desc": "Співпрацюйте з нами та замовляйте безкоштовні проекти від талановитих студентів.",
     "image": {
-      "src": "/images/hero/hero@2x.webp",
+      "src": "/images/hero/hero-business@2x.webp",
       "alt": "Нові можливості для бізнесу"
     },
-    "button": { "label": "Замовити сайт", "target": "contactUs" }
+    "button": { "label": "Замовити сайт", "target": "#contactUs" }
   },
   "advantages": {
     "id": "advantages",
