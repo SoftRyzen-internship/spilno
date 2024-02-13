@@ -39,6 +39,7 @@ export const Tabs: React.FC<TabsProps> = ({
                 >
                   {({ selected }) => (
                     <button
+                      type="button"
                       className={cn(
                         'pb-2 text-[16px] font-normal leading-[1.25] transition-colors hover:text-accent focus:text-accent',
                         'md:pb-3 md:text-[20px] md:leading-[1.3]',

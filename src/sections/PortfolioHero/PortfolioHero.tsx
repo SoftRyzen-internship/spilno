@@ -1,11 +1,11 @@
 import { cn } from '@/utils/cn';
 
-import content from '@/data/portfolio-hero.json';
+import content from '@/data/portfolio.json';
 
 import css from './PortfolioHero.module.css';
 
 export const PortfolioHero: React.FC = () => {
-  const { id, title, desc } = content;
+  const { id, title, desc } = content.hero;
 
   return (
     <section

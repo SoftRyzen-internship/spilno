@@ -9,7 +9,11 @@ import { Problems } from '@/sections/Problems';
 import { Partners } from '@/sections/Partners';
 import { Cases } from '@/sections/Cases';
 
+import data from '@/data/main.json';
+
 export default function Home() {
+  const { advantages } = data;
+
   return (
     <>
       <Hero />
@@ -18,7 +22,7 @@ export default function Home() {
 
       <Offer />
 
-      <Advantages />
+      <Advantages {...advantages} />
 
       <About />
 

@@ -22,6 +22,7 @@ import { sendTelegramData } from '@/actions/sendTelegramData';
 import IconArrow from '~/icons/arrow.svg';
 
 import { schema } from './schema';
+import { sendOrderDataToGoogleSheet } from '@/actions/sendOrderDataToGoogleSheet';
 
 export const ContactUsForm: React.FC = () => {
   const { formName, inputs, textarea, checkbox, select, submitBtn } =
@@ -55,7 +56,7 @@ export const ContactUsForm: React.FC = () => {
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       await sendTelegramData(data);
-      console.log('FORM_DATA', data);
+      await sendOrderDataToGoogleSheet(data);
       setIsSuccess(true);
       reset();
     } catch {
