@@ -21,6 +21,7 @@ export const Creators: React.FC = () => {
             className="group relative inline-block transition hover:scale-110 focus:scale-110"
             target="_blank"
             rel="noopener noreferrer nofollow"
+            aria-label={goit.ariaLabel}
           >
             <GoitLogo
               width={129}
@@ -44,6 +45,7 @@ export const Creators: React.FC = () => {
             className="group inline-block transition hover:scale-110 focus:scale-110"
             target="_blank"
             rel="noopener noreferrer nofollow"
+            aria-label={goit.ariaLabel}
           >
             <SoftryzenLogo
               width={208}
