@@ -2,10 +2,10 @@ import { CaseCard } from '@/components/ui/CaseCard';
 
 import { getAllCases } from '@/actions/getAllCases';
 
-import content from '@/data/advantages.json';
+import content from '@/data/portfolio.json';
 
 export const PortfolioCases: React.FC = async () => {
-  const { id, title } = content;
+  const { id, title } = content.gallery;
 
   const slidesData = await getAllCases();
 

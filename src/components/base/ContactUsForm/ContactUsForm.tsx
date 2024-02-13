@@ -55,7 +55,6 @@ export const ContactUsForm: React.FC = () => {
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       await sendTelegramData(data);
-      console.log('FORM_DATA', data);
       setIsSuccess(true);
       reset();
     } catch {
