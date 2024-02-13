@@ -2,26 +2,11 @@ import { request } from 'graphql-request';
 
 import { fetchPartners } from '@/actions/queries/fetchPartners';
 
-type TImage = {
-  partners: {
-    data: {
-      attributes: {
-        alt: string;
-        img: {
-          data: {
-            attributes: {
-              url: string;
-            };
-          };
-        };
-      };
-    }[];
-  };
-};
+import { TImage } from '@/types';
 
 export const getPartners = async () => {
   try {
-    const { partners }: TImage = await request(
+    const { partners } = await request<TImage>(
       process.env.API_BASE_URL as string,
       fetchPartners,
     );

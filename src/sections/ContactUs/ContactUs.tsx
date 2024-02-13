@@ -31,6 +31,7 @@ export const ContactUs: React.FC = () => {
             />
           </RingedImage>
         </div>
+
         <ContactUsForm />
       </div>
     </section>

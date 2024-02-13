@@ -38,7 +38,7 @@ export const Footer: React.FC = async () => {
               <p>{policy.label}</p>
             </a>
 
-            <p className="">{copyrights.label}</p>
+            <p>{copyrights.label}</p>
           </div>
         </div>
       </div>
