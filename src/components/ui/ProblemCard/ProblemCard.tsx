@@ -33,7 +33,7 @@ export const ProblemCard: React.FC<Props> = ({
       >
         <Icon
           width="23"
-          heigh="23"
+          height="23"
           className={cn('text-accent xl:size-12', {
             'text-white': cardName === CardNames.RESULT,
           })}
