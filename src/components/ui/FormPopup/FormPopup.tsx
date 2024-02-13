@@ -16,7 +16,7 @@ export const FormPopup: React.FC<FormPopupProps> = ({
   onClose,
   isSuccess,
 }) => {
-  const { onSuccess, onError } = content.popup;
+  const { onSuccess, onError, closeButtton } = content.popup;
 
   const Icon = isSuccess ? SuccessIcon : ErrorIcon;
 
@@ -34,7 +34,7 @@ export const FormPopup: React.FC<FormPopupProps> = ({
         type="button"
         className="absolute right-4 top-4 size-8 text-greyText md:right-[42px] md:top-[42px] md:size-12 xl:right-8 xl:top-8"
         onClick={onClose}
-        aria-label="Кнопка закриття меню"
+        aria-label={closeButtton.aria}
       >
         <CrossIcon className="size-full" />
       </button>
