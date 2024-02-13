@@ -6,7 +6,7 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 export const VideoPlayer: React.FC<VideoPlayerProps> = ({ url }) => {
   return (
-    <div className="relative size-full pt-[56.25%]">
+    <div className=" relative h-[70vh]">
       <ReactPlayer
         url={url}
         width="100%"

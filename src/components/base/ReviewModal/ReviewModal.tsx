@@ -62,12 +62,12 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
         <Modal
           isOpen={isOpen}
           onClose={closeModal}
-          modalStyle={'w-full '}
-          modalWrapStyle="container flex items-center xl:justify-center"
+          modalStyle={'w-full pb-6'}
+          modalWrapStyle="container flex items-center"
         >
           <button
             type="button"
-            className="mb-6 ml-auto block text-greyText md:mb-10"
+            className="mb-6 ml-auto block text-greyText md:mb-6"
             onClick={closeModal}
             aria-label={commonData.reviewCard.closeBtn.closeBtnAriaLabel}
           >
