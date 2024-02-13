@@ -45,7 +45,7 @@ export const Creators: React.FC = () => {
             className="group inline-block transition hover:scale-110 focus:scale-110"
             target="_blank"
             rel="noopener noreferrer nofollow"
-            aria-label={goit.ariaLabel}
+            aria-label={softryzen.ariaLabel}
           >
             <SoftryzenLogo
               width={208}
