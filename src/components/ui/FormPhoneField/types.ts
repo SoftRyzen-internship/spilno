@@ -6,5 +6,6 @@ export type FormPhoneFieldProps = {
   name: string;
   control: Control<FieldValues>;
   errors: FieldErrors;
+  required: boolean;
   className?: string;
 };

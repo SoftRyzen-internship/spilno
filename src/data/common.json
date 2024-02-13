@@ -39,29 +39,34 @@
     }
   },
 
-  "socialLinks": [
-    {
-      "path": "https://www.facebook.com/profile.php?id=61555523816034",
-      "label": "facebook",
-      "ariaLabel": "Зв'яжися з нами у facebook"
-    },
-    {
-      "path": "https://www.instagram.com/spilno.group/",
-      "label": "instagram",
-      "ariaLabel": "Зв'яжися з нами у instagram"
-    },
-    {
-      "path": "https://www.linkedin.com/company/spilnogroup/",
-      "label": "linkedin",
-      "ariaLabel": "Зв'яжися з нами у linkedin"
-    }
-  ],
+  "socialLinks": {
+    "ariaLabel": "Зв'яжися з нами у"
+  },
 
   "sliderControls": {
     "prevBtnAriaLabel": "Кнопка назад для перегортання слайдів",
     "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів",
     "prevIconAriaLabel": "іконка стрілки гортання назад",
     "nextIconAriaLabel": "іконка стрілки гортання вперед"
+  },
+
+  "telegramFieldNames": [
+    "Імʼя",
+    "Телефон",
+    "Телеграм",
+    "Пошта",
+    "Звідки ви про нас дізнались?",
+    "Додаткові коментарі"
+  ],
+
+  "reviewSection": {
+    "title": "Враження від спільної взаємодії",
+    "label": "Дізнайтеся, як наші клієнти та стажери оцінюють нас та діляться своїм досвідом"
+  },
+
+  "reviewTabs": {
+    "business": "Від бізнесу",
+    "trainee": "Від стажерів"
   },
 
   "reviewCard": {
@@ -72,6 +77,8 @@
     },
     "readMoreBtn": {
       "label": "Читати більше"
-    }
+    },
+    "playBtnAriaLabel": "кнопка відтворення відео",
+    "playIconAriaLabel": "іконка відтворення відео"
   }
 }

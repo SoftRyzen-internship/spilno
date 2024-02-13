@@ -1,38 +1,28 @@
-'use client';
-
-import { Tab } from '@headlessui/react';
-
-import { Accordion } from '@/components/base/Accordion';
-
 import { Tabs } from '@/components/ui/Tabs';
-import { AccordionFAQItem } from '@/components/ui/AccordionFAQItem';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 
-import data from '@/data/faq.json';
-
-import { FAQItemsType } from '@/components/base/Accordion/types';
+import staticData from '@/data/faq.json';
 
 export const FAQ: React.FC = () => {
-  const { title, label, questionsData } = data;
+  const {
+    title,
+    label,
+
+    questionsData,
+  } = staticData;
 
   return (
     <section className="section bg-lightBg">
       <div className="container">
-        <Tabs title={title} label={label} data={questionsData}>
-          {questionsData &&
-            questionsData.map(({ questions, aria }, index: number) => (
-              <Tab.Panel key={index} className="pt-4 md:pt-0">
-                <Accordion type="faq">
-                  {questions.map((item: FAQItemsType, index: number) => (
-                    <AccordionFAQItem
-                      key={`${item.question}${index}`}
-                      data={item}
-                      index={index}
-                      aria={aria}
-                    />
-                  ))}
-                </Accordion>
-              </Tab.Panel>
-            ))}
+        <Tabs questionsData={questionsData}>
+          <SectionTitle className="mb-4 xl:mb-6">{title}</SectionTitle>
+
+          <p
+            className="mb-8 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:w-[448px]
+              md:text-[16px] xl:mb-0 xl:text-[18px] smOnly:mr-10"
+          >
+            {label}
+          </p>
         </Tabs>
       </div>
     </section>

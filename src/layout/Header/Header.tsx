@@ -3,10 +3,14 @@ import { MainNav } from '@/components/ui/MainNav';
 import { MobileMenu } from '@/components/base/MobileMenu';
 import { Button } from '@/components/ui/Button';
 
+import { getContacts } from '@/actions/getContacts';
+
 import data from '@/data/common.json';
 
-export const Header: React.FC = () => {
+export const Header: React.FC = async () => {
   const { mobileMenu } = data;
+
+  const socialList = await getContacts();
 
   return (
     <header className="absolute top-0 w-full bg-transparent pt-6 xl:pt-9">
@@ -23,7 +27,7 @@ export const Header: React.FC = () => {
           />
         </div>
 
-        <MobileMenu />
+        <MobileMenu socialList={socialList} />
       </div>
     </header>
   );

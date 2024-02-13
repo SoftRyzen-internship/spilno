@@ -3,10 +3,14 @@ import { Creators } from '@/components/ui/Creators';
 import { Logo } from '@/components/ui/Logo';
 import { Socials } from '@/components/ui/Socials';
 
+import { getContacts } from '@/actions/getContacts';
+
 import content from '@/data/footer.json';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC = async () => {
   const { policy, copyrights } = content;
+
+  const socialList = await getContacts();
 
   return (
     <footer className="md:delimeter overflow-hidden bg-darkBg pt-[60px] text-center text-white md:pt-20 md:after:bg-accent xl:pt-16">
@@ -18,7 +22,7 @@ export const Footer: React.FC = () => {
 
           <ContactLinks location="footer" />
 
-          <Socials location="footer" />
+          {socialList && <Socials location="footer" socialList={socialList} />}
         </div>
 
         <div className="delimeter text-xs/[1.5] md:text-sm/[1.25] xl:flex xl:items-center xl:justify-between xl:py-5">
@@ -34,7 +38,7 @@ export const Footer: React.FC = () => {
               <p>{policy.label}</p>
             </a>
 
-            <p className="">{copyrights.label}</p>
+            <p>{copyrights.label}</p>
           </div>
         </div>
       </div>

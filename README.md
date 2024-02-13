@@ -42,13 +42,14 @@ Pure Modal Component which expect `onClose`:implements close modal window by
 mouse click on backdrop or by press `ESC` button, `isOpen` - state to show/hide
 modal, `children` -content for modal.
 
-| Prop            | Default | Description                                                   |
-| --------------- | ------- | ------------------------------------------------------------- |
-| `children`      | -       | required, `ReactNode`, which will be content for modal window |
-| `isOpen`        | `false` | required, `boolean`, changes state to show/close the window.  |
-| `onClose`       | -       | required, click handler for close modal window                |
-| `modalStyle`    | ''      | optional, `string`, additional css class you'd need           |
-| `backdropStyle` | ''      | optional, `string`, additional css class you'd need           |
+| Prop             | Default | Description                                                       |
+| ---------------- | ------- | ----------------------------------------------------------------- |
+| `children`       | -       | required, `ReactNode`, which will be content for modal window     |
+| `isOpen`         | `false` | required, `boolean`, changes state to show/close the window.      |
+| `onClose`        | -       | required, click handler for close modal window                    |
+| `modalStyle`     | ''      | optional, `string`, additional css class you'd need               |
+| `modalWrapStyle` | ''      | optional, `string`, additional css class you'd need for container |
+| `backdropStyle`  | ''      | optional, `string`, additional css class you'd need               |
 
 - #### RingedImage
 
@@ -138,9 +139,12 @@ The component is a feedback card. Implements card rendering with text feedback
 and video feedback. In order for the video display mode to be enabled, the video
 props must be set to true.
 
-| Prop   | Default     | Description                                                                                           |
-| ------ | ----------- | ----------------------------------------------------------------------------------------------------- |
-| `card` | `undefined` | required, `Object`, a feedback data object with data about the test feedback or video and author data |
+| Prop     | Default     | Description                                          |
+| -------- | ----------- | ---------------------------------------------------- |
+| `text`   | `undefined` | required, `string`, or `null` text feedback          |
+| `video`  | `undefined` | required, `Object`, or `null` video feedback data    |
+| `author` | `undefined` | required, `Object`, data of the author of the review |
+| `type`   | `undefined` | required, `string`, feedback type, video or text     |
 
 - #### ReviewerInfoCard
 
@@ -148,23 +152,23 @@ The component is a feedback card. Implements card rendering with text feedback
 and video feedback. In order for the video display mode to be enabled, the video
 props must be set to true.
 
-| Prop        | Default     | Description                                                                                                              |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `author`    | `undefined` | required, `Object`, author data                                                                                          |
-| `video`     | `undefined` | required, `Object` or `null`, object with video feedback data or null - changes styles depending on the type of feedback |
-| `className` | `undefined` | optional, `string`, adds custom css class to the ReviewerInfoCard wrapper component.                                     |
+| Prop            | Default     | Description                                                                          |
+| --------------- | ----------- | ------------------------------------------------------------------------------------ |
+| `author`        | `undefined` | required, `Object`, author data                                                      |
+| `isVideoReview` | `undefined` | required, `boolean`, indicates whether it is a video review or a text one.           |
+| `className`     | `undefined` | optional, `string`, adds custom css class to the ReviewerInfoCard wrapper component. |
 
 - #### Tabs
 
-A component that allows you to render different content depending on which
-button is active
+A component that allows playing different content depending on which button is
+active. Depending on the data passed, the corresponding tab component will be
+displayed.
 
-| Prop       | Default     | Description                             |
-| ---------- | ----------- | --------------------------------------- |
-| `data`     | `undefined` | required, `Object`, data                |
-| `title`    | `undefined` | required, `String`, title text          |
-| `title`    | `undefined` | required, `String`, label text          |
-| `children` | `undefined` | required, Built-in ReactNode components |
+| Prop            | Default     | Description                                                           |
+| --------------- | ----------- | --------------------------------------------------------------------- |
+| `reviewsData`   | `undefined` | required, `Object`, data required for rendering reviews               |
+| `questionsData` | `undefined` | required, `Object`, data required for rendering questions and answers |
+| `children`      | `undefined` | required, Built-in ReactNode components                               |
 
 - #### FormField
 
@@ -178,6 +182,7 @@ This is a styled input component with an accompanying label and FormError.
 | `name`        | `undefined` | required, `string`, input name                                                    |
 | `register`    | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                       |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                          |
 
 - #### FormPhoneField
@@ -192,6 +197,7 @@ formatt numeric input according pattern.
 | `name`        | `undefined` | required, `string`, textarea name                                                           |
 | `control`     | `undefined` | required, `object` object contains methods for registering components into React Hook Form. |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                             |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                                 |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                                    |
 
 - #### FormListbox
@@ -207,6 +213,7 @@ accompanying label and FormError. Rendered as `button` + open/hide list `ul`
 | `variants`    | `undefined` | required, `string's array`, options to choose                                               |
 | `control`     | `undefined` | required, `object` object contains methods for registering components into React Hook Form. |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                             |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                                 |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                                    |
 
 - #### FormTextArea
@@ -220,6 +227,7 @@ This is a styled textarea component with an accompanying label and FormError.
 | `name`        | `undefined` | required, `string`, textarea name                                                 |
 | `register`    | `undefined` | required, `func` register onChange, onBlur, name, validation from React Hook Form |
 | `errors`      | `undefined` | required, errors `object` from React Hook Form.                                   |
+| `required`    | `undefined` | required, `boolean` sets the label as required or optional.                       |
 | `className`   | `""`        | optional, `string`, allows you to override common styles                          |
 
 - #### FormCheckbox
@@ -269,17 +277,27 @@ Component - card for section company advantages.
 Feedback card modal window component. Works in two modes, for test feedback and
 video feedback
 
-| Prop         | Default     | Description                                                                             |
-| ------------ | ----------- | --------------------------------------------------------------------------------------- |
-| `isOpen`     | `undefined` | required, `boolean`, reports the state of the modal window, true - open, false - closed |
-| `closeModal` | `undefined` | required, `function`, callback to close the modal window                                |
-| `data`       | `undefined` | required, `Object`, data may include text feedback or video feedback data               |
+| Prop            | Default     | Description                                                                             |
+| --------------- | ----------- | --------------------------------------------------------------------------------------- |
+| `isOpen`        | `undefined` | required, `boolean`, reports the state of the modal window, true - open, false - closed |
+| `closeModal`    | `undefined` | required, `function`, callback to close the modal window                                |
+| `data`          | `undefined` | required, `Object`, data may include text feedback or video feedback data               |
+| `isVideoReview` | `undefined` | required, `boolean`, indicates whether it is a video review or a text one.              |
 
 - #### VideoPlayer
 
 Video player component. Plays videos of different sizes. A link to the video is
 expected in the props
 
-| Prop    | Default     | Description                                                                                              |
-| ------- | ----------- | -------------------------------------------------------------------------------------------------------- |
-| `video` | `undefined` | required, `Object`, data, which must contain a property with the value of the absolute path to the video |
+| Prop  | Default     | Description                                                 |
+| ----- | ----------- | ----------------------------------------------------------- |
+| `url` | `undefined` | required, `string`, value of the absolute path to the video |
+
+- #### PartnersCard
+
+Component - card for section company advantages.
+
+| Prop  | Default | Description                                         |
+| ----- | ------- | --------------------------------------------------- |
+| `alt` | -       | required, `string`, describe alt for partner logo   |
+| `url` | -       | required, `string`, link with partner web-site logo |

@@ -47,6 +47,7 @@ export const schema = z.object({
 
   userEmail: z
     .string(commonMsg)
+    .min(userEmail.minLength.value, userEmail.minLength.message)
     .email(userEmail.format.message)
     .regex(RegExp(userEmail.format.reg), userEmail.format.message),
 

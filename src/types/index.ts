@@ -1,11 +1,5 @@
-export type CaseCardType = {
-  slug: string;
-  text: string;
-  alt: string;
-  url: string;
-  tags: {
-    attributes: {
-      name: string;
-    };
-  }[];
-};
+export * from './contacts';
+export * from './cases';
+export * from './reviews';
+export * from './partners';
+export * from './telegram';

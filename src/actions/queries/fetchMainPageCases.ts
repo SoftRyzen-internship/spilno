@@ -16,7 +16,7 @@ export const fetchMainPageCases = gql`
               }
             }
           }
-          types {
+          types(sort: "id") {
             data {
               attributes {
                 name

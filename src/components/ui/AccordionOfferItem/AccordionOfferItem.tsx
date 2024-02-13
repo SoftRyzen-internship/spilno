@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Tab, Transition } from '@headlessui/react';
 
-import { RingedImage } from '../RingedImage';
+import { RingedImage } from '@/components/ui/RingedImage';
 import { cn } from '@/utils/cn';
 
 import ArrowIcon from '~/icons/arrow.svg';

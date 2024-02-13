@@ -17,6 +17,8 @@ import { FormTextArea } from '@/components/ui/FormTextArea';
 import { cn } from '@/utils/cn';
 import content from '@/data/contactUs.json';
 
+import { sendTelegramData } from '@/actions/sendTelegramData';
+
 import IconArrow from '~/icons/arrow.svg';
 
 import { schema } from './schema';
@@ -52,8 +54,7 @@ export const ContactUsForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
-      // await submit to telegram bot
-      console.log('FORM_DATA', data);
+      await sendTelegramData(data);
       setIsSuccess(true);
       reset();
     } catch {
