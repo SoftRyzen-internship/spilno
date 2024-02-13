@@ -17,7 +17,7 @@ import { FormTextArea } from '@/components/ui/FormTextArea';
 import { cn } from '@/utils/cn';
 import content from '@/data/contactUs.json';
 
-import { sendTelegramData } from '@/actions/telegram/sendTelegramData';
+import { sendTelegramData } from '@/actions/sendTelegramData';
 
 import IconArrow from '~/icons/arrow.svg';
 
@@ -56,9 +56,7 @@ export const ContactUsForm: React.FC = () => {
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       await sendTelegramData(data);
-
       await sendOrderDataToGoogleSheet(data);
-
       setIsSuccess(true);
       reset();
     } catch {

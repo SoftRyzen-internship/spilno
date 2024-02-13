@@ -1,12 +1,12 @@
 import { request } from 'graphql-request';
 
-import { fetchReviews } from './queries/fetchReviews';
+import { fetchReviews } from '@/actions/queries/fetchReviews';
 
 import commonData from '@/data/common.json';
 
 import { Review, ReviewData, ReviewsData, ReviewsResponse } from '@/types';
 
-export const getReviews = async (): Promise<ReviewsData | undefined> => {
+export const getReviews = async () => {
   try {
     const {
       reviews: { data },
