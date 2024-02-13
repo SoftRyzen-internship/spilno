@@ -2,10 +2,9 @@ import { google } from 'googleapis';
 
 import { NextResponse } from 'next/server';
 
-const GOOGLE_CLIENT_EMAIL = process.env
-  .NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL as string;
-const GOOGLE_PRIVATE_KEY = process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY as string;
-const GOOGLE_SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID as string;
+const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL as string;
+const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY as string;
+const GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID as string;
 
 export async function POST(req: Request) {
   const body = await req.json();
