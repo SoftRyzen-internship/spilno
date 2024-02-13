@@ -1,5 +1,3 @@
-'use client';
-
 import IconFOP from '~/images/businessClients/fop-business.svg';
 import IconSmallBusiness from '~/images/businessClients/small-business.svg';
 import IconMediumBusiness from '~/images/businessClients/medium-business.svg';
