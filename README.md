@@ -295,9 +295,19 @@ expected in the props
 
 - #### PartnersCard
 
-Component - card for section company advantages.
+Component - card for section company partners.
 
 | Prop  | Default | Description                                         |
 | ----- | ------- | --------------------------------------------------- |
 | `alt` | -       | required, `string`, describe alt for partner logo   |
 | `url` | -       | required, `string`, link with partner web-site logo |
+
+- #### Advantages section
+
+Component - section company's advantages
+
+| Prop    | Default | Description                                            |
+| ------- | ------- | ------------------------------------------------------ |
+| `id`    | -       | required, `string`, used as id for section             |
+| `title` | -       | required, `string`, display as title for section       |
+| `desc`  | -       | required, `string`, display as description for section |
