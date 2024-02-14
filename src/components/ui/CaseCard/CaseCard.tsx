@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import data from '@/data/cases.json';
 
@@ -8,7 +7,7 @@ import ArrowIcon from '~/icons/arrow.svg';
 import { CaseCardType as Props } from '@/types';
 
 export const CaseCard: React.FC<Props> = ({
-  slug,
+  link,
   text,
   alt,
   url,
@@ -44,13 +43,15 @@ export const CaseCard: React.FC<Props> = ({
           ))}
         </div>
 
-        <Link
-          href={`/${slug}`}
+        <a
+          href={link}
           className="flex size-[40px] items-center justify-center rounded-full border border-solid border-accent text-accent transition-all hover:bg-lightBlue focus-visible:bg-lightBlue md:size-[48px]"
           aria-label={projectDetailsLinkAriaLabel}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
         >
           <ArrowIcon className="size-[16px]" aria-label={arrowIconAriaLabel} />
-        </Link>
+        </a>
       </div>
 
       <p className="mb-2 text-start font-geologica text-[18px]/[1.3] text-headline md:text-[20px] xl:mb-4 xl:text-[34px]">
