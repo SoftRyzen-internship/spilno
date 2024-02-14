@@ -9,6 +9,7 @@ export const fetchCasesAll = gql`
           title
           text
           alt
+          link
           img {
             data {
               attributes {
