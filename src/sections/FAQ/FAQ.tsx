@@ -5,9 +5,7 @@ import staticData from '@/data/faq.json';
 
 import { SectionFAQProps } from './types';
 
-export const FAQ: React.FC<SectionFAQProps> = ({
-  tags = ['business', 'trainee'],
-}) => {
+export const FAQ: React.FC<SectionFAQProps> = ({ tags }) => {
   const { title, label, questionsData } = staticData;
 
   const data = tags
