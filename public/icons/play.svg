@@ -1,1 +1,14 @@
-<svg width="74" height="74" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#a)"><rect width="74" height="74" rx="37" fill="#0052F2" fill-opacity=".4"/><path d="M52.1523 37.5589 29.8019 50.9244c-.2581.157-.4797.1751-.6648.0544-.1852-.1208-.2777-.3381-.2777-.652V23.6682c0-.3139.0925-.5312.2777-.652.1851-.1207.4067-.1026.6648.0544l22.3504 13.3655c.258.1569.3871.3441.3871.5614s-.1291.4045-.3871.5614Z" fill="#fff"/></g><defs><filter id="a" x="-40" y="-40" width="154" height="154" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_682_9726"/><feBlend in="SourceGraphic" in2="effect1_backgroundBlur_682_9726" result="shape"/></filter></defs></svg>
+<svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_682_9726)">
+<rect width="74" height="74" rx="37" fill="#0052F2" fill-opacity="0.4"/>
+<path d="M52.1523 37.5589L29.8019 50.9244C29.5438 51.0814 29.3222 51.0995 29.1371 50.9788C28.9519 50.858 28.8594 50.6407 28.8594 50.3268V23.6682C28.8594 23.3543 28.9519 23.137 29.1371 23.0162C29.3222 22.8955 29.5438 22.9136 29.8019 23.0706L52.1523 36.4361C52.4103 36.593 52.5394 36.7802 52.5394 36.9975C52.5394 37.2148 52.4103 37.402 52.1523 37.5589Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_b_682_9726" x="-40" y="-40" width="154" height="154" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="20"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_682_9726"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_682_9726" result="shape"/>
+</filter>
+</defs>
+</svg>
