@@ -28,6 +28,7 @@ export const schema = z.object({
 
   phoneNumber: z
     .string(commonMsg)
+    .min(phoneNumber.required.value, phoneNumber.required.message)
     .trim()
     .min(phoneNumber.minLength.value, phoneNumber.minLength.message)
     .max(phoneNumber.maxLength.value, phoneNumber.maxLength.message),
@@ -48,6 +49,7 @@ export const schema = z.object({
   userEmail: z
     .string(commonMsg)
     .min(userEmail.minLength.value, userEmail.minLength.message)
+    .max(userEmail.maxLength.value, userEmail.maxLength.message)
     .email(userEmail.format.message)
     .regex(RegExp(userEmail.format.reg), userEmail.format.message),
 
