@@ -39,7 +39,7 @@ export async function POST(req: Request) {
             body.telegram,
             body.userEmail,
             body.referralSource,
-            body.projectDecription,
+            body.projectDescription,
           ],
         ],
       },
