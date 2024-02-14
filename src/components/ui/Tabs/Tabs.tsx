@@ -23,8 +23,6 @@ export const Tabs: React.FC<TabsProps> = ({
 
   const dataForTablist = reviewsData || questionsData;
 
-  console.log('dataForTablist', dataForTablist);
-
   return (
     <Tab.Group manual selectedIndex={selectedIndex} onChange={setSelectedIndex}>
       <div className="xl:flex xl:justify-between">
