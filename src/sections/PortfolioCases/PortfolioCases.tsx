@@ -15,7 +15,11 @@ export const PortfolioCases: React.FC = async () => {
         <h2 className="sr-only">{title}</h2>
 
         <ul className="grid justify-center md:grid-cols-2 xl:gap-x-[88px] xl:gap-y-[100px] smOnly:space-y-12 mdOnly:gap-x-6 mdOnly:gap-y-[60px]">
-          {slidesData?.map(slide => <CaseCard key={slide.slug} {...slide} />)}
+          {slidesData?.map(slide => (
+            <li key={slide.slug}>
+              <CaseCard {...slide} priorityImgLoad />
+            </li>
+          ))}
         </ul>
       </div>
     </section>

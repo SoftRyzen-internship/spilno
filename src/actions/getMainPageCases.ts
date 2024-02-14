@@ -12,7 +12,7 @@ export const getMainPageCases = async () => {
     );
 
     const result = cases.data.map(({ attributes }) => {
-      const { slug, text, alt, img, types } = attributes;
+      const { slug, text, alt, img, types, title } = attributes;
       const {
         data: {
           attributes: { url },
@@ -21,6 +21,7 @@ export const getMainPageCases = async () => {
       const { data: tags } = types;
 
       return {
+        title,
         slug,
         text,
         alt,

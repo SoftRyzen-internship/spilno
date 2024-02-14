@@ -11,7 +11,7 @@ export const CasesSlider: React.FC<Props> = ({ slidesData }) => {
       section="cases"
       slideComponent={CaseCard}
       slidesData={slidesData}
-      wrapClassName="mb-6 smOnly:max-w-[328px] md:mb-12 xl:mb-16"
+      wrapClassName="mb-6 md:mb-12 xl:mb-16"
     />
   );
 };

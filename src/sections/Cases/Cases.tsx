@@ -5,12 +5,15 @@ import { Button } from '@/components/ui/Button';
 import { SliderControls } from '@/components/ui/SliderControls';
 
 import { getMainPageCases } from '@/actions/getMainPageCases';
+import { cn } from '@/utils/cn';
 
 import data from '@/data/cases.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-export const Cases: React.FC = async () => {
+import { CasesProps } from './types';
+
+export const Cases: React.FC<CasesProps> = async ({ className }) => {
   const { title, link } = data;
 
   const slidesData = await getMainPageCases();
@@ -18,7 +21,7 @@ export const Cases: React.FC = async () => {
   return (
     <>
       {slidesData && (
-        <section className="py-[60px] md:py-[80px] xl:py-[120px]" id="cases">
+        <section className={cn('section', className)} id="cases">
           <div className="container relative text-center">
             <SectionTitle
               className="mb-8 w-[258px] text-start md:mb-12 md:w-[448px] xl:mb-16 xl:w-[596px]"

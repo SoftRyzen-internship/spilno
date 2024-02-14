@@ -50,14 +50,14 @@
     "nextIconAriaLabel": "іконка стрілки гортання вперед"
   },
 
-  "telegramFieldNames": [
-    "Імʼя",
-    "Телефон",
-    "Телеграм",
-    "Пошта",
-    "Звідки ви про нас дізнались?",
-    "Додаткові коментарі"
-  ],
+  "formFieldsTranslation": {
+    "userName": "Імʼя",
+    "phoneNumber": "Телефон",
+    "telegram": "Телеграм",
+    "userEmail": "Пошта",
+    "referralSource": "Звідки ви про нас дізнались?",
+    "projectDescription": "Додаткові коментарі"
+  },
 
   "reviewSection": {
     "title": "Враження від спільної взаємодії",

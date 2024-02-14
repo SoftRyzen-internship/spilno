@@ -2,6 +2,7 @@ export type CasesResponse = {
   cases: {
     data: {
       attributes: {
+        title: string;
         slug: string;
         text: string;
         alt: string;
@@ -25,6 +26,7 @@ export type CasesResponse = {
 };
 
 export type CaseCardType = {
+  title: string;
   slug: string;
   text: string;
   alt: string;
@@ -34,4 +36,5 @@ export type CaseCardType = {
       name: string;
     };
   }[];
+  priorityImgLoad?: boolean;
 };

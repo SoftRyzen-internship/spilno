@@ -9,7 +9,7 @@ const {
   phoneNumber,
   userEmail,
   referralSource,
-  projectDecription,
+  projectDescription,
   common,
 } = validation;
 
@@ -57,14 +57,20 @@ export const schema = z.object({
       message: referralSource.message,
     }),
 
-  projectDecription: z
+  projectDescription: z
     .string(commonMsg)
     .trim()
-    .min(projectDecription.minLength.value, projectDecription.minLength.message)
-    .max(projectDecription.maxLength.value, projectDecription.maxLength.message)
+    .min(
+      projectDescription.minLength.value,
+      projectDescription.minLength.message,
+    )
+    .max(
+      projectDescription.maxLength.value,
+      projectDescription.maxLength.message,
+    )
     .regex(
-      RegExp(projectDecription.format.reg),
-      projectDecription.format.message,
+      RegExp(projectDescription.format.reg),
+      projectDescription.format.message,
     ),
 
   agreement: z.boolean().refine(value => value === true, {
