@@ -17,12 +17,12 @@ import { FormTextArea } from '@/components/ui/FormTextArea';
 import { cn } from '@/utils/cn';
 import content from '@/data/contactUs.json';
 
-// import { sendTelegramData } from '@/actions/sendTelegramData';
+import { sendTelegramData } from '@/actions/sendTelegramData';
 
 import IconArrow from '~/icons/arrow.svg';
 
 import { schema } from './schema';
-// import { sendOrderDataToGoogleSheet } from '@/actions/sendOrderDataToGoogleSheet';
+import { sendOrderDataToGoogleSheet } from '@/actions/sendOrderDataToGoogleSheet';
 
 export const ContactUsForm: React.FC = () => {
   const { formName, inputs, textarea, checkbox, select, submitBtn } =
@@ -55,10 +55,10 @@ export const ContactUsForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
-      // Promise.all([
-      //   await sendTelegramData(data),
-      //   await sendOrderDataToGoogleSheet(data),
-      // ]);
+       Promise.all([
+         await sendTelegramData(data),
+         await sendOrderDataToGoogleSheet(data),
+       ]);
       console.log(data);
       setIsSuccess(true);
       reset();
