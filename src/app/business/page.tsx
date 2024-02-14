@@ -33,7 +33,7 @@ const BusinessPage = () => {
 
       <Partners />
 
-      <FAQ />
+      <FAQ tags={['business']} />
 
       <ContactUs />
     </>
