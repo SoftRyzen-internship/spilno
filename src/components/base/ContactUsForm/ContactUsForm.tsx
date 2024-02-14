@@ -55,8 +55,11 @@ export const ContactUsForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
-      await sendTelegramData(data);
-      await sendOrderDataToGoogleSheet(data);
+      Promise.all([
+        await sendTelegramData(data),
+        await sendOrderDataToGoogleSheet(data),
+      ]);
+
       setIsSuccess(true);
       reset();
     } catch {
