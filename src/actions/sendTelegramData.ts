@@ -5,6 +5,7 @@ import data from '@/data/common.json';
 import { FormFields, TelegramRes } from '@/types';
 
 const ENTRY = '<b>Замовлення проєкту:</b>\n';
+const EMPTY_FIELD_MESSAGE = 'не заповнено';
 
 export const sendTelegramData = async (formData: FieldValues) => {
   const { formFieldsTranslation } = data;
@@ -15,7 +16,7 @@ export const sendTelegramData = async (formData: FieldValues) => {
 
   const telegramMessage = formFields.reduce(
     (acc, fieldName) =>
-      (acc += `${formFieldsTranslation[fieldName]}: ${formData[fieldName] ? formData[fieldName] : 'не заповнено'}\n`),
+      (acc += `${formFieldsTranslation[fieldName]}: ${formData[fieldName] ? formData[fieldName] : EMPTY_FIELD_MESSAGE}\n`),
     ENTRY,
   );
 
