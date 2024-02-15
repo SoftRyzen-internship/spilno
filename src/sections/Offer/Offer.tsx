@@ -1,10 +1,10 @@
-import { Accordion } from '@/components/base';
-
-import { AccordionOfferItem, SectionTitle } from '@/components/ui';
+import { Accordion } from '@/components/base/Accordion';
+import { AccordionOfferItem } from '@/components/ui/AccordionOfferItem';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 
 import data from '@/data/offer.json';
 
-import { OfferItemsType } from '@/components/base/Accordion/types';
+import { OfferItemsType } from './types';
 
 export const Offer = () => {
   return (
