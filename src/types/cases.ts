@@ -38,5 +38,4 @@ export type CaseCardType = {
       name: string;
     };
   }[];
-  priorityImgLoad?: boolean;
 };

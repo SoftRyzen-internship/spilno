@@ -11,3 +11,4 @@ export * from './PortfolioCases';
 export * from './PortfolioHero';
 export * from './Problems';
 export * from './Reviews';
+export * from './Cooperation';

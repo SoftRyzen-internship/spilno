@@ -8,6 +8,7 @@ import {
   Partners,
   FAQ,
   ContactUs,
+  Cooperation,
 } from '@/sections';
 
 import data from '@/data/business.json';
@@ -25,7 +26,7 @@ export default function BusinessPage() {
 
       <BusinessClients />
 
-      {/* Collaboration */}
+      <Cooperation />
 
       <Cases />
 
