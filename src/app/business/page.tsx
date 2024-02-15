@@ -7,6 +7,7 @@ import { FAQ } from '@/sections/FAQ';
 import { Hero } from '@/sections/Hero';
 import { Partners } from '@/sections/Partners';
 import { BusinessClients } from '@/sections/BusinessClients';
+import { Cooperation } from '@/sections/Cooperation';
 
 import data from '@/data/business.json';
 
@@ -27,7 +28,7 @@ const BusinessPage = () => {
 
       <BusinessClients />
 
-      {/* Collaboration */}
+      <Cooperation />
 
       <Cases className="!p-0" />
 

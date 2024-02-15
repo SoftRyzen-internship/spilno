@@ -14,7 +14,6 @@ export const CaseCard: React.FC<Props> = ({
   url,
   tags,
   title,
-  priorityImgLoad = false,
 }) => {
   const { projectDetailsLinkAriaLabel, arrowIconAriaLabel } = data;
 
@@ -28,7 +27,6 @@ export const CaseCard: React.FC<Props> = ({
           width={620}
           height={427}
           blurDataURL={url}
-          priority={priorityImgLoad}
         />
       </div>
 
