@@ -1,4 +1,4 @@
-import { CaseCard } from '@/components/ui/CaseCard';
+import { CaseCard } from '@/components/ui';
 
 import { getAllCases } from '@/actions/getAllCases';
 

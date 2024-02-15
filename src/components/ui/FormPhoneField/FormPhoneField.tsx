@@ -3,7 +3,7 @@
 import { PatternFormat } from 'react-number-format';
 import { Controller } from 'react-hook-form';
 
-import { FormError } from '@/components/ui/FormError';
+import { FormError } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { FormError } from '@/components/ui/FormError';
+import { FormError } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 

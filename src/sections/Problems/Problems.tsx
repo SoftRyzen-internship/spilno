@@ -1,5 +1,4 @@
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { ProblemCard } from '@/components/ui/ProblemCard';
+import { SectionTitle, ProblemCard } from '@/components/ui';
 
 import data from '@/data/problems.json';
 

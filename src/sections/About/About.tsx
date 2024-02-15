@@ -1,8 +1,6 @@
 import Image from 'next/image';
 
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Button } from '@/components/ui/Button';
-import { RingedImage } from '@/components/ui/RingedImage';
+import { SectionTitle, Button, RingedImage } from '@/components/ui';
 
 import aboutProjectImg from '~/images/about/about@2x.webp';
 

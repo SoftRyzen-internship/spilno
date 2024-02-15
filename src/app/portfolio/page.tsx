@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 
-import { ContactUs } from '@/sections/ContactUs';
-import { PortfolioCases } from '@/sections/PortfolioCases';
-import { PortfolioHero } from '@/sections/PortfolioHero';
-import { Reviews } from '@/sections/Reviews';
+import { PortfolioHero, PortfolioCases, Reviews, ContactUs } from '@/sections';
 
 import data from '@/data/portfolio.json';
 
