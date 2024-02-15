@@ -35,3 +35,8 @@ type Review = {
     company: string | null;
   };
 };
+
+export type FAQItemsType = {
+  question: string;
+  answer: string;
+};
