@@ -29,34 +29,36 @@ export const Tabs: React.FC<TabsProps> = ({
         <div className="mb-8 md:mb-12 xl:mb-0 xl:flex xl:flex-col xl:justify-between">
           <div>{children}</div>
 
-          <Tab.List as={'ul'} className={'flex gap-4 md:gap-8'}>
-            {dataForTablist &&
-              dataForTablist.map(({ label }, idx) => (
-                <Tab
-                  className={'relative outline-none'}
-                  key={`${label}${idx}`}
-                  as={'li'}
-                >
-                  {({ selected }) => (
-                    <button
-                      type="button"
-                      className={cn(
-                        'pb-2 text-[16px] font-normal leading-[1.25] transition-colors hover:text-accent focus:text-accent',
-                        'md:pb-3 md:text-[20px] md:leading-[1.3]',
-                        'xl:text-[24px] xl:leading-[1.25]',
-                        {
-                          'text-accent after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-accent':
-                            selected,
-                          'text-greyText': !selected,
-                        },
-                      )}
-                    >
-                      {label}
-                    </button>
-                  )}
-                </Tab>
-              ))}
-          </Tab.List>
+          {dataForTablist && dataForTablist.length > 1 && (
+            <Tab.List as={'ul'} className={'flex gap-4 md:gap-8'}>
+              {dataForTablist &&
+                dataForTablist.map(({ label }, idx) => (
+                  <Tab
+                    className={'relative outline-none'}
+                    key={`${label}${idx}`}
+                    as={'li'}
+                  >
+                    {({ selected }) => (
+                      <button
+                        type="button"
+                        className={cn(
+                          'pb-2 text-[16px] font-normal leading-[1.25] transition-colors hover:text-accent focus:text-accent',
+                          'md:pb-3 md:text-[20px] md:leading-[1.3]',
+                          'xl:text-[24px] xl:leading-[1.25]',
+                          {
+                            'text-accent after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-accent':
+                              selected,
+                            'text-greyText': !selected,
+                          },
+                        )}
+                      >
+                        {label}
+                      </button>
+                    )}
+                  </Tab>
+                ))}
+            </Tab.List>
+          )}
         </div>
 
         <Tab.Panels>

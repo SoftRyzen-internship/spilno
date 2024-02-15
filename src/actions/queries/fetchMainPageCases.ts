@@ -9,6 +9,7 @@ export const fetchMainPageCases = gql`
           title
           text
           alt
+          link
           img {
             data {
               attributes {

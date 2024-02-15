@@ -2,13 +2,15 @@
 
 import { useState } from 'react';
 
-import { Modal } from '@/components/ui/Modal';
-import { MainNav } from '@/components/ui/MainNav';
-import { Logo } from '@/components/ui/Logo';
-import { Button } from '@/components/ui/Button';
-import { ContactLinks } from '@/components/ui/ContactLinks';
-import { Socials } from '@/components/ui/Socials';
-import { ModalBtn } from '@/components/ui/ModalBtn';
+import {
+  Modal,
+  MainNav,
+  Logo,
+  Button,
+  ContactLinks,
+  Socials,
+  ModalBtn,
+} from '@/components/ui';
 
 import data from '@/data/common.json';
 

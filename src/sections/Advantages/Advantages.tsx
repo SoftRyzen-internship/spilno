@@ -1,7 +1,9 @@
-import { AdvantagesCard } from '@/components/ui/AdvantagesCard';
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Slider } from '@/components/ui/Slider';
-import { SliderControls } from '@/components/ui/SliderControls';
+import {
+  AdvantagesCard,
+  SectionTitle,
+  Slider,
+  SliderControls,
+} from '@/components/ui';
 
 import content from '@/data/advantages.json';
 

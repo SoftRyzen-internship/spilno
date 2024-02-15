@@ -191,7 +191,7 @@ position the ring. With option `hero` for prop `ringType` realized special ring
 
 | Prop        | Default | Description                                                                                   |
 | ----------- | ------- | --------------------------------------------------------------------------------------------- |
-| `children`  | -       | required, `ReactNode`, expect Image component with fill propery                               |
+| `children`  | -       | required, `ReactNode`, expect Image component with fill property                              |
 | `variant`   | -       | required, select the ring positioning option: `right` or `left`                               |
 | `ringType`  | ``      | optional, realized ring `3px '#BFD5FF'` border for Hero Component                             |
 | `className` | ''      | optional, `string`, You should set the width of component and additional css class you'd need |

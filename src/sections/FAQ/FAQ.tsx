@@ -1,20 +1,20 @@
-import { Tabs } from '@/components/ui/Tabs';
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import { Tabs, SectionTitle } from '@/components/ui';
 
 import staticData from '@/data/faq.json';
 
-export const FAQ: React.FC = () => {
-  const {
-    title,
-    label,
+import { SectionFAQProps } from './types';
 
-    questionsData,
-  } = staticData;
+export const FAQ: React.FC<SectionFAQProps> = ({ tags }) => {
+  const { title, label, questionsData } = staticData;
+
+  const data = tags
+    ? questionsData.filter(({ tag }) => tags.includes(tag))
+    : questionsData;
 
   return (
     <section className="section bg-lightBg">
       <div className="container">
-        <Tabs questionsData={questionsData}>
+        <Tabs questionsData={data}>
           <SectionTitle className="mb-4 xl:mb-6">{title}</SectionTitle>
 
           <p
