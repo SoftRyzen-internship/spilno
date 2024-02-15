@@ -18,7 +18,7 @@ export const Creators: React.FC = () => {
           <a
             href={goit.href}
             title={goit.label}
-            className="group relative inline-block transition hover:scale-110 focus:scale-110"
+            className="group relative inline-block transition duration-500 hover:scale-110  focus:scale-110"
             target="_blank"
             rel="noopener noreferrer nofollow"
             aria-label={goit.ariaLabel}
@@ -27,14 +27,14 @@ export const Creators: React.FC = () => {
               width={129}
               height={56}
               aria-label={goit.ariaLabel}
-              className="absolute inset-0 z-10 h-10 w-[91px] opacity-0 transition-all group-hover:scale-110 group-hover:opacity-100 group-focus:scale-110 group-focus:opacity-100 md:h-14 md:w-[129px]"
+              className="absolute inset-0 z-10 h-10 w-[91px] opacity-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100 group-focus:scale-110 group-focus:opacity-100 md:h-14 md:w-[129px]"
             />
 
             <GoitSepiaLogo
               width={129}
               height={56}
               aria-label={goit.ariaLabel}
-              className="h-10 w-[91px] opacity-100 transition-all group-hover:opacity-0 group-focus:opacity-0 md:h-14 md:w-[129px]"
+              className="h-10 w-[91px] opacity-100 transition-all duration-500 group-hover:opacity-0 group-focus:opacity-0 md:h-14 md:w-[129px]"
             />
           </a>
         </li>
@@ -42,7 +42,7 @@ export const Creators: React.FC = () => {
           <a
             href={softryzen.href}
             title={softryzen.label}
-            className="group inline-block transition hover:scale-110 focus:scale-110"
+            className="group inline-block transition duration-500 hover:scale-110 focus:scale-110"
             target="_blank"
             rel="noopener noreferrer nofollow"
             aria-label={softryzen.ariaLabel}
@@ -51,7 +51,7 @@ export const Creators: React.FC = () => {
               width={208}
               height={56}
               aria-label={softryzen.ariaLabel}
-              className="h-10 w-[148px] brightness-[0.89] contrast-[0.85] hue-rotate-[321deg] invert-[0.79] saturate-[0.15] sepia-[0.12] transition group-hover:scale-110 group-hover:filter-none group-focus:scale-110 group-focus:filter-none md:h-14 md:w-[208px]"
+              className="h-10 w-[148px] brightness-[0.89] contrast-[0.85] hue-rotate-[321deg] invert-[0.79] saturate-[0.15] sepia-[0.12] transition duration-500 group-hover:scale-110 group-hover:filter-none group-focus:scale-110 group-focus:filter-none md:h-14 md:w-[208px]"
             />
           </a>
         </li>
