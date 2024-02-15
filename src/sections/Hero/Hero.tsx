@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             <p
               className={cn(
-                'mb-8 text-sm/[1.5] text-white md:text-sm/[1.4] xl:mb-16 xl:text-[22px]/[1.4]',
+                'mb-8 text-sm/[1.5] text-white md:text-sm/[1.4] xl:mb-16 xl:text-[18px]/[1.5]',
                 descClassName,
               )}
             >

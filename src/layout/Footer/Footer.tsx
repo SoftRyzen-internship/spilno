@@ -13,7 +13,7 @@ export const Footer: React.FC = async () => {
   const socialList = await getContacts();
 
   return (
-    <footer className="md:delimeter overflow-hidden bg-darkBg pt-[60px] text-center text-white md:pt-20 md:after:bg-accent xl:pt-16">
+    <footer className="md:delimeter overflow-hidden bg-darkBg pt-[60px] text-center text-white md:pt-20 md:after:opacity-100 xl:pt-16">
       <div className="container mx-auto">
         <div className="md:flex md:items-center md:justify-between xl:mb-20 smOnly:mb-8 smOnly:space-y-8 mdOnly:mb-16 mdOnly:flex-wrap mdOnly:gap-16">
           <div className="mdOnly:w-full">
