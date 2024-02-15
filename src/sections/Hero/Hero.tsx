@@ -2,8 +2,7 @@ import Image from 'next/image';
 
 import { cn } from '@/utils/cn';
 
-import { Button } from '@/components/ui/Button';
-import { RingedImage } from '@/components/ui/RingedImage';
+import { Button, RingedImage } from '@/components/ui';
 
 import IconArrow from '~/icons/arrow.svg';
 

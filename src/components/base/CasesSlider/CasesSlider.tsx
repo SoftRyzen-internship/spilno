@@ -1,7 +1,6 @@
 'use client';
 
-import { Slider } from '@/components/ui/Slider';
-import { CaseCard } from '@/components/ui/CaseCard';
+import { Slider, CaseCard } from '@/components/ui';
 
 import { Props } from './types';
 

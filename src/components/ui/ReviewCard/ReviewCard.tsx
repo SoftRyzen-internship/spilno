@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import { ReviewerInfoCard } from '@/components/ui/ReviewerInfoCard';
-import { ReviewModal } from '@/components/base/ReviewModal';
+import { ReviewerInfoCard } from '@/components/ui';
+import { ReviewModal } from '@/components/base';
 
 import { cn } from '@/utils/cn';
 
