@@ -1,10 +1,9 @@
 import { Accordion } from '@/components/base';
-
 import { AccordionOfferItem, SectionTitle } from '@/components/ui';
 
 import data from '@/data/offer.json';
 
-import { OfferItemsType } from '@/components/base/Accordion/types';
+import { OfferItemsType } from './types';
 
 export const Offer = () => {
   return (

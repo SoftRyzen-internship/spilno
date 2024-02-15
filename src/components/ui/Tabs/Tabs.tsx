@@ -6,13 +6,12 @@ import { Tab } from '@headlessui/react';
 import { cn } from '@/utils/cn';
 
 import { Accordion } from '@/components/base/Accordion';
-import { FAQItemsType } from '@/components/base/Accordion/types';
 import { Slider } from '@/components/ui/Slider';
 import { SliderControls } from '@/components/ui/SliderControls';
 import { ReviewCard } from '@/components/ui/ReviewCard';
 import { AccordionFAQItem } from '@/components/ui/AccordionFAQItem';
 
-import { TabsProps } from './types';
+import { FAQItemsType, TabsProps } from './types';
 
 export const Tabs: React.FC<TabsProps> = ({
   children,

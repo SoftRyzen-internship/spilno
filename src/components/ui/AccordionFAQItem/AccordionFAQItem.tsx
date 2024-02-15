@@ -35,7 +35,7 @@ export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
                 'max-h-[364px] md:max-h-[255px] xl:max-h-[281px]': selected,
                 'max-h-[66px] md:max-h-[54px]': !selected,
               },
-              'ui-selected:outline-none duration-800 transition-all',
+              'ui-selected:outline-none transition-all duration-1000',
             )}
           >
             <h3
@@ -56,7 +56,7 @@ export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
                   {
                     'max-h-[264px] md:max-h-[156px] xl:max-h-[182px]': selected,
                   },
-                  'transition duration-300',
+                  'transition-all duration-1000',
                   styles.fade,
                 )}
               >
@@ -72,7 +72,7 @@ export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
               {
                 'rotate-[180deg]': selected,
               },
-              'transition-all',
+              'transition-all duration-1000',
               'h-4 w-4 flex-shrink-0 md:h-5 md:w-5',
             )}
             aria-label={aria}
