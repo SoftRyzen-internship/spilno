@@ -47,7 +47,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
           </button>
 
           <div>
-            <p className="mb-10 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-6 md:text-[16px] xl:mb-8 xl:text-[24px]">
+            <p className="mb-10 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-6 md:text-[16px] xl:mb-8 xl:text-[20px]">
               {text}
             </p>
 

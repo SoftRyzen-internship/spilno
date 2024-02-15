@@ -52,7 +52,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
         {!isVideoReview && (
           <p
             className="mb-12 line-clamp-[9] text-ellipsis font-raleway text-[14px] font-normal leading-[1.5] text-primaryText 
-          md:mb-0 md:line-clamp-[11] md:text-[16px] xl:line-clamp-[8] xl:text-[24px]"
+          md:mb-0 md:line-clamp-[11] md:text-[16px] xl:line-clamp-[8] xl:text-[20px]"
           >
             {text}
           </p>
@@ -77,7 +77,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
               <PlayIcon
                 width={74}
                 height={74}
-                className="block size-[74px] rounded-full bg-accent/40 backdrop-blur-[20px]"
+                className="block size-[74px] rounded-full bg-accent/40 backdrop-blur-[20px] transition-all hover:bg-accent/60 focus:bg-accent/60"
                 aria-label={commonData.reviewCard.playIconAriaLabel}
               />
             </button>
