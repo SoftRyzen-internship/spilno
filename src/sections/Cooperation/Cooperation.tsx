@@ -1,5 +1,5 @@
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Button } from '@/components/ui/Button';
+import { SectionTitle } from '@/components/ui';
+import { Button } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 
