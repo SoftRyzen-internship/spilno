@@ -1,6 +1,5 @@
-import { Accordion } from '@/components/base/Accordion';
-import { AccordionOfferItem } from '@/components/ui/AccordionOfferItem';
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import { Accordion } from '@/components/base';
+import { AccordionOfferItem, SectionTitle } from '@/components/ui';
 
 import data from '@/data/offer.json';
 
