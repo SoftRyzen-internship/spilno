@@ -13,7 +13,7 @@ export const Header: React.FC = async () => {
   const socialList = await getContacts();
 
   return (
-    <header className="absolute top-0 w-full bg-transparent pt-6 xl:pt-9">
+    <header className="absolute top-0 w-full bg-darkBg py-6 xl:py-9">
       <div className="container mx-auto flex items-center justify-between">
         <Logo location="header" />
 

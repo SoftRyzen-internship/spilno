@@ -26,7 +26,7 @@ export const ProblemCard: React.FC<Props> = ({
             'rounded-[10px] xl:rounded-[27px]': cardName === CardNames.SOLUTION,
             'rounded-full border-accent bg-accent':
               cardName === CardNames.RESULT,
-            [`${css.line} relative`]:
+            [`${css.iconWrap} relative`]:
               cardName === CardNames.PROBLEM || cardName === CardNames.SOLUTION,
           },
         )}

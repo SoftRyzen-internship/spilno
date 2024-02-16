@@ -1,5 +1,4 @@
-import { BusinessClientCard } from '@/components/ui/BusinessClientCard';
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import { BusinessClientCard, SectionTitle } from '@/components/ui';
 
 import content from '@/data/businessClients.json';
 

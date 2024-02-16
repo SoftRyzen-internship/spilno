@@ -1,5 +1,4 @@
-import { Tabs } from '@/components/ui/Tabs';
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import { Tabs, SectionTitle } from '@/components/ui';
 
 import { getReviews } from '@/actions/getReviews';
 

@@ -5,14 +5,16 @@ import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Button } from '@/components/ui/Button';
-import { FormField } from '@/components/ui/FormField';
-import { FormCheckbox } from '@/components/ui/FormCheckbox';
-import { FormListbox } from '@/components/ui/FormListbox';
-import { FormPhoneField } from '@/components/ui/FormPhoneField';
-import { FormPopup } from '@/components/ui/FormPopup';
-import { Spinner } from '@/components/ui/Spinner';
-import { FormTextArea } from '@/components/ui/FormTextArea';
+import {
+  Button,
+  FormField,
+  FormCheckbox,
+  FormListbox,
+  FormPhoneField,
+  FormPopup,
+  Spinner,
+  FormTextArea,
+} from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 import content from '@/data/contactUs.json';
@@ -55,8 +57,10 @@ export const ContactUsForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
-      await sendTelegramData(data);
-      await sendOrderDataToGoogleSheet(data);
+      Promise.all([
+        await sendTelegramData(data),
+        await sendOrderDataToGoogleSheet(data),
+      ]);
       setIsSuccess(true);
       reset();
     } catch {

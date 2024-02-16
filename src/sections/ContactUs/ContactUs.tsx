@@ -1,8 +1,7 @@
 import Image from 'next/image';
 
-import { ContactUsForm } from '@/components/base/ContactUsForm';
-import { RingedImage } from '@/components/ui/RingedImage';
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import { ContactUsForm } from '@/components/base';
+import { RingedImage, SectionTitle } from '@/components/ui';
 
 import content from '@/data/contactUs.json';
 

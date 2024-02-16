@@ -1,8 +1,5 @@
-import { CasesSlider } from '@/components/base/CasesSlider';
-
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Button } from '@/components/ui/Button';
-import { SliderControls } from '@/components/ui/SliderControls';
+import { CasesSlider } from '@/components/base';
+import { SectionTitle, Button, SliderControls } from '@/components/ui';
 
 import { getMainPageCases } from '@/actions/getMainPageCases';
 import { cn } from '@/utils/cn';

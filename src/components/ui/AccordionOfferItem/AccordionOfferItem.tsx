@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Tab, Transition } from '@headlessui/react';
 
-import { RingedImage } from '@/components/ui/RingedImage';
+import { RingedImage } from '@/components/ui';
 import { cn } from '@/utils/cn';
 
 import ArrowIcon from '~/icons/arrow.svg';
@@ -82,7 +82,7 @@ export const AccordionOfferItem: React.FC<AccordionOfferItemProps> = ({
             enter="transition duration-1000"
             enterFrom="opacity-0"
             enterTo=" opacity-100"
-            leave="transition duration-100"
+            leave="transition duration-1000"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >

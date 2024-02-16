@@ -6,6 +6,7 @@ export type CasesResponse = {
         slug: string;
         text: string;
         alt: string;
+        link: string;
         img: {
           data: {
             attributes: {
@@ -31,10 +32,10 @@ export type CaseCardType = {
   text: string;
   alt: string;
   url: string;
+  link: string;
   tags: {
     attributes: {
       name: string;
     };
   }[];
-  priorityImgLoad?: boolean;
 };

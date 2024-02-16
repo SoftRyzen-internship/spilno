@@ -1,6 +1,4 @@
-import { PartnersCard } from '@/components/ui/PartnersCard';
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Slider } from '@/components/ui/Slider';
+import { PartnersCard, SectionTitle, Slider } from '@/components/ui';
 
 import { getPartners } from '@/actions/getPartners';
 

@@ -82,6 +82,7 @@
       },
       "phoneNumber": {
         "message": "Недійсний номер телефону.",
+        "required": { "value": 1, "message": "Обовʼязкове поле." },
         "minLength": { "value": 12, "message": "Не менше 11 символів." },
         "maxLength": { "value": 13, "message": "Не більше 12 символів." }
       },
@@ -107,7 +108,7 @@
         },
         "maxLength": {
           "value": 63,
-          "message": "Максимальна довжина 60 символів."
+          "message": "Максимальна довжина 63 символи."
         }
       },
       "referralSource": {

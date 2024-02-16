@@ -1,43 +1,40 @@
 import type { Metadata } from 'next';
 
-import { Advantages } from '@/sections/Advantages';
-import { ContactUs } from '@/sections/ContactUs';
-import { Cases } from '@/sections/Cases';
-import { FAQ } from '@/sections/FAQ';
-import { Hero } from '@/sections/Hero';
-import { Partners } from '@/sections/Partners';
-import { BusinessClients } from '@/sections/BusinessClients';
+import {
+  Hero,
+  Advantages,
+  BusinessClients,
+  Cases,
+  Partners,
+  FAQ,
+  ContactUs,
+  Cooperation,
+} from '@/sections';
 
 import data from '@/data/business.json';
 
 export const metadata: Metadata = data.meta;
 
-const BusinessPage = () => {
+export default function BusinessPage() {
   const { hero, advantages } = data;
 
   return (
     <>
-      <Hero
-        {...hero}
-        className="xl:w-[699px]"
-        descClassName="xl:text-[18px]/[1.5] xl:w-[493px]"
-      />
+      <Hero {...hero} className="xl:w-[699px]" descClassName="xl:w-[493px]" />
 
       <Advantages {...advantages} />
 
       <BusinessClients />
 
-      {/* Collaboration */}
+      <Cooperation />
 
-      <Cases className="!p-0" />
+      <Cases />
 
       <Partners />
 
-      <FAQ />
+      <FAQ tags={['business']} />
 
       <ContactUs />
     </>
   );
-};
-
-export default BusinessPage;
+}

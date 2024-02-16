@@ -12,7 +12,7 @@ export const getAllCases = async () => {
     );
 
     const result = cases.data.map(({ attributes }) => {
-      const { slug, text, alt, img, types, title } = attributes;
+      const { slug, text, alt, img, types, title, link } = attributes;
       const {
         data: {
           attributes: { url },
@@ -27,6 +27,7 @@ export const getAllCases = async () => {
         alt,
         url,
         tags,
+        link,
       };
     });
 

@@ -1,4 +1,4 @@
-import { CaseCard } from '@/components/ui/CaseCard';
+import { CaseCard } from '@/components/ui';
 
 import { getAllCases } from '@/actions/getAllCases';
 
@@ -17,7 +17,7 @@ export const PortfolioCases: React.FC = async () => {
         <ul className="grid justify-center md:grid-cols-2 xl:gap-x-[88px] xl:gap-y-[100px] smOnly:space-y-12 mdOnly:gap-x-6 mdOnly:gap-y-[60px]">
           {slidesData?.map(slide => (
             <li key={slide.slug}>
-              <CaseCard {...slide} priorityImgLoad />
+              <CaseCard {...slide} />
             </li>
           ))}
         </ul>

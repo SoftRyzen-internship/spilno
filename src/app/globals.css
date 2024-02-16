@@ -18,10 +18,10 @@ body {
 
 /* Footer */
 @layer utilities {
-  .delimeter {
+  .delimiter {
     @apply relative;
   }
-  .delimeter::after {
-    @apply absolute left-1/2 top-0 h-[1px] w-screen -translate-x-1/2 bg-delimeterGrey content-[''];
+  .delimiter::after {
+    @apply bg-delimiterGrey absolute left-1/2 top-0 h-[1px] w-screen -translate-x-1/2 content-[''] md:opacity-30;
   }
 }
