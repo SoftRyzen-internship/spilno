@@ -13,7 +13,19 @@ import {
 
 import data from '@/data/business.json';
 
-export const metadata: Metadata = data.meta;
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
+  const { title, description } = data.meta;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}business/`,
+    },
+  };
+}
 
 export default function BusinessPage() {
   const { hero, advantages } = data;
