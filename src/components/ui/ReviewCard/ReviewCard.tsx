@@ -40,7 +40,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
 
   useEffect(() => {
     const textElement = textRef.current;
-    console.log('textElement', textElement);
+
     if (textElement) {
       const isOverflowing = textElement.scrollHeight > textElement.clientHeight;
       setShowBtn(isOverflowing);
