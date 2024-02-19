@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 import { ReviewerInfoCard } from '@/components/ui';
@@ -13,6 +14,8 @@ import PlayIcon from '~/icons/play.svg';
 import commonData from '@/data/common.json';
 
 import { ReviewProps } from './types';
+
+import styles from './ReviewCard.module.css';
 
 export const ReviewCard: React.FC<ReviewProps> = ({
   text,
@@ -51,19 +54,25 @@ export const ReviewCard: React.FC<ReviewProps> = ({
     <>
       <div
         className={cn(
-          'h-[395px] rounded-[10px] bg-white p-6 md:h-[485px] md:w-[330px] xl:h-[600px] xl:w-[596px] xl:p-12',
+          'h-[395px] w-full overflow-hidden rounded-[10px] bg-white  md:h-[485px] md:w-[330px] xl:h-[600px] xl:w-[596px]',
           {
-            'relative flex items-center justify-center bg-cover': isVideoReview,
-            'flex flex-col justify-between': !isVideoReview,
+            'relative flex items-center justify-center': isVideoReview,
+            'flex flex-col justify-between p-6 xl:p-12': !isVideoReview,
           },
         )}
-        style={{
-          backgroundImage:
-            type === 'video'
-              ? `linear-gradient(191deg, rgba(13, 10, 25, 0.00) 42.8%, #0D0A19 117.17%), url(${video?.preview})`
-              : undefined,
-        }}
       >
+        {video?.preview && (
+          <div className={styles.gradientBgImage}>
+            <Image
+              width={596}
+              height={600}
+              src={video.preview}
+              alt={author.name}
+              className={cn('block size-full object-cover')}
+            />
+          </div>
+        )}
+
         {!isVideoReview && (
           <p
             ref={textRef}
@@ -87,7 +96,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
             )
           ) : (
             <button
-              className="mb-4 font-raleway text-[14px] font-normal leading-[1.5] text-accent underline"
+              className="absolute left-1/2 top-1/2 mb-4 -translate-x-1/2 -translate-y-1/2 font-raleway text-[14px] font-normal leading-[1.5] text-accent underline"
               onClick={openModal}
               type="button"
               aria-label={commonData.reviewCard.playBtnAriaLabel}
