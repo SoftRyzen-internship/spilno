@@ -5,7 +5,7 @@ import {
   SliderControls,
 } from '@/components/ui';
 
-import content from '@/data/advantages.json';
+import data from '@/data/common.json';
 
 import { AdvantagesProps } from './types';
 
@@ -25,7 +25,7 @@ export const Advantages: React.FC<AdvantagesProps> = ({ id, title, desc }) => (
 
       <Slider
         section="advantages"
-        slidesData={content.features}
+        slidesData={data.advantages}
         slideComponent={AdvantagesCard}
         wrapClassName="smOnly:max-w-[288px] smOnly:mb-8"
       />

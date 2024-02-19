@@ -18,7 +18,7 @@ import { MobileMenuProps } from './types';
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ socialList }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { mobileMenu } = data;
+  const { openBtnAriaLabel, closeBtnAriaLabel, link, title } = data.mobileMenu;
 
   const closeModal = () => setIsOpen(false);
 
@@ -28,7 +28,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ socialList }) => {
     <div className="xl:hidden">
       <ModalBtn
         location="header"
-        ariaLabel={mobileMenu.openBtnAriaLabel}
+        ariaLabel={openBtnAriaLabel}
         className="text-white transition-colors hover:text-accent focus:text-accent"
         onClick={openModal}
       />
@@ -44,7 +44,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ socialList }) => {
 
           <ModalBtn
             location="modal"
-            ariaLabel={mobileMenu.closeBtnAriaLabel}
+            ariaLabel={closeBtnAriaLabel}
             className="text-white transition-colors hover:text-accent focus:text-accent md:ml-auto md:text-accent md:hover:text-darkBlue md:focus:text-darkBlue"
             onClick={closeModal}
           />
@@ -54,16 +54,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ socialList }) => {
           <MainNav location="menu" onClick={closeModal} />
 
           <Button
-            text={mobileMenu.link.text}
+            text={link.text}
             btnStyle="transparent"
-            link={mobileMenu.link.path}
+            link={link.path}
             onClick={closeModal}
           />
         </div>
 
         <div className="mb-[64px] flex flex-col gap-[16px] md:mb-[32px] md:gap-[24px] smOnly:items-center">
           <h3 className="font-geologica text-[18px]/[1.3] text-white md:text-[22px]/[1.4] md:text-headline ">
-            {mobileMenu.title}
+            {title}
           </h3>
 
           <ContactLinks location="menu" />

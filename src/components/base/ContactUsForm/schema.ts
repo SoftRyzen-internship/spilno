@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-import content from '@/data/contactUs.json';
+import content from '@/data/contact-us.json';
 
 const { validation } = content.form;
 const {

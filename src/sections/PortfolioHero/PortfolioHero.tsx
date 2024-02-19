@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn';
 
-import content from '@/data/portfolio.json';
+import content from '@/data/portfolio-page.json';
 
 import css from './PortfolioHero.module.css';
 

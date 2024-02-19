@@ -1,9 +1,9 @@
 import { SectionTitle, ProblemCard } from '@/components/ui';
 
-import data from '@/data/problems.json';
+import data from '@/data/main-page.json';
 
 export const Problems: React.FC = () => {
-  const { title, cards } = data;
+  const { title, cards } = data.problems;
 
   return (
     <section className="py-[60px] md:py-[80px] xl:py-[120px]" id="problems">
