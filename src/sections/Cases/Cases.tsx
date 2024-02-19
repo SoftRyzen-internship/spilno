@@ -4,14 +4,14 @@ import { SectionTitle, Button, SliderControls } from '@/components/ui';
 import { getMainPageCases } from '@/actions/getMainPageCases';
 import { cn } from '@/utils/cn';
 
-import data from '@/data/cases.json';
+import data from '@/data/common.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
 import { CasesProps } from './types';
 
 export const Cases: React.FC<CasesProps> = async ({ className }) => {
-  const { title, link } = data;
+  const { title, link } = data.cases;
 
   const slidesData = await getMainPageCases();
 

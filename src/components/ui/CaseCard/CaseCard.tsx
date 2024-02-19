@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import data from '@/data/cases.json';
+import data from '@/data/common.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
@@ -14,7 +14,7 @@ export const CaseCard: React.FC<Props> = ({
   tags,
   title,
 }) => {
-  const { projectDetailsLinkAriaLabel, arrowIconAriaLabel } = data;
+  const { projectDetailsLinkAriaLabel, arrowIconAriaLabel } = data.cases;
 
   return (
     <div className="group rounded-[10px]">

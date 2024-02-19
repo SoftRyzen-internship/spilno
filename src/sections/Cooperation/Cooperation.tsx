@@ -4,12 +4,12 @@ import { cn } from '@/utils/cn';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import data from '@/data/cooperation.json';
+import data from '@/data/business-page.json';
 
 import css from './Cooperation.module.css';
 
 export const Cooperation = () => {
-  const { title, description, link, cooperationStages } = data;
+  const { title, description, link, cooperationStages } = data.cooperation;
   return (
     <section className="py-[60px]  md:py-[80px] xl:py-[120px]" id="cooperation">
       <div
@@ -42,6 +42,7 @@ export const Cooperation = () => {
                   >
                     {stageName}
                   </h3>
+
                   <p className="text-[12px]/[1.5] text-primaryText md:w-[250px] md:text-[14px] xl:w-[390px] xl:text-[16px]">
                     {stageDescription}
                   </p>

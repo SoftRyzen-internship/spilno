@@ -4,10 +4,11 @@ import { SectionTitle, Button, RingedImage } from '@/components/ui';
 
 import aboutProjectImg from '~/images/about/about@2x.webp';
 
-import data from '@/data/about.json';
+import data from '@/data/main-page.json';
 
 export const About: React.FC = () => {
-  const { title, ourGoal, link, aboutProjectImgAlt } = data;
+  const { title, ourGoal, link, aboutProjectImgAlt } = data.about;
+
   return (
     <section
       className="overflow-hidden bg-darkBg py-[60px] md:py-[80px] xl:py-[178px]"

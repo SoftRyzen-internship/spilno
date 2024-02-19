@@ -11,12 +11,13 @@ import {
   Cooperation,
 } from '@/sections';
 
-import data from '@/data/business.json';
+import data from '@/data/business-page.json';
+import meta from '@/data/meta.json';
 
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
-  const { title, description } = data.meta;
+  const { title, description } = meta.business;
 
   return {
     title,

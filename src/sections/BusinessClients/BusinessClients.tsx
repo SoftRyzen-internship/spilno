@@ -1,9 +1,9 @@
 import { BusinessClientCard, SectionTitle } from '@/components/ui';
 
-import content from '@/data/businessClients.json';
+import data from '@/data/business-page.json';
 
 export const BusinessClients: React.FC = () => {
-  const { id, title, desc, clients } = content;
+  const { id, title, desc, clients } = data.businessClients;
 
   return (
     <section id={id} className="section bg-white">

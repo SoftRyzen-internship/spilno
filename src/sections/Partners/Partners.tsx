@@ -2,10 +2,10 @@ import { PartnersCard, SectionTitle, Slider } from '@/components/ui';
 
 import { getPartners } from '@/actions/getPartners';
 
-import content from '@/data/partners.json';
+import data from '@/data/common.json';
 
 export const Partners: React.FC = async () => {
-  const { id, title, desc } = content;
+  const { id, title, desc } = data.partners;
 
   const partnersList = await getPartners();
 
