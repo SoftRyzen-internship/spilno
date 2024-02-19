@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ReviewerInfoCard } from '@/components/ui';
 import { ReviewModal } from '@/components/base';
 
 import { cn } from '@/utils/cn';
+import { useViewportSize } from '@/utils/useWindowSize';
 
 import PlayIcon from '~/icons/play.svg';
 
@@ -20,6 +21,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
   type,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showBtn, setShowBtn] = useState(false);
 
   const closeModal = () => setIsOpen(false);
 
@@ -32,6 +34,19 @@ export const ReviewCard: React.FC<ReviewProps> = ({
       ? video.url
       : 'https://youtu.be/SxjSRV6v7ck';
 
+  const { width } = useViewportSize();
+
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+
+  useEffect(() => {
+    const textElement = textRef.current;
+    console.log('textElement', textElement);
+    if (textElement) {
+      const isOverflowing = textElement.scrollHeight > textElement.clientHeight;
+      setShowBtn(isOverflowing);
+    }
+  }, [width]);
+
   return (
     <>
       <div
@@ -39,7 +54,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
           'h-[395px] rounded-[10px] bg-white p-6 md:h-[485px] md:w-[330px] xl:h-[600px] xl:w-[596px] xl:p-12',
           {
             'relative flex items-center justify-center bg-cover': isVideoReview,
-            'md:flex  md:flex-col md:justify-between': !isVideoReview,
+            'flex flex-col justify-between': !isVideoReview,
           },
         )}
         style={{
@@ -51,8 +66,9 @@ export const ReviewCard: React.FC<ReviewProps> = ({
       >
         {!isVideoReview && (
           <p
+            ref={textRef}
             className="mb-12 line-clamp-[9] text-ellipsis font-raleway text-[14px] font-normal leading-[1.5] text-primaryText 
-          md:mb-0 md:line-clamp-[11] md:text-[16px] xl:line-clamp-[8] xl:text-[20px]"
+          md:mb-0 md:line-clamp-[11] md:text-[16px] xl:line-clamp-[10] xl:text-[20px]"
           >
             {text}
           </p>
@@ -60,13 +76,15 @@ export const ReviewCard: React.FC<ReviewProps> = ({
 
         <div>
           {!isVideoReview ? (
-            <button
-              className="mb-4 text-left font-raleway text-[14px] font-normal leading-[1.5] text-accent underline md:mb-8 xl:mb-12 xl:text-[18px]"
-              onClick={openModal}
-              type="button"
-            >
-              {commonData.reviewCard.readMoreBtn.label}
-            </button>
+            showBtn && (
+              <button
+                className="mb-4 text-left font-raleway text-[14px] font-normal leading-[1.5] text-accent underline md:mb-8 xl:mb-12 xl:text-[18px]"
+                onClick={openModal}
+                type="button"
+              >
+                {commonData.reviewCard.readMoreBtn.label}
+              </button>
+            )
           ) : (
             <button
               className="mb-4 font-raleway text-[14px] font-normal leading-[1.5] text-accent underline"
