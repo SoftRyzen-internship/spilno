@@ -16,7 +16,7 @@ const config: Config = {
       smOnly: { max: '767.98px' },
       mdOnly: { min: '768px', max: '1279.98px' },
     },
-
+    safelist: ['scale-y'],
     container: {
       center: true,
       padding: {

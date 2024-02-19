@@ -1,7 +1,10 @@
-.stageTitle::after {
+/* .stageTitle::after {
   @apply absolute bottom-0 left-[-44px] z-50 size-[20px] rounded-full border-[3px] border-solid border-strokeColor bg-white content-[''] md:left-auto  md:right-[-68px] md:size-[24px] xl:right-[-170px];
 }
 
-.lastStageTitle::before {
-  @apply absolute bottom-[1px] left-[-36px] h-[1195px] w-[4px] bg-strokeColor content-[''] md:left-auto md:right-[-60px] md:h-[1243px] xl:right-[-160px] xl:h-[1600px];
+.progressBar::before {
+  @apply absolute bottom-[1px] left-[-36px] h-[1280px] w-[4px] bg-strokeColor content-[''] md:left-auto md:right-[-60px] md:h-[1243px] xl:left-1/2 xl:h-[1600px] xl:-translate-x-1/2;
 }
+.progressBar::after {
+  @apply absolute bottom-[1px] left-[-36px] h-[1280px] w-[4px] scale-y-0 bg-accent content-[''] md:left-auto md:right-[-60px] md:h-[1243px] xl:left-1/2 xl:h-[1600px] xl:-translate-x-1/2;
+} */
