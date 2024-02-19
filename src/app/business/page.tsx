@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import {
   Hero,
   Advantages,
-  BusinessClients,
-  Cases,
-  Partners,
-  FAQ,
+  // BusinessClients,
+  // Cases,
+  // Partners,
+  // FAQ,
   ContactUs,
   Cooperation,
 } from '@/sections';
@@ -24,15 +24,15 @@ export default function BusinessPage() {
 
       <Advantages {...advantages} />
 
-      <BusinessClients />
+      {/* <BusinessClients /> */}
 
       <Cooperation />
 
-      <Cases />
+      {/* <Cases /> */}
 
-      <Partners />
+      {/* <Partners /> */}
 
-      <FAQ tags={['business']} />
+      {/* <FAQ tags={['business']} /> */}
 
       <ContactUs />
     </>

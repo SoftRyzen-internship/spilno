@@ -7,6 +7,7 @@ import ArrowIcon from '~/icons/arrow.svg';
 import data from '@/data/cooperation.json';
 
 import css from './Cooperation.module.css';
+import TrackImpression from '@/components/ui/Observer';
 
 export const Cooperation = () => {
   const { title, description, link, cooperationStages } = data;
@@ -19,7 +20,7 @@ export const Cooperation = () => {
         <p className="mb-20 leading-[1.5] text-primaryText md:mb-[123px] md:w-[469px] md:text-center md:text-[16px] xl:mb-[174px] xl:w-[596px] xl:text-[18px]">
           {description}
         </p>
-
+        <TrackImpression />
         <ul
           className={`mb-12 ml-[44px] flex h-[1228px] flex-col justify-between md:mb-[64px] md:ml-[100px] md:h-auto md:gap-[85px] xl:ml-[140px] xl:gap-[146px] ${css.stagesList}`}
         >
@@ -50,7 +51,6 @@ export const Cooperation = () => {
             },
           )}
         </ul>
-
         <Button
           className="smOnly:w-full"
           text={link.text}
