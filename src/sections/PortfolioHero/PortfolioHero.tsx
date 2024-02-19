@@ -10,7 +10,7 @@ export const PortfolioHero: React.FC = () => {
   return (
     <section
       id={id}
-      className="overflow-hidden bg-darkBg pb-[60px] pt-[114px] md:pb-28 md:pt-[155px] xl:pb-[200px] xl:pt-[258px]"
+      className="overflow-hidden bg-darkBg pb-[60px] pt-[114px] md:pb-28 md:pt-[155px] xl:pb-[138px] xl:pt-[220px]"
     >
       <div className={cn('container text-white', css.circle)}>
         <div className="ml-0 mr-auto max-w-[328px] xl:max-w-[493px]">
