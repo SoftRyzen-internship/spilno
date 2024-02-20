@@ -19,7 +19,9 @@ export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
     <Tab
       key={`${data.question}${index}`}
       as={'li'}
-      className={'mb-2 outline-none last:mb-0 md:mb-0 xl:w-[596px]'}
+      className={
+        'mb-2 cursor-pointer outline-none last:mb-0 md:mb-0 xl:w-[596px]'
+      }
     >
       {({ selected }) => (
         <div
@@ -27,6 +29,7 @@ export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
             'relative flex justify-between gap-x-8 overflow-hidden py-4',
             'md:gap-x-6 md:py-6',
             styles.line,
+            { 'cursor-default': selected },
           )}
         >
           <div
@@ -40,9 +43,10 @@ export const AccordionFAQItem: React.FC<AccordionFAQItemProps> = ({
           >
             <h3
               className={cn(
-                'cursor-pointer font-geologica text-base font-normal leading-[1.35] text-headline',
+                'font-geologica text-base font-normal leading-[1.35] text-headline',
                 'md:text-[20px]',
                 { 'mb-6': selected },
+                { 'cursor-default': selected },
               )}
             >
               {data.question}
