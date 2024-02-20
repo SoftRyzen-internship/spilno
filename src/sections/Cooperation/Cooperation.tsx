@@ -3,8 +3,7 @@
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { CooperationStageCard } from '@/components/ui';
-import { SectionTitle, Button } from '@/components/ui';
+import { SectionTitle, Button, CooperationStageCard } from '@/components/ui';
 
 import { scrollAnimation } from '@/utils/scrollAnimation';
 import { cn } from '@/utils/cn';
