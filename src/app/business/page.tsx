@@ -1,39 +1,51 @@
 import type { Metadata } from 'next';
 
 import {
-  // Hero,
-  // Advantages,
-  // BusinessClients,
-  // Cases,
-  // Partners,
-  // FAQ,
+  Hero,
+  Advantages,
+  BusinessClients,
+  Cases,
+  Partners,
+  FAQ,
   ContactUs,
   Cooperation,
 } from '@/sections';
 
-import data from '@/data/business.json';
+import data from '@/data/business-page.json';
+import meta from '@/data/meta.json';
 
-export const metadata: Metadata = data.meta;
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
+  const { title, description } = meta.business;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}business/`,
+    },
+  };
+}
 
 export default function BusinessPage() {
-  // const { hero, advantages } = data;
+  const { hero, advantages } = data;
 
   return (
     <>
-      {/* <Hero {...hero} className="xl:w-[699px]" descClassName="xl:w-[493px]" /> */}
+      <Hero {...hero} className="xl:w-[699px]" descClassName="xl:w-[493px]" />
 
-      {/* <Advantages {...advantages} /> */}
+      <Advantages {...advantages} />
 
-      {/* <BusinessClients /> */}
-      <ContactUs />
+      <BusinessClients />
 
       <Cooperation />
 
-      {/* <Cases /> */}
+      <Cases />
 
-      {/* <Partners /> */}
+      <Partners />
 
-      {/* <FAQ tags={['business']} /> */}
+      <FAQ tags={['business']} />
 
       <ContactUs />
     </>

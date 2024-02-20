@@ -9,7 +9,7 @@ import { SectionTitle, Button } from '@/components/ui';
 import { scrollAnimation } from '@/utils/scrollAnimation';
 import { cn } from '@/utils/cn';
 
-import data from '@/data/cooperation.json';
+import data from '@/data/business-page.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
@@ -42,7 +42,7 @@ export const Cooperation = () => {
     }
   }, [entry]);
 
-  const { title, description, link, cooperationStages } = data;
+  const { title, description, link, cooperationStages } = data.cooperation;
 
   return (
     <section className="section" id="cooperation">

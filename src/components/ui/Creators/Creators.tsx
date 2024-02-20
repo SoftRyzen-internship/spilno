@@ -1,11 +1,11 @@
-import content from '@/data/footer.json';
+import data from '@/data/common.json';
 
 import GoitLogo from '~/images/footer/logo-goit.svg';
 import SoftryzenLogo from '~/images/footer/logo-softryzen.svg';
 import GoitSepiaLogo from '~/images/footer/logo-goit-sepia.svg';
 
 export const Creators: React.FC = () => {
-  const { label, creators } = content.devs;
+  const { label, creators } = data.footer.devs;
   const [goit, softryzen] = creators;
 
   return (

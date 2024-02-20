@@ -3,7 +3,7 @@
 import { Modal } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
-import content from '@/data/contactUs.json';
+import content from '@/data/contact-us.json';
 
 import CrossIcon from '~/icons/cross.svg';
 import SuccessIcon from '~/icons/success.svg';

@@ -17,7 +17,7 @@ import {
 } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
-import content from '@/data/contactUs.json';
+import content from '@/data/contact-us.json';
 
 import { sendTelegramData } from '@/actions/sendTelegramData';
 

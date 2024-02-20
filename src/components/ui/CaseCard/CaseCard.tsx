@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import data from '@/data/cases.json';
+import data from '@/data/common.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
@@ -14,10 +14,10 @@ export const CaseCard: React.FC<Props> = ({
   tags,
   title,
 }) => {
-  const { projectDetailsLinkAriaLabel, arrowIconAriaLabel } = data;
+  const { projectDetailsLinkAriaLabel, arrowIconAriaLabel } = data.cases;
 
   return (
-    <div className="group rounded-[10px]">
+    <div className="group relative rounded-[10px]">
       <div className="mb-2 h-[264px] overflow-hidden rounded-[10px] xl:mb-4 xl:h-[498px]">
         <Image
           className="size-full object-cover object-center transition-all  group-hover:scale-[1.1]"
@@ -41,15 +41,9 @@ export const CaseCard: React.FC<Props> = ({
           ))}
         </div>
 
-        <a
-          href={link}
-          className="flex size-[40px] items-center justify-center rounded-full border border-solid border-accent text-accent transition-all hover:bg-lightBlue focus-visible:bg-lightBlue md:size-[48px]"
-          aria-label={projectDetailsLinkAriaLabel}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
+        <div className="flex size-[40px] items-center justify-center rounded-full border border-solid border-accent text-accent transition-all hover:bg-lightBlue focus-visible:bg-lightBlue md:size-[48px] xl:hidden">
           <ArrowIcon className="size-[16px]" aria-label={arrowIconAriaLabel} />
-        </a>
+        </div>
       </div>
 
       <p className="mb-2 text-start font-geologica text-[18px]/[1.3] text-headline md:text-[20px] xl:mb-4 xl:text-[34px]">
@@ -58,6 +52,14 @@ export const CaseCard: React.FC<Props> = ({
       <p className="text-start text-[14px]/[1.5] text-headline md:text-[16px] xl:text-[20px]">
         {text}
       </p>
+
+      <a
+        className="absolute inset-0"
+        href={link}
+        target="_blank"
+        rel="noreferrer noopener nofollow"
+        aria-label={projectDetailsLinkAriaLabel}
+      />
     </div>
   );
 };
