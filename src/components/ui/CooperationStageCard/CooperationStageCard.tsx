@@ -46,7 +46,7 @@ export const CooperationStageCard: React.FC<CooperationStageCardProps> = ({
   return (
     <li
       className={cn(
-        'relative flex flex-col transition-colors last:z-20 md:flex-row md:items-start md:justify-center md:gap-[116px] xl:gap-[324px] smOnly:gap-6 smOnly:first:ml-11',
+        'relative flex flex-col last:z-20 md:flex-row md:items-start md:justify-center md:gap-[116px] xl:gap-[324px] smOnly:gap-6 smOnly:first:ml-11',
         css.marker,
         { 'after:!border-accent': active },
       )}
@@ -55,13 +55,13 @@ export const CooperationStageCard: React.FC<CooperationStageCardProps> = ({
     >
       <h3
         className={cn(
-          'idx relative h-fit font-geologica text-[18px]/[1.3] text-greyText transition-colors md:basis-1/2 md:text-right md:text-[20px] xl:text-[34px]',
+          'idx relative h-fit font-geologica text-[18px]/[1.3] text-greyText transition-colors duration-500 md:basis-1/2 md:text-right md:text-[20px] xl:text-[34px]',
           { 'text-accent': active },
         )}
       >
         {stageName}
       </h3>
-      <p className="text-[12px]/[1.5] text-primaryText md:w-[250px] md:basis-1/2 md:pt-[5px] md:text-left md:text-[14px] xl:w-[390px] xl:text-[16px]">
+      <p className="text-[12px]/[1.5] text-primaryText md:w-[250px] md:basis-1/2 md:text-left md:text-[14px] xl:w-[390px] xl:pt-[5px] xl:text-[16px]">
         {stageDescription}
       </p>
     </li>
