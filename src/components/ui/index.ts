@@ -28,3 +28,4 @@ export * from './Socials';
 export * from './Spinner';
 export * from './Tabs';
 export * from './VideoPlayer';
+export * from './CooperationStageCard';
