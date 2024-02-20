@@ -16,15 +16,15 @@ import {
   FormTextArea,
 } from '@/components/ui';
 
+import { sendTelegramData } from '@/actions/sendTelegramData';
+import { sendOrderDataToGoogleSheet } from '@/actions/sendOrderDataToGoogleSheet';
+
 import { cn } from '@/utils/cn';
 import content from '@/data/contact-us.json';
-
-import { sendTelegramData } from '@/actions/sendTelegramData';
 
 import IconArrow from '~/icons/arrow.svg';
 
 import { schema } from './schema';
-import { sendOrderDataToGoogleSheet } from '@/actions/sendOrderDataToGoogleSheet';
 
 export const ContactUsForm: React.FC = () => {
   const { formName, inputs, textarea, checkbox, select, submitBtn } =

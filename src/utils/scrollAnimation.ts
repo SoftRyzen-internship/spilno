@@ -30,14 +30,14 @@ export const scrollAnimation = ({
 
   if (rect.bottom < halfScreenHeight) {
     if (isTracking) {
-      element.style.background = `linear-gradient(to top, ${colors.strokeColor} ${depthPercent}%, ${colors.accent} ${depthPercent}% 100%)`;
+      element.style.background = `linear-gradient(to top, ${colors.accent} 0%, ${colors.accent}  100%)`;
     }
     onActive && onActive(true);
   }
 
   if (rect.top > halfScreenHeight) {
     if (isTracking) {
-      element.style.background = colors.strokeColor;
+      element.style.background = `linear-gradient(to top, ${colors.strokeColor} 0%, ${colors.strokeColor}  100%)`;
     }
     onActive && onActive(false);
   }
