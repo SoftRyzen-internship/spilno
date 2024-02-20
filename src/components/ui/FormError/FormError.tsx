@@ -1,6 +1,6 @@
 import { ErrorMessage } from '@hookform/error-message';
 
-import content from '@/data/contactUs.json';
+import content from '@/data/contact-us.json';
 
 import ErrorIcon from '~/icons/error.svg';
 

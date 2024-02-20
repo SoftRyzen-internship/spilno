@@ -1,14 +1,11 @@
-import { ContactLinks } from '@/components/ui/ContactLinks';
-import { Creators } from '@/components/ui/Creators';
-import { Logo } from '@/components/ui/Logo';
-import { Socials } from '@/components/ui/Socials';
+import { Logo, ContactLinks, Creators, Socials } from '@/components/ui';
 
 import { getContacts } from '@/actions/getContacts';
 
-import content from '@/data/footer.json';
+import data from '@/data/common.json';
 
 export const Footer: React.FC = async () => {
-  const { policy, copyrights } = content;
+  const { policy, copyrights } = data.footer;
 
   const socialList = await getContacts();
 

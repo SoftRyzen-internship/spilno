@@ -11,7 +11,7 @@ import {
   FAQ,
 } from '@/sections';
 
-import data from '@/data/main.json';
+import data from '@/data/main-page.json';
 
 export default function Home() {
   const { hero, advantages } = data;

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ContactUsForm } from '@/components/base';
 import { RingedImage, SectionTitle } from '@/components/ui';
 
-import content from '@/data/contactUs.json';
+import content from '@/data/contact-us.json';
 
 export const ContactUs: React.FC = () => {
   const { id, title, desc, image } = content;

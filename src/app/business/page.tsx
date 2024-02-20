@@ -11,9 +11,22 @@ import {
   Cooperation,
 } from '@/sections';
 
-import data from '@/data/business.json';
+import data from '@/data/business-page.json';
+import meta from '@/data/meta.json';
 
-export const metadata: Metadata = data.meta;
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
+  const { title, description } = meta.business;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}business/`,
+    },
+  };
+}
 
 export default function BusinessPage() {
   const { hero, advantages } = data;

@@ -1,12 +1,12 @@
 import { SectionTitle, ProblemCard } from '@/components/ui';
 
-import data from '@/data/problems.json';
+import data from '@/data/main-page.json';
 
 export const Problems: React.FC = () => {
-  const { title, cards } = data;
+  const { title, cards } = data.problems;
 
   return (
-    <section className="py-[60px] md:py-[80px] xl:py-[120px]" id="problems">
+    <section className="section" id="problems">
       <div className="container flex flex-col items-center gap-8 md:gap-12 xl:gap-16">
         <SectionTitle isCentered className="md:w-[448px] xl:w-[840px]">
           {title}
