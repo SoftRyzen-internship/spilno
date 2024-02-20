@@ -1,7 +1,5 @@
-import { Logo } from '@/components/ui/Logo';
-import { MainNav } from '@/components/ui/MainNav';
-import { MobileMenu } from '@/components/base/MobileMenu';
-import { Button } from '@/components/ui/Button';
+import { Logo, MainNav, Button } from '@/components/ui';
+import { MobileMenu } from '@/components/base';
 
 import { getContacts } from '@/actions/getContacts';
 
