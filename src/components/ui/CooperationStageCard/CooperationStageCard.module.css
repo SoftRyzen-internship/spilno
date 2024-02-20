@@ -1,0 +1,3 @@
+.marker::after {
+  @apply absolute top-0 z-10 size-5 rounded-full border-[3px] border-solid border-strokeColor bg-white transition-colors duration-500 content-[''] md:left-1/2 md:top-[5px] md:-translate-x-1/2 xl:right-[-170px] xl:size-6 smOnly:-left-11;
+}
