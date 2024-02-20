@@ -1,7 +1,4 @@
-import { ContactLinks } from '@/components/ui/ContactLinks';
-import { Creators } from '@/components/ui/Creators';
-import { Logo } from '@/components/ui/Logo';
-import { Socials } from '@/components/ui/Socials';
+import { Logo, ContactLinks, Creators, Socials } from '@/components/ui';
 
 import { getContacts } from '@/actions/getContacts';
 
