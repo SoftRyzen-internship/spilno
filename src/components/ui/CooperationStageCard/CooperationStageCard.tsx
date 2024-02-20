@@ -61,9 +61,16 @@ export const CooperationStageCard: React.FC<CooperationStageCardProps> = ({
       >
         {stageName}
       </h3>
-      <p className="text-[12px]/[1.5] text-primaryText md:w-[250px] md:basis-1/2 md:text-left md:text-[14px] xl:w-[390px] xl:pt-[5px] xl:text-[16px]">
-        {stageDescription}
-      </p>
+
+      <ul>
+        {stageDescription.split('\n').map(item => (
+          <li className="md:w-[251px]  xl:w-[390px]" key={item}>
+            <p className="text-[12px]/[1.5] text-primaryText md:text-[14px] xl:text-[16px]">
+              {item}
+            </p>
+          </li>
+        ))}
+      </ul>
     </li>
   );
 };

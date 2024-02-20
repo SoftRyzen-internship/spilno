@@ -3,8 +3,7 @@
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { CooperationStageCard } from '@/components/ui/CooperationStageCard';
-import { SectionTitle, Button } from '@/components/ui';
+import { SectionTitle, Button, CooperationStageCard } from '@/components/ui';
 
 import { scrollAnimation } from '@/utils/scrollAnimation';
 import { cn } from '@/utils/cn';
@@ -57,7 +56,7 @@ export const Cooperation = () => {
           <div
             ref={ref}
             className={cn(
-              'absolute bottom-24 left-2 z-10 block h-full w-1 bg-strokeColor transition-all sm:bottom-24 md:bottom-[68px] md:left-1/2 md:-translate-x-1/2 xl:w-[6px]',
+              'absolute bottom-[100px] left-2 z-10 block h-full w-1 bg-strokeColor transition-all md:bottom-[68px] md:left-1/2 md:-translate-x-1/2 xl:w-[6px]',
               css.progressBar,
             )}
           />
