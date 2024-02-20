@@ -3,5 +3,5 @@
 }
 
 .lastStageTitle::before {
-  @apply absolute bottom-[1px] left-[-36px] h-[1195px] w-[4px] bg-strokeColor content-[''] md:left-auto md:right-[-60px] md:h-[1243px] xl:right-[-160px] xl:h-[1600px];
+  @apply absolute bottom-[1px] left-[-36px] h-[1177px] w-[4px] bg-strokeColor content-[''] md:left-auto md:right-[-58px] md:h-[1290px] xl:right-[-160px] xl:h-[1650px];
 }

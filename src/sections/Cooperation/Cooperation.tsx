@@ -10,11 +10,10 @@ import css from './Cooperation.module.css';
 
 export const Cooperation = () => {
   const { title, description, link, cooperationStages } = data.cooperation;
+
   return (
     <section className="py-[60px]  md:py-[80px] xl:py-[120px]" id="cooperation">
-      <div
-        className={`container relative flex flex-col md:items-center ${css.line}`}
-      >
+      <div className="container relative flex flex-col md:items-center">
         <SectionTitle className="mb-4 xl:mb-6">{title}</SectionTitle>
         <p className="mb-20 leading-[1.5] text-primaryText md:mb-[123px] md:w-[469px] md:text-center md:text-[16px] xl:mb-[174px] xl:w-[596px] xl:text-[18px]">
           {description}
@@ -29,23 +28,28 @@ export const Cooperation = () => {
 
               return (
                 <li
-                  className=" flex flex-col gap-6 md:flex-row md:justify-end md:gap-[116px] xl:gap-[324px]"
+                  className="flex flex-col gap-6 md:flex-row md:justify-end md:gap-[116px] xl:gap-[324px]"
                   key={stageName}
                 >
                   <h3
                     className={cn(
                       'relative h-fit font-geologica text-[18px]/[1.3] text-greyText md:text-[20px] xl:text-[34px]',
                       css.stageTitle,
-
                       { [css.lastStageTitle]: isLast },
                     )}
                   >
                     {stageName}
                   </h3>
 
-                  <p className="text-[12px]/[1.5] text-primaryText md:w-[250px] md:text-[14px] xl:w-[390px] xl:text-[16px]">
-                    {stageDescription}
-                  </p>
+                  <ul>
+                    {stageDescription.split('\n').map(item => (
+                      <li className="md:w-[251px]  xl:w-[390px]" key={item}>
+                        <p className="text-[12px]/[1.5] text-primaryText md:text-[14px] xl:text-[16px]">
+                          {item}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               );
             },
