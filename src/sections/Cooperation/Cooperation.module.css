@@ -1,7 +1,11 @@
-.stageTitle::after {
+/* .stageTitle::after {
   @apply absolute bottom-0 left-[-44px] z-50 size-[20px] rounded-full border-[3px] border-solid border-strokeColor bg-white content-[''] md:left-auto  md:right-[-68px] md:size-[24px] xl:right-[-170px];
-}
+} */
 
-.lastStageTitle::before {
+/* .lastStageTitle::before {
   @apply absolute bottom-[1px] left-[-36px] h-[1177px] w-[4px] bg-strokeColor content-[''] md:left-auto md:right-[-58px] md:h-[1290px] xl:right-[-160px] xl:h-[1650px];
+} */
+
+.progressBar::after {
+  @apply absolute left-1/2 top-0 z-20 h-40 w-2 -translate-x-1/2 bg-gradient-to-b from-white from-60% to-transparent content-[''] xl:w-3;
 }

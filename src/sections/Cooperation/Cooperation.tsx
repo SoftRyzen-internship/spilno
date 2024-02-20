@@ -1,60 +1,77 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+import { CooperationStageCard } from '@/components/ui/CooperationStageCard';
 import { SectionTitle, Button } from '@/components/ui';
 
+import { scrollAnimation } from '@/utils/scrollAnimation';
 import { cn } from '@/utils/cn';
 
-import ArrowIcon from '~/icons/arrow.svg';
-
 import data from '@/data/business-page.json';
+
+import ArrowIcon from '~/icons/arrow.svg';
 
 import css from './Cooperation.module.css';
 
 export const Cooperation = () => {
+  const { ref, entry } = useInView({
+    root: null,
+    rootMargin: '0%',
+    triggerOnce: false,
+    threshold: 0.2,
+    delay: 100,
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && entry) {
+      const animation = function () {
+        const options = { entry, isTracking: true };
+
+        window.requestAnimationFrame(function () {
+          scrollAnimation(options);
+        });
+      };
+
+      document.addEventListener('scroll', animation);
+
+      return function () {
+        document.removeEventListener('scroll', animation);
+      };
+    }
+  }, [entry]);
+
   const { title, description, link, cooperationStages } = data.cooperation;
 
   return (
-    <section className="py-[60px]  md:py-[80px] xl:py-[120px]" id="cooperation">
+    <section className="section" id="cooperation">
       <div className="container relative flex flex-col md:items-center">
         <SectionTitle className="mb-4 xl:mb-6">{title}</SectionTitle>
-        <p className="mb-20 leading-[1.5] text-primaryText md:mb-[123px] md:w-[469px] md:text-center md:text-[16px] xl:mb-[174px] xl:w-[596px] xl:text-[18px]">
+
+        <p className="mb-8 leading-[1.5] text-primaryText md:mb-12 md:w-[469px] md:text-center md:text-[16px] xl:mb-16 xl:w-[596px] xl:text-[18px]">
           {description}
         </p>
 
-        <ul
-          className={`mb-12 ml-[44px] flex h-[1228px] flex-col justify-between md:mb-[64px] md:ml-[100px] md:h-auto md:gap-[85px] xl:ml-[140px] xl:gap-[146px] ${css.stagesList}`}
-        >
-          {cooperationStages.map(
-            ({ stageName, stageDescription }, idx, arr) => {
-              const isLast = idx === arr.length - 1;
+        <div className="relative mb-12 overflow-hidden pt-12 md:mb-16 md:w-full md:pt-20 xl:pt-[110px] smOnly:max-w-[360px]">
+          <div
+            ref={ref}
+            className={cn(
+              'absolute bottom-[100px] left-2 z-10 block h-full w-1 bg-strokeColor transition-all md:bottom-[68px] md:left-1/2 md:-translate-x-1/2 xl:w-[6px]',
+              css.progressBar,
+            )}
+          />
 
-              return (
-                <li
-                  className="flex flex-col gap-6 md:flex-row md:justify-end md:gap-[116px] xl:gap-[324px]"
-                  key={stageName}
-                >
-                  <h3
-                    className={cn(
-                      'relative h-fit font-geologica text-[18px]/[1.3] text-greyText md:text-[20px] xl:text-[34px]',
-                      css.stageTitle,
-                      { [css.lastStageTitle]: isLast },
-                    )}
-                  >
-                    {stageName}
-                  </h3>
-
-                  <ul>
-                    {stageDescription.split('\n').map(item => (
-                      <li className="md:w-[251px]  xl:w-[390px]" key={item}>
-                        <p className="text-[12px]/[1.5] text-primaryText md:text-[14px] xl:text-[16px]">
-                          {item}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              );
-            },
-          )}
-        </ul>
+          <ul className="relative md:space-y-[85px] xl:space-y-[144px] smOnly:space-x-11 smOnly:space-y-24">
+            {cooperationStages.map(({ stageName, stageDescription }) => (
+              <CooperationStageCard
+                key={stageName}
+                stageName={stageName}
+                stageDescription={stageDescription}
+              />
+            ))}
+          </ul>
+        </div>
 
         <Button
           className="smOnly:w-full"
