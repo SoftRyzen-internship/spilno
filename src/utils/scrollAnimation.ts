@@ -1,19 +1,20 @@
-const colors = {
-  accent: '#0052F2',
-  strokeColor: '#CBD8E5',
-};
+import tailwindConfig from '../../tailwind.config';
 
-type scrollAnimationProps = {
+type ScrollAnimationProps = {
   entry: IntersectionObserverEntry;
   isTracking?: boolean;
   onActive?: (acitve: boolean) => void;
 };
 
+type TColors = Record<string, string>;
+
+const colors: TColors = tailwindConfig.theme?.extend?.colors as TColors;
+
 export const scrollAnimation = ({
   entry,
   isTracking,
   onActive,
-}: scrollAnimationProps): void => {
+}: ScrollAnimationProps): void => {
   const halfScreenHeight = window.innerHeight / 2;
   const rect = entry.target.getBoundingClientRect();
   const depthPx = rect.bottom - halfScreenHeight;
@@ -22,7 +23,7 @@ export const scrollAnimation = ({
 
   if (rect.bottom > halfScreenHeight && rect.top < halfScreenHeight) {
     if (isTracking) {
-      element.style.background = `linear-gradient(to top, ${colors.strokeColor} ${depthPercent}%, ${colors.accent} ${depthPercent}% 100%)`;
+      element.style.background = `linear-gradient(to top, ${colors.strokeColor} ${depthPercent}%, ${colors.accent} ${depthPercent - 10}%, ${colors.accent}  90%, ${colors.white} 100%)`;
     } else {
       onActive && onActive(true);
     }
@@ -30,15 +31,17 @@ export const scrollAnimation = ({
 
   if (rect.bottom < halfScreenHeight) {
     if (isTracking) {
-      element.style.background = `linear-gradient(to top, ${colors.accent} 0%, ${colors.accent}  100%)`;
+      element.style.background = `linear-gradient(to top, ${colors.accent} 0%, ${colors.accent}  90%, ${colors.white} 100%)`;
     }
+
     onActive && onActive(true);
   }
 
   if (rect.top > halfScreenHeight) {
     if (isTracking) {
-      element.style.background = `linear-gradient(to top, ${colors.strokeColor} 0%, ${colors.strokeColor}  100%)`;
+      element.style.background = `linear-gradient(to top, ${colors.strokeColor} 0%, ${colors.strokeColor}  90%,  ${colors.white} 100%)`;
     }
+
     onActive && onActive(false);
   }
 };
