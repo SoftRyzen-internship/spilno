@@ -1,3 +1,0 @@
-.progressBar::after {
-  @apply absolute left-1/2 top-0 z-20 h-40 w-2 -translate-x-1/2 bg-gradient-to-b from-white from-60% to-transparent content-[''] xl:w-3;
-}

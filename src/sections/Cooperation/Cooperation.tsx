@@ -6,13 +6,10 @@ import { useInView } from 'react-intersection-observer';
 import { SectionTitle, Button, CooperationStageCard } from '@/components/ui';
 
 import { scrollAnimation } from '@/utils/scrollAnimation';
-import { cn } from '@/utils/cn';
 
 import data from '@/data/business-page.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
-
-import css from './Cooperation.module.css';
 
 export const Cooperation = () => {
   const { ref, entry } = useInView({
@@ -20,7 +17,6 @@ export const Cooperation = () => {
     rootMargin: '0%',
     triggerOnce: false,
     threshold: 0.2,
-    delay: 100,
   });
 
   useEffect(() => {
@@ -55,10 +51,7 @@ export const Cooperation = () => {
         <div className="relative mb-12 overflow-hidden pt-12 md:mb-16 md:w-full md:pt-20 xl:pt-[110px] smOnly:max-w-[360px]">
           <div
             ref={ref}
-            className={cn(
-              'absolute bottom-[100px] left-2 z-10 block h-full w-1 bg-strokeColor transition-all md:bottom-[68px] md:left-1/2 md:-translate-x-1/2 xl:w-[6px]',
-              css.progressBar,
-            )}
+            className="absolute left-2 top-0 z-10 block h-[calc(100%-5rem)] w-1 bg-gradient-to-b from-white to-strokeColor to-10% transition-all md:left-1/2 md:-translate-x-1/2 xl:w-[6px]"
           />
 
           <ul className="relative md:space-y-[85px] xl:space-y-[144px] smOnly:space-x-11 smOnly:space-y-24">
