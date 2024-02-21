@@ -14,19 +14,7 @@ import {
 import data from '@/data/business-page.json';
 import meta from '@/data/meta.json';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
-
-  const { title, description } = meta.business;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `${baseUrl}business/`,
-    },
-  };
-}
+export const metadata: Metadata = meta.business;
 
 export default function BusinessPage() {
   const { hero, advantages } = data;
