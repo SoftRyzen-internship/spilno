@@ -4,19 +4,7 @@ import { PortfolioHero, PortfolioCases, Reviews, ContactUs } from '@/sections';
 
 import meta from '@/data/meta.json';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
-
-  const { title, description } = meta.portfolio;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `${baseUrl}portfolio/`,
-    },
-  };
-}
+export const metadata: Metadata = meta.portfolio;
 
 export default function PortfolioPage() {
   return (
