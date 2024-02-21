@@ -46,7 +46,7 @@ export const CooperationStageCard: React.FC<CooperationStageCardProps> = ({
   return (
     <li
       className={cn(
-        'relative flex flex-col last:z-20 md:flex-row md:items-start md:justify-center md:gap-[116px] xl:gap-[324px] smOnly:gap-6 smOnly:first:ml-11',
+        'relative md:grid md:grid-cols-2 md:gap-[116px] xl:gap-[324px] smOnly:gap-6 smOnly:first:ml-11',
         css.marker,
         { 'after:!border-accent': active },
       )}
@@ -55,22 +55,16 @@ export const CooperationStageCard: React.FC<CooperationStageCardProps> = ({
     >
       <h3
         className={cn(
-          'idx relative h-fit font-geologica text-[18px]/[1.3] text-greyText transition-colors duration-500 md:basis-1/2 md:text-right md:text-[20px] xl:text-[34px]',
+          'relative h-fit font-geologica text-[18px]/[1.3] text-greyText transition-colors duration-500 md:text-right md:text-[20px] xl:text-[34px]',
           { 'text-accent': active },
         )}
       >
         {stageName}
       </h3>
 
-      <ul>
-        {stageDescription.split('\n').map(item => (
-          <li className="md:w-[251px]  xl:w-[390px]" key={item}>
-            <p className="text-[12px]/[1.5] text-primaryText md:text-[14px] xl:text-[16px]">
-              {item}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <p className="whitespace-pre-line text-[12px]/[1.5] text-primaryText md:max-w-[250px] md:text-left md:text-[14px] xl:max-w-[390px] xl:pt-[5px] xl:text-[16px]">
+        {stageDescription}
+      </p>
     </li>
   );
 };

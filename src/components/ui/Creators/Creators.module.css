@@ -1,0 +1,13 @@
+.creatorsLogo > path,
+.creatorsLogo > path {
+  @apply fill-[#B0B0B0] transition-colors duration-500;
+}
+
+.creatorsLogo:hover > path:not(:last-child),
+.creatorsLogo:focus > path:not(:last-child) {
+  @apply fill-[#FF5F00];
+}
+.creatorsLogo:hover > path:last-child,
+.creatorsLogo:focus > path:last-child {
+  @apply fill-white;
+}

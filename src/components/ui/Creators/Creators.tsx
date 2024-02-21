@@ -1,8 +1,10 @@
+import { cn } from '@/utils/cn';
 import data from '@/data/common.json';
 
 import GoitLogo from '~/images/footer/logo-goit.svg';
 import SoftryzenLogo from '~/images/footer/logo-softryzen.svg';
-import GoitSepiaLogo from '~/images/footer/logo-goit-sepia.svg';
+
+import css from './Creators.module.css';
 
 export const Creators: React.FC = () => {
   const { label, creators } = data.footer.devs;
@@ -27,14 +29,10 @@ export const Creators: React.FC = () => {
               width={129}
               height={56}
               aria-label={goit.ariaLabel}
-              className="absolute inset-0 z-10 h-10 w-[91px] opacity-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100 group-focus:scale-110 group-focus:opacity-100 md:h-14 md:w-[129px]"
-            />
-
-            <GoitSepiaLogo
-              width={129}
-              height={56}
-              aria-label={goit.ariaLabel}
-              className="h-10 w-[91px] opacity-100 transition-all duration-500 group-hover:opacity-0 group-focus:opacity-0 md:h-14 md:w-[129px]"
+              className={cn(
+                'h-10 w-[91px] transition duration-500 group-hover:scale-110 group-focus:scale-110 md:h-14 md:w-[129px]',
+                css.creatorsLogo,
+              )}
             />
           </a>
         </li>
@@ -51,7 +49,7 @@ export const Creators: React.FC = () => {
               width={208}
               height={56}
               aria-label={softryzen.ariaLabel}
-              className="h-10 w-[148px] brightness-[0.89] contrast-[0.85] hue-rotate-[321deg] invert-[0.79] saturate-[0.15] sepia-[0.12] transition duration-500 group-hover:scale-110 group-hover:filter-none group-focus:scale-110 group-focus:filter-none md:h-14 md:w-[208px]"
+              className="h-10 w-[148px] brightness-[0.9] contrast-[0.85] hue-rotate-[321deg] invert-[0.3] saturate-[0.15] sepia-[0.1] transition duration-500 group-hover:scale-110 group-hover:filter-none group-focus:scale-110 group-focus:filter-none md:h-14 md:w-[208px]"
             />
           </a>
         </li>
