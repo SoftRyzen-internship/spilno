@@ -16,8 +16,8 @@ export const ReviewerInfoCard: React.FC<ReviewerInfoCardProps> = ({
   return (
     <div
       className={cn(
-        'flex gap-6',
-        { 'absolute bottom-6 left-6 xl:bottom-12 xl:left-12': isVideoReview },
+        'flex items-center gap-6',
+        { 'absolute bottom-4 left-4 md:bottom-8 md:left-8': isVideoReview },
         className,
       )}
     >
@@ -36,14 +36,14 @@ export const ReviewerInfoCard: React.FC<ReviewerInfoCardProps> = ({
       >
         <p
           className={cn(
-            'mb-2 font-geologica text-[16px] font-normal leading-[1.25] text-headline md:text-[18px] xl:mb-4 xl:text-[22px] xl:leading-[1.4]',
+            'mb-2 font-geologica text-[16px] font-normal leading-[1.25] text-headline md:text-[18px] xl:text-[22px] xl:leading-[1.4]',
             { 'text-white': isVideoReview },
           )}
         >
           {name}
         </p>
-        <p className="mb-0.5 md:mb-1 xl:mb-2">{position}</p>
-        <p>{company}</p>
+        <p className="mb-0.5 last:mb-0 md:mb-1 xl:mb-2">{position}</p>
+        {company && <p>{company}</p>}
       </div>
     </div>
   );
