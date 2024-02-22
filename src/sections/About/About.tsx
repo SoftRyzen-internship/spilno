@@ -11,7 +11,7 @@ export const About: React.FC = () => {
 
   return (
     <section
-      className="overflow-hidden bg-darkBg py-[60px] md:py-[80px] xl:py-[178px]"
+      className="section overflow-hidden bg-darkBg xl:py-[138px]"
       id="about"
     >
       <div className="xl:relative xl:mx-auto xl:max-w-[1400px]">
