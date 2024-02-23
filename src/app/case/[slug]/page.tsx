@@ -1,9 +1,9 @@
-import { ContactUs, Overview } from '@/sections';
+import { ContactUs, Overview, CaseHero } from '@/sections';
 
 export default function CasePage() {
   return (
     <>
-      {/* <CaseHero /> */}
+      <CaseHero />
 
       <Overview />
 
