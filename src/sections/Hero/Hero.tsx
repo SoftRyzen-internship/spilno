@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <section
       id={id}
-      className="overflow-hidden bg-darkBg pb-[60px] pt-28 sm:pt-24 md:py-[180px] xl:pb-[167px] xl:pt-[268px]"
+      className="overflow-hidden bg-darkBg pb-[60px] pt-28 sm:pt-24 md:py-[180px] xl:pb-[187px] xl:pt-[268px]"
     >
       <div className="xl:relative xl:mx-auto xl:max-w-[1400px]">
         <div className="container md:flex md:items-center md:justify-between xl:justify-start">
