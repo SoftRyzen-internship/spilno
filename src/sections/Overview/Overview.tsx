@@ -21,7 +21,7 @@ export const Overview: React.FC = async () => {
   return (
     <section
       id={id}
-      className="relative bg-white pb-[60px] after:absolute after:bottom-0 after:left-1/2 after:h-[1px] after:w-screen after:-translate-x-1/2 after:bg-strokeColor after:content-[''] md:pb-20"
+      className="relative overflow-hidden bg-white pb-[60px] after:absolute after:bottom-0 after:left-1/2 after:h-[1px] after:w-screen after:-translate-x-1/2 after:bg-strokeColor after:content-[''] md:pb-20"
     >
       <Image
         src={primaryImage.src}
@@ -36,11 +36,7 @@ export const Overview: React.FC = async () => {
       <div className="container md:space-y-20 smOnly:space-y-[60px]">
         <h2 className="hidden">{title}</h2>
 
-        <OverviewStage
-          title={problem.title}
-          desc={problem.desc}
-          containerStyle="text-left md:flex md:gap-[10px] xl:gap-8"
-        />
+        <OverviewStage title={problem.title} desc={problem.desc} />
 
         <ul className="md:flex md:h-[278px] md:gap-6 xl:h-[500px] xl:gap-10 smOnly:space-y-4">
           <li>
@@ -67,11 +63,7 @@ export const Overview: React.FC = async () => {
           </li>
         </ul>
 
-        <OverviewStage
-          title={analysis.title}
-          desc={analysis.desc}
-          containerStyle="text-left md:flex md:gap-[10px]"
-        />
+        <OverviewStage title={analysis.title} desc={analysis.desc} />
 
         <Image
           src={analysis.image.src}
@@ -79,7 +71,7 @@ export const Overview: React.FC = async () => {
           width={1216}
           height={550}
           loading="lazy"
-          className="w-full rounded-[10px] object-cover smOnly:h-[210px]"
+          className="w-full rounded-[10px] object-cover"
           sizes="(max-width: 479px) 100vw,(min-width: 480px) 448px, (min-width: 768px) 684px, (min-width: 1280px) 1216px"
         />
 
@@ -87,7 +79,6 @@ export const Overview: React.FC = async () => {
           title={decision.title}
           desc={decision.desc}
           keySolutions={decision.keySolutions}
-          containerStyle="text-left md:grid md:gap-4 md:grid-cols-2 xl:gap-6"
         />
 
         <ul className="md:flex md:flex-wrap md:justify-between md:gap-y-6 xl:gap-y-10 smOnly:space-y-4">
@@ -98,7 +89,7 @@ export const Overview: React.FC = async () => {
               width={1216}
               height={480}
               loading="lazy"
-              className="w-full rounded-[10px] object-cover xl:h-[480px] smOnly:h-[169px]"
+              className="w-full rounded-[10px] object-cover xl:h-[480px] smOnly:aspect-[1.94]"
               sizes="(max-width: 479px) 100vw,(min-width: 480px) 448px, (min-width: 768px) 684px, (min-width: 1280px) 1216px"
             />
           </li>
@@ -129,11 +120,7 @@ export const Overview: React.FC = async () => {
         </ul>
 
         <div>
-          <OverviewStage
-            title={conclusion.title}
-            desc={conclusion.desc}
-            containerStyle="text-center mb-8 md:max-w-[538px] md:mx-auto md:mb-10 xl:max-w-[804px] xl:mb-12"
-          />
+          <OverviewStage title={conclusion.title} desc={conclusion.desc} />
 
           <Button
             text={button.label}
