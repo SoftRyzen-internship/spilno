@@ -1,3 +1,4 @@
-export type CasesProps = {
-  className?: string;
+export type Props = {
+  title: string;
+  showAllProjectsLinkText: string;
 };

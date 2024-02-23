@@ -84,10 +84,8 @@
 
   "cases": {
     "title": "Бізнеси, яким допомогли наші стажери",
-    "link": {
-      "text": "Переглянути проєкти",
-      "path": "/portfolio"
-    },
+    "showAllProjectsLinkText": "Переглянути проєкти",
+    "showAllProjectsLinkPath": "/portfolio",
     "projectDetailsLinkAriaLabel": "Дізнатися більше про проєкт",
     "arrowIconAriaLabel": "Іконка діагональної стрілки вгору"
   },
