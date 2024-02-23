@@ -11,7 +11,7 @@ export const OverviewStage: React.FC<OverviewStageProps> = ({
   containerStyle,
 }) => {
   return (
-    <div className={cn('text-left smOnly:mb-[60px]', containerStyle)}>
+    <div className={containerStyle}>
       <h3 className="font-geologica text-2xl text-headline smOnly:mb-6">
         {title}
       </h3>
