@@ -3,7 +3,13 @@ export type CasesResponse = {
     data: {
       attributes: {
         title: string;
-        slug: string;
+        slug: {
+          data: {
+            attributes: {
+              slug: string | null;
+            };
+          };
+        } | null;
         text: string;
         alt: string;
         link: string;
@@ -28,7 +34,13 @@ export type CasesResponse = {
 
 export type CaseCardType = {
   title: string;
-  slug: string;
+  slug: {
+    data: {
+      attributes: {
+        slug: string | null;
+      };
+    };
+  } | null;
   text: string;
   alt: string;
   url: string;
