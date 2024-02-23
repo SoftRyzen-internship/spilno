@@ -17,7 +17,7 @@ export const BusinessClientCard: React.FC<BusinessClientCardProps> = ({
 
   return (
     <div className="mx-auto w-full text-center xl:m-0 xl:max-w-[284px] xl:text-left smOnly:max-w-[288px] mdOnly:max-w-[244px]">
-      <div className="mx-auto mb-6 flex size-[79px] items-center justify-center rounded-full bg-lightBg md:mb-8 xl:ml-0 xl:mr-auto">
+      <div className="mx-auto mb-6 flex size-[79px] items-center justify-center rounded-full bg-white md:mb-8 xl:ml-0 xl:mr-auto">
         <Icon
           width={40}
           height={40}
