@@ -5,7 +5,13 @@ export const fetchMainPageCases = gql`
     cases(filters: { mainPage: { eq: true } }, sort: "id") {
       data {
         attributes {
-          slug
+          slug {
+            data {
+              attributes {
+                slug
+              }
+            }
+          }
           title
           text
           alt
