@@ -13,16 +13,24 @@ export const getAllCases = async () => {
 
     const result = cases.data.map(({ attributes }) => {
       const { slug, text, alt, img, types, title, link } = attributes;
+
       const {
         data: {
           attributes: { url },
         },
       } = img;
+
       const { data: tags } = types;
+
+      const {
+        data: {
+          attributes: { slug: innerSlug },
+        },
+      } = slug;
 
       return {
         title,
-        slug,
+        slug: innerSlug,
         text,
         alt,
         url,
