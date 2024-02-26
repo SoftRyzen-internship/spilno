@@ -1,103 +1,106 @@
-import React from 'react';
+'use client';
 
-export const SingleReviewCard = () => {
-  return <div>SingleReviewCard</div>;
+import { useState } from 'react';
+import Image from 'next/image';
+
+import { ReviewModal } from '@/components/base';
+import { ReviewerInfoCard } from '@/components/ui/ReviewerInfoCard';
+
+import { cn } from '@/utils/cn';
+
+import PlayIcon from '~/icons/play.svg';
+
+import commonData from '@/data/common.json';
+
+import { SingleReviewCardProps } from './types';
+
+import styles from './SingleReviewCard.module.css';
+
+export const SingleReviewCard: React.FC<SingleReviewCardProps> = ({
+  review: { type, text, video, author },
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onCloseModal = () => {
+    setIsOpen(false);
+  };
+  const onOpenModal = () => {
+    setIsOpen(true);
+  };
+
+  const isVideoReview = type === 'video';
+
+  const url = video?.url ? video.url : '';
+
+  return (
+    <>
+      {!isVideoReview && (
+        <div
+          className={cn(
+            'relative rounded-[10px] bg-white p-4 md:p-12',
+            styles.quoteUpIcon,
+          )}
+        >
+          <div className="pt-12 md:pt-[72px] xl:pt-[88px]">
+            <p className="mb-10 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-6 md:text-[16px] xl:mb-8 xl:text-[20px]">
+              {text}
+            </p>
+
+            <div className={cn('relative', styles.quoteDownIcon)}>
+              <ReviewerInfoCard author={author} isVideoReview={isVideoReview} />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isVideoReview && (
+        <div
+          className={cn(
+            'h-[388px] w-full overflow-hidden rounded-[10px] bg-white  md:h-[485px] md:w-[330px] xl:h-[600px] xl:w-[596px]',
+            {
+              'relative flex items-center justify-center': isVideoReview,
+              'flex flex-col justify-between p-6 xl:p-12': !isVideoReview,
+            },
+          )}
+        >
+          {video?.preview && (
+            <div className={styles.gradientBgImage}>
+              <Image
+                width={596}
+                height={600}
+                src={video.preview}
+                alt={author.name}
+                className={cn('block size-full object-cover')}
+              />
+            </div>
+          )}
+
+          <div>
+            <button
+              className="absolute left-1/2 top-1/2 mb-4 -translate-x-1/2 -translate-y-1/2 font-raleway text-[14px] font-normal leading-[1.5] text-accent underline"
+              onClick={onOpenModal}
+              type="button"
+              aria-label={commonData.reviewCard.playBtnAriaLabel}
+            >
+              <PlayIcon
+                width={74}
+                height={74}
+                className="block size-[74px] rounded-full bg-accent/40 backdrop-blur-[20px] transition-all hover:bg-accent/60 focus:bg-accent/60"
+                aria-label={commonData.reviewCard.playIconAriaLabel}
+              />
+            </button>
+
+            <ReviewerInfoCard author={author} isVideoReview={isVideoReview} />
+          </div>
+        </div>
+      )}
+
+      <ReviewModal
+        isOpen={isOpen}
+        closeModal={onCloseModal}
+        isVideoReview={isVideoReview}
+        data={{ url, author, text }}
+      />
+    </>
+  );
 };
-
-// 'use client';
-
-// import { Modal } from '@/components/ui/Modal';
-// import { ReviewerInfoCard } from '@/components/ui/ReviewerInfoCard';
-// import { VideoPlayer } from '@/components/ui/VideoPlayer';
-
-// import { cn } from '@/utils/cn';
-
-// import CloseIcon from '~/icons/cross.svg';
-
-// import commonData from '@/data/common.json';
-
-// import { SingleReviewCardProps } from './types';
-
-// import styles from './SingleReviewCard.module.css';
-// import { useState } from 'react';
-
-// export const SingleReviewCard: React.FC<SingleReviewCardProps> = ({
-//   type,
-//   text = 'test',
-//   url = 'http://test',
-
-//   isVideoReview,
-// }) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const onClose = () => {
-//     setIsOpen(false);
-//   };
-
-//   return (
-//     <>
-//       {!isVideoReview && (
-//         <Modal
-//           isOpen={isOpen}
-//           onClose={onClose}
-//           modalStyle={cn(
-//             'relative w-full max-w-[448px] rounded-[10px] bg-white p-4',
-//             'md:w-[684px] md:max-w-full md:p-12',
-//             'xl:w-[1010px]',
-//             !isVideoReview && styles.quoteUpIcon,
-//           )}
-//           modalWrapStyle="container flex items-center xl:justify-center"
-//         >
-//           <button
-//             type="button"
-//             className="mb-6 ml-auto block text-greyText md:mb-10"
-//             onClick={onClose}
-//             aria-label={commonData.reviewCard.closeBtn.closeBtnAriaLabel}
-//           >
-//             <CloseIcon
-//               width={36}
-//               height={36}
-//               className="ml-auto size-6 md:size-8 xl:size-12"
-//               aria-label={commonData.reviewCard.closeBtn.closeBtnIconAriaLabel}
-//             />
-//           </button>
-
-//           <div>
-//             <p className="mb-10 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-6 md:text-[16px] xl:mb-8 xl:text-[20px]">
-//               {text}
-//             </p>
-
-//             <div className={cn('relative', styles.quoteDownIcon)}>
-//               {/* <ReviewerInfoCard author={author} isVideoReview={isVideoReview} /> */}
-//             </div>
-//           </div>
-//         </Modal>
-//       )}
-
-//       {isVideoReview && (
-//         <Modal
-//           isOpen={isOpen}
-//           onClose={onClose}
-//           modalStyle={'w-full pb-6'}
-//           modalWrapStyle="container flex items-center"
-//         >
-//           <button
-//             type="button"
-//             className="mb-6 ml-auto block text-greyText md:mb-6"
-//             onClick={onClose}
-//             aria-label={commonData.reviewCard.closeBtn.closeBtnAriaLabel}
-//           >
-//             <CloseIcon
-//               width={36}
-//               height={36}
-//               className="ml-auto size-6 text-white md:size-8 xl:size-12"
-//               aria-label={commonData.reviewCard.closeBtn.closeBtnIconAriaLabel}
-//             />
-//           </button>
-
-//           <VideoPlayer url={url} />
-//         </Modal>
-//       )}
-//     </>
-//   );
-// };

@@ -1,47 +1,54 @@
-// import { SectionTitle, SingleReviewCard } from '@/components/ui';
-import { SectionTitle } from '@/components/ui';
+import { SectionTitle, SingleReviewCard } from '@/components/ui';
 
-import { getReviews } from '@/actions/getReviews';
+import { cn } from '@/utils/cn';
 
 import staticData from '@/data/common.json';
 
 import { SingleReviewProps } from './types';
 
-export const SingleReview: React.FC<SingleReviewProps> = async ({ slug }) => {
-  const { title, label } = staticData.reviewSection;
+export const SingleReview: React.FC<SingleReviewProps> = async ({ review }) => {
+  const { title, label } = staticData.singleReviewSection;
 
-  const reviewsData = await getReviews();
-
-  const businessReview = reviewsData?.filter(({ label }) => {
-    if (label !== 'Від бізнесу') return;
-
-    return true;
-  })[0].data;
-
-  console.log('businessReview', businessReview);
-
-  const review = businessReview?.find(
-    ({ author: { company } }) => company === slug || company === 'sulaieva.com',
-  );
-  console.log('review', review);
+  const isVideoReview = review.type === 'video';
 
   return (
     <>
-      {reviewsData && (
-        <section className="section bg-lightBg">
-          <div className="container">
-            <SectionTitle className="mb-4 xl:mb-6">{title}</SectionTitle>
-
-            <p
-              className="mb-8 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:w-[448px]
-              md:text-[16px] xl:mb-0 xl:text-[18px] smOnly:mr-10"
+      <section className="section bg-lightBg">
+        <div className="container">
+          <div className={cn({ 'md:flex md:justify-between': isVideoReview })}>
+            <div
+              className={cn(
+                { 'md:w-[330px] xl:w-[492px]': isVideoReview },
+                {
+                  'md:mb-12 md:flex md:items-center md:justify-between xl:mb-16':
+                    !isVideoReview,
+                },
+              )}
             >
-              {label}
-            </p>
+              <SectionTitle
+                className={cn(
+                  { 'mb-4 xl:mb-6': isVideoReview },
+                  { 'mb-4 md:mb-0 md:w-[319px] xl:w-[583px]': !isVideoReview },
+                )}
+              >
+                {title}
+              </SectionTitle>
+
+              <p
+                className={cn(
+                  'mb-8 font-raleway text-[14px] font-normal leading-[1.5] text-primaryText md:mb-0 md:text-[16px] xl:mb-0 xl:text-[18px]',
+
+                  { 'md:w-[286px] xl:w-[492px]': !isVideoReview },
+                )}
+              >
+                {label}
+              </p>
+            </div>
+
+            <SingleReviewCard review={review} />
           </div>
-          {/* <SingleReviewCard review={review} /> */}
-        </section>
-      )}
+        </div>
+      </section>
     </>
   );
 };
