@@ -48,13 +48,12 @@ export default async function CasePage({
   const { cases } = casePageData;
 
   const onePageData = await getOnePage(slug);
-  console.log(onePageData);
 
   return (
     <>
-      {/* <CaseHero /> */}
+      {/* <CaseHero />  */}
 
-      <Overview />
+      <Overview data={onePageData} />
 
       <Cases {...cases} slug={slug} />
 
