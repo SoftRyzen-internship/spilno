@@ -29,6 +29,7 @@ export type PageResponse = {
           analysis: TAnalysis;
           decision: TDecision;
           result: TResult;
+          review: Review;
         };
       },
     ];
@@ -64,6 +65,7 @@ export type TOneCaseData =
       analysis: TAnalysis;
       decision: TDecision;
       result: TResult;
+      review: FormattedReviewData;
     }
   | undefined;
 
@@ -112,3 +114,34 @@ type decisionList = {
   title: string;
   description: string;
 };
+
+type Review = {
+  data: {
+    attributes: {
+      from: string;
+      type: string;
+      url: string | null;
+      text: string | null;
+      preview: TImage | null;
+      avatar: TImage;
+      name: string;
+      position: string;
+      company: string;
+    };
+  } | null;
+};
+
+export type FormattedReviewData = {
+  type: string;
+  text: string | null;
+  video: {
+    url: string;
+    preview: string;
+  } | null;
+  author: {
+    name: string;
+    position: string;
+    company: string;
+    avatar: string;
+  };
+} | null;

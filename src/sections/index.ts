@@ -14,3 +14,4 @@ export * from './Reviews';
 export * from './Cooperation';
 export * from './Overview';
 export * from './CaseHero';
+export * from './SingleReview';

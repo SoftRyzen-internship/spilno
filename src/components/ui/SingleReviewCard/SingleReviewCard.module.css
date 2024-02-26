@@ -1,0 +1,29 @@
+.quoteUpIcon::before {
+  @apply absolute left-4 top-4 block size-8 bg-contain bg-no-repeat content-[""] md:left-12 md:top-12 md:size-12 xl:size-16;
+
+  background-image: url('/icons/quote-up.svg');
+}
+
+.quoteDownIcon::after {
+  @apply absolute bottom-1/2 right-0 block h-8 w-8 translate-y-1/2 bg-contain bg-no-repeat content-[""] md:size-12 xl:size-16;
+
+  background-image: url('/icons/quote-down.svg');
+}
+
+.gradientBgImage {
+  width: 100%;
+  height: 100%;
+}
+.gradientBgImage::before {
+  position: absolute;
+  inset: 0px;
+
+  display: block;
+  content: '';
+
+  background: linear-gradient(
+    191deg,
+    rgba(13, 10, 25, 0) 42.8%,
+    #0d0a19 117.17%
+  );
+}

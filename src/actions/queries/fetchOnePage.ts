@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 
-export const fetchOneCase = gql`
+export const fetchOnePage = gql`
   query ($case: String) {
     pages(filters: { slug: { slug: { eq: $case } } }) {
       data {
@@ -97,6 +97,33 @@ export const fetchOneCase = gql`
             title
             description
             link
+          }
+          review {
+            data {
+              attributes {
+                from
+                type
+                url
+                preview {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                text
+                avatar {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                name
+                position
+                company
+              }
+            }
           }
         }
       }
