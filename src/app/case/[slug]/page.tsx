@@ -57,7 +57,7 @@ export default async function CasePage({
 
       <Cases {...cases} slug={slug} />
 
-      {onePageData?.review && <SingleReview review={onePageData?.review} />}
+      {onePageData?.review && <SingleReview review={onePageData.review} />}
 
       <ContactUs />
     </>

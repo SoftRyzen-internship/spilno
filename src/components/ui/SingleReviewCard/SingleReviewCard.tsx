@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import { ReviewModal } from '@/components/base';
-import { ReviewerInfoCard } from '@/components/ui/ReviewerInfoCard';
+import { ReviewerInfoCard } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 
