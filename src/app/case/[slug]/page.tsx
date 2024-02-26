@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { getOnePage } from '@/actions/getOnePage';
 import { getAllPagesSlug } from '@/actions/getAllPagesSlug';
 
-import { ContactUs, Overview, PortfolioHero } from '@/sections';
+import { ContactUs, Overview } from '@/sections';
 
 export const dynamicParams = false;
 export const dynamic = 'error';
@@ -47,8 +47,7 @@ export default async function CasePage({
 
   return (
     <>
-      {/* <CaseHero />  remove Portfolio Hero it was added only for display correct single page*/}
-      <PortfolioHero />
+      {/* <CaseHero />  */}
 
       <Overview data={onePageData} />
 
