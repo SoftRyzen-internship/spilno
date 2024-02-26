@@ -50,7 +50,7 @@ export const OverviewStage: React.FC<OverviewStageProps> = ({
           <li key={keySolution.title} className="relative pl-[34px] xl:pl-14">
             <CheckIcon
               width={20}
-              heigth={20}
+              height={20}
               className="absolute left-0 top-0 size-5 text-accent md:size-6 xl:size-8"
             />
 

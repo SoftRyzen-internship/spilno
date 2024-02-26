@@ -30,7 +30,7 @@ export const Overview: React.FC<OverviewProps> = ({ data }) => {
       />
 
       <div className="container md:space-y-20 smOnly:space-y-[60px]">
-        <h2 className="hidden">{title}</h2>
+        <h2 className="sr-only">{title}</h2>
 
         <OverviewStage title={problems.title} desc={problems.description} />
 
