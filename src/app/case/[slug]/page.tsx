@@ -56,7 +56,7 @@ export default async function CasePage({
 
       <Overview />
 
-      <Cases {...cases} />
+      <Cases {...cases} slug={slug} />
 
       {/* <CaseReview /> */}
 
