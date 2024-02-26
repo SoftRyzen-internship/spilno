@@ -12,14 +12,19 @@ import { Props } from './types';
 export const Cases: React.FC<Props> = async ({
   title,
   showAllProjectsLinkText,
+  slug,
 }) => {
   const { showAllProjectsLinkPath, arrowIconAriaLabel } = data.cases;
 
   const slidesData = await getMainPageCases();
 
+  const finalSlidesData = slug
+    ? slidesData?.filter(({ slug: s }) => s !== slug)
+    : slidesData;
+
   return (
     <>
-      {slidesData && (
+      {finalSlidesData && (
         <section className="section" id="cases">
           <div className="container relative text-center">
             <SectionTitle
@@ -29,7 +34,7 @@ export const Cases: React.FC<Props> = async ({
               {title}
             </SectionTitle>
 
-            <CasesSlider slidesData={slidesData} />
+            <CasesSlider slidesData={finalSlidesData} />
             <SliderControls
               wrapClassName="mb-8 flex justify-center md:absolute md:top-[4px] right-[42px] md:mb-0 xl:right-[32px] xl:top-[29px]"
               section="cases"
