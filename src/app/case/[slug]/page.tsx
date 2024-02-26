@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { getOnePage } from '@/actions/getOnePage';
 import { getAllPagesSlug } from '@/actions/getAllPagesSlug';
 
-import { ContactUs, Overview, Cases, CaseHero } from '@/sections';
+import { ContactUs, Overview, Cases, CaseHero, SingleReview } from '@/sections';
 
 import casePageData from '@/data/case-page.json';
 
@@ -57,7 +57,7 @@ export default async function CasePage({
 
       <Cases {...cases} slug={slug} />
 
-      {/* <CaseReview /> */}
+      <SingleReview slug={slug} />
 
       <ContactUs />
     </>
