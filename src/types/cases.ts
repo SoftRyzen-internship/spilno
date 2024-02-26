@@ -3,7 +3,13 @@ export type CasesResponse = {
     data: {
       attributes: {
         title: string;
-        slug: string;
+        slug: {
+          data: {
+            attributes: {
+              slug: string;
+            };
+          };
+        };
         text: string;
         alt: string;
         link: string;
