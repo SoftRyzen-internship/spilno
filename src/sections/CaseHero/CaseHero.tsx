@@ -1,8 +1,6 @@
-import data from './data.json';
+import { Props } from './types';
 
-export const CaseHero = () => {
-  const { title, text, tags } = data;
-
+export const CaseHero: React.FC<Props> = ({ title, description, tags }) => {
   return (
     <section className="bg-darkBg pb-8 pt-[146px] md:pb-[42px] md:pt-[151px] xl:pb-[64px] xl:pt-[235px]">
       <div className="container md:flex md:items-end md:justify-between">
@@ -12,17 +10,17 @@ export const CaseHero = () => {
           </h1>
 
           <p className="text-xs/[1.5] text-white md:text-[14px] xl:text-[18px] smOnly:mb-8">
-            {text}
+            {description}
           </p>
         </div>
 
-        <div className="flex gap-1">
-          {tags.map(tag => (
+        <div className="flex gap-1 xl:gap-2">
+          {tags.map(({ attributes: { name } }) => (
             <p
               className="rounded-full border border-lightBlue px-4 py-2 text-[10px]/[1.25] text-white xl:px-[22px] xl:py-4 xl:text-[14px]"
-              key={tag}
+              key={name}
             >
-              {tag}
+              {name}
             </p>
           ))}
         </div>

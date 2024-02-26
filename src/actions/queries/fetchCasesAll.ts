@@ -5,7 +5,13 @@ export const fetchCasesAll = gql`
     cases(sort: "id") {
       data {
         attributes {
-          slug
+          slug {
+            data {
+              attributes {
+                slug
+              }
+            }
+          }
           title
           text
           alt

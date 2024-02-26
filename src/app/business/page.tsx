@@ -11,13 +11,15 @@ import {
   Cooperation,
 } from '@/sections';
 
-import data from '@/data/business-page.json';
+import businessPageData from '@/data/business-page.json';
 import meta from '@/data/meta.json';
+import commonData from '@/data/common.json';
 
 export const metadata: Metadata = meta.business;
 
 export default function BusinessPage() {
-  const { hero, advantages } = data;
+  const { hero, advantages } = businessPageData;
+  const { cases } = commonData;
 
   return (
     <>
@@ -29,7 +31,7 @@ export default function BusinessPage() {
 
       <Cooperation />
 
-      <Cases />
+      <Cases {...cases} />
 
       <Partners />
 
