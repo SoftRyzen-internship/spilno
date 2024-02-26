@@ -5,6 +5,6 @@ export type OverviewStageProps = {
 };
 
 type KeySolution = {
-  label: string;
-  summary: string;
+  title: string;
+  description: string;
 };

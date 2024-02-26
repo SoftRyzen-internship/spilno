@@ -2,30 +2,26 @@ import Image from 'next/image';
 
 import { Button, OverviewStage } from '@/components/ui';
 
-import data from '@/data/overview.json';
+import content from '@/data/single-page.json';
 
 import IconArrow from '~/icons/arrow.svg';
 
-export const Overview: React.FC = async () => {
-  const {
-    id,
-    title,
-    primaryImage,
-    button,
-    problem,
-    analysis,
-    decision,
-    conclusion,
-  } = data;
+import { OverviewProps } from './types';
+
+export const Overview: React.FC<OverviewProps> = ({ data }) => {
+  if (!data) {
+    return null;
+  }
+
+  const { title, button } = content.overview;
+
+  const { url, alt, problems, analysis, decision, result } = data;
 
   return (
-    <section
-      id={id}
-      className="relative overflow-hidden bg-white pb-[60px] after:absolute after:bottom-0 after:left-1/2 after:h-[1px] after:w-screen after:-translate-x-1/2 after:bg-strokeColor after:content-[''] md:pb-20"
-    >
+    <section className="relative overflow-hidden bg-white pb-[60px] after:absolute after:bottom-0 after:left-1/2 after:h-[1px] after:w-screen after:-translate-x-1/2 after:bg-strokeColor after:content-[''] md:pb-20">
       <Image
-        src={primaryImage.src}
-        alt={primaryImage.alt}
+        src={url}
+        alt={alt}
         width={1400}
         height={700}
         priority
@@ -36,13 +32,13 @@ export const Overview: React.FC = async () => {
       <div className="container md:space-y-20 smOnly:space-y-[60px]">
         <h2 className="hidden">{title}</h2>
 
-        <OverviewStage title={problem.title} desc={problem.desc} />
+        <OverviewStage title={problems.title} desc={problems.description} />
 
         <ul className="md:flex md:h-[278px] md:gap-6 xl:h-[500px] xl:gap-10 smOnly:space-y-4">
           <li>
             <Image
-              src={problem.wideImage.src}
-              alt={problem.wideImage.alt}
+              src={problems.problemsImgFirst.data.attributes.url}
+              alt={problems.altFirst}
               width={677}
               height={500}
               loading="lazy"
@@ -52,8 +48,8 @@ export const Overview: React.FC = async () => {
           </li>
           <li>
             <Image
-              src={problem.squareImage.src}
-              alt={problem.squareImage.alt}
+              src={problems.problemsImgSecond.data.attributes.url}
+              alt={problems.altSecond}
               width={500}
               height={500}
               loading="lazy"
@@ -63,11 +59,11 @@ export const Overview: React.FC = async () => {
           </li>
         </ul>
 
-        <OverviewStage title={analysis.title} desc={analysis.desc} />
+        <OverviewStage title={analysis.title} desc={analysis.description} />
 
         <Image
-          src={analysis.image.src}
-          alt={analysis.image.alt}
+          src={analysis.img.data.attributes.url}
+          alt={analysis.alt}
           width={1216}
           height={550}
           loading="lazy"
@@ -77,15 +73,15 @@ export const Overview: React.FC = async () => {
 
         <OverviewStage
           title={decision.title}
-          desc={decision.desc}
-          keySolutions={decision.keySolutions}
+          desc={decision.description}
+          keySolutions={decision.decisionList}
         />
 
         <ul className="md:flex md:flex-wrap md:justify-between md:gap-y-6 xl:gap-y-10 smOnly:space-y-4">
           <li className="md:basis-full">
             <Image
-              src={conclusion.overviewImg.src}
-              alt={conclusion.overviewImg.alt}
+              src={decision.decisionImgFirst.data.attributes.url}
+              alt={decision.altFirst}
               width={1216}
               height={480}
               loading="lazy"
@@ -96,8 +92,8 @@ export const Overview: React.FC = async () => {
 
           <li className="md:h-[282px] xl:h-[500px]">
             <Image
-              src={conclusion.squareImg.src}
-              alt={conclusion.squareImg.alt}
+              src={decision.decisionImgSecond.data.attributes.url}
+              alt={decision.altSecond}
               width={500}
               height={500}
               loading="lazy"
@@ -108,8 +104,8 @@ export const Overview: React.FC = async () => {
 
           <li className="md:h-[282px] xl:h-[500px]">
             <Image
-              src={conclusion.wideImg.src}
-              alt={conclusion.wideImg.alt}
+              src={decision.decisionImgThird.data.attributes.url}
+              alt={decision.altThird}
               width={677}
               height={500}
               loading="lazy"
@@ -120,13 +116,13 @@ export const Overview: React.FC = async () => {
         </ul>
 
         <div>
-          <OverviewStage title={conclusion.title} desc={conclusion.desc} />
+          <OverviewStage title={result.title} desc={result.description} />
 
           <Button
             text={button.label}
             btnStyle="accent"
             className="flex w-full md:mx-auto md:max-w-[223px] xl:max-w-[338px]"
-            link={button.target}
+            link={result.link}
           >
             <IconArrow className="size-5 xl:size-6" aria-hidden="true" />
           </Button>

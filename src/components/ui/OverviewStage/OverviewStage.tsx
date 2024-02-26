@@ -47,7 +47,7 @@ export const OverviewStage: React.FC<OverviewStageProps> = ({
     {keySolutions && (
       <ul className="space-y-6 md:row-span-3 xl:space-y-10">
         {keySolutions.map(keySolution => (
-          <li key={keySolution.label} className="relative pl-[34px] xl:pl-14">
+          <li key={keySolution.title} className="relative pl-[34px] xl:pl-14">
             <CheckIcon
               width={20}
               heigth={20}
@@ -55,11 +55,11 @@ export const OverviewStage: React.FC<OverviewStageProps> = ({
             />
 
             <h4 className="mb-2 font-geologica text-base/[1.25] text-headline md:text-lg/[1.25] xl:text-2xl/[1.25]">
-              {keySolution.label}
+              {keySolution.title}
             </h4>
 
             <p className="text-sm/[1.5] text-primaryText xl:text-xl/[1.5]">
-              {keySolution.summary}
+              {keySolution.description}
             </p>
           </li>
         ))}
