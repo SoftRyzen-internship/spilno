@@ -53,7 +53,7 @@ export default async function CasePage({
     <>
       {onePageData && <CaseHero {...onePageData} />}
 
-      <Overview />
+      <Overview data={onePageData} />
 
       <Cases {...cases} slug={slug} />
 

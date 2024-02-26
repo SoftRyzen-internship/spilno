@@ -23,88 +23,12 @@ export type PageResponse = {
             }[];
           };
 
-          heroImg: {
-            data: {
-              attributes: {
-                url: string;
-              };
-            };
-          };
-
+          heroImg: TImage;
           alt: string;
-
-          problems: {
-            title: string;
-            description: string;
-            problemsImgFirst: {
-              data: {
-                attributes: {
-                  url: string;
-                };
-              };
-            };
-            altFirst: string;
-            problemsImgSecond: {
-              data: {
-                attributes: {
-                  url: string;
-                };
-              };
-            };
-            altSecond: string;
-          };
-
-          analysis: {
-            title: string;
-            description: string;
-            img: {
-              data: {
-                attributes: {
-                  url: string;
-                };
-              };
-            };
-            alt: string;
-          };
-
-          decision: {
-            title: string;
-            description: string;
-            decisionList: {
-              title: string;
-              description: string;
-            };
-            decisionImgFirst: {
-              data: {
-                attributes: {
-                  url: string;
-                };
-              };
-            };
-            altFirst: string;
-            decisionImgSecond: {
-              data: {
-                attributes: {
-                  url: string;
-                };
-              };
-            };
-            altSecond: string;
-            decisionImgThird: {
-              data: {
-                attributes: {
-                  url: string;
-                };
-              };
-            };
-            altThird: string;
-          };
-
-          result: {
-            title: string;
-            description: string;
-            link: string;
-          };
+          problems: TProblems;
+          analysis: TAnalysis;
+          decision: TDecision;
+          result: TResult;
         };
       },
     ];
@@ -123,4 +47,68 @@ export type getAllPagesSlugResponse = {
       };
     }[];
   };
+};
+
+export type TOneCaseData =
+  | {
+      title: string;
+      description: string;
+      tags: {
+        attributes: {
+          name: string;
+        };
+      }[];
+      url: string;
+      alt: string;
+      problems: TProblems;
+      analysis: TAnalysis;
+      decision: TDecision;
+      result: TResult;
+    }
+  | undefined;
+
+type TImage = {
+  data: {
+    attributes: {
+      url: string;
+    };
+  };
+};
+
+type TDecision = {
+  title: string;
+  description: string;
+  decisionList: decisionList[];
+  decisionImgFirst: TImage;
+  altFirst: string;
+  decisionImgSecond: TImage;
+  altSecond: string;
+  decisionImgThird: TImage;
+  altThird: string;
+};
+
+type TResult = {
+  title: string;
+  description: string;
+  link: string;
+};
+
+type TAnalysis = {
+  title: string;
+  description: string;
+  img: TImage;
+  alt: string;
+};
+type TProblems = {
+  title: string;
+  description: string;
+  problemsImgFirst: TImage;
+  altFirst: string;
+  problemsImgSecond: TImage;
+  altSecond: string;
+};
+
+type decisionList = {
+  title: string;
+  description: string;
 };
