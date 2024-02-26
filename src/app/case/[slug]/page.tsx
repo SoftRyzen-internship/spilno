@@ -49,8 +49,6 @@ export default async function CasePage({
 
   const onePageData = await getOnePage(slug);
 
-  console.log(onePageData);
-
   return (
     <>
       {onePageData && <CaseHero {...onePageData} />}
