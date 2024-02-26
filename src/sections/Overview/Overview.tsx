@@ -68,7 +68,6 @@ export const Overview: React.FC<OverviewProps> = ({ data }) => {
           height={550}
           loading="lazy"
           className="w-full rounded-[10px] object-cover"
-          sizes="(max-width: 479px) 100vw,(min-width: 480px) 448px, (min-width: 768px) 684px, (min-width: 1280px) 1216px"
         />
 
         <OverviewStage
@@ -86,7 +85,6 @@ export const Overview: React.FC<OverviewProps> = ({ data }) => {
               height={480}
               loading="lazy"
               className="w-full rounded-[10px] object-cover xl:h-[480px] smOnly:aspect-[1.94]"
-              sizes="(max-width: 479px) 100vw,(min-width: 480px) 448px, (min-width: 768px) 684px, (min-width: 1280px) 1216px"
             />
           </li>
 
