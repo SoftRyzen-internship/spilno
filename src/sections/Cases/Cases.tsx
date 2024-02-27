@@ -7,9 +7,9 @@ import data from '@/data/common.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import { Props } from './types';
+import { CasesProps } from './types';
 
-export const Cases: React.FC<Props> = async ({
+export const Cases: React.FC<CasesProps> = async ({
   title,
   showAllProjectsLinkText,
   slug,

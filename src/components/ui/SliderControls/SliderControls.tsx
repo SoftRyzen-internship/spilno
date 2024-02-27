@@ -8,9 +8,12 @@ import data from '@/data/common.json';
 
 import css from './SliderControls.module.css';
 
-import { Props, Sections } from './types';
+import { SliderControlsProps, Sections } from './types';
 
-export const SliderControls: React.FC<Props> = ({ section, wrapClassName }) => {
+export const SliderControls: React.FC<SliderControlsProps> = ({
+  section,
+  wrapClassName,
+}) => {
   const {
     sliderControls: {
       prevBtnAriaLabel,

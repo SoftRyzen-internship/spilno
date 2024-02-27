@@ -7,9 +7,9 @@ import { getSliderConfig } from '@/utils/getSliderConfig';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { Props } from './types';
+import { SliderProps } from './types';
 
-export const Slider: React.FC<Props> = ({
+export const Slider: React.FC<SliderProps> = ({
   slideClassName,
   slidesData,
   slideComponent: SlideComponent,

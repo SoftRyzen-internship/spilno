@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: onePageData?.title,
     description: onePageData?.description,
     alternates: {
-      canonical: `/case/${slug}`,
+      canonical: `/portfolio/${slug}`,
     },
   };
 }

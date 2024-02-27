@@ -1,4 +1,4 @@
-export type Props = {
+export type SliderControlsProps = {
   section: 'cases' | 'reviews' | 'advantages';
   wrapClassName?: string;
 };

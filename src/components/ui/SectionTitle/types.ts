@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type Props = {
+export type SectionTitleProps = {
   children: ReactNode;
   className?: string;
   isWhite?: boolean;
