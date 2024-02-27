@@ -1,4 +1,4 @@
-export type Props = {
+export type ProblemCardProps = {
   title: string;
   text: string;
   idx: number;

@@ -94,6 +94,14 @@ Z{Enter} --> L(Layout)
   E --> EG[Section 7. FAQ]
   E --> EH[Section 8. ContactUs]
 
+
+  BA --> F((Single page))
+  F --> FA[Section 1. Hero]
+  F --> FB[Section 2. Overview]
+  F --> FC[Section 3. Cases]
+  F --> FD[Section 4. Review]
+  F --> FE[Section 5. ContactUs]
+
 ```
 
 <details>
@@ -106,10 +114,12 @@ Z{Enter} --> L(Layout)
 
 |-- public -> static files
 |-- src -> source directory with the main application code
+  |-- actions -> asynchronous functions that are executed on the server
   |-- app -> pages and routing
     |-- / --> routing group for main UI
     |-- (portfolio) --> routing group for portfolio UI
     |-- (business) --> routing group for business UI
+    |-- (single-page) --> routing group for dynamic page UI
   |-- components -> folder with reusable components
     |-- base -> base sections/block components (accordion, form, slider, etc.)
     |-- ui -> small reusable components (button, modal, etc.)
@@ -133,103 +143,21 @@ Z{Enter} --> L(Layout)
 Each component has its own API. You can find it in the component's folder. This
 is a list of more common components and their API.
 
-- #### Logo
+<details>
 
-| Prop        | Default | Description                                                    |
-| ----------- | ------- | -------------------------------------------------------------- |
-| `location`  | -       | required, choose the position you'd need :'header' or 'footer' |
-| `className` | ''      | optional, `string`, adds custom css class.                     |
+<summary><b>Base sections/block components (accordion, form, slider, etc.): </b></summary>
 
-- #### MainNav
+<br/>
 
-| Prop       | Default   | Description                                                  |
-| ---------- | --------- | ------------------------------------------------------------ |
-| `location` | -         | required, choose the position you'd need :'header' or 'menu' |
-| `onClick`  | undefined | click handler                                                |
+- #### Advantages section
 
-- #### SectionTitle
+Component - section company's advantages
 
-| Prop         | Default | Description                                                  |
-| ------------ | ------- | ------------------------------------------------------------ |
-| `children`   | -       | required, `ReactNode`.                                       |
-| `isWhite`    | `false` | optional, `boolean`, changes color to white.                 |
-| `isCentered` | `false` | optional, `boolean`, adds css property `text-align: center`. |
-| `className`  | ''      | optional, `string`, adds custom css class.                   |
-
-- #### ModalBtn
-
-| Prop            | Default   | Description                                                   |
-| --------------- | --------- | ------------------------------------------------------------- |
-| `location`      | -         | required, choose the position you'd need :'header' or 'modal' |
-| `ariaLabel`     | -         | required, text for the aria label                             |
-| `onClick`       | undefined | optional, click handler                                       |
-| `className`     | ''        | optional, add custom or additional css class you'd need.      |
-| `iconClassName` | ''        | optional, add custom or additional css class you'd need.      |
-
-- #### Modal
-
-Pure Modal Component which expect `onClose`:implements close modal window by
-mouse click on backdrop or by press `ESC` button, `isOpen` - state to show/hide
-modal, `children` -content for modal.
-
-| Prop             | Default | Description                                                       |
-| ---------------- | ------- | ----------------------------------------------------------------- |
-| `children`       | -       | required, `ReactNode`, which will be content for modal window     |
-| `isOpen`         | `false` | required, `boolean`, changes state to show/close the window.      |
-| `onClose`        | -       | required, click handler for close modal window                    |
-| `modalStyle`     | ''      | optional, `string`, additional css class you'd need               |
-| `modalWrapStyle` | ''      | optional, `string`, additional css class you'd need for container |
-| `backdropStyle`  | ''      | optional, `string`, additional css class you'd need               |
-
-- #### RingedImage
-
-Rounded Image component `rounded-full` expect Next/Image component as children
-prop with fill prop. Contains pseudo after element `ring`, positioned absolutely
-looks as `2px white` border. Component expect `right` or `left` variants for
-position the ring. With option `hero` for prop `ringType` realized special ring
-`3px '#BFD5FF'` border, setup in config colors as heroRing.
-
-| Prop        | Default | Description                                                                                   |
-| ----------- | ------- | --------------------------------------------------------------------------------------------- |
-| `children`  | -       | required, `ReactNode`, expect Image component with fill property                              |
-| `variant`   | -       | required, select the ring positioning option: `right` or `left`                               |
-| `ringType`  | ``      | optional, realized ring `3px '#BFD5FF'` border for Hero Component                             |
-| `className` | ''      | optional, `string`, You should set the width of component and additional css class you'd need |
-
-- #### Button
-
-A button or link component. Can accept an SVG icon component as children. The
-`link` prop enables the link mode, the value of which will be used in the href
-tag from NextLink. Props `text` - the text that will be displayed in the button
-or link. `btnStyle` sets the style of the stylized button, has the following
-options: `primary`, `accent`, `submit`, `transparent`. `className` is a prop
-that can be used to pass styles that will override common button or link styles
-
-| Prop        | Default     | Description                                                                              |
-| ----------- | ----------- | ---------------------------------------------------------------------------------------- |
-| `link`      | `undefined` | `string` or `undefined` toggles changes the button tag to a link tag, the value must     |
-|             |             | contain a site link or section ID.                                                       |
-| `text`      | `undefined` | required, `string`, the text displayed in the button                                     |
-| `children`  | `undefined` | ReactNode embedded components                                                            |
-| `btnStyle`  | `primary`   | sets the type of stylization, can be: `primary` or `accent` or `submit` or `transparent` |
-| `className` | `undefined` | `string`, allows you to override common styles                                           |
-
-- #### Slider
-
-| Prop             | Default     | Description                                                                                               |
-| ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| `slideComponent` | -           | required, `React.FC<any>`, It`s the component that will be rendered as side.                              |
-| `slidesData`     | -           | required, `Record<string, any>[]`, It is a array with slide`s objects                                     |
-| `section`        | -           | required, `cases`, `reviews`, `partners`, `advantages`, name of the section where slider will be rendered |
-| `wrapClassName`  | `undefined` | optional, `string`, adds custom css class to the Swiper component.                                        |
-| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponent component.                                |
-
-- #### SliderControls
-
-| Prop            | Default     | Description                                                                                            |
-| --------------- | ----------- | ------------------------------------------------------------------------------------------------------ |
-| `section`       | -           | required, `cases`, `reviews`, `advantages`, name of the section where sliderControls will be rendered. |
-| `wrapClassName` | `undefined` | optional, `Record<string, any>[]`, adds custom css class on the div that wraps control buttons.        |
+| Prop    | Default | Description                                            |
+| ------- | ------- | ------------------------------------------------------ |
+| `id`    | -       | required, `string`, used as id for section             |
+| `title` | -       | required, `string`, display as title for section       |
+| `desc`  | -       | required, `string`, display as description for section |
 
 - #### Accordion
 
@@ -243,25 +171,41 @@ state. Only one item can be deployed at a time
 | `type`      | `undefined` | optional, specifies the type of component to render and progress as children  |
 | `className` | `undefined` | optional, `string`, adds custom css class to the Accordion wrapper component. |
 
-- #### AccordionOfferItem
+- #### AdvantagesCard
 
-Component is an accordion element that contains a title, description, and image
+Component - card for section company advantages.
 
-| Prop    | Default     | Description                                                                                                                         |
-| ------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `data`  | `undefined` | data to be displayed in the component must contain a `title`:`string`, `description`:`string`, `image`:`string` - path to the image |
-| `index` | `undefined` | `number`, the index of the expanded element                                                                                         |
-| `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                                                                  |
+| Prop          | Default | Description                                                               |
+| ------------- | ------- | ------------------------------------------------------------------------- |
+| `id`          | -       | required, `string`, depends what image will be rendered. Value from 01-04 |
+| `title`       | -       | required, `string`, will be rendered as card title                        |
+| `description` | -       | required, `string`, will be rendered as card description                  |
 
-- #### AccordionFAQItem
+- #### BusinessClientsCard
 
-Component is an accordion element that contains a question and answer.
+Component - card for section business clients.
 
-| Prop    | Default     | Description                                                                                  |
-| ------- | ----------- | -------------------------------------------------------------------------------------------- |
-| `data`  | `undefined` | data to be displayed in the component must contain a `question`:`string`, `answer`:`string`, |
-| `index` | `undefined` | `number`, the index of the expanded element                                                  |
-| `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                           |
+| Prop    | Default | Description                                                                            |
+| ------- | ------- | -------------------------------------------------------------------------------------- |
+| `id`    | -       | required, `string`, used as an identifier for the correct display of the category icon |
+| `title` | -       | required, `string`, display as title for the category                                  |
+| `desc`  | -       | required, `string`, display as description for the category                            |
+
+- #### MainNav
+
+| Prop       | Default   | Description                                                  |
+| ---------- | --------- | ------------------------------------------------------------ |
+| `location` | -         | required, choose the position you'd need :'header' or 'menu' |
+| `onClick`  | undefined | click handler                                                |
+
+- #### PartnersCard
+
+Component - card for section company partners.
+
+| Prop  | Default | Description                                         |
+| ----- | ------- | --------------------------------------------------- |
+| `alt` | -       | required, `string`, describe alt for partner logo   |
+| `url` | -       | required, `string`, link with partner web-site logo |
 
 - #### ReviewCard
 
@@ -288,6 +232,37 @@ props must be set to true.
 | `isVideoReview` | `undefined` | required, `boolean`, indicates whether it is a video review or a text one.           |
 | `className`     | `undefined` | optional, `string`, adds custom css class to the ReviewerInfoCard wrapper component. |
 
+- #### ReviewModal
+
+Feedback card modal window component. Works in two modes, for test feedback and
+video feedback
+
+| Prop            | Default     | Description                                                                             |
+| --------------- | ----------- | --------------------------------------------------------------------------------------- |
+| `isOpen`        | `undefined` | required, `boolean`, reports the state of the modal window, true - open, false - closed |
+| `closeModal`    | `undefined` | required, `function`, callback to close the modal window                                |
+| `data`          | `undefined` | required, `Object`, data may include text feedback or video feedback data               |
+| `isVideoReview` | `undefined` | required, `boolean`, indicates whether it is a video review or a text one.              |
+
+- #### SectionTitle
+
+| Prop         | Default | Description                                                  |
+| ------------ | ------- | ------------------------------------------------------------ |
+| `children`   | -       | required, `ReactNode`.                                       |
+| `isWhite`    | `false` | optional, `boolean`, changes color to white.                 |
+| `isCentered` | `false` | optional, `boolean`, adds css property `text-align: center`. |
+| `className`  | ''      | optional, `string`, adds custom css class.                   |
+
+- #### Slider
+
+| Prop             | Default     | Description                                                                                               |
+| ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
+| `slideComponent` | -           | required, `React.FC<any>`, It`s the component that will be rendered as side.                              |
+| `slidesData`     | -           | required, `Record<string, any>[]`, It is a array with slide`s objects                                     |
+| `section`        | -           | required, `cases`, `reviews`, `partners`, `advantages`, name of the section where slider will be rendered |
+| `wrapClassName`  | `undefined` | optional, `string`, adds custom css class to the Swiper component.                                        |
+| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponent component.                                |
+
 - #### Tabs
 
 A component that allows playing different content depending on which button is
@@ -299,6 +274,61 @@ displayed.
 | `reviewsData`   | `undefined` | required, `Object`, data required for rendering reviews               |
 | `questionsData` | `undefined` | required, `Object`, data required for rendering questions and answers |
 | `children`      | `undefined` | required, Built-in ReactNode components                               |
+
+- #### VideoPlayer
+
+Video player component. Plays videos of different sizes. A link to the video is
+expected in the props
+
+| Prop  | Default     | Description                                                 |
+| ----- | ----------- | ----------------------------------------------------------- |
+| `url` | `undefined` | required, `string`, value of the absolute path to the video |
+
+</details>
+
+<details>
+
+<summary><b>Small reusable components (button, modal, etc.): </b></summary>
+
+<br/>
+
+- #### AccordionOfferItem
+
+Component is an accordion element that contains a title, description, and image
+
+| Prop    | Default     | Description                                                                                                                         |
+| ------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `data`  | `undefined` | data to be displayed in the component must contain a `title`:`string`, `description`:`string`, `image`:`string` - path to the image |
+| `index` | `undefined` | `number`, the index of the expanded element                                                                                         |
+| `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                                                                  |
+
+- #### AccordionFAQItem
+
+Component is an accordion element that contains a question and answer.
+
+| Prop    | Default     | Description                                                                                  |
+| ------- | ----------- | -------------------------------------------------------------------------------------------- |
+| `data`  | `undefined` | data to be displayed in the component must contain a `question`:`string`, `answer`:`string`, |
+| `index` | `undefined` | `number`, the index of the expanded element                                                  |
+| `aria`  | `undefined` | `string`, text to fill the aria label for the icon                                           |
+
+- #### Button
+
+A button or link component. Can accept an SVG icon component as children. The
+`link` prop enables the link mode, the value of which will be used in the href
+tag from NextLink. Props `text` - the text that will be displayed in the button
+or link. `btnStyle` sets the style of the stylized button, has the following
+options: `primary`, `accent`, `submit`, `transparent`. `className` is a prop
+that can be used to pass styles that will override common button or link styles
+
+| Prop        | Default     | Description                                                                              |
+| ----------- | ----------- | ---------------------------------------------------------------------------------------- |
+| `link`      | `undefined` | `string` or `undefined` toggles changes the button tag to a link tag, the value must     |
+|             |             | contain a site link or section ID.                                                       |
+| `text`      | `undefined` | required, `string`, the text displayed in the button                                     |
+| `children`  | `undefined` | ReactNode embedded components                                                            |
+| `btnStyle`  | `primary`   | sets the type of stylization, can be: `primary` or `accent` or `submit` or `transparent` |
+| `className` | `undefined` | `string`, allows you to override common styles                                           |
 
 - #### FormField
 
@@ -392,65 +422,71 @@ This popup component rendered using Modal component.
 | `isSuccess` | `false` | required, `boolean`, show styled Success or Error component with message |
 | `onClose`   | -       | required, click handler for close popup window                           |
 
-- #### AdvantagesCard
+- #### Logo
 
-Component - card for section company advantages.
+| Prop        | Default | Description                                                    |
+| ----------- | ------- | -------------------------------------------------------------- |
+| `location`  | -       | required, choose the position you'd need :'header' or 'footer' |
+| `className` | ''      | optional, `string`, adds custom css class.                     |
 
-| Prop          | Default | Description                                                               |
-| ------------- | ------- | ------------------------------------------------------------------------- |
-| `id`          | -       | required, `string`, depends what image will be rendered. Value from 01-04 |
-| `title`       | -       | required, `string`, will be rendered as card title                        |
-| `description` | -       | rrequired, `string`, will be rendered as card description                 |
+- #### Modal
 
-- #### ReviewModal
+Pure Modal Component which expect `onClose`:implements close modal window by
+mouse click on backdrop or by press `ESC` button, `isOpen` - state to show/hide
+modal, `children` -content for modal.
 
-Feedback card modal window component. Works in two modes, for test feedback and
-video feedback
+| Prop             | Default | Description                                                       |
+| ---------------- | ------- | ----------------------------------------------------------------- |
+| `children`       | -       | required, `ReactNode`, which will be content for modal window     |
+| `isOpen`         | `false` | required, `boolean`, changes state to show/close the window.      |
+| `onClose`        | -       | required, click handler for close modal window                    |
+| `modalStyle`     | ''      | optional, `string`, additional css class you'd need               |
+| `modalWrapStyle` | ''      | optional, `string`, additional css class you'd need for container |
+| `backdropStyle`  | ''      | optional, `string`, additional css class you'd need               |
 
-| Prop            | Default     | Description                                                                             |
-| --------------- | ----------- | --------------------------------------------------------------------------------------- |
-| `isOpen`        | `undefined` | required, `boolean`, reports the state of the modal window, true - open, false - closed |
-| `closeModal`    | `undefined` | required, `function`, callback to close the modal window                                |
-| `data`          | `undefined` | required, `Object`, data may include text feedback or video feedback data               |
-| `isVideoReview` | `undefined` | required, `boolean`, indicates whether it is a video review or a text one.              |
+- #### ModalBtn
 
-- #### VideoPlayer
+| Prop            | Default   | Description                                                   |
+| --------------- | --------- | ------------------------------------------------------------- |
+| `location`      | -         | required, choose the position you'd need :'header' or 'modal' |
+| `ariaLabel`     | -         | required, text for the aria label                             |
+| `onClick`       | undefined | optional, click handler                                       |
+| `className`     | ''        | optional, add custom or additional css class you'd need.      |
+| `iconClassName` | ''        | optional, add custom or additional css class you'd need.      |
 
-Video player component. Plays videos of different sizes. A link to the video is
-expected in the props
+- #### OverviewStage
 
-| Prop  | Default     | Description                                                 |
-| ----- | ----------- | ----------------------------------------------------------- |
-| `url` | `undefined` | required, `string`, value of the absolute path to the video |
+Component - card for section overview dev process.
 
-- #### PartnersCard
+| Prop           | Default | Description                                                                                                                |
+| -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `title`        | -       | required, `string`, will be rendered as card title                                                                         |
+| `description`  | -       | required, `string`, will be rendered as card description                                                                   |
+| `keySolutions` | -       | optional, it is a array with desicions stages, contains: title as required, `string` and description as required, `string` |
 
-Component - card for section company partners.
+- #### RingedImage
 
-| Prop  | Default | Description                                         |
-| ----- | ------- | --------------------------------------------------- |
-| `alt` | -       | required, `string`, describe alt for partner logo   |
-| `url` | -       | required, `string`, link with partner web-site logo |
+Rounded Image component `rounded-full` expect Next/Image component as children
+prop with fill prop. Contains pseudo after element `ring`, positioned absolutely
+looks as `2px white` border. Component expect `right` or `left` variants for
+position the ring. With option `hero` for prop `ringType` realized special ring
+`3px '#BFD5FF'` border, setup in config colors as heroRing.
 
-- #### Advantages section
+| Prop        | Default | Description                                                                                   |
+| ----------- | ------- | --------------------------------------------------------------------------------------------- |
+| `children`  | -       | required, `ReactNode`, expect Image component with fill property                              |
+| `variant`   | -       | required, select the ring positioning option: `right` or `left`                               |
+| `ringType`  | ``      | optional, realized ring `3px '#BFD5FF'` border for Hero Component                             |
+| `className` | ''      | optional, `string`, You should set the width of component and additional css class you'd need |
 
-Component - section company's advantages
+- #### SliderControls
 
-| Prop    | Default | Description                                            |
-| ------- | ------- | ------------------------------------------------------ |
-| `id`    | -       | required, `string`, used as id for section             |
-| `title` | -       | required, `string`, display as title for section       |
-| `desc`  | -       | required, `string`, display as description for section |
+| Prop            | Default     | Description                                                                                            |
+| --------------- | ----------- | ------------------------------------------------------------------------------------------------------ |
+| `section`       | -           | required, `cases`, `reviews`, `advantages`, name of the section where sliderControls will be rendered. |
+| `wrapClassName` | `undefined` | optional, `Record<string, any>[]`, adds custom css class on the div that wraps control buttons.        |
 
-- #### BusinessClientsCard
-
-Component - card for section business clients.
-
-| Prop    | Default | Description                                                                            |
-| ------- | ------- | -------------------------------------------------------------------------------------- |
-| `id`    | -       | required, `string`, used as an identifier for the correct display of the category icon |
-| `title` | -       | required, `string`, display as title for the category                                  |
-| `desc`  | -       | required, `string`, display as description for the category                            |
+</details>
 
 ### 🚧 Technology stack
 

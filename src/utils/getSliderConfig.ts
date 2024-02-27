@@ -1,6 +1,6 @@
 import { Navigation, Autoplay } from 'swiper/modules';
 
-import { Props as SliderProps } from '@/components/ui/Slider/types';
+import { SliderProps } from '@/components/ui/Slider/types';
 
 enum Sections {
   CASES = 'cases',

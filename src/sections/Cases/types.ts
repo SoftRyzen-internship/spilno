@@ -1,3 +1,5 @@
 export type CasesProps = {
-  className?: string;
+  title: string;
+  showAllProjectsLinkText: string;
+  slug?: string;
 };

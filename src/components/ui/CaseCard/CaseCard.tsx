@@ -1,13 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import data from '@/data/common.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import { CaseCardType as Props } from '@/types';
+import { CaseCardType as CaseCardProps } from '@/types';
 
-export const CaseCard: React.FC<Props> = ({
-  link,
+export const CaseCard: React.FC<CaseCardProps> = ({
+  slug,
   text,
   alt,
   url,
@@ -53,11 +54,9 @@ export const CaseCard: React.FC<Props> = ({
         {text}
       </p>
 
-      <a
+      <Link
         className="absolute inset-0"
-        href={link}
-        target="_blank"
-        rel="noreferrer noopener nofollow"
+        href={`/portfolio/${slug}`}
         aria-label={projectDetailsLinkAriaLabel}
       />
     </div>

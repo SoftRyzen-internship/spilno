@@ -18,7 +18,7 @@ export const About: React.FC = () => {
         <div className="container flex flex-col items-center text-center md:flex-row-reverse md:justify-end md:gap-24 md:text-start">
           <RingedImage
             variant="right"
-            className="w-[219px] md:w-[259px] xl:absolute xl:right-0 xl:top-[-58px] xl:w-[537px] smOnly:mb-8 smOnly:translate-x-[-25%]"
+            className="w-[219px] md:w-[259px] xl:absolute xl:right-0 xl:w-[537px] smOnly:mb-8 smOnly:translate-x-[-25%]"
           >
             <Image
               alt={aboutProjectImgAlt}

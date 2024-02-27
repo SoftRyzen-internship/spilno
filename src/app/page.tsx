@@ -11,10 +11,12 @@ import {
   FAQ,
 } from '@/sections';
 
-import data from '@/data/main-page.json';
+import mainPageData from '@/data/main-page.json';
+import commonData from '@/data/common.json';
 
 export default function Home() {
-  const { hero, advantages } = data;
+  const { hero, advantages } = mainPageData;
+  const { cases } = commonData;
 
   return (
     <>
@@ -28,7 +30,7 @@ export default function Home() {
 
       <About />
 
-      <Cases />
+      <Cases {...cases} />
 
       <Reviews />
 
