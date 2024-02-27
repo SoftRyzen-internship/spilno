@@ -5,9 +5,9 @@ import data from '@/data/common.json';
 
 import ArrowIcon from '~/icons/arrow.svg';
 
-import { CaseCardType as Props } from '@/types';
+import { CaseCardType as CaseCardProps } from '@/types';
 
-export const CaseCard: React.FC<Props> = ({
+export const CaseCard: React.FC<CaseCardProps> = ({
   slug,
   text,
   alt,
@@ -56,7 +56,7 @@ export const CaseCard: React.FC<Props> = ({
 
       <Link
         className="absolute inset-0"
-        href={`/case/${slug}`}
+        href={`/portfolio/${slug}`}
         aria-label={projectDetailsLinkAriaLabel}
       />
     </div>

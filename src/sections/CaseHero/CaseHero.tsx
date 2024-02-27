@@ -1,6 +1,10 @@
-import { Props } from './types';
+import { CaseHeroProps } from './types';
 
-export const CaseHero: React.FC<Props> = ({ title, description, tags }) => {
+export const CaseHero: React.FC<CaseHeroProps> = ({
+  title,
+  description,
+  tags,
+}) => {
   return (
     <section className="bg-darkBg pb-8 pt-[146px] md:pb-[42px] md:pt-[151px] xl:pb-[64px] xl:pt-[235px]">
       <div className="container md:flex md:items-end md:justify-between">

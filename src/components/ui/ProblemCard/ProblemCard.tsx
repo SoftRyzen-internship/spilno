@@ -4,11 +4,11 @@ import Cross from '~/icons/cross.svg';
 import BracketsCheck from '~/icons/brackets-check.svg';
 import Zap from '~/icons/zap.svg';
 
-import { Props, CardNames } from './types';
+import { ProblemCardProps, CardNames } from './types';
 
 import css from './ProblemCard.module.css';
 
-export const ProblemCard: React.FC<Props> = ({
+export const ProblemCard: React.FC<ProblemCardProps> = ({
   title,
   text,
   cardName,
