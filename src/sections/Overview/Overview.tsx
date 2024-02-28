@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Button, OverviewStage } from '@/components/ui';
+import { OverviewStage } from '@/components/ui';
 
 import content from '@/data/single-page.json';
 
@@ -116,14 +116,15 @@ export const Overview: React.FC<OverviewProps> = ({ data }) => {
         <div>
           <OverviewStage title={result.title} desc={result.description} />
 
-          <Button
-            text={button.label}
-            btnStyle="accent"
-            className="flex w-full md:mx-auto md:max-w-[223px] xl:max-w-[338px]"
-            link={result.link}
+          <a
+            className="flex w-full items-center justify-center gap-4 rounded-[48px] bg-accent py-4 pl-6 pr-5 font-geologica text-base/[1.5] font-medium text-white transition-all hover:bg-darkBlue focus:bg-darkBlue md:mx-auto md:max-w-[223px] xl:max-w-[338px] xl:py-5 xl:pl-8 xl:pr-6 xl:text-xl/[1.35]"
+            href={result.link}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
           >
+            {button.label}
             <IconArrow className="size-5 xl:size-6" aria-hidden="true" />
-          </Button>
+          </a>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@ export const FormPhoneField: React.FC<FormPhoneFieldProps> = ({
             )}
             placeholder={placeholder}
             aria-invalid={errors[name] ? 'true' : 'false'}
-            format="+############"
+            format="+#############"
             onChange={field.onChange}
             onBlur={field.onBlur}
             name={field.name}
