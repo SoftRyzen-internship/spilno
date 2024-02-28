@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: GOOGLE_CLIENT_EMAIL,
-        private_key: GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        private_key: GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '/n'),
       },
       scopes: [
         'https://www.googleapis.com/auth/drive',
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
     const resp = await sheets.spreadsheets.values.append({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: 'A1:F1',
+      range: 'spilno!A2:G2',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [
@@ -40,15 +40,13 @@ export async function POST(req: Request) {
             body.userEmail,
             body.referralSource,
             body.projectDescription,
+            body.createdAt,
           ],
         ],
       },
     });
-
-    if (resp.data) {
-      return NextResponse.json({ status: 200 });
-    }
+    return NextResponse.json({ data: resp }, { status: 200 });
   } catch (e) {
-    return NextResponse.json({ status: 500 });
+    return NextResponse.json({ data: e }, { status: 500 });
   }
 }

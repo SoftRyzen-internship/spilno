@@ -19,11 +19,14 @@ export const POST = async (req: Request) => {
     });
 
     if (!response.ok) {
-      return NextResponse.json({ code: response.status });
+      return NextResponse.json(
+        { code: response.status },
+        { status: response.status },
+      );
     }
 
-    return NextResponse.json({ code: 200 });
+    return NextResponse.json({ code: 200 }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ code: 500 });
+    return NextResponse.json({ code: 500 }, { status: 500 });
   }
 };
