@@ -20,6 +20,8 @@ export const sendTelegramData = async (formData: FieldValues) => {
     ENTRY,
   );
 
+  const telegramMessageWithDate = `${telegramMessage}Дата заповнення: ${new Date().toLocaleString()}`;
+
   try {
     const res: TelegramRes = await fetch('/api/telegram', {
       method: 'POST',
@@ -28,7 +30,7 @@ export const sendTelegramData = async (formData: FieldValues) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        text: telegramMessage,
+        text: telegramMessageWithDate,
       }),
     }).then(r => r.json());
 
