@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import { FormError } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
+import { useViewportSize } from '@/utils/useWindowSize';
 
 import { FormFieldProps } from './types';
-import { useViewportSize } from '@/utils/useWindowSize';
 
 export const FormTextArea: React.FC<FormFieldProps> = ({
   label,
