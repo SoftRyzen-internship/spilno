@@ -26,7 +26,7 @@ export const FormField: React.FC<FormFieldProps> = ({
 
     <input
       className={cn(
-        'relative mb-2 w-full rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition-colors placeholder:text-greyText focus:outline-none focus-visible:border-accent',
+        'relative mb-2 w-full rounded-[10px] border-[1px] border-transparent bg-lightBg px-4 py-[17.5px] text-left text-sm/[1.5] font-light text-primaryText transition placeholder:text-sm/[1.5] placeholder:text-greyText focus:outline-none focus-visible:border-accent smOnly:focus-visible:py-4 smOnly:focus-visible:text-base/[1.5]',
         { 'border-red': errors[name] },
       )}
       type={type}
