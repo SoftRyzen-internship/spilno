@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-
+import { Suspense } from 'react';
 import { getOnePage } from '@/actions/getOnePage';
 import { getAllPagesSlug } from '@/actions/getAllPagesSlug';
 
@@ -59,7 +59,9 @@ export default async function CasePage({
 
       {onePageData?.review && <SingleReview review={onePageData.review} />}
 
-      <ContactUs />
+      <Suspense>
+        <ContactUs />
+      </Suspense>
     </>
   );
 }

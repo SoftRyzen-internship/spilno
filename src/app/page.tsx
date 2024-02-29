@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import {
   Hero,
   Problems,
@@ -38,7 +39,9 @@ export default function Home() {
 
       <FAQ />
 
-      <ContactUs />
+      <Suspense>
+        <ContactUs />
+      </Suspense>
     </>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -27,8 +28,18 @@ import IconArrow from '~/icons/arrow.svg';
 import { schema } from './schema';
 
 export const ContactUsForm: React.FC = () => {
+  const isBrowser = typeof window != 'undefined';
+  const paramsArr: { [key: string]: string }[] = [];
+
+  useSearchParams().forEach((value, key) => {
+    return paramsArr.push({ [key]: value });
+  });
   const { formName, inputs, textarea, checkbox, select, submitBtn } =
     content.form;
+
+  paramsArr.length !== 0 &&
+    isBrowser &&
+    sessionStorage.setItem('utm', JSON.stringify(paramsArr));
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -54,14 +65,16 @@ export const ContactUsForm: React.FC = () => {
     setValue,
     exclude: [checkbox.name],
   });
+  const utm = isBrowser && sessionStorage.getItem('utm');
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       Promise.all([
-        await sendTelegramData(data),
+        await sendTelegramData({ ...data, utm: utm }),
         await sendOrderDataToGoogleSheet(data),
       ]);
       setIsSuccess(true);
+      sessionStorage.removeItem('utm');
       reset();
     } catch {
       setIsSuccess(false);

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { PortfolioHero, PortfolioCases, Reviews, ContactUs } from '@/sections';
 
@@ -15,7 +16,9 @@ export default function PortfolioPage() {
 
       <Reviews />
 
-      <ContactUs />
+      <Suspense>
+        <ContactUs />
+      </Suspense>
     </>
   );
 }

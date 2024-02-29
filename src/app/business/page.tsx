@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import {
   Hero,
@@ -37,7 +38,9 @@ export default function BusinessPage() {
 
       <FAQ tags={['business']} />
 
-      <ContactUs />
+      <Suspense>
+        <ContactUs />
+      </Suspense>
     </>
   );
 }

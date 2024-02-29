@@ -3,7 +3,6 @@
     "path": "/",
     "ariaLabel": "Посилання із логотипом компанії"
   },
-
   "navLinks": [
     {
       "path": "/",
@@ -18,7 +17,6 @@
       "label": "Портфоліо"
     }
   ],
-
   "mobileMenu": {
     "title": "Контакти",
     "openBtnAriaLabel": "Кнопка відкриття меню",
@@ -28,7 +26,6 @@
       "path": "#contactUs"
     }
   },
-
   "contactLinks": {
     "email": {
       "path": "hello@spilno.group"
@@ -38,42 +35,36 @@
       "label": "Telegram"
     }
   },
-
   "socialLinks": {
     "ariaLabel": "Зв'яжися з нами у"
   },
-
   "sliderControls": {
     "prevBtnAriaLabel": "Кнопка назад для перегортання слайдів",
     "nextBtnAriaLabel": "Кнопка вперед для перегортання слайдів",
     "prevIconAriaLabel": "іконка стрілки гортання назад",
     "nextIconAriaLabel": "іконка стрілки гортання вперед"
   },
-
   "formFieldsTranslation": {
     "userName": "Імʼя",
     "phoneNumber": "Телефон",
     "telegram": "Телеграм",
     "userEmail": "Пошта",
     "referralSource": "Звідки ви про нас дізнались?",
-    "projectDescription": "Додаткові коментарі"
+    "projectDescription": "Додаткові коментарі",
+    "utm": "Мітки UTM"
   },
-
   "reviewSection": {
     "title": "Враження від спільної взаємодії",
     "label": "Дізнайтеся, як наші клієнти та стажери оцінюють нас та діляться своїм досвідом"
   },
-
   "singleReviewSection": {
     "title": "Враження нашого клієнта після завершення проєкту",
     "label": "Подивіться, як наш клієнт сприймає результати нашої спільної роботи та ділиться своїми враженнями"
   },
-
   "reviewTabs": {
     "business": "Від бізнесу",
     "trainee": "Від стажерів"
   },
-
   "reviewCard": {
     "closeBtn": {
       "label": "Кнопка закриття меню",
@@ -86,7 +77,6 @@
     "playBtnAriaLabel": "кнопка відтворення відео",
     "playIconAriaLabel": "іконка відтворення відео"
   },
-
   "cases": {
     "title": "Бізнеси, яким допомогли наші стажери",
     "showAllProjectsLinkText": "Переглянути проєкти",
@@ -94,7 +84,6 @@
     "projectDetailsLinkAriaLabel": "Дізнатися більше про проєкт",
     "arrowIconAriaLabel": "Іконка діагональної стрілки вгору"
   },
-
   "advantages": [
     {
       "id": "01",
@@ -117,13 +106,11 @@
       "description": "Бізнес виступає сприячем для освіти та розвитку молодих спеціалістів."
     }
   ],
-
   "partners": {
     "id": "partners",
     "title": "Нам довіряють",
     "desc": "Познайомтеся з компаніями, що довірились співпраці та разом з нами досягають своїх цілей."
   },
-
   "footer": {
     "devs": {
       "label": "Створено при підтримці",
