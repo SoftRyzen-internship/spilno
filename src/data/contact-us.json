@@ -118,7 +118,7 @@
       },
       "projectDescription": {
         "format": {
-          "reg": "^[\s\S]*$",
+          "reg": "^[\\s\\S]*$",
           "message": "Присутні недопустимі символи."
         },
         "minLength": {
