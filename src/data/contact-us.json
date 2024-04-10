@@ -118,7 +118,7 @@
       },
       "projectDescription": {
         "format": {
-          "reg": "^[A-Za-zА-Яа-яЇїІіЄєҐґ0-9(),'\"-.!? \n\r]*$",
+          "reg": "^[\s\S]*$",
           "message": "Присутні недопустимі символи."
         },
         "minLength": {
